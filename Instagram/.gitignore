@@ -1,0 +1,7 @@
+target/
+.idea/
+.svn/
+*.iml
+*.xml
+/node_modules
+*.properties
