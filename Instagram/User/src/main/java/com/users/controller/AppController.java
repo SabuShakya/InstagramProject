@@ -8,6 +8,7 @@ import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.service.PhotoService;
 import com.users.service.UserService;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpHeaders;
@@ -49,14 +50,16 @@ public class AppController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Boolean> getUser(@RequestBody Userdto userdto){
+    public ResponseEntity<Userdto> getUser(@RequestBody Userdto userdto){
 
         User isUser = userService.getUser(userdto.getUname());
         System.out.println(isUser);
-        if((isUser != null)&& (isUser.getPassword().equals(userdto.getPassword()))){
-            return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+        if((isUser != null)&& (BCrypt.checkpw(userdto.getPassword(),isUser.getPassword()))){
+            userdto.setUname(isUser.getUname());
+            userdto.setTokenNo(isUser.getTokenNo());
+            return new ResponseEntity<Userdto>(userdto,HttpStatus.OK);
         }
-        return new ResponseEntity<Boolean>(false, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<Userdto>(userdto, HttpStatus.NOT_FOUND);
     }
 
    @PostMapping("/upload")

@@ -1,5 +1,5 @@
 (function(){
-angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap']);
+angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap', 'ngStorage']);
 
 angular.module('userModule').config(function($routeProvider) {
     $routeProvider

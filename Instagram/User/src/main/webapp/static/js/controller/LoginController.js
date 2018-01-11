@@ -1,8 +1,8 @@
 (function () {
     angular.module('userModule').controller('LoginController', LoginController);
-    LoginController.$inject=['$location','HttpService'];
+    LoginController.$inject=['$location','HttpService','$localStorage'];
 
-    function LoginController($location, HttpService) {
+    function LoginController($location, HttpService, $localStorage) {
         var vm= this;
         vm.uname = '';
         vm.email = '';
@@ -22,7 +22,9 @@
             HttpService.postLogin(vm.url, vm.user).then(
                 function(value){
                     console.log("success");
-                    $location.path("/main");
+                    $localStorage.uname = value.uname;
+                    $localStorage.tokenNo = value.tokenNo;
+                    $location.path("/profile");
                 },
                 function(error){
                     vm.valid=false;

@@ -28,7 +28,7 @@
                 'password': vm.password
             };
 
-            SignupService.createUser(vm.url,vm.newUser).then(function(value){
+            SignupService.signupUser(vm.url,vm.newUser).then(function(value){
                     console.log("success");
                     $location.path("/login");
                 }, function(reason){
