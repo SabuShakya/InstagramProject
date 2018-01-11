@@ -8,7 +8,6 @@ function SignupService( $location, HttpService) {
 
     function signupUser(url,newUser) {
        return HttpService.post(url, newUser);
-
     }
 }
 })();
