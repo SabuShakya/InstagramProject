@@ -10,10 +10,10 @@
         <module name="User" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="Admin" target="1.5" />
       <module name="Instagram" target="1.5" />
-      <module name="User" target="1.5" />
+      <module name="User" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
