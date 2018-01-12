@@ -26,7 +26,7 @@
         vm.openLoginModal = openLoginModal;
         vm.refreshList =refreshList;
 
-        HttpService.get("/getAdminId/"+$localStorage.tokenNo+"/"+$localStorage.userId).then(
+        HttpService.get("/getAdminId/"+$localStorage.tokenNo+"/"+$localStorage.userName).then(
             function (value) {
                 vm.adminId =  value.name;
                 console.log(vm.adminId);

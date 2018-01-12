@@ -5,7 +5,7 @@
 
     function LoginController($location,LoginService,HttpService,$localStorage) {
         var vm = this;
-        vm.userId = '';
+        vm.userName = '';
         vm.password = '';
         vm.errormsg = '';
         vm.valid = true;
@@ -17,26 +17,18 @@
 
         function loginUser() {
             vm.adminObj = {
-                'userId' : vm.userId,
+                'userName' : vm.userName,
                 'password' : vm.password
             };
         LoginService.verifyAdmin(vm.url,vm.adminObj)
             .then(function (response) {
-                $localStorage.tokenNo = response.token;
-                $localStorage.userId = response.userId;
+                $localStorage.tokenNo = response.tokenNo;
+                $localStorage.userName = response.userName;
                 $location.path("/adminPage");
         },function (reason) {
                     vm.valid = false;
                     vm.errormsg = "User not registered";
             });
-
-            // vm.response = LoginService.verifyAdmin(vm.url,vm.adminObj);
-            // if (vm.response){
-            // $location.path("/adminPage");
-            // }else{
-            //     vm.valid = false;
-            //     vm.errormsg = "User not registered";
-            // }
         }
 
         function signup() {

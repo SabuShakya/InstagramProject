@@ -1,5 +1,5 @@
 (function(){
-angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap']);
+angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap', 'ngStorage']);
 
 angular.module('userModule').config(function($routeProvider) {
     $routeProvider
@@ -19,7 +19,6 @@ angular.module('userModule').config(function($routeProvider) {
             templateUrl: "/static/views/profile.jsp",
             controller:"ModalUploadController as profile"
         })
-
         .otherwise({
             redirectTo:'/login'
         });

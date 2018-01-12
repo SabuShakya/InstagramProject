@@ -2,6 +2,7 @@ package com.f1soft.admin.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -24,8 +25,8 @@ public class Admin implements Serializable{
     private String email;
 
     @NotNull
-    @Column(name = "user_id",nullable = false)
-    private String userId;
+    @Column(name = "user_name",nullable = false, unique = true)
+    private String userName;
 
     @NotNull
     @Column(name = "password" ,nullable = false)
@@ -34,6 +35,6 @@ public class Admin implements Serializable{
     @Column(name = "image")
     private String image;
 
-    @Column(name = "token_no" ,unique = true)
-    private String tokenNo;
+    @OneToOne(mappedBy = "admin")
+    private TokenAuth tokenAuth;
 }
