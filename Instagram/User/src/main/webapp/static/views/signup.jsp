@@ -1,7 +1,7 @@
 <form name="signupform" novalidate>
     <div class="container">
         <p>
-            FirstName:
+            First Name:
             <input type="text" name="firstName" ng-model="signup.firstName" placeholder="First name" required/>
             <span style="color:red" ng-show="signupform.firstName.$dirty && signupform.firstName.$invalid">
             <span class="error" ng-show="signupform.firstName.$error.required"> First name is required</span>
@@ -9,7 +9,7 @@
         </p>
 
         <p>
-            LastName:
+            Last Name:
             <input type="text" name="lastName" ng-model="signup.lastName" placeholder="Last name" required/>
             <span style="color:red" ng-show="signupform.lastName.$dirty && signupform.lastName.$invalid">
             <span class="error" ng-show="signupform.lastName.$error.required"> Last name is required</span>
@@ -18,7 +18,7 @@
 
         <p>
             Username:
-            <input type="text" name="uname" ng-model="signup.uname" placeholder="Username" required/>
+            <input type="text" name="uname" ng-model="signup.username" placeholder="Username" required/>
         <span style="color:red" ng-show="signupform.uname.$dirty && signupform.uname.$invalid">
             <span class="error" ng-show="signupform.uname.$error.required"> Username is required</span>
         </span>
@@ -45,8 +45,6 @@
         <input type ="repassword" name ="repass" ng-model ="signup.repassword" placeholder="Enter password again"required />
         <span style="color:red" ng-show="signup.match">Password donot match</span>
         </p>
-    </div>
-
     </div>
 
     <button type="submit" ng-click="signup.createUser()" ng-disabled="signupform.$invalid">

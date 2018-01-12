@@ -10,7 +10,7 @@ angular.module('userModule').factory('HttpService', HttpService);
             get: get,
             post: post,
             postLogin:postLogin,
-            postPhotos: postPhotos,
+            postPhotos: postPhotos
         }
 
         function get(url) {

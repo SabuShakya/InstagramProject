@@ -41,7 +41,6 @@ public class PhotoServiceImpl implements PhotoService {
                 e.printStackTrace();
             }
             userPhotodto.setImage_path(filename);
-
             ModelMapper modelMapper = new ModelMapper();
             UserPhotos userPhotoEntity = modelMapper.map(userPhotodto, UserPhotos.class);
             userPhotoEntity.setCreated_date(new Date());

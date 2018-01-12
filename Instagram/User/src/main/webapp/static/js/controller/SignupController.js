@@ -6,11 +6,11 @@
         var vm=this;
             vm.firstName ='';
             vm.lastName ='';
-            vm.uname ='';
+            vm.username ='';
             vm.email='';
             vm.password='';
             vm.repassword='';
-            
+
             vm.match =false;
             vm.error_msg = false;
             if(!(vm.password == vm.repassword)){
@@ -23,7 +23,7 @@
             vm.newUser ={
                 'firstName': vm.firstName,
                 'lastName': vm.lastName,
-                'uname': vm.uname,
+                'username': vm.username,
                 'email': vm.email,
                 'password': vm.password
             };

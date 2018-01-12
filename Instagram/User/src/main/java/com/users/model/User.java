@@ -8,6 +8,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,7 +18,7 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name="firstName", nullable = false)
@@ -25,8 +27,8 @@ public class User implements Serializable {
     @Column(name="lastName", nullable = false)
     private String lastName;
 
-    @Column(name="uname", nullable = false)
-    private String uname;
+    @Column(name="username", nullable = false)
+    private String username;
 
     @Column(name="email", nullable = false)
     private String email;
@@ -34,13 +36,10 @@ public class User implements Serializable {
     @Column(name="password", nullable = false)
     private String password;
 
-//    @Column(name = "enabled")
-//    private boolean enabled;
-//
-//    @Column(name ="confirmation_token")
-//    private String confirmationToken;
+    @OneToMany(mappedBy = "userPhotos")
+    private List<UserPhotos> listPhotos = new ArrayList<UserPhotos>();
 
-    @Column(name = "token_no" ,unique = true)
-    private String tokenNo;
+    @OneToOne(mappedBy = "user")
+    private UserTokenAuth userTokenAuth;
 
 }

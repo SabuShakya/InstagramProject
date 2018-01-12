@@ -17,7 +17,7 @@ angular.module('userModule').config(function($routeProvider) {
         })
         .when("/profile",{
             templateUrl: "/static/views/profile.jsp",
-            controller:"ModalUploadController as profile"
+            controller:"ProfileController as profile"
         })
 
         .otherwise({

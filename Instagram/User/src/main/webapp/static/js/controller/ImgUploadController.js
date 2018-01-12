@@ -11,14 +11,15 @@
         vm.comments ='';
 
         vm.url="/upload";
+        // vm.url="/upload/" + $localStorage.tokenNo + "/"+ $localStorage.user_id ;
         vm.uploadPhoto = uploadPhoto;
         vm.close = close;
 
         function uploadPhoto() {
             vm.obj = {'image_path':vm.imageName.base64,
-                        'id': null,
+                        // 'user_id': $localStorage.user_id,
                         'created_date': new Date(),
-                        'caption': vm.caption,
+                        'caption': vm.caption
                         // 'likes' : vm.likes,
                         // 'comments': vm.comments
                 }

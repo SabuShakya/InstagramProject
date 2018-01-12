@@ -23,8 +23,8 @@ public class UserPhotos {
     private Date created_date;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
-    private User id;
+//    @JoinColumn(name="username")
+    private User userPhotos;
 
     @Column(name ="caption")
     private String caption;

@@ -24,16 +24,8 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-    public User getUser(String uname) {
-        User user = userRepository.getUserByUname(uname);
-        System.out.println(user);
-        if (user.getTokenNo()== null){
-            String token = UUID.randomUUID().toString().replace("-","");
-            System.out.println(token);
-            user.setTokenNo(token);
-            userRepository.save(user);
-            return user;
-        }
+    public User getUser(String username) {
+        User user = userRepository.getUserByUsername(username);
         return user;
     }
 
@@ -43,19 +35,15 @@ public class UserServiceImpl implements UserService {
         return userlist;
 
     }
+    public User getUserByTokenNo(String token, String username){
+        return userRepository.getUserByTokenNoAndUsername(token,username);
+
+    }
 
 //    public User findByEmail(String email){
 //        return userRepository.findByEmail(email);
 //    }
-//
-//    public User findByConfirmationToken(String confirmationToken){
-//        return userRepository.findByConfirmationToken(confirmationToken);
-//    }
-
-    public User getUserByTokenNo(String token, String uname){
-        return userRepository.getUserByTokenNoAndUname(token,uname);
 
     }
-}
 
 

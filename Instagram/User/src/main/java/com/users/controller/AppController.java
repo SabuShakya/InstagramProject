@@ -3,12 +3,13 @@ package com.users.controller;
 import com.users.dto.UserPhotodto;
 import com.users.dto.Userdto;
 import com.users.model.User;
-
-//import com.users.service.PhotoService;
 import com.users.model.UserPhotos;
+import com.users.model.UserTokenAuth;
 import com.users.service.PhotoService;
 import com.users.service.UserService;
+import com.users.service.UserTokenAuthService;
 import org.mindrot.jbcrypt.BCrypt;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpHeaders;
@@ -22,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.FileOutputStream;
 import java.util.Base64;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/")
@@ -31,6 +33,9 @@ public class AppController {
 
     @Autowired
     private PhotoService photoService;
+
+    @Autowired
+    private UserTokenAuthService userTokenAuthService;
 
     @GetMapping("/allusers")
     public ResponseEntity<List<User>> listAllUsers() {
@@ -46,18 +51,19 @@ public class AppController {
     @PostMapping(value = "/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
         userService.saveUser(user);
-        return new ResponseEntity<Boolean>(true, HttpStatus.CREATED);
+        userTokenAuthService.saveToken(user);
+        return new ResponseEntity<Boolean>(true, HttpStatus.OK);
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<Userdto> getUser(@RequestBody Userdto userdto){
 
-        User isUser = userService.getUser(userdto.getUname());
-        System.out.println(isUser);
-        if((isUser != null)&& (BCrypt.checkpw(userdto.getPassword(),isUser.getPassword()))){
-            userdto.setUname(isUser.getUname());
+    @PostMapping("/login")
+    public ResponseEntity<Userdto> getUser(@RequestBody User user){
+        userTokenAuthService.authUser(user);
+
+            userService.saveToken(isUser);
+            userdto.setUsername(isUser.getUsername());
             userdto.setTokenNo(isUser.getTokenNo());
-            return new ResponseEntity<Userdto>(userdto,HttpStatus.OK);
+            return new ResponseEntity<Userdto>(userdto, HttpStatus.OK);
         }
         return new ResponseEntity<Userdto>(userdto, HttpStatus.NOT_FOUND);
     }
@@ -77,13 +83,13 @@ public class AppController {
         return new ResponseEntity<List<UserPhotos>>(photoList,HttpStatus.NOT_FOUND);
     }
 
-//    @GetMapping("/getUserId/{tokenNo}/{uname}")
-//    public ResponseEntity<User> getUserId(@PathVariable("tokenNo") String tokenNo,
-//                                            @PathVariable("uanme") String uname){
-//        User admin = userService.getUserByTokenNo(tokenNo,uname);
-//        if (admin != null){
-//            return new ResponseEntity<User>(admin,HttpStatus.OK);
+//    @GetMapping("/uploads/{tokenNo}/{user_id}")
+//    public ResponseEntity<User> getUserID(@PathVariable("tokenNo") String tokenNo,
+//                                            @PathVariable("user_id") String user_id){
+//        User user = userService.getUserByTokenNo(tokenNo,user_id);
+//        if (user != null){
+//            return new ResponseEntity<User>(user,HttpStatus.OK);
 //        }
-//        return new ResponseEntity<User>(admin,HttpStatus.NOT_FOUND);
+//        return new ResponseEntity<User>(user,HttpStatus.NOT_FOUND);
 //    }
 }

@@ -10,11 +10,4 @@
     </div>
 </nav>
 
-<%--<div class="thumbnails">--%>
-    <%--<div class="col-md-4" ng-repeat="pic in pictures">--%>
-        <%--<img ng-src="{{pic.url}}">--%>
-        <%--<h3>{{pic.title}}</h3>--%>
-        <%--<p> {{pic.summary}}</p>--%>
-    <%--</div>--%>
-<%--</div>--%>
 
