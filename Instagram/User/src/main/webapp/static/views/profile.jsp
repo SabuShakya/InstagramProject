@@ -36,7 +36,7 @@
         </div>
     </header>
     <div class="main">
-        <p class="description">Deep you whales to form appear fifth beginning. Fourth give said he Forth.</p>
+        <p class="description">welcome</p>
 
         <div class="stats-container">
             <div class="stat">
@@ -58,10 +58,11 @@
         </div>
 
         <%--<div class="pictures">--%>
-            <div ng-repeat="photo in profile.photoList">--%>
+            <div ng-repeat="photo in profile.photoList">
                 <tr>
                 <td><img src="upload/{{photo.image_path}}"></td>
                 <td>{{photo.caption}}</td>
+                <td><button class= "btn btn-primary" ng-click="profile.edit(photo)"></button></td>
                 <%--<td>{{photo.likes}}</td>--%>
                 <%--<td>{{photo.comments}}</td>--%>
                 </tr>

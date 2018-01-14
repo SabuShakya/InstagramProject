@@ -32,16 +32,16 @@ public class UserController {
     @Autowired
     private UserTokenService userTokenService;
 
-    @GetMapping("/allusers")
-    public ResponseEntity<List<User>> listAllUsers() {
-        List<User> users = userService.findAllUsers();
-        HttpHeaders httpHeaders= new HttpHeaders();
-
-        if(users.isEmpty()){
-            return new ResponseEntity<List<User>>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<List<User>>(users, httpHeaders, HttpStatus.OK);
-    }
+//    @GetMapping("/allusers")
+//    public ResponseEntity<List<User>> listAllUsers() {
+//        List<User> users = userService.findAllUsers();
+//        HttpHeaders httpHeaders= new HttpHeaders();
+//
+//        if(users.isEmpty()){
+//            return new ResponseEntity<List<User>>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<List<User>>(users, httpHeaders, HttpStatus.OK);
+//    }
 
     @PostMapping(value = "/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
