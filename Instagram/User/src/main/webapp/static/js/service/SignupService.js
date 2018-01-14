@@ -7,7 +7,7 @@ function SignupService( $location, HttpService) {
     vm.signupUser = signupUser;
 
     function signupUser(url,newUser) {
-       return HttpService.post(url, newUser)
+       return HttpService.post(url, newUser);
     }
 }
 })();

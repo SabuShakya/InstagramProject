@@ -5,9 +5,10 @@
     function SignupController(SignupService,$location) {
         var vm = this;
         vm.name = '';
-        vm.userId = '';
+        vm.userName = '';
         vm.email = '';
         vm.password = '';
+
         vm.repassword = '';
         vm.response = '';
         vm.match = false;
@@ -18,11 +19,11 @@
         function saveAdmin() {
             vm.newAdminObj={
                 'name':vm.name,
-                'userId':vm.userId,
+                'userName':vm.userName,
                 'email':vm.email,
                 'password':vm.password
             };
-            vm.response = SignupService.saveAdmin(vm.url,vm.newAdminObj).then(function (value) {
+            SignupService.saveAdmin(vm.url,vm.newAdminObj).then(function (value) {
                 $location.path("/login");
             },function (reason) {
                 vm.show_error_msg = true;

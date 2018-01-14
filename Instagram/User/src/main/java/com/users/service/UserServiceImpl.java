@@ -1,5 +1,6 @@
 package com.users.service;
 
+import com.users.dto.Userdto;
 import com.users.model.User;
 import com.users.repository.UserRepository;
 import org.mindrot.jbcrypt.BCrypt;
@@ -19,6 +20,9 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserRepository userRepository;
 
+    @Autowired
+    private UserTokenService userTokenService;
+
     public void saveUser(User user) {
         user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
         userRepository.save(user);
@@ -33,17 +37,14 @@ public class UserServiceImpl implements UserService {
         List<User> userlist = userRepository.findAll();
         System.out.println(userlist.toString());
         return userlist;
-
-    }
-    public User getUserByTokenNo(String token, String username){
-        return userRepository.getUserByTokenNoAndUsername(token,username);
-
     }
 
-//    public User findByEmail(String email){
-//        return userRepository.findByEmail(email);
-//    }
-
+    public boolean loginUser(Userdto userdto) {
+        User isUser = userRepository.getUserByUsername(userdto.getUsername());
+        if((isUser !=null) && BCrypt.checkpw(userdto.getPassword(),isUser.getPassword())){
+            userdto.setId(isUser.getId());
+            return true;
+        }
+        return false;
     }
-
-
+}

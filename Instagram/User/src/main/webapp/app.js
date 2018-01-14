@@ -19,7 +19,6 @@ angular.module('userModule').config(function($routeProvider) {
             templateUrl: "/static/views/profile.jsp",
             controller:"ProfileController as profile"
         })
-
         .otherwise({
             redirectTo:'/login'
         });

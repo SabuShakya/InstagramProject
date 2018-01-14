@@ -7,8 +7,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     public User getUserByUsername(String username);
 
-// public User getUserById(int id);
-
-    public User getUserByTokenNoAndUsername(String tokenNo,String username);
+//    public User getUserByTokenNoAndUsername(String tokenNo,String username);
 
 }

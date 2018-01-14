@@ -6,9 +6,9 @@
 
     <form name="myForm" class="form-login" novalidate>
         <p> Username</p>
-        <input type="text" class="form-control" ng-model="login.uname" id="uname" placeholder="Enter username" name="uname" required/><br>
-        <span style="color:red" ng-show="myForm.uname.$dirty && myForm.uname.$invalid">
-            <span ng-show="myForm.uname.$error.required">Username is required.</span>
+        <input type="text" class="form-control" ng-model="login.username" id="username" placeholder="Enter username" name="username" required/><br>
+        <span style="color:red" ng-show="myForm.username.$dirty && myForm.username.$invalid">
+            <span ng-show="myForm.username.$error.required">Username is required.</span>
         </span>
 
         <p> Password</p>
@@ -16,13 +16,13 @@
         <span style="color:red" ng-show="myForm.pwd.$dirty && myForm.pwd.$invalid">
             <span ng-show="myForm.pwd.$error.required">Password required</span>
         </span>
+
         <input type="submit" value="Login" ng-disabled="myForm.$invalid" ng-click="login.loginUser()"/>
         <div ng-hide ="login.valid">
                 <span style="color:red">{{login.errormsg}}</span>
         </div>
 
         <a href="#!/signup">Signup </a></li>
-
     </form>
     <span style="color:red" ng-show="login.errormsg">Incorrect username or password</span>
 </div>

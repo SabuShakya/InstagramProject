@@ -6,11 +6,11 @@
     </div>
 
     <div class="container">
-        <label class="control-label col-sm-2" for="userId"><b>UserId:</b></label>
-            <input type="text" class="form-control" ng-model="login.userId" id="userId"
-                   placeholder="Enter user id" name="userId" required/><br>
-            <span style="color:red" ng-show="myForm.userId.$dirty && myForm.userId.$invalid">
-        <span ng-show="myForm.userId.$error.required">UserId is required.</span>
+        <label class="control-label col-sm-2" for="userName"><b>UserName:</b></label>
+            <input type="text" class="form-control" ng-model="login.userName" id="userName"
+                   placeholder="Enter user name" name="userName" required/><br>
+            <span style="color:red" ng-show="myForm.userId.$dirty && myForm.userName.$invalid">
+        <span ng-show="myForm.userName.$error.required">UserName is required.</span>
       </span>
       <label class="control-label col-sm-2" for="pwd">Password:</label>
 

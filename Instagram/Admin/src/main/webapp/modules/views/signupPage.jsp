@@ -10,11 +10,11 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-sm-2" for="userId">UserId:</label>
+        <label class="control-label col-sm-2" for="userName">UserName:</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" ng-model="signup.userId" id="userId" placeholder="Enter name" name="name" required/><br>
-            <span style="color:red" ng-show="myForm.userId.$dirty && myForm.userId.$invalid">
-        <span ng-show="myForm.userId.$error.required">UserId is required.</span>
+            <input type="text" class="form-control" ng-model="signup.userName" id="userName" placeholder="Enter name" name="userName" required/><br>
+            <span style="color:red" ng-show="myForm.userName.$dirty && myForm.userName.$invalid">
+        <span ng-show="myForm.userName.$error.required">userName is required.</span>
         </span>
         </div>
     </div>

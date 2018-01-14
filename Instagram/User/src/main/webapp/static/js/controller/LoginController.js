@@ -5,30 +5,29 @@
     function LoginController($location, HttpService, $localStorage) {
         var vm= this;
         vm.username = '';
-        vm.email = '';
         vm.password = '';
-        vm.error_msg = '';
-        vm.url = "/login";
+        vm.errormsg = '';
         vm.valid= true;
+        vm.booleanValue = true;
 
+        vm.url = "/login";
         vm.loginUser = loginUser;
 
         function loginUser() {
             vm.user = {
-                username: vm.username,
-                email: vm.email,
-                password: vm.password
+                'username': vm.username,
+                'password': vm.password
             };
-            HttpService.postLogin(vm.url, vm.user).then(
-                function(value){
-                    console.log("success");
-                    // $localStorage.user_id = value.user_id;
-                    // $localStorage.tokenNo = value.tokenNo;
+
+            HttpService.postLogin(vm.url, vm.user)
+                .then(function(response){
+                    $localStorage.username = response.username;
+                    $localStorage.tokenNo = response.tokenNo;
                     $location.path("/profile");
                 },
                 function(error){
                     vm.valid=false;
-                    vm.error_msg = true;
+                    vm.errormsg = true;
                     console.log("error occurred");
                 }
             );

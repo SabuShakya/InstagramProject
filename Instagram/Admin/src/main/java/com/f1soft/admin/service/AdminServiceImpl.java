@@ -1,9 +1,12 @@
 package com.f1soft.admin.service;
 
-import com.f1soft.admin.dto.AdminDto;
+import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.model.Admin;
+import com.f1soft.admin.model.TokenAuth;
 import com.f1soft.admin.repository.AdminRepository;
+import com.f1soft.admin.utils.TokenUtils;
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,22 +15,30 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @Transactional("transactionManager")
 public class AdminServiceImpl implements AdminService{
 
-//  private static String filepath = "/home/sabu/Downloads/apache-tomcat-8.0.35-windows-x64/apache-tomcat-8.0.35/Images/";
-
     @Resource
     private AdminRepository adminRepository;
 
-    public Admin getAdmin(String userId) {
-        Admin adminFromrepo= adminRepository.getAdminByUserId(userId);
+    @Autowired
+    private TokenAuthService tokenAuthService;
+
+    public boolean loginAdmin(AdminLoginDto adminLoginDto) {
+        Admin isAdmin = adminRepository.getAdminByUserName(adminLoginDto.getUserName());
+        if((isAdmin !=null) && BCrypt.checkpw(adminLoginDto.getPassword(),isAdmin.getPassword())){
+            adminLoginDto.setId(isAdmin.getId());
+           return true;
+        }
+        return false;
+    }
+
+    public Admin getAdmin(String userName) {
+        Admin adminFromrepo= adminRepository.getAdminByUserName(userName);
         System.out.println(adminFromrepo);
         return adminFromrepo;
     }
@@ -36,14 +47,6 @@ public class AdminServiceImpl implements AdminService{
     {
         admin.setPassword(BCrypt.hashpw(admin.getPassword(),BCrypt.gensalt()));
         adminRepository.save(admin);
-    }
-
-    public void saveToken(Admin admin) {
-        adminRepository.save(admin);
-    }
-
-    public Admin getAdminByTokenNo(String token,String userId) {
-        return adminRepository.getAdminByTokenNoAndUserId(token,userId);
     }
 
     public void updateAdmin(Admin admin) {
@@ -66,18 +69,18 @@ public class AdminServiceImpl implements AdminService{
             e.printStackTrace();
         }
 
-        adminRepository.getAdminByUserId(admin.getUserId());
+        adminRepository.getAdminByUserName(admin.getUserName());
         admin.setImage(filename);
         adminRepository.save(admin);
     }
 
     public List<Admin> getAllAdmins() {
-        List<Admin> adminList = adminRepository.findAll();
-        System.out.println(adminList.toString());
-        return adminList;
+        return adminRepository.findAll();
     }
 
     public void deleteAdmin(Admin admin) {
         adminRepository.delete(admin);
     }
+
+
 }

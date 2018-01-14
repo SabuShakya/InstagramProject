@@ -4,11 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,15 +15,12 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
-    @Column(name="firstName", nullable = false)
-    private String firstName;
+    @Column(name="fullName", nullable = false)
+    private String fullName;
 
-    @Column(name="lastName", nullable = false)
-    private String lastName;
-
-    @Column(name="username", nullable = false)
+    @Column(name="username", nullable = false, unique = true)
     private String username;
 
     @Column(name="email", nullable = false)
@@ -36,10 +29,9 @@ public class User implements Serializable {
     @Column(name="password", nullable = false)
     private String password;
 
-    @OneToMany(mappedBy = "userPhotos")
-    private List<UserPhotos> listPhotos = new ArrayList<UserPhotos>();
+    @OneToMany(mappedBy = "user")
+    private List<UserPhotos> userPhotos;
 
     @OneToOne(mappedBy = "user")
-    private UserTokenAuth userTokenAuth;
-
+    private UserToken userTokenAuth;
 }

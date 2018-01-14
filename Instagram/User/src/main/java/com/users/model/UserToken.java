@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "user_token_auth")
 @Getter
 @Setter
-public class UserTokenAuth {
+public class UserToken {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

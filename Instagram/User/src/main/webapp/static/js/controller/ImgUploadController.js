@@ -1,23 +1,22 @@
 (function() {
     angular.module('userModule').controller('ImgUploadController', ImgUploadController);
 
-    ImgUploadController.$inject=['HttpService','$uibModalInstance', '$rootScope'];
+    ImgUploadController.$inject=['HttpService','$uibModalInstance', '$rootScope','$localStorage'];
 
-    function ImgUploadController (HttpService, $uibModalInstance, $rootScope) {
+    function ImgUploadController (HttpService, $uibModalInstance, $rootScope,$localStorage) {
         var vm= this;
         vm.imageName = [];
         vm.caption = '';
         vm.likes= 0;
         vm.comments ='';
-
-        vm.url="/upload";
-        // vm.url="/upload/" + $localStorage.tokenNo + "/"+ $localStorage.user_id ;
+        vm.userDisplayName = '';
+        vm.url= "/upload";
         vm.uploadPhoto = uploadPhoto;
         vm.close = close;
 
         function uploadPhoto() {
             vm.obj = {'image_path':vm.imageName.base64,
-                        // 'user_id': $localStorage.user_id,
+                        'username': $localStorage.username,
                         'created_date': new Date(),
                         'caption': vm.caption
                         // 'likes' : vm.likes,
@@ -26,6 +25,7 @@
 
             HttpService.postPhotos(vm.url, vm.obj).then(
                 function (value) {
+                    vm.userDisplayName = value.username;
                     $rootScope.message = "Picture uploaded successfully";
                     $rootScope.saved = true;
                 },
@@ -40,6 +40,5 @@
         function close(){
             $uibModalInstance.dismiss('close');
         }
-
     }
 })();

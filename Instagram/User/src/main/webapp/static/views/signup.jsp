@@ -1,18 +1,10 @@
 <form name="signupform" novalidate>
     <div class="container">
         <p>
-            First Name:
-            <input type="text" name="firstName" ng-model="signup.firstName" placeholder="First name" required/>
-            <span style="color:red" ng-show="signupform.firstName.$dirty && signupform.firstName.$invalid">
-            <span class="error" ng-show="signupform.firstName.$error.required"> First name is required</span>
-            </span>
-        </p>
-
-        <p>
-            Last Name:
-            <input type="text" name="lastName" ng-model="signup.lastName" placeholder="Last name" required/>
-            <span style="color:red" ng-show="signupform.lastName.$dirty && signupform.lastName.$invalid">
-            <span class="error" ng-show="signupform.lastName.$error.required"> Last name is required</span>
+            Full Name:
+            <input type="text" name="fullName" ng-model="signup.fullName" placeholder="Full Name" required/>
+            <span style="color:red" ng-show="signupform.fullName.$dirty && signupform.fullName.$invalid">
+            <span class="error" ng-show="signupform.fullName.$error.required"> Fullname is required</span>
             </span>
         </p>
 

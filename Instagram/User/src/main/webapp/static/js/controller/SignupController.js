@@ -4,8 +4,7 @@
     function SignupController(SignupService, $location){
 
         var vm=this;
-            vm.firstName ='';
-            vm.lastName ='';
+            vm.fullName ='';
             vm.username ='';
             vm.email='';
             vm.password='';
@@ -21,8 +20,7 @@
 
         function createUser() {
             vm.newUser ={
-                'firstName': vm.firstName,
-                'lastName': vm.lastName,
+                'fullName': vm.fullName,
                 'username': vm.username,
                 'email': vm.email,
                 'password': vm.password
