@@ -24,7 +24,7 @@
             <tr>
                 <th>Index</th>
                 <th>Name</th>
-                <th>UserId</th>
+                <th>User Name</th>
                 <th>Email</th>
                 <th>Profile Picture</th>
                 <th>Edit</th>
@@ -35,7 +35,7 @@
             <tr ng-repeat="ad in admin.adminList">
                 <td>{{$index+1}}</td>
                 <td>{{ad.name}}</td>
-                <td>{{ad.userId}}</td>
+                <td>{{ad.userName}}</td>
                 <td>{{ad.email}}</td>
                 <td><img src="uploads/{{ad.image}}" width="50px" height="50px"></td>
                 <td>

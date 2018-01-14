@@ -2,6 +2,8 @@ package com.f1soft.admin.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
@@ -35,6 +37,6 @@ public class Admin implements Serializable{
     @Column(name = "image")
     private String image;
 
-    @OneToOne(mappedBy = "admin")
+    @OneToOne(mappedBy = "admin",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private TokenAuth tokenAuth;
 }

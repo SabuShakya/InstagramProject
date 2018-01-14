@@ -19,12 +19,12 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="userId">UserId:</label>
+            <label class="control-label col-sm-2" for="userName">User Name:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" ng-model="clickedAdmin.userId"
-                       id="userId" placeholder="Enter name" name="name" style="width:50%" required/><br>
-                <span style="color:red" ng-show="myForm.userId.$dirty && myForm.userId.$invalid">
-                <span ng-show="myForm.userId.$error.required">UserId is required.</span>
+                <input type="text" class="form-control" ng-model="clickedAdmin.userName"
+                       id="userName" placeholder="Enter user name" name="name" style="width:50%" required/><br>
+                <span style="color:red" ng-show="myForm.userName.$dirty && myForm.userName.$invalid">
+                <span ng-show="myForm.userName.$error.required">UserName is required.</span>
                 </span>
             </div>
         </div>

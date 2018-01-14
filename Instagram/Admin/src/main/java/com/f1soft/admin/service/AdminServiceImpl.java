@@ -69,18 +69,17 @@ public class AdminServiceImpl implements AdminService{
             e.printStackTrace();
         }
 
-        adminRepository.getAdminByUserName(admin.getUserName());
-        admin.setImage(filename);
-        adminRepository.save(admin);
+        Admin adminfromRepo= adminRepository.getAdminByUserName(admin.getUserName());
+        adminfromRepo.setImage(filename);
+        adminRepository.save(adminfromRepo);
     }
 
     public List<Admin> getAllAdmins() {
-        return adminRepository.findAll();
+        List<Admin> list = adminRepository.findAll();
+        return list;
     }
 
     public void deleteAdmin(Admin admin) {
-        adminRepository.delete(admin);
+        adminRepository.delete(adminRepository.getAdminByUserName(admin.getUserName()));
     }
-
-
 }

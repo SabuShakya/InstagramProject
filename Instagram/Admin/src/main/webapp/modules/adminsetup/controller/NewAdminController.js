@@ -5,7 +5,7 @@
     function NewAdminController(NewAdminService,$location) {
         var vm = this;
         vm.name = '';
-        vm.userId = '';
+        vm.userName = '';
         vm.email = '';
         vm.password = '';
         vm.repassword = '';
@@ -15,7 +15,7 @@
         function saveNewAdmin() {
             vm.newAdminObj={
                 'name':vm.name,
-                'userId':vm.userId,
+                'userName':vm.userName,
                 'email':vm.email,
                 'password':vm.password
             };
