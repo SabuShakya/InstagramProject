@@ -10,7 +10,7 @@
 
 </form>
 
-    <img src="data:image/jpeg;base64,{{img.imageName.base64}}" width ="80px" height="80px">
+    <img src="data:image/jpeg;base64,{{img.imageName.base64}}" width ="100px" height="100px">
 </div>
 
 <div class="modal-footer">

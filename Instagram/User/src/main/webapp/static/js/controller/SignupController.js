@@ -4,13 +4,12 @@
     function SignupController(SignupService, $location){
 
         var vm=this;
-            vm.firstName ='';
-            vm.lastName ='';
-            vm.uname ='';
+            vm.fullName ='';
+            vm.username ='';
             vm.email='';
             vm.password='';
             vm.repassword='';
-            
+
             vm.match =false;
             vm.error_msg = false;
             if(!(vm.password == vm.repassword)){
@@ -21,9 +20,8 @@
 
         function createUser() {
             vm.newUser ={
-                'firstName': vm.firstName,
-                'lastName': vm.lastName,
-                'uname': vm.uname,
+                'fullName': vm.fullName,
+                'username': vm.username,
                 'email': vm.email,
                 'password': vm.password
             };

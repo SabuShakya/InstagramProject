@@ -4,31 +4,30 @@
 
     function LoginController($location, HttpService, $localStorage) {
         var vm= this;
-        vm.uname = '';
-        vm.email = '';
+        vm.username = '';
         vm.password = '';
-        vm.error_msg = '';
-        vm.url = "/login";
+        vm.errormsg = '';
         vm.valid= true;
+        vm.booleanValue = true;
 
+        vm.url = "/login";
         vm.loginUser = loginUser;
 
         function loginUser() {
             vm.user = {
-                uname: vm.uname,
-                email: vm.email,
-                password: vm.password
+                'username': vm.username,
+                'password': vm.password
             };
-            HttpService.postLogin(vm.url, vm.user).then(
-                function(value){
-                    console.log("success");
-                    $localStorage.uname = value.uname;
-                    $localStorage.tokenNo = value.tokenNo;
-                    $location.path("/main");
+
+            HttpService.postLogin(vm.url, vm.user)
+                .then(function(response){
+                    $localStorage.username = response.username;
+                    $localStorage.tokenNo = response.tokenNo;
+                    $location.path("/profile");
                 },
                 function(error){
                     vm.valid=false;
-                    vm.error_msg = "Incorrect username or password";
+                    vm.errormsg = true;
                     console.log("error occurred");
                 }
             );

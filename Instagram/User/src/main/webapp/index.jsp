@@ -29,7 +29,7 @@
 <script src="static/js/controller/LoginController.js"> </script>
 <script src="static/js/controller/MainController.js"> </script>
 <script src="static/js/controller/ImgUploadController.js"> </script>
-<script src ="static/js/controller/ModalUploadController.js"></script>
+<script src ="static/js/controller/ProfileController.js"></script>
 
 <script src="static/js/service/HttpService.js"> </script>
 <script src="static/js/service/SignupService.js"> </script>

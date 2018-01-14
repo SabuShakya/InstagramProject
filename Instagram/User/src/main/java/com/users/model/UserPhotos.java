@@ -14,7 +14,7 @@ public class UserPhotos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long pic_id;
+    private long id;
 
     @Column(name="image_path", nullable = false)
     private String image_path;
@@ -22,9 +22,9 @@ public class UserPhotos {
     @Column(name="created_date", nullable = false)
     private Date created_date;
 
-    @ManyToOne
-    @JoinColumn(name="user_id")
-    private User id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id", nullable =false)
+    private User user;
 
     @Column(name ="caption")
     private String caption;

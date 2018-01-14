@@ -1,12 +1,16 @@
 package com.users.service;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.users.dto.UserPhotodto;
+import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.repository.PhotoRepository;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -19,11 +23,14 @@ import java.util.List;
 @Transactional
 public class PhotoServiceImpl implements PhotoService {
 
-   @Autowired
+   @Resource
    private PhotoRepository photoRepository;
 
-    public void savePhoto (UserPhotodto userPhotodto){
-        File dir = new File(System.getProperty("catalina.home")+ "/uploads");
+   @Autowired
+   private UserService userService;
+
+    public void savePhoto(UserPhotodto userPhotodto){
+        File dir = new File(System.getProperty("catalina.home")+ "/upload");
         if(!dir.exists()){
             dir.mkdir();
         }
@@ -31,8 +38,7 @@ public class PhotoServiceImpl implements PhotoService {
             String filename = imageDecoded + ".jpg";
             String pathToImage = dir + "/" + filename;
             try {
-                FileOutputStream fout = new FileOutputStream
-                        (pathToImage);
+                FileOutputStream fout = new FileOutputStream(pathToImage);
                 fout.write(imageDecoded);
                 fout.close();
             }catch (FileNotFoundException e) {
@@ -40,17 +46,20 @@ public class PhotoServiceImpl implements PhotoService {
             }catch (IOException e) {
                 e.printStackTrace();
             }
-            userPhotodto.setImage_path(filename);
-
-            ModelMapper modelMapper = new ModelMapper();
-            UserPhotos userPhotoEntity = modelMapper.map(userPhotodto, UserPhotos.class);
-            userPhotoEntity.setCreated_date(new Date());
-            photoRepository.save(userPhotoEntity);
+            User user = userService.getUser(userPhotodto.getUsername());
+            UserPhotos userPhotos = new UserPhotos();
+            userPhotos.setUser(user);
+            userPhotos.setCreated_date(new Date());
+            userPhotos.setCaption(userPhotodto.getCaption());
+            userPhotos.setImage_path(filename);
+            photoRepository.save(userPhotos);
     }
 
-    public List<UserPhotos> getAllPhotos() {
+    public List<UserPhotodto> getAllPhotos() {
         List<UserPhotos> photoList = photoRepository.findAll();
-        System.out.println(photoList.toString());
-        return photoList;
+        ModelMapper modelMapper = new ModelMapper();
+        java.lang.reflect.Type targetListType = new TypeToken<List<UserPhotodto>>() {}.getType();
+        List<UserPhotodto> userPhotodtoList = modelMapper.map(photoList, targetListType);
+        return userPhotodtoList;
     }
 }

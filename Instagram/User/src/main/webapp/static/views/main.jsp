@@ -9,16 +9,16 @@
         </ul>
     </div>
 </nav>
-<div ng-show="main.showFollowMsg">
-    {{main.message}}
-</div>
-<div ng-hide="main.showFollowMsg" class="col-md-4" ng-repeat="image in main.imageList">
-    <div class="thumbnail" >
-        <img src="{{image.image_path}}" style="width:100%">
-        <div class="caption">
-            <p> {{image.caption}} </p>
-        </div>
-    </div>
-</div>
+<%--<div ng-show="main.showFollowMsg">--%>
+    <%--{{main.message}}--%>
+<%--</div>--%>
+<%--<div ng-hide="main.showFollowMsg" class="col-md-4" ng-repeat="image in main.imageList">--%>
+    <%--<div class="thumbnail" >--%>
+        <%--<img src="{{image.image_path}}" style="width:100%">--%>
+        <%--<div class="caption">--%>
+            <%--<p> {{image.caption}} </p>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</div>--%>
 
 

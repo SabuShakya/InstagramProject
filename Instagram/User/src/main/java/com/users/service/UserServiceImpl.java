@@ -1,5 +1,6 @@
 package com.users.service;
 
+import com.users.dto.Userdto;
 import com.users.model.User;
 import com.users.repository.UserRepository;
 import org.mindrot.jbcrypt.BCrypt;
@@ -19,21 +20,16 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserRepository userRepository;
 
+    @Autowired
+    private UserTokenService userTokenService;
+
     public void saveUser(User user) {
         user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
         userRepository.save(user);
     }
 
-    public User getUser(String uname) {
-        User user = userRepository.getUserByUname(uname);
-        System.out.println(user);
-        if (user.getTokenNo()== null){
-            String token = UUID.randomUUID().toString().replace("-","");
-            System.out.println(token);
-            user.setTokenNo(token);
-            userRepository.save(user);
-            return user;
-        }
+    public User getUser(String username) {
+        User user = userRepository.getUserByUsername(username);
         return user;
     }
 
@@ -41,21 +37,14 @@ public class UserServiceImpl implements UserService {
         List<User> userlist = userRepository.findAll();
         System.out.println(userlist.toString());
         return userlist;
-
     }
 
-//    public User findByEmail(String email){
-//        return userRepository.findByEmail(email);
-//    }
-//
-//    public User findByConfirmationToken(String confirmationToken){
-//        return userRepository.findByConfirmationToken(confirmationToken);
-//    }
-
-    public User getUserByTokenNo(String token, String uname){
-        return userRepository.getUserByTokenNoAndUname(token,uname);
-
+    public boolean loginUser(Userdto userdto) {
+        User isUser = userRepository.getUserByUsername(userdto.getUsername());
+        if((isUser !=null) && BCrypt.checkpw(userdto.getPassword(),isUser.getPassword())){
+            userdto.setId(isUser.getId());
+            return true;
+        }
+        return false;
     }
 }
-
-
