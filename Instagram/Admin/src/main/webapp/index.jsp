@@ -27,8 +27,6 @@
 
 </head>
 <body>
-<h1>Welcome</h1>
-
 <div>
 <ng-view></ng-view>
 </div>

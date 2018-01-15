@@ -75,7 +75,7 @@ public class AdminController {
     @GetMapping("/getAllAdmins")
     public ResponseEntity<List<AdminInfoDto>> viewLog(){
         List<Admin> adminList = adminService.getAllAdmins();
-        List<AdminInfoDto> list =  new ArrayList<>();
+        List<AdminInfoDto> list =  new ArrayList<AdminInfoDto>();
         if (adminList != null) {
             list = AdminUtils.convertAdminListToAdminInfoDtoList(adminList);
             return new ResponseEntity<List<AdminInfoDto>>(list,HttpStatus.OK);

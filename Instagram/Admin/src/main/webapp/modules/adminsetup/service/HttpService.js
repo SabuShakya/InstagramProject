@@ -9,7 +9,7 @@
         return {
             get:get,
             post:post,
-            postAdmin:postAdmin
+            // postAdmin:postAdmin
         };
         function get(url) {
             var defered = $q.defer();

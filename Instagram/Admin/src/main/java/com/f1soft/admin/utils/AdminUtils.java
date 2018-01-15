@@ -16,7 +16,7 @@ public class AdminUtils {
     }
 
     public static List<AdminInfoDto> convertAdminListToAdminInfoDtoList(List<Admin> adminList){
-        List<AdminInfoDto> adminInfoDtoList = new ArrayList<>();
+        List<AdminInfoDto> adminInfoDtoList = new ArrayList<AdminInfoDto>();
         ModelMapper modelMapper = new ModelMapper();
         for(Admin admin:adminList){
             AdminInfoDto mapAdmin = modelMapper.map(admin, AdminInfoDto.class);
