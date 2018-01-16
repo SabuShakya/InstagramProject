@@ -58,9 +58,9 @@
         </div>
 
         <%--<div class="pictures">--%>
-            <div ng-repeat="photo in profile.photoList">--%>
+            <div ng-repeat="photo in profile.photoList">
                 <tr>
-                <td><img src="upload/{{photo.image_path}}"></td>
+                <td><img src="uploads/{{photo.image_path}}"></td>
                 <td>{{photo.caption}}</td>
                 <%--<td>{{photo.likes}}</td>--%>
                 <%--<td>{{photo.comments}}</td>--%>

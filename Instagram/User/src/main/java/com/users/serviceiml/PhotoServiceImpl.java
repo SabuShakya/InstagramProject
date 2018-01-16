@@ -1,9 +1,11 @@
-package com.users.service;
+package com.users.serviceiml;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.users.dto.UserPhotodto;
 import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.repository.PhotoRepository;
+import com.users.service.PhotoService;
+import com.users.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
@@ -30,7 +33,7 @@ public class PhotoServiceImpl implements PhotoService {
    private UserService userService;
 
     public void savePhoto(UserPhotodto userPhotodto){
-        File dir = new File(System.getProperty("catalina.home")+ "/upload");
+        File dir = new File(System.getProperty("catalina.home")+ "/uploads");
         if(!dir.exists()){
             dir.mkdir();
         }
@@ -61,5 +64,14 @@ public class PhotoServiceImpl implements PhotoService {
         java.lang.reflect.Type targetListType = new TypeToken<List<UserPhotodto>>() {}.getType();
         List<UserPhotodto> userPhotodtoList = modelMapper.map(photoList, targetListType);
         return userPhotodtoList;
+    }
+
+    @Override
+    public List<UserPhotos> getListOfPhotos(List<User> listOfFollowedUsers) {
+        List<UserPhotos> userPhotosList = new ArrayList<UserPhotos>();
+        for (User user:listOfFollowedUsers){
+           userPhotosList.add(photoRepository.getUserPhotosById(user.getId()));
+        }
+        return userPhotosList;
     }
 }

@@ -1,17 +1,18 @@
-package com.users.service;
+package com.users.serviceiml;
 
 import com.users.dto.UserTokenDto;
 import com.users.dto.Userdto;
 import com.users.model.User;
 import com.users.model.UserToken;
 import com.users.repository.UserTokenRepository;
+import com.users.service.UserTokenService;
 import com.users.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-//@Transactional
+//@Transactionalo
 public class UserTokenServiceImpl implements UserTokenService {
 
     @Autowired
@@ -36,6 +37,7 @@ public class UserTokenServiceImpl implements UserTokenService {
         if ((userToken.getTokenNo() != null) && userToken.getStatus() == 'N') {
                 userToken.setTokenNo(TokenUtils.generateToken());
                 userToken.setStatus('Y');
+                userTokenRepository.save(userToken);
                 userTokenDto = TokenUtils.setUserToken(userToken);
                 return userTokenDto;
             }

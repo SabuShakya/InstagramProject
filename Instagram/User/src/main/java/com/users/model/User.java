@@ -34,4 +34,10 @@ public class User implements Serializable {
 
     @OneToOne(mappedBy = "user")
     private UserToken userTokenAuth;
+
+    @OneToMany(mappedBy = "user")
+    private List<Follow> followingUser;
+
+    @OneToMany(mappedBy = "followedUser")
+    private List<Follow> followedUser;
 }

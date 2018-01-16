@@ -1,11 +1,13 @@
 package com.users.controller;
 
 import com.users.dto.UserPhotodto;
+import com.users.dto.UserPostDto;
 import com.users.dto.UserTokenDto;
 import com.users.dto.Userdto;
 import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.model.UserToken;
+import com.users.service.FollowService;
 import com.users.service.PhotoService;
 import com.users.service.UserService;
 import com.users.service.UserTokenService;
@@ -32,14 +34,8 @@ public class UserController {
     @Autowired
     private UserTokenService userTokenService;
 
-//    @GetMapping("/allusers")
-//    public ResponseEntity<List<User>> listAllUsers() {
-//        List<User> users = userService.findAllUsers();
-//              if(users.isEmpty()){
-//            return new ResponseEntity<List<User>>(HttpStatus.NO_CONTENT);
-//        }
-//        return new ResponseEntity<List<User>>(users, HttpStatus.OK);
-//    }
+    @Autowired
+    private FollowService followService;
 
     @PostMapping(value = "/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
@@ -76,4 +72,12 @@ public class UserController {
         return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/getPosts/{userName}")
+    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username){
+        List<UserPostDto> userPostList=followService.getPosts(username);
+        if (userPostList!= null) {
+            return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
+        }
+        return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
+    }
 }

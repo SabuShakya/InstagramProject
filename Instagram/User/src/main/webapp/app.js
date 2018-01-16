@@ -11,7 +11,7 @@ angular.module('userModule').config(function($routeProvider) {
             templateUrl:"/static/views/signup.jsp",
             controller:"SignupController as signup"
         })
-        .when("/main",{
+        .when("/newsFeed",{
             templateUrl:"/static/views/newsFeed.jsp",
             controller:"MainController as main"
         })
