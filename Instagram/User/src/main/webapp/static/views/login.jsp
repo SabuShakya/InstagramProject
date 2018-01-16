@@ -24,6 +24,5 @@
 
         <a href="#!/signup">Signup </a></li>
     </form>
-    <span style="color:red" ng-show="login.errormsg">Incorrect username or password</span>
 </div>
 </body>

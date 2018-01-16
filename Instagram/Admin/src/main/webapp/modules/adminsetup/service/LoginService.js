@@ -8,7 +8,7 @@
         vm.verifyAdmin = verifyAdmin;
 
         function verifyAdmin(url,adminObj) {
-            return HttpService.postAdmin(url,adminObj);
+            return HttpService.post(url,adminObj);
                 // .then(function (response) {
                 //     console.log("response" + response);
                 //     // $location.path("/adminPage");

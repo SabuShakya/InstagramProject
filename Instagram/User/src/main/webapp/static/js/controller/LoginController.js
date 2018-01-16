@@ -19,16 +19,17 @@
                 'password': vm.password
             };
 
-            HttpService.postLogin(vm.url, vm.user)
+            HttpService.post(vm.url, vm.user)
                 .then(function(response){
-                    $localStorage.username = response.username;
-                    $localStorage.tokenNo = response.tokenNo;
+                    $localStorage.storedObj={
+                        username:response.username,
+                        tokenNo :response.tokenNo
+                    };
                     $location.path("/profile");
                 },
                 function(error){
                     vm.valid=false;
-                    vm.errormsg = true;
-                    console.log("error occurred");
+                    vm.errormsg = "Incorrect username or password";
                 }
             );
         }

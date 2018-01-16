@@ -9,6 +9,7 @@ public interface TokenAuthService {
     public void saveToken(Admin admin);
     public TokenAuthDto authenticateToken(AdminLoginDto adminLoginDto);
     public boolean verifyIfLoggedIn(Admin admin,String tokenNo);
-//    public TokenAuth getAdminByTokenNo(String token,String userId);
+    public void logoutAdmin(int id,String tokenNo);
+    public TokenAuth getByAdminId(int id);
 //    public TokenAuth getByUserId(String userId);
 }

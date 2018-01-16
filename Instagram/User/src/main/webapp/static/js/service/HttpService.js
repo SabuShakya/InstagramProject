@@ -5,12 +5,9 @@ angular.module('userModule').factory('HttpService', HttpService);
 
         var vm= this;
         vm. REST_SERVICE_URI= "http://localhost:8080";
-
         return{
             get: get,
-            post: post,
-            postLogin:postLogin,
-            postPhotos: postPhotos
+            post: post
         }
 
         function get(url) {
@@ -37,34 +34,6 @@ angular.module('userModule').factory('HttpService', HttpService);
                     },
                     function (error) {
                         console.log("Error occured");
-                        defered.reject(error);
-                    }
-                );
-            return defered.promise;
-        }
-
-        function postLogin(url,user) {
-            var defered = $q.defer();
-            $http.post(vm.REST_SERVICE_URI+url,user)
-                .then(
-                    function (response) {
-                        defered.resolve(response.data);
-                    },
-                    function (reason) {
-                        defered.reject(reason);
-                    }
-                );
-            return defered.promise;
-        }
-
-        function postPhotos(url, imageName) {
-            var defered = $q.defer();
-            $http.post(vm.REST_SERVICE_URI +url, imageName)
-                .then(
-                    function (value) {
-                        defered.resolve(value.data);
-                    },
-                    function(error){
                         defered.reject(error);
                     }
                 );

@@ -19,11 +19,11 @@ public class AppConfiguration extends WebMvcConfigurerAdapter {
         configurer.enable();
     }
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry
-                .addResourceHandler("/uploads/**")
-                .addResourceLocations("file:/home/smriti/Desktop/Softwares/apache-tomcat-8.5.24/uploads/");
-    }
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry
+//                .addResourceHandler("/uploads/**")
+//                .addResourceLocations("file:/home/smriti/Desktop/Softwares/apache-tomcat-8.5.24/uploads/");
+//    }
 }
 

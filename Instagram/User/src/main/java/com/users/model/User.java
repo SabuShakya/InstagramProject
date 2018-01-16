@@ -34,4 +34,8 @@ public class User implements Serializable {
 
     @OneToOne(mappedBy = "user")
     private UserToken userTokenAuth;
+
+    @OneToMany(mappedBy = "user")
+    private List<Comments> comments;
 }
+

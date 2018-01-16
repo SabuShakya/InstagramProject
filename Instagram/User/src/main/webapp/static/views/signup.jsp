@@ -1,3 +1,4 @@
+<h2 class="text-center">Sign Up</h2>
 <form name="signupform" novalidate>
     <div class="container">
         <p>
@@ -39,7 +40,7 @@
         </p>
     </div>
 
-    <button type="submit" ng-click="signup.createUser()" ng-disabled="signupform.$invalid">
+    <button type="submit" class="btn btn-success btn-lg pull-centre" ng-click="signup.createUser()" ng-disabled="signupform.$invalid">
         Submit form
     </button>
     </div>

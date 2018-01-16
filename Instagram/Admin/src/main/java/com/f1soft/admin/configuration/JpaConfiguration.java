@@ -8,6 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.data.web.config.EnableSpringDataWebSupport;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -23,6 +24,7 @@ import java.util.Properties;
 @PropertySource(value = {"classpath:application.properties"})
 @EnableJpaRepositories(basePackages = "com.f1soft.admin.repository",
         entityManagerFactoryRef = "entityManagerFactoryBean")
+@EnableSpringDataWebSupport
 public class JpaConfiguration {
     @Autowired
     private Environment environment;

@@ -7,25 +7,19 @@
         var vm= this;
         vm.imageName = [];
         vm.caption = '';
-        vm.likes= 0;
-        vm.comments ='';
-        vm.userDisplayName = '';
-        vm.url= "/upload";
+        vm.url="/upload";
         vm.uploadPhoto = uploadPhoto;
         vm.close = close;
 
         function uploadPhoto() {
             vm.obj = {'image_path':vm.imageName.base64,
-                        'username': $localStorage.username,
                         'created_date': new Date(),
+                        'username':$localStorage.storedObj.username,
                         'caption': vm.caption
-                        // 'likes' : vm.likes,
-                        // 'comments': vm.comments
                 }
 
-            HttpService.postPhotos(vm.url, vm.obj).then(
+            HttpService.post(vm.url, vm.obj).then(
                 function (value) {
-                    vm.userDisplayName = value.username;
                     $rootScope.message = "Picture uploaded successfully";
                     $rootScope.saved = true;
                 },

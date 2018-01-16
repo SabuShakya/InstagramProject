@@ -3,16 +3,16 @@ body {
     font-family: 'Roboto Condensed';
 }
 
-.container {
-    margin: 0 auto;
-    background-color: white;
-    /*max-width: 400px;*/
-    /*max-height: 650px;*/
-    overflow: hidden;
-    /*box-shadow: 0px 0px 20px black;*/
-    /*margin-top: 1em;*/
-    color: black;
-}
+/*.container {*/
+    /*margin: 0 auto;*/
+    /*background-color: white;*/
+    /*!*max-width: 400px;*!*/
+    /*!*max-height: 650px;*!*/
+    /*overflow: hidden;*/
+    /*!*box-shadow: 0px 0px 20px black;*!*/
+    /*margin-top: 50px;*/
+    /*color: black;*/
+/*}*/
 
 /*// Icons*/
 a {
@@ -73,15 +73,14 @@ header {
     position: absolute;
 
 }
-
-.search-container {
-    background-color: pink;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    bottom: 1em;
-    right: 0;}
+/*.search-container {*/
+    /*background-color: pink;*/
+    /*border-radius: 50%;*/
+    /*width: 15px;*/
+    /*height: 15px;*/
+    /*position: absolute;*/
+    /*bottom: 1em;*/
+    /*right: 0;}*/
 
 i::after{
     width: 100%;
@@ -97,7 +96,6 @@ i::after{
     max-width: 80px;
     border-radius: 50%;
     border: 2px solid white;
-    box-shadow: 0 0 15px black;
 }
 
 .main{
@@ -106,6 +104,7 @@ i::after{
 .description{
     padding: 0.5em 2em;
     text-align: center;
+    font-size: 40px;
 }
 
 .stats-container{

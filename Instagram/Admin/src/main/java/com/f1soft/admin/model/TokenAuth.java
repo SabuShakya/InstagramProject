@@ -14,7 +14,7 @@ public class TokenAuth {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Admin admin;
 
     @Column(name = "token_no" ,unique = true)

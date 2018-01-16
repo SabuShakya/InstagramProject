@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="photo_table" )
@@ -29,10 +30,6 @@ public class UserPhotos {
     @Column(name ="caption")
     private String caption;
 
-    @Column(name ="likes")
-    private int likes;
-
-    @Column(name ="comments")
-    private String comments;
-
+    @OneToMany(mappedBy = "userPhotos")
+    private List<Comments> comments;
 }

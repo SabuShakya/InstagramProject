@@ -4,18 +4,22 @@
 
     function ProfileController($uibModal, $rootScope, HttpService, $localStorage, $location){
         var vm =this;
-        vm.url ="/allPhotos";
+        vm.userDisplayName='';
         vm.photoList=[];
-        // vm.showList = true;
+        vm.showList = true;
         $rootScope.message='';
         $rootScope.saved = false;
+        $rootScope.photo = '';
 
+        vm.url ="/allPhotos/"+$localStorage.storedObj.username;
         vm.openModal=openModal;
         vm.logout =logout;
+        vm.commentModal=commentModal;
 
         HttpService.get(vm.url).then(function(value){
             vm.photoList = value;
-            // vm.showList = false;
+            vm.userDisplayName= $localStorage.storedObj.username;
+            vm.showList = false;
         },function (reason) {
             console.log("Error occured"+reason);
         });
@@ -32,7 +36,27 @@
         }
 
         function logout() {
-            $location.path("/login");
+            HttpService.post("/logout", $localStorage.storedObj).then(
+                function (value) {
+                    $localStorage.storedObj={};
+                    $location.path("/login");
+                },
+                function (reason) {
+                    console.log(reason);
+                }
+            )
+        };
+
+        function commentModal(image_path) {
+            $rootScope.photo = image_path;
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/comments.jsp',
+                controller :'CommentsController',
+                controllerAs: 'comment',
+                size: 'lg'
+            });
         }
     }
 })();

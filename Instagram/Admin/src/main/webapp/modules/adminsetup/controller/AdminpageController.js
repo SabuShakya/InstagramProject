@@ -1,14 +1,14 @@
 (function () {
-    angular.module("adminModule").controller("AdminpageController",AdminpageController);
-    
+    angular.module("adminModule").controller("AdminpageController", AdminpageController);
+
     AdminpageController.$inject = ['HttpService',
-                                    '$uibModal',
-                                    '$rootScope',
-                                    '$localStorage',
-                                    '$location'];
-    
-    function AdminpageController(HttpService,$uibModal,$rootScope,$localStorage,$location) {
-        var vm  = this;
+        '$uibModal',
+        '$rootScope',
+        '$localStorage',
+        '$location'];
+
+    function AdminpageController(HttpService, $uibModal, $rootScope, $localStorage, $location) {
+        var vm = this;
         vm.adminList = [];
         vm.adminId = '';
         vm.showList = true;
@@ -19,18 +19,19 @@
         $rootScope.saved = false;
 
         vm.showAdminList = showAdminList;
-        vm.openEditModal =  openEditModal;
-        vm.openDeleteModal =openDeleteModal;
+        vm.openEditModal = openEditModal;
+        vm.openDeleteModal = openDeleteModal;
         vm.openUserLog = openUserLog;
         vm.logout = logout;
         vm.openLoginModal = openLoginModal;
-        vm.refreshList =refreshList;
+        vm.refreshList = refreshList;
 
-        HttpService.get("/getAdminId/"+$localStorage.tokenNo+"/"+$localStorage.userName).then(
+        HttpService.get("/getAdminId/" + $localStorage.adminObj.tokenNo + "/"
+            + $localStorage.adminObj.userName).then(
             function (value) {
-                vm.adminId =  value.name;
+                vm.adminId = $localStorage.adminObj.name;
                 console.log(vm.adminId);
-            },function (reason) {
+            }, function (reason) {
                 vm.showAll = false;
                 openLoginModal();
             });
@@ -39,10 +40,11 @@
             HttpService.get(vm.url).then(function (value) {
                 vm.adminList = value;
                 vm.showList = false;
-            },function (reason) {
-                console.log("Something occurred"+reason);
+            }, function (reason) {
+                console.log("Something occurred" + reason);
             });
         }
+
         function refreshList() {
             showAdminList();
             $rootScope.saved = false;
@@ -51,52 +53,55 @@
         function openEditModal(admin) {
             $rootScope.clickedAdmin = admin;
             vm.modalInstance = $uibModal.open({
-                ariaLabelledBy : 'modal-title',
-                ariaDescribedBy : 'modal-body',
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
                 templateUrl: '/modules/views/editModal.jsp',
-                controller:'EditModalController',
-                controllerAs:'modalController',
-                size : 'lg'
+                controller: 'EditModalController',
+                controllerAs: 'modalController',
+                size: 'lg'
             });
         }
 
         function openDeleteModal(admin) {
             $rootScope.clickedAdmin = admin;
             vm.modalInstance = $uibModal.open({
-                ariaLabelledBy : 'modal-title',
-                ariaDescribedBy : 'modal-body',
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
                 templateUrl: '/modules/views/confirmDelete.jsp',
-                controller:'EditModalController',
-                controllerAs:'modalController',
-                size : 'lg'
+                controller: 'EditModalController',
+                controllerAs: 'modalController',
+                size: 'lg'
             });
         }
 
         function openUserLog() {
             vm.modalInstance = $uibModal.open({
-                ariaLabelledBy : 'modal-title',
-                ariaDescribedBy : 'modal-body',
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
                 templateUrl: '/modules/views/userLog.jsp',
-                controller:'EditModalController',
-                controllerAs:'modalController',
-                size : 'lg'
+                controller: 'EditModalController',
+                controllerAs: 'modalController',
+                size: 'lg'
             });
         }
 
         function logout() {
-           $localStorage.adminId = null;
-           $localStorage.tokenNo = null;
-           $location.path("/login");
+            HttpService.post("/logout", $localStorage.adminObj).then(function (value) {
+                $localStorage.adminObj = {};
+                $location.path("/login");
+            }, function (reason) {
+                alert("Error Occurred");
+            });
         }
 
         function openLoginModal() {
             vm.modalInstance = $uibModal.open({
-                ariaLabelledBy : 'modal-title',
-                ariaDescribedBy : 'modal-body',
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
                 templateUrl: '/modules/views/sessionLostModal.jsp',
-                controller:'EditModalController',
-                controllerAs:'modalController',
-                size : 'lg'
+                controller: 'EditModalController',
+                controllerAs: 'modalController',
+                size: 'lg'
             });
         }
     }

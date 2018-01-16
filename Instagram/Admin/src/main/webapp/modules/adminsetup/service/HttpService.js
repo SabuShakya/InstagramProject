@@ -29,14 +29,14 @@
             });
             return defered.promise;
         }
-        function postAdmin(url,adminObj) {
-            var  defered = $q.defer();
-            $http.post(vm.Rest_Service_Url+url,adminObj).then(function (response) {
-                defered.resolve(response.data)
-            },function (reason) {
-                defered.reject(reason.data);
-            });
-            return defered.promise;
-        }
+        // function postAdmin(url,adminObj) {
+        //     var  defered = $q.defer();
+        //     $http.post(vm.Rest_Service_Url+url,adminObj).then(function (response) {
+        //         defered.resolve(response.data)
+        //     },function (reason) {
+        //         defered.reject(reason.data);
+        //     });
+        //     return defered.promise;
+        // }
     }
 })();

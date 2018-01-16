@@ -22,8 +22,12 @@ function LoginController($location,LoginService,HttpService,$localStorage) {
         };
         LoginService.verifyAdmin(vm.url,vm.adminObj)
             .then(function (response) {
-                $localStorage.tokenNo = response.tokenNo;
-                $localStorage.userName = response.userName;
+                $localStorage.adminObj = {
+                    name : response.name,
+                    tokenNo: response.tokenNo,
+                    userName: response.userName,
+                    status: response.status
+                };
                 $location.path("/adminPage");
             },function (reason) {
                 vm.valid = false;

@@ -9,5 +9,6 @@ import java.util.List;
 
 public interface PhotoService {
     public void savePhoto(UserPhotodto userPhotos);
-    public List<UserPhotodto> getAllPhotos();
+    public List<UserPhotodto> getAllPhotos(String username);
+    public UserPhotos getPhotos(String image_path);
 }

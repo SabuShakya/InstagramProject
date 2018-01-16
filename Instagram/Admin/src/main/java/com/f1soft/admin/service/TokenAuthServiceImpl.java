@@ -42,6 +42,16 @@ public class TokenAuthServiceImpl implements TokenAuthService{
         return false;
     }
 
+    public void logoutAdmin(int id, String tokenNo) {
+        TokenAuth tokenAuth = tokenRepository.getByAdmin_IdAndTokenNo(id,tokenNo);
+        tokenAuth.setStatus('N');
+        tokenRepository.save(tokenAuth);
+    }
+
+    public TokenAuth getByAdminId(int id) {
+        return tokenRepository.getByAdmin_Id(id);
+    }
+
     public void saveToken(Admin admin) {
         TokenAuth tokenAuth = new TokenAuth();
         tokenAuth.setTokenNo(TokenUtils.generateToken());
@@ -49,14 +59,5 @@ public class TokenAuthServiceImpl implements TokenAuthService{
         tokenAuth.setAdmin(admin);
         tokenRepository.save(tokenAuth);
     }
-//    public TokenAuth getByUserId(String userId) {
-////        return tokenRepository.getByAdmin_UserId(userId);
-//        return null
-//    }
-//
-//
-//    public TokenAuth getAdminByTokenNo(String token, String userId) {
-////        return tokenRepository.getByTokenNoAndAdmin_UserId(token,userId);
-//        return null;
-//    }
+
 }
