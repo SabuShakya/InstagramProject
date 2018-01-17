@@ -1,4 +1,4 @@
-package com.users.serviceiml;
+package com.users.serviceImpl;
 
 import com.users.dto.UserTokenDto;
 import com.users.dto.Userdto;
@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-//@Transactionalo
 public class UserTokenServiceImpl implements UserTokenService {
 
     @Autowired
@@ -33,8 +32,8 @@ public class UserTokenServiceImpl implements UserTokenService {
 
     public UserTokenDto authToken(Userdto userdto) {
         UserToken userToken = userTokenRepository.getByUserId(userdto.getId());
-        UserTokenDto userTokenDto =null;
-        if ((userToken.getTokenNo() != null) && userToken.getStatus() == 'N') {
+        UserTokenDto userTokenDto =new UserTokenDto();
+        if ((userToken.getTokenNo() != null) && userToken.getStatus()=='N') {
                 userToken.setTokenNo(TokenUtils.generateToken());
                 userToken.setStatus('Y');
                 userTokenRepository.save(userToken);
@@ -45,11 +44,9 @@ public class UserTokenServiceImpl implements UserTokenService {
             return userTokenDto;
     }
 
-    public boolean verifyloginUser(User user,String tokenNo) {
-        UserToken userToken =userTokenRepository.getUserByTokenNoAndId(tokenNo, user.getId());
-        if ((userToken != null) && (userToken.getStatus().equals('Y'))){
-            return true;
-        }
-        return false;
-    }
+    public void logoutUser(long id, String tokenNo){
+       UserToken userToken=userTokenRepository.getUserByTokenNoAndId(tokenNo,id);
+       userToken.setStatus('N');
+       userTokenRepository.save(userToken);
+   }
 }

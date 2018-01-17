@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserTokenDto {
-    private Character status;
     private String username;
     private String tokenNo;
+    private Character status;
 }

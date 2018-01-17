@@ -1,4 +1,4 @@
-package com.users.serviceiml;
+package com.users.serviceImpl;
 
 import com.users.dto.UserPostDto;
 import com.users.model.User;

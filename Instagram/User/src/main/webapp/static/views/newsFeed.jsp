@@ -11,16 +11,25 @@
 </nav>
 <section>
     <div align="center" ng-repeat="post in main.posts">
-        <div class="overlay">
-            <span></span>
-        </div>
-        <div class='caption'>
-            </a><span>{{post.caption}}</span>
-        </div>
+        <div class='insta fade-scroll'>
+            <div class='top-insta'>
+                <%--<a href="#" target='_blank'><img class="profile-pic" src='static/images/login.png'></a>--%>
+                <a href='#' target='_blank' class='user'>{{post.username}}
+                </a>
+                <span class='dot'></span>
+            </div>
+            <div class='post'>
+                <div class="overlay">
+                    <span></span>
+                </div>
+                <div class='caption'>
+                    </a><span>{{post.caption}}</span>
+                </div>
 
-        <div class="thumbnail principal-post">
-            <img src="/uploads/{{post.image_path}}">
-        </div>
+                <div class="thumbnail principal-post">
+                    <img src="/uploads/{{post.image_path}}">
+                </div>
+            </div>
         <label>Created On:
             <span class="date-of-post">{{post.created_date}}</span>
         </label>

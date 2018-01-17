@@ -9,6 +9,7 @@ public class TokenUtils {
     public static String generateToken(){
         return UUID.randomUUID().toString().replace("-","");
     }
+
     public static UserTokenDto setUserToken(UserToken userToken){
         UserTokenDto userTokenDto = new UserTokenDto();
         userTokenDto.setTokenNo(userToken.getTokenNo());

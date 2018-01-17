@@ -1,7 +1,7 @@
 (function(){
     angular.module('userModule').controller('SignupController',SignupController);
-    SignupController.$inject =['SignupService','$location'];
-    function SignupController(SignupService, $location){
+    SignupController.$inject =['HttpService','$location'];
+    function SignupController(HttpService, $location){
 
         var vm=this;
             vm.fullName ='';
@@ -25,10 +25,9 @@
                 'email': vm.email,
                 'password': vm.password
             };
-
-            SignupService.signupUser(vm.url,vm.newUser).then(function(value){
-                    console.log("success");
-                    $location.path("/login");
+            HttpService.post(vm.url, vm.newUser).then(function(value){
+                console.log("success");
+                $location.path("/login");
                 }, function(reason){
                     vm.error_msg = true;
                 }

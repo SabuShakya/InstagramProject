@@ -8,7 +8,7 @@
         vm.message = '';
         vm.addComment = addComment;
 
-        HttpService.get("/getPosts/"+$localStorage.username).then(
+        HttpService.get("/getPosts/"+$localStorage.storedObj.username).then(
             function (value) {
                 vm.posts = value;
             },function (reason) {

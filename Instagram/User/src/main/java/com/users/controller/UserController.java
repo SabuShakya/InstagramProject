@@ -1,5 +1,7 @@
 package com.users.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import com.users.dto.Commentsdto;
 import com.users.dto.UserPhotodto;
 import com.users.dto.UserPostDto;
 import com.users.dto.UserTokenDto;
@@ -8,6 +10,7 @@ import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.model.UserToken;
 import com.users.service.FollowService;
+import com.users.service.CommentsService;
 import com.users.service.PhotoService;
 import com.users.service.UserService;
 import com.users.service.UserTokenService;
@@ -36,8 +39,10 @@ public class UserController {
 
     @Autowired
     private FollowService followService;
+    @Autowired
+    private CommentsService commentsService;
 
-    @PostMapping(value = "/signup", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping("/signup")
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
         userService.saveUser(user);
         userTokenService.saveToken(user);
@@ -57,21 +62,21 @@ public class UserController {
         return new ResponseEntity<UserTokenDto>(userTokenDto, HttpStatus.NOT_FOUND);
     }
 
-   @PostMapping("/upload")
-   public ResponseEntity<Boolean> uploads(@RequestBody UserPhotodto userPhotodto){
+    @PostMapping("/upload")
+    public ResponseEntity<Boolean> uploads(@RequestBody UserPhotodto userPhotodto){
         photoService.savePhoto(userPhotodto);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-   }
+    }
 
-    @GetMapping("/allPhotos")
-    public ResponseEntity<List<UserPhotodto>> photoList(){
-        List<UserPhotodto> photoList= photoService.getAllPhotos();
+    @GetMapping("/allPhotos/{username}")
+    public ResponseEntity<List<UserPhotodto>> photoList(@PathVariable("username") String username){
+        List<UserPhotodto> photoList= photoService.getAllPhotos(username);
         if(photoList != null && !photoList.isEmpty()){
             return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.OK);
         }
         return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
     }
-
+//sabu
     @GetMapping("/getPosts/{userName}")
     public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username){
         List<UserPostDto> userPostList=followService.getPosts(username);
@@ -79,5 +84,22 @@ public class UserController {
             return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
         }
         return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
+    }
+    @PostMapping("/addComment")
+    public ResponseEntity<Boolean> addComment( @RequestBody Commentsdto commentsdto ){
+        commentsService.saveComments(commentsdto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
+//    @GetMapping("/showComments")
+//    public ResponseEntity<List<Commentsdto>> commentList(){
+//
+//
+//    }
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logoutUser(@RequestBody UserTokenDto userTokenDto){
+        User user = userService.getUser(userTokenDto.getUsername());
+        userTokenService.logoutUser(user.getId(),userTokenDto.getTokenNo());
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

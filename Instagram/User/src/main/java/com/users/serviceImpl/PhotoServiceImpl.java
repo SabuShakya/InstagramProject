@@ -1,4 +1,4 @@
-package com.users.serviceiml;
+package com.users.serviceImpl;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.users.dto.UserPhotodto;
 import com.users.model.User;
@@ -6,6 +6,8 @@ import com.users.model.UserPhotos;
 import com.users.repository.PhotoRepository;
 import com.users.service.PhotoService;
 import com.users.service.UserService;
+import com.users.utils.PhotoUtils;
+import com.users.utils.TokenUtils;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,20 +60,32 @@ public class PhotoServiceImpl implements PhotoService {
             photoRepository.save(userPhotos);
     }
 
-    public List<UserPhotodto> getAllPhotos() {
-        List<UserPhotos> photoList = photoRepository.findAll();
-        ModelMapper modelMapper = new ModelMapper();
-        java.lang.reflect.Type targetListType = new TypeToken<List<UserPhotodto>>() {}.getType();
-        List<UserPhotodto> userPhotodtoList = modelMapper.map(photoList, targetListType);
-        return userPhotodtoList;
-    }
-
-    @Override
+//sabu
     public List<UserPhotos> getListOfPhotos(List<User> listOfFollowedUsers) {
         List<UserPhotos> userPhotosList = new ArrayList<UserPhotos>();
         for (User user:listOfFollowedUsers){
-           userPhotosList.add(photoRepository.getUserPhotosById(user.getId()));
+            long id = user.getId();
+            System.out.println(id);
+            List<UserPhotos> list = photoRepository.getUserPhotosByUser_Id(id);
+            for(UserPhotos userPhotos:list) {
+                userPhotosList.add(userPhotos);
+            }
         }
         return userPhotosList;
+    }
+
+    public List<UserPhotodto> getAllPhotos(String username) {
+        List<UserPhotos> photoList = photoRepository.getUserPhotosByUserUsername(username);
+        List<UserPhotodto> userPhotodto = PhotoUtils.convertUserPhotos(photoList);
+        return userPhotodto;
+//        ModelMapper modelMapper = new ModelMapper();
+//        java.lang.reflect.Type targetListType = new TypeToken<List<UserPhotodto>>() {}.getType();
+//        List<UserPhotodto> userPhotodtoList = modelMapper.map(photoList, targetListType);
+    }
+
+    public UserPhotos getPhotos(String image_path) {
+       UserPhotos userPhotos= photoRepository.getUserPhotosByImage_path(image_path);
+       return userPhotos;
+
     }
 }

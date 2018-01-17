@@ -40,4 +40,8 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy = "followedUser")
     private List<Follow> followedUser;
+
+    @OneToMany(mappedBy = "user")
+    private List<Comments> comments;
 }
+

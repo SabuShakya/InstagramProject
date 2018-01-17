@@ -1,7 +1,7 @@
 (function(){
 angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap', 'ngStorage']);
 
-angular.module('userModule').config(function($routeProvider) {
+angular.module('userModule').config(['$routeProvider',function ($routeProvider) {
     $routeProvider
         .when("/login",{
             templateUrl:"/static/views/login.jsp",
@@ -22,5 +22,5 @@ angular.module('userModule').config(function($routeProvider) {
         .otherwise({
             redirectTo:'/login'
         });
-})
+}]);
 })();

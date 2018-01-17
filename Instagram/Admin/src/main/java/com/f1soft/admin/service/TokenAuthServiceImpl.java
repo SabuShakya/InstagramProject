@@ -48,7 +48,6 @@ public class TokenAuthServiceImpl implements TokenAuthService{
         tokenRepository.save(tokenAuth);
     }
 
-    @Override
     public TokenAuth getByAdminId(int id) {
         return tokenRepository.getByAdmin_Id(id);
     }
