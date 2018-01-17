@@ -7,52 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd5a31d5-53e5-4916-9c0d-c0c3c7628b4d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/Commentsdto.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/Comments.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/CommentsRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/CommentsService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/PhotoUtils.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/angular-route.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/angular.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/META-INF/MANIFEST.MF" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/User_war_exploded.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/CommentUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/css/comments.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/navigation.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/TokenAuthServiceImpl.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/TokenAuthServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppConfiguration.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppConfiguration.java" />
       <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserTokenDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserTokenDto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/model/User.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/User.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/model/UserPhotos.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/UserPhotos.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/repository/UserRepository.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/UserRepository.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/repository/UserTokenRepository.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/UserTokenRepository.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/service/PhotoService.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/PhotoService.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/service/UserTokenService.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/UserTokenService.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceiml/FollowServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceiml/PhotoServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceiml/UserServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceiml/UserTokenServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserTokenServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/TokenUtils.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/TokenUtils.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/app.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/app.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/Commentsdto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/Commentsdto.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/model/Comments.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/Comments.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/repository/CommentsRepository.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/CommentsRepository.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/service/CommentsService.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/CommentsService.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/css/login.css" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/css/login.css" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/css/newsFeed.css" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/css/newsFeed.css" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/css/profile.css" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/css/profile.css" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ImgUploadController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ImgUploadController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/LoginController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/LoginController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" />
       <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SignupController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SignupController.js" />
       <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/service/HttpService.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/service/HttpService.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/service/SignupService.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/login.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/login.jsp" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" />
       <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" />
       <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/signup.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/signup.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/Admin/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,21 +38,98 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="newsFeed.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state relative-caret-position="208">
+              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp">
+      <file leaf-file-name="AppConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="61" column="115" lean-forward="false" selection-start-line="61" selection-start-column="77" selection-end-line="61" selection-end-column="115" />
+            <state relative-caret-position="126">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppInitializer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JPAConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/JPAConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-558">
+              <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RootConfiguration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/RootConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpService.js" pinned="false" current-in-tab="false">
+        <entry file="http://localhost:8080/static/js/service/HttpService.js">
+          <provider selected="true" editor-type-id="httpFileEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Commentsdto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/dto/Commentsdto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentsServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentsController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/CommentUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,12 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/AdminpageController.js" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/AdminInfoDto.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/TokenAuthDto.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository/AdminRepository.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/configuration/JpaConfiguration.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/AdminService.java" />
         <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/NewAdminController.js" />
         <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/addNewAdmin.jsp" />
         <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/editModal.jsp" />
@@ -148,16 +191,22 @@
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/service/PhotoService.java" />
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" />
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceiml/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" />
         <option value="$PROJECT_DIR$/User/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" />
         <option value="$PROJECT_DIR$/User/src/main/webapp/static/css/newsFeed.css" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" />
         <option value="$PROJECT_DIR$/User/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" />
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java" />
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" />
+        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" />
+        <option value="$PROJECT_DIR$/User/src/main/java/com/users/repository/CommentsRepository.java" />
+        <option value="$PROJECT_DIR$/User/src/main/java/com/users/model/Comments.java" />
+        <option value="$PROJECT_DIR$/User/src/main/java/com/users/utils/CommentUtils.java" />
+        <option value="$PROJECT_DIR$/User/src/main/java/com/users/dto/Commentsdto.java" />
+        <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/service/HttpService.js" />
+        <option value="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -250,7 +299,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -407,14 +458,44 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -717,14 +798,15 @@
       <workItem from="1516074802456" duration="14510000" />
       <workItem from="1516096690059" duration="6744000" />
       <workItem from="1516163059828" duration="4702000" />
+      <workItem from="1516169900246" duration="7039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108023000" />
+    <option name="totallyTimeSpent" value="115062000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="-4" width="1325" height="772" extended-state="7" />
+    <frame x="51" y="44" width="1325" height="772" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -737,18 +819,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5116641" sideWeight="0.4972635" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3608087" sideWeight="0.4972635" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36391914" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5645412" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5645412" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24003127" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24394058" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -777,34 +859,28 @@
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java</url>
-          <line>31</line>
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/utils/CommentUtils.java</url>
+          <line>19</line>
           <properties />
-          <option name="timeStamp" value="127" />
+          <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java</url>
-          <line>32</line>
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java</url>
+          <line>96</line>
           <properties />
-          <option name="timeStamp" value="128" />
+          <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java</url>
-          <line>34</line>
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java</url>
+          <line>98</line>
           <properties />
-          <option name="timeStamp" value="129" />
+          <option name="timeStamp" value="152" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java</url>
-          <line>37</line>
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java</url>
+          <line>100</line>
           <properties />
-          <option name="timeStamp" value="130" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java</url>
-          <line>35</line>
-          <properties />
-          <option name="timeStamp" value="134" />
+          <option name="timeStamp" value="153" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/HttpService.js</url>
@@ -841,106 +917,59 @@
           <line>32</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/static/js/service/HttpService.js</url>
+          <line>17</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/static/js/service/HttpService.js</url>
+          <line>21</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/static/js/service/HttpService.js</url>
+          <line>24</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/static/js/service/HttpService.js</url>
+          <line>14</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js</url>
+          <line>32</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js</url>
+          <line>36</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="160" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js</url>
+          <line>33</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="161" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="147" />
+      <option name="time" value="164" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="http://localhost:8080/">
+        <watch expression="url" />
+        <watch expression="url" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Instagram.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/User.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/app-module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="52" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminDashboard.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="51" lean-forward="false" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/AdminUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/HttpService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/LoginService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LoginController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/TokenUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/TokenAuthServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="29" column="46" lean-forward="false" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -986,14 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/JPAConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/FollowedUsersUtils.java" />
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/PostsUtil.java" />
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/TokenUtils.java">
@@ -1016,14 +1037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1054,26 +1067,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="88" lean-forward="false" selection-start-line="5" selection-start-column="88" selection-end-line="5" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/css/profile.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1692">
           <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="98" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,35 +1089,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/UserPhotos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/repository/FollowRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="11" column="46" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/User/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1128,7 +1100,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,14 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="13" column="60" lean-forward="false" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -1182,26 +1145,191 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state relative-caret-position="142">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="61" column="115" lean-forward="false" selection-start-line="61" selection-start-column="77" selection-end-line="61" selection-end-column="115" />
+        <state relative-caret-position="774">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp">
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="35" column="16" lean-forward="false" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+        <state relative-caret-position="144">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/repository/FollowRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="44" column="31" lean-forward="false" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/repository/CommentsRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/Comments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="24" column="38" lean-forward="false" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="22" column="60" lean-forward="false" selection-start-line="22" selection-start-column="60" selection-end-line="22" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="110" column="17" lean-forward="false" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.config/chromium/Default/Extensions/hhlhjgianpocpoppaiihmlpgcoehlhio/3.12_0/js/content_script/content_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="82" column="57" lean-forward="false" selection-start-line="82" selection-start-column="57" selection-end-line="82" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/UserPhotos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/service/HttpService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/service/CommentsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="http://localhost:8080/static/js/service/HttpService.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="32" column="8" lean-forward="false" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/dto/Commentsdto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/CommentUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/RootConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/configuration/JPAConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-558">
+          <caret line="31" column="49" lean-forward="false" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1260,7 +1388,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>User</last-edited>
+          <last-edited>Instagram</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

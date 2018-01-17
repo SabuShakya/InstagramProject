@@ -18,11 +18,11 @@ public class Comments implements Serializable{
     @Column(name ="comments")
     private String comments;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="user_id", nullable =false)
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="pic_id", nullable = false)
     private UserPhotos userPhotos;
 }

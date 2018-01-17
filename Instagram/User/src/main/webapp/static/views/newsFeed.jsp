@@ -30,23 +30,25 @@
                     <img src="/uploads/{{post.image_path}}">
                 </div>
             </div>
-        <label>Created On:
-            <span class="date-of-post">{{post.created_date}}</span>
-        </label>
-        <div class='footer'>
+            <label>Created On:
+                <span class="date-of-post">{{post.created_date}}</span>
+            </label>
+            <div class='footer'>
 
-            <div class='react'>
-                <a href='#' role='button'><span class='love'></span></a>
-                <a href='#' role='button'><span class='comment'></span></a>
-                <a href='#' role='button'><span class='save'></span></a>
+                <div class='react'>
+                    <a href='#' role='button'><span class='love'></span></a>
+                    <a href='#' role='button'><span class='comment'></span></a>
+                    <a href='#' role='button'><span class='save'></span></a>
 
-            </div><br>
+                </div>
+                <br>
 
-            <div class='comment-section'>
-                <input type='text' id='cmnt' ng-model="post.comment" placeholder='Add a comment...'>
-                <button ng-click="main.addComment()">Add</button>
-                <span class='dot02'></span>
-            </div>
-        </div> <!-- end Footer -->
+                <div class='comment-section'>
+                    <input type='text' id='cmnt' ng-model="post.comment" placeholder='Add a comment...'>
+                    <button ng-click="main.addComment()">Add</button>
+                    <span class='dot02'></span>
+                </div>
+            </div> <!-- end Footer -->
+        </div>
     </div>
 </section>

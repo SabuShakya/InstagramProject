@@ -8,6 +8,7 @@
         vm.comments = '';
         vm.commentList=[];
         vm.showList=false;
+        vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
         vm.add = add;
         vm.cancel=cancel;
@@ -21,7 +22,6 @@
 
             HttpService.post(vm.url,vm.obj).then(
                 function (value) {
-                    $rootScope.message = "Updated successfully";
                     $rootScope.saved = true;
                 },function (reason) {
                     $rootScope.message = "Error Occurred";
@@ -30,7 +30,7 @@
             $uibModalInstance.close('save');
         }
 
-        HttpService.get("/showComments").then(function(value){
+        HttpService.get("/showComments/"+$rootScope.photo).then(function(value){
             vm.commentList = value;
             vm.showList = false;
         },function (reason) {

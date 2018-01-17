@@ -91,11 +91,16 @@ public class UserController {
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
-//    @GetMapping("/showComments")
-//    public ResponseEntity<List<Commentsdto>> commentList(){
-//
-//
-//    }
+    @GetMapping(value = "/showComments/{image_path}")
+    public ResponseEntity<List<Commentsdto>> commentList(@PathVariable("image_path")String image_path){
+        String image = image_path+".jpg";
+        List<Commentsdto> commentsdtoList=commentsService.getAllComments(image);
+        if(commentsdtoList!=null){
+        return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
+    }
+        return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.NO_CONTENT);
+    }
+    
     @PostMapping("/logout")
     public ResponseEntity<Void> logoutUser(@RequestBody UserTokenDto userTokenDto){
         User user = userService.getUser(userTokenDto.getUsername());

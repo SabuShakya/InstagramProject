@@ -4,7 +4,7 @@
 
     function ProfileController($uibModal, $rootScope, HttpService, $localStorage, $location){
         var vm =this;
-        vm.userDisplayName='';
+        vm.userDisplayName= $localStorage.storedObj.username;
         vm.photoList=[];
         vm.showList = true;
         $rootScope.message='';
@@ -18,7 +18,6 @@
 
         HttpService.get(vm.url).then(function(value){
             vm.photoList = value;
-            vm.userDisplayName= $localStorage.storedObj.username;
             vm.showList = false;
         },function (reason) {
             console.log("Error occured"+reason);
@@ -47,8 +46,10 @@
             )
         };
 
-        function commentModal(image_path) {
+        function commentModal(image_path,caption) {
             $rootScope.photo = image_path;
+            $rootScope.caption =caption;
+
             vm.modalInstance=$uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
