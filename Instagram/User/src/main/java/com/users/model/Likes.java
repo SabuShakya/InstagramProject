@@ -9,20 +9,20 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-@Table(name ="comment_table")
-public class Comments implements Serializable{
+@Table(name ="likes_table")
+public class Likes implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name ="comments")
-    private String comments;
+    @Column(name ="likes")
+    private int likes;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id", nullable =false)
     private User user;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="pic_id", nullable = false)
     private UserPhotos userPhotos;
 }

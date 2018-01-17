@@ -35,7 +35,7 @@
         </p>
 
         <p>Re-Password:
-        <input type ="repassword" name ="repass" ng-model ="signup.repassword" placeholder="Enter password again"required />
+        <input type ="password" name ="repass" ng-model ="signup.repassword" placeholder="Enter password again"required />
         <span style="color:red" ng-show="signup.match">Password donot match</span>
         </p>
     </div>

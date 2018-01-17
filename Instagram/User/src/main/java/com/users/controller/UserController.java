@@ -77,10 +77,14 @@ public class UserController {
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
-    @GetMapping("/showComments/{username}")
-    public ResponseEntity<List<Commentsdto>> commentList(@PathVariable("username")String username){
-        List<Commentsdto> commentsdtoList=commentsService.getAllComments(username);
-        return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
+    @GetMapping("/showComments/{image_path}")
+    public ResponseEntity<List<Commentsdto>> commentList(@PathVariable("image_path")String image_path){
+        String image= image_path+".jpg";
+        List<Commentsdto> commentList=commentsService.getAllComments(image);
+        if(commentList!= null && !commentList.isEmpty()){
+            return new ResponseEntity<List<Commentsdto>>(commentList,HttpStatus.OK);
+        }
+        return new ResponseEntity<List<Commentsdto>>(commentList, HttpStatus.NOT_FOUND);
     }
     
     @PostMapping("/logout")
@@ -88,5 +92,11 @@ public class UserController {
         User user = userService.getUser(userTokenDto.getUsername());
         userTokenService.logoutUser(user.getId(),userTokenDto.getTokenNo());
         return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
+    @PostMapping("/updateProfile")
+    public ResponseEntity<Boolean> updateProfile(@RequestBody UserPhotodto userPhotodto){
+        photoService.updateProfile(userPhotodto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 }

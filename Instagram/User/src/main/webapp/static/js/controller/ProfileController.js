@@ -6,6 +6,7 @@
         var vm =this;
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.photoList=[];
+        vm.profilephotoList=[];
         vm.showList = true;
         $rootScope.message='';
         $rootScope.saved = false;
@@ -13,11 +14,19 @@
 
         vm.url ="/allPhotos/"+$localStorage.storedObj.username;
         vm.openModal=openModal;
+        vm.editProfile=editProfile;
         vm.logout =logout;
         vm.commentModal=commentModal;
 
         HttpService.get(vm.url).then(function(value){
             vm.photoList = value;
+            vm.showList = false;
+        },function (reason) {
+            console.log("Error occured"+reason);
+        });
+
+        HttpService.get("/profilePhotos").then(function(value){
+            vm.profilephotoList = value;
             vm.showList = false;
         },function (reason) {
             console.log("Error occured"+reason);
@@ -58,6 +67,18 @@
                 controllerAs: 'comment',
                 size: 'lg'
             });
+        }
+
+        function editProfile() {
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/editProfile.jsp',
+                controller :'EditProfileController',
+                controllerAs: 'editProfile',
+                size: 'lg'
+            });
+
         }
     }
 })();

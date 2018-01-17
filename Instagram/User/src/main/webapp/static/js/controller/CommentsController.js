@@ -30,9 +30,9 @@
             $uibModalInstance.close('save');
         }
 
-        HttpService.get("/showComments/" +$localStorage.storedObj.username).then(function(value){
+        HttpService.get("/showComments/"+$rootScope.photo).then(function(value){
             vm.commentList = value;
-            vm.showList = false;
+            // vm.showList = false;
         },function (reason) {
             console.log("Error occured"+reason);
         });

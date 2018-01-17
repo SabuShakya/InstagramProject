@@ -13,6 +13,7 @@ public class CommentUtils {
             Commentsdto commentsdto = new Commentsdto();
             commentsdto.setUsername(comments.getUser().getUsername());
             commentsdto.setImage_path(comments.getUserPhotos().getImage_path());
+            commentsdto.setComments(comments.getComments());
             commentsdtoList.add(commentsdto);
         }
         return commentsdtoList;

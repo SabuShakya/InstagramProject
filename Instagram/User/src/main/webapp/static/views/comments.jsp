@@ -15,13 +15,14 @@
 
     <div class='footer'>
         <div class='react'>
-            <span class='love'></span></a>
+            <button type="button" class="btn btn-default btn-lg"  ng-click="temp.likes = temp.likes+1">
+                <span class='love'></span>{{temp.likes}}</button>
             <span class='comment'></span></a>
             <span class='save'></span></a>
-        </div><br>
+        </div>
 
-        <div ng-repeat="comment in comment.commentList">--%>
-            {{comment.comments}}
+        <div ng-repeat="comment in comment.commentList">
+           {{comment.comments}}
         </div>
 
         <div class='comment-section'>
