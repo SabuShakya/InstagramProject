@@ -6,7 +6,9 @@
         var vm= this;
         vm.posts = {};
         vm.message = '';
+        vm.searchTerm = '';
         vm.addComment = addComment;
+        vm.search = search;
 
         HttpService.get("/getPosts/"+$localStorage.storedObj.username).then(
             function (value) {
@@ -17,6 +19,14 @@
         
         function addComment() {
 
+        }
+
+        function search() {
+            HttpService.get("/search/"+vm.searchTerm).then(function (value) {
+
+            },function (reason) {
+
+            });
         }
     }
 })();

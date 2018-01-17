@@ -93,8 +93,7 @@ public class UserController {
 
     @GetMapping(value = "/showComments/{image_path}")
     public ResponseEntity<List<Commentsdto>> commentList(@PathVariable("image_path")String image_path){
-        String image = image_path+".jpg";
-        List<Commentsdto> commentsdtoList=commentsService.getAllComments(image);
+        List<Commentsdto> commentsdtoList=commentsService.getAllComments(image_path);
         if(commentsdtoList!=null){
         return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
     }
@@ -106,5 +105,11 @@ public class UserController {
         User user = userService.getUser(userTokenDto.getUsername());
         userTokenService.logoutUser(user.getId(),userTokenDto.getTokenNo());
         return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
+    @GetMapping("/search/{searchTerm}")
+    public ResponseEntity<User> searchUsers(@PathVariable("searchTerm")String searchTerm){
+        List<User> list = userService.findBySearchTerm(searchTerm);
+        return new ResponseEntity<User>(HttpStatus.OK);
     }
 }

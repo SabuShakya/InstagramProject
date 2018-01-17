@@ -6,6 +6,7 @@
         <ul class="nav navbar-nav">
             <li class="active"><a href="#/main">Home</a></li>
             <li><a href="/#!/profile">Profile</a></li>
+            <li><input type="text" ng-model="main.searchTerm"><button ng-click="main.search()">Search</button></li>
         </ul>
     </div>
 </nav>

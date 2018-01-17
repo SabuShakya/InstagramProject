@@ -12,7 +12,7 @@
         vm.url ="/addComment";
         vm.add = add;
         vm.cancel=cancel;
-
+        vm.imageName = $rootScope.photo;
         function add() {
             vm.obj={
                 'comments': vm.comments,

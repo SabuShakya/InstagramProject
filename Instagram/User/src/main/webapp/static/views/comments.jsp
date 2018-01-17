@@ -20,8 +20,8 @@
             <span class='save'></span></a>
         </div><br>
 
-        <div ng-repeat="comment in comment.commentList">--%>
-            {{comment.comments}}
+        <div ng-repeat="comment in comment.commentList">
+            {{comment.username}} : {{comment.comments}}
         </div>
 
         <div class='comment-section'>

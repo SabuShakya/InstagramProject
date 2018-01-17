@@ -40,7 +40,8 @@ public class PhotoServiceImpl implements PhotoService {
             dir.mkdir();
         }
             byte[] imageDecoded = Base64.getDecoder().decode(userPhotodto.getImage_path());
-            String filename = imageDecoded + ".jpg";
+            String filename = imageDecoded.toString();//sabu
+//                    + ".jpg";
             String pathToImage = dir + "/" + filename;
             try {
                 FileOutputStream fout = new FileOutputStream(pathToImage);
