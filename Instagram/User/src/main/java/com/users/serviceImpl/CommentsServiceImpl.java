@@ -8,6 +8,8 @@ import com.users.repository.CommentsRepository;
 import com.users.service.CommentsService;
 import com.users.service.PhotoService;
 import com.users.service.UserService;
+import com.users.utils.CommentUtils;
+import com.users.utils.PhotoUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,7 +36,13 @@ public class CommentsServiceImpl implements CommentsService {
         Comments comments = new Comments();
         comments.setUser(user);
         comments.setUserPhotos(userPhotos);
-        comments.setComments(commentsdto.getComments());
+       comments.setComments(commentsdto.getComments());
         commentsRepository.save(comments);
+    }
+
+    public List<Commentsdto> getAllComments(String username) {
+        List<Comments> commentsList = commentsRepository.getCommentsByUserUsername(username);
+        List<Commentsdto> commentsdtos = CommentUtils.convertCommentsdtoToComments(commentsList);
+        return commentsdtos;
     }
 }

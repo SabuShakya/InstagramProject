@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface CommentsService{
     public void saveComments(Commentsdto commentsdto);
-
-//    public List<Commentsdto> getAllPhotos();
+    public List<Commentsdto> getAllComments(String username);
 }

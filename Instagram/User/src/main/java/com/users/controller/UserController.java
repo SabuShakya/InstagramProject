@@ -77,11 +77,12 @@ public class UserController {
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
-//    @GetMapping("/showComments")
-//    public ResponseEntity<List<Commentsdto>> commentList(){
-//
-//
-//    }
+    @GetMapping("/showComments/{username}")
+    public ResponseEntity<List<Commentsdto>> commentList(@PathVariable("username")String username){
+        List<Commentsdto> commentsdtoList=commentsService.getAllComments(username);
+        return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
+    }
+    
     @PostMapping("/logout")
     public ResponseEntity<Void> logoutUser(@RequestBody UserTokenDto userTokenDto){
         User user = userService.getUser(userTokenDto.getUsername());

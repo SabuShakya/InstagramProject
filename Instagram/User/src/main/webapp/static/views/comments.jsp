@@ -1,29 +1,38 @@
 <div class="modal-header">
-    <%--<h3 class="modal-title" id="modal-title">Upload Photo</h3>--%>
+<h1 class="modal-title" id="modal-title">{{comment.userDisplayName}}</h1>
 </div>
-<div class="modal-body" id="modal-body">
-    <%--<div class="thumbnail" ng-repeat="photo in profile.photoList" >--%>
-        <%--<img src="uploads/{{photo.image_path}}" style="width:100%">--%>
-        <%--{{photo.caption}}--%>
-    <%--</div>--%>
-    <img src="uploads/{{photo}}" width="100%">
 
-    <div class="container">
-        <form name="myForm" novalidate>
-            <h4>Add Comment</h4>
-            <textarea id="subject" name="subject" ng-model="comment.comments" placeholder="Write something.." cols="60" rows="10" required></textarea> <br>
-            <br>
-            <button class="btn btn-success" ng-click="comment.add()">Add Comment </button>
-        </form>
+<div class="modal-body" id="modal-body">
+<section>
+    <div align="center">
+        <img src="uploads/{{photo}}" width="100%">
     </div>
 
-        <div ng-repeat="comment in comment.commentList">
+    <div class='caption'>
+        </a><span>{{caption}}</span>
+    </div>
+    <br>
+
+    <div class='footer'>
+        <div class='react'>
+            <span class='love'></span></a>
+            <span class='comment'></span></a>
+            <span class='save'></span></a>
+        </div><br>
+
+        <div ng-repeat="comment in comment.commentList">--%>
             {{comment.comments}}
         </div>
 
+        <div class='comment-section'>
+                <input type='text' id='cmnt' ng-model="comment.comments" placeholder='Add a comment...'>
+                <button ng-click="comment.add()">Add</button>
+        </div>
 
+    </div>
+</section>
 </div>
 
 <div class="modal-footer">
-    <button class="btn btn-warning" type="button" ng-click="comment.close()">Cancel</button>
+    <button class="btn btn-warning" type="button" ng-click="comment.cancel()">Cancel</button>
 </div>
