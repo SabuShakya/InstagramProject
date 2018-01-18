@@ -7,4 +7,6 @@ import lombok.Setter;
 @Setter
 public class Likesdto {
     private int likes;
+    private String username;
+    private String image_path;
 }

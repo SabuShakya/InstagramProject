@@ -47,5 +47,6 @@
         {{photo.caption}}
     </div>
 </div>
+</div>
 
 

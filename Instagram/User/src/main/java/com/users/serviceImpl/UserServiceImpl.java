@@ -7,6 +7,8 @@ import com.users.service.UserService;
 import com.users.service.UserTokenService;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +26,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserTokenService userTokenService;
+
+    private JavaMailSender mailSender;
 
     public void saveUser(User user) {
         user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
@@ -50,8 +54,18 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-    @Override
     public List<User> findBySearchTerm(String searchTerm) {
         return userRepository.findByUsername(searchTerm);
     }
+
+    public User getUserEmail(String email) {
+        return userRepository.getUserByEmail(email);
+    }
+
+//    public void sendEmail(User user){
+//        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+//        simpleMailMessage.setTo(userRepository.getUserByEmail(email));
+//
+//
+//    }
 }

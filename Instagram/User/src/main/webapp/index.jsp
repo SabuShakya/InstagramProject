@@ -35,7 +35,7 @@
 <script src="static/js/controller/ImgUploadController.js"> </script>
 <script src ="static/js/controller/ProfileController.js"></script>
 <script src="static/js/controller/CommentsController.js"></script>
-<script src="static/js/controller/EditProfileController.js"></script>
+<script src="static/js/controller/LikesController.js"></script>
 
 <script src="static/js/service/HttpService.js"> </script>
 

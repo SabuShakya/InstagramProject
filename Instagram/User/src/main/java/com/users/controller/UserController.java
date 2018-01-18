@@ -22,23 +22,23 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
-
     @Autowired
     private PhotoService photoService;
-
     @Autowired
     private UserTokenService userTokenService;
-
     @Autowired
     private CommentsService commentsService;
-
     @Autowired
     private FollowService followService;
+
+    @Autowired
+    private LikesService likesService;
 
     @PostMapping("/signup")
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
         userService.saveUser(user);
         userTokenService.saveToken(user);
+
         return new ResponseEntity<Boolean>(true, HttpStatus.OK);
     }
 
@@ -89,6 +89,21 @@ public class UserController {
         return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
     }
         return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.NO_CONTENT);
+    }
+
+    @PostMapping(value="/addLikes")
+    public ResponseEntity<Boolean> addLikes(@RequestBody Likesdto likesdto){
+        likesService.saveLikes(likesdto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
+    @GetMapping(value="/showLikes/{image_path}")
+    public ResponseEntity<List<Likesdto>> likesList(@PathVariable("image_path")String image_path){
+        List<Likesdto> likesdtoList = likesService.getAllLikes(image_path);
+        if(likesdtoList!=null){
+            return new ResponseEntity<List<Likesdto>>(likesdtoList,HttpStatus.OK);
+        }
+        return new ResponseEntity<List<Likesdto>>(likesdtoList, HttpStatus.NO_CONTENT);
     }
 
     @PostMapping("/logout")

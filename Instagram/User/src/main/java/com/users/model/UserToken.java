@@ -22,5 +22,4 @@ public class UserToken {
 
     @OneToOne
     private User user;
-
 }

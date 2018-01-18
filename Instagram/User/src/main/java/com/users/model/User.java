@@ -24,7 +24,7 @@ public class User implements Serializable {
     private String username;
 
     @Column(name="email", nullable = false)
-    private String email;
+    public String email;
 
     @Column(name="password", nullable = false)
     private String password;
@@ -43,5 +43,8 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy = "user")
     private List<Comments> comments;
+
+    @OneToOne(mappedBy = "user")
+    private Likes likes;
 }
 

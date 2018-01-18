@@ -11,6 +11,8 @@
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
         vm.add = add;
+        vm.likesModal=likesModal;
+        vm.saveLike=saveLike;
         vm.cancel=cancel;
         vm.imageName = $rootScope.photo;
 
@@ -38,6 +40,30 @@
             console.log("Error occured"+reason);
         });
 
+        function likesModal() {
+            vm.modalInstance= $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/likes.jsp',
+                controller :'LikesController',
+                controllerAs: 'likes',
+                size: 'lg'
+            });
+        }
+
+        function saveLike() {
+            vm.obj={
+                'username':$localStorage.storedObj.username,
+                'image_path':$rootScope.photo
+            }
+            HttpService.post("/addLikes",vm.obj).then(
+                function (value) {
+                    $rootScope.saved = true;
+                },function (reason) {
+                    $rootScope.message = "Error Occurred";
+                    $rootScope.saved = true;
+                });
+        }
         function cancel(){
             $uibModalInstance.dismiss('close');
         }

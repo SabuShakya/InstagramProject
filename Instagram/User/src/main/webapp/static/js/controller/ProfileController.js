@@ -13,7 +13,6 @@
 
         vm.url ="/allPhotos/"+$localStorage.storedObj.username;
         vm.openModal=openModal;
-        vm.editProfile=editProfile;
         vm.logout =logout;
         vm.commentModal=commentModal;
 
@@ -68,16 +67,18 @@
             });
         }
 
-        function editProfile() {
-            vm.modalInstance=$uibModal.open({
-                ariaLabelledBy: 'modal-title',
-                ariaDescribedBy: 'modal-body',
-                templateUrl: '/static/views/editProfile.jsp',
-                controller :'EditProfileController',
-                controllerAs: 'editProfile',
-                size: 'lg'
-            });
 
-        }
+
+        // function editProfile() {
+        //     vm.modalInstance=$uibModal.open({
+        //         ariaLabelledBy: 'modal-title',
+        //         ariaDescribedBy: 'modal-body',
+        //         templateUrl: '/static/views/editProfile.jsp',
+        //         controller :'EditProfileController',
+        //         controllerAs: 'editProfile',
+        //         size: 'lg'
+        //     });
+        //
+        // }
     }
 })();

@@ -15,7 +15,8 @@
 
     <div class='footer'>
         <div class='react'>
-            <button type="button" class="btn btn-default btn-lg"  ng-click="temp.likes = temp.likes+1">
+            <button type="button" class="btn btn-default btn-lg"  ng-click="comment.saveLike()"></button>
+                    <%--"temp.likes = temp.likes+1">--%>
                 <span class='love'></span>{{temp.likes}}</button>
             <span class='comment'></span></a>
             <span class='save'></span></a>
