@@ -20,8 +20,8 @@ public class UserPhotos {
     @Column(name="image_path", nullable = false)
     private String image_path;
 
-    @Column(name="profileImg", nullable = false)
-    private String profileImg;
+//    @Column(name="profileImg")
+//    private String profileImg;
 
     @Column(name="created_date")
     private Date created_date;

@@ -22,7 +22,7 @@
         </div>
 
         <div ng-repeat="comment in comment.commentList">
-           {{comment.comments}}
+            {{comment.username}} : {{comment.comments}}
         </div>
 
         <div class='comment-section'>

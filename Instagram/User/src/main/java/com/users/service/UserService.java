@@ -10,4 +10,5 @@ public interface UserService {
     public void saveUser(User user);
     public List<User> findAllUsers();
     public boolean loginUser(Userdto userdto);
+    public List<User> findBySearchTerm(String searchTerm);
 }

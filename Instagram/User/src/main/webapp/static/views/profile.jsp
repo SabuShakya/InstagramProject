@@ -4,10 +4,11 @@
 <header>
     <button class="btn btn-success btn-lg pull-right" ng-click="profile.openModal()"> Upload Photo</button>
     <button class="btn btn-danger btn-lg pull-right" ng-click="profile.logout()">Logout</button>
-    <button class="btn btn-success btn-lg pull-right" ng-click="profile.editProfile()"></button>
+    <button class="btn btn-success btn-lg" ng-click="profile.editProfile()"></button>
+
     <div class="profile-pic-container">
         <img class="img-responsive img-circle margin" style="display:inline" alt="" width="120%"
-             src="uploads/{{photo.profileImg}}" alt="" />
+             src="https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg" alt=""/>
     </div>
 </header>
 
@@ -35,9 +36,13 @@
 </div>
 <br>
 
+<div ng-hide ="profile.showList">
+<div class="alert alert-success" ng-show="saved">
+<strong>{{message}}</strong>
+</div>
+
 <div class="col-md-4" ng-repeat="photo in profile.photoList">
     <div class="thumbnail" >
-        <%--<img src="uploads/{{photo.profileImg}}">--%>
         <img src="uploads/{{photo.image_path}}" style="width:100%" ng-click="profile.commentModal(photo.image_path,photo.caption)">
         {{photo.caption}}
     </div>

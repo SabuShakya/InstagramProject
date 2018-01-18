@@ -8,12 +8,11 @@ angular.module('userModule').factory('HttpService', HttpService);
         return{
             get: get,
             post: post
-        }
+        };
 
         function get(url) {
             var defered = $q.defer();
-            $http.get(vm.REST_SERVICE_URI+url)
-                .then(
+            $http.get(vm.REST_SERVICE_URI+url).then(
                     function (response) {
                         defered.resolve(response.data);
                     },
@@ -27,8 +26,7 @@ angular.module('userModule').factory('HttpService', HttpService);
 
         function post(url,newUser) {
             var defered = $q.defer();
-            $http.post(vm.REST_SERVICE_URI+url,newUser)
-                .then(
+            $http.post(vm.REST_SERVICE_URI+url,newUser).then(
                     function (response) {
                         defered.resolve(response.data);
                     },
@@ -40,4 +38,4 @@ angular.module('userModule').factory('HttpService', HttpService);
             return defered.promise;
         }
     }
-})()
+})();

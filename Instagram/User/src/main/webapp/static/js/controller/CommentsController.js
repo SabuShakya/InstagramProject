@@ -12,6 +12,7 @@
         vm.url ="/addComment";
         vm.add = add;
         vm.cancel=cancel;
+        vm.imageName = $rootScope.photo;
 
         function add() {
             vm.obj={
@@ -32,7 +33,7 @@
 
         HttpService.get("/showComments/"+$rootScope.photo).then(function(value){
             vm.commentList = value;
-            // vm.showList = false;
+            vm.showList = false;
         },function (reason) {
             console.log("Error occured"+reason);
         });

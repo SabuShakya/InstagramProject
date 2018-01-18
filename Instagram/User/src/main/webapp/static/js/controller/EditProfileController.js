@@ -5,10 +5,10 @@
         var vm= this;
         vm.profilePic = [];
         vm.url="/updateProfile";
-        vm.uploadPhoto = uploadPhoto;
+        vm.uploadProfilePhoto = uploadProfilePhoto;
         vm.close = close;
 
-        function uploadPhoto() {
+        function uploadProfilePhoto() {
             vm.obj = {'profileImg':vm.profilePic.base64
             }
 

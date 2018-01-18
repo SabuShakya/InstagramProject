@@ -9,9 +9,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface CommentsRepository extends JpaRepository<Comments,Long> {
-//    public List<Comments> getCommentsByUserUsername(String username);
-
     @Query("SELECT c from Comments c where c.userPhotos.image_path=:image_path")
-    public List<Comments> getCommentsByUserPhotosImage_path(@Param("image_path")
-                                                                        String image_path);
+    public List<Comments> getCommentsByUserPhotosImage_path(@Param("image_path")String image_path);
+
 }

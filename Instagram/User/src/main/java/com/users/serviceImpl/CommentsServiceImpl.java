@@ -32,19 +32,14 @@ public class CommentsServiceImpl implements CommentsService {
 
     public void saveComments(Commentsdto commentsdto){
         User user = userService.getUser(commentsdto.getUsername());
-        UserPhotos userPhotos =photoService.getPhotos(commentsdto.getImage_path());
+        UserPhotos userPhotos = photoService.getPhotos(commentsdto.getImage_path());
         Comments comments = new Comments();
         comments.setUser(user);
         comments.setUserPhotos(userPhotos);
-       comments.setComments(commentsdto.getComments());
+        comments.setComments(commentsdto.getComments());
         commentsRepository.save(comments);
     }
 
-//    public List<Commentsdto> getAllComments(String username) {
-//        List<Comments> commentsList = commentsRepository.getCommentsByUserUsername(username);
-//        List<Commentsdto> commentsdtos = CommentUtils.convertCommentsdtoToComments(commentsList);
-//        return commentsdtos;
-//    }
     public List<Commentsdto> getAllComments(String image_path) {
         List<Comments> commentsList = commentsRepository.getCommentsByUserPhotosImage_path(image_path);
         List<Commentsdto> commentsdtos = CommentUtils.convertCommentsdtoToComments(commentsList);

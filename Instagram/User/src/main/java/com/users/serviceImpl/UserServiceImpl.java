@@ -49,4 +49,9 @@ public class UserServiceImpl implements UserService {
         }
         return false;
     }
+
+    @Override
+    public List<User> findBySearchTerm(String searchTerm) {
+        return userRepository.findByUsername(searchTerm);
+    }
 }

@@ -6,7 +6,6 @@
         var vm =this;
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.photoList=[];
-        vm.profilephotoList=[];
         vm.showList = true;
         $rootScope.message='';
         $rootScope.saved = false;
@@ -25,12 +24,12 @@
             console.log("Error occured"+reason);
         });
 
-        HttpService.get("/profilePhotos").then(function(value){
-            vm.profilephotoList = value;
-            vm.showList = false;
-        },function (reason) {
-            console.log("Error occured"+reason);
-        });
+        // HttpService.get("/profilePhotos").then(function(value){
+        //     vm.profilephotoList = value;
+        //     vm.showList = false;
+        // },function (reason) {
+        //     console.log("Error occured"+reason);
+        // });
 
         function openModal(){
             vm.modalInstance = $uibModal.open({

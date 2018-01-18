@@ -1,17 +1,11 @@
 package com.users.controller;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
-import com.users.dto.Commentsdto;
-import com.users.dto.UserPhotodto;
-import com.users.dto.UserTokenDto;
-import com.users.dto.Userdto;
+import com.users.dto.*;
 import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.model.UserToken;
-import com.users.service.CommentsService;
-import com.users.service.PhotoService;
-import com.users.service.UserService;
-import com.users.service.UserTokenService;
+import com.users.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpHeaders;
@@ -37,6 +31,9 @@ public class UserController {
 
     @Autowired
     private CommentsService commentsService;
+
+    @Autowired
+    private FollowService followService;
 
     @PostMapping("/signup")
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
@@ -71,22 +68,29 @@ public class UserController {
         return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/getPosts/{userName}")
+    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username){
+        List<UserPostDto> userPostList=followService.getPosts(username);
+        if (userPostList!= null) {
+            return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
+        }
+        return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
+    }
     @PostMapping("/addComment")
     public ResponseEntity<Boolean> addComment( @RequestBody Commentsdto commentsdto ){
         commentsService.saveComments(commentsdto);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
-    @GetMapping("/showComments/{image_path}")
+    @GetMapping(value = "/showComments/{image_path}")
     public ResponseEntity<List<Commentsdto>> commentList(@PathVariable("image_path")String image_path){
-        String image= image_path+".jpg";
-        List<Commentsdto> commentList=commentsService.getAllComments(image);
-        if(commentList!= null && !commentList.isEmpty()){
-            return new ResponseEntity<List<Commentsdto>>(commentList,HttpStatus.OK);
-        }
-        return new ResponseEntity<List<Commentsdto>>(commentList, HttpStatus.NOT_FOUND);
+        List<Commentsdto> commentsdtoList=commentsService.getAllComments(image_path);
+        if(commentsdtoList!=null){
+        return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
     }
-    
+        return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.NO_CONTENT);
+    }
+
     @PostMapping("/logout")
     public ResponseEntity<Void> logoutUser(@RequestBody UserTokenDto userTokenDto){
         User user = userService.getUser(userTokenDto.getUsername());
@@ -94,9 +98,15 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
-    @PostMapping("/updateProfile")
-    public ResponseEntity<Boolean> updateProfile(@RequestBody UserPhotodto userPhotodto){
-        photoService.updateProfile(userPhotodto);
-        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    @GetMapping("/search/{searchTerm}")
+    public ResponseEntity<User> searchUsers(@PathVariable("searchTerm")String searchTerm){
+        List<User> list = userService.findBySearchTerm(searchTerm);
+        return new ResponseEntity<User>(HttpStatus.OK);
     }
+
+//    @PostMapping("/updateProfile")
+//    public ResponseEntity<Boolean> updateProfile(@RequestBody UserPhotodto userPhotodto){
+//        photoService.updateProfile(userPhotodto);
+//        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+//    }
 }

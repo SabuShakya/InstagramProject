@@ -17,6 +17,10 @@
                 controller:"NewAdminController as newadmin",
                 templateUrl:'/modules/views/addNewAdmin.jsp'
             })
+            .when("/adminDashboard",{
+                controller:"AdminPageController as admin",
+                templateUrl:'/modules/views/adminDashboard.jsp'
+            })
             .otherwise({
                 redirectTo:'/login'
             })

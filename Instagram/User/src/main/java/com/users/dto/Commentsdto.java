@@ -9,6 +9,7 @@ import java.io.Serializable;
 @Setter
 public class Commentsdto implements Serializable{
     private String comments;
+    private Long comment_id;
     private String username;
     private String image_path;
 }

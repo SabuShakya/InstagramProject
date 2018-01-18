@@ -14,6 +14,7 @@ public class CommentUtils {
             commentsdto.setUsername(comments.getUser().getUsername());
             commentsdto.setImage_path(comments.getUserPhotos().getImage_path());
             commentsdto.setComments(comments.getComments());
+            commentsdto.setComment_id(comments.getId());
             commentsdtoList.add(commentsdto);
         }
         return commentsdtoList;

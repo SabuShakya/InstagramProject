@@ -1,17 +1,17 @@
 package com.users.dto;
 
-import com.users.model.User;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
-public class UserPhotodto {
+public class UserPostDto {
+    private String username;
     private String image_path;
-//    private String profileImg;
+    private List<String> comments;
     private Date created_date;
     private String caption;
-    private String username;
 }

@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
@@ -39,7 +40,8 @@ public class PhotoServiceImpl implements PhotoService {
             dir.mkdir();
         }
             byte[] imageDecoded = Base64.getDecoder().decode(userPhotodto.getImage_path());
-            String filename = imageDecoded + ".jpg";
+            String filename = imageDecoded.toString();
+//                    + ".jpg";
             String pathToImage = dir + "/" + filename;
             try {
                 FileOutputStream fout = new FileOutputStream(pathToImage);
@@ -56,7 +58,22 @@ public class PhotoServiceImpl implements PhotoService {
             userPhotos.setCreated_date(new Date());
             userPhotos.setCaption(userPhotodto.getCaption());
             userPhotos.setImage_path(filename);
+//            userPhotos.setProfileImg(userPhotodto.getProfileImg());
             photoRepository.save(userPhotos);
+    }
+
+//sabu
+    public List<UserPhotos> getListOfPhotos(List<User> listOfFollowedUsers) {
+        List<UserPhotos> userPhotosList = new ArrayList<UserPhotos>();
+        for (User user:listOfFollowedUsers){
+            long id = user.getId();
+            System.out.println(id);
+            List<UserPhotos> list = photoRepository.getUserPhotosByUser_Id(id);
+            for(UserPhotos userPhotos:list) {
+                userPhotosList.add(userPhotos);
+            }
+        }
+        return userPhotosList;
     }
 
     public List<UserPhotodto> getAllPhotos(String username) {
@@ -72,30 +89,29 @@ public class PhotoServiceImpl implements PhotoService {
        UserPhotos userPhotos= photoRepository.getUserPhotosByImage_path(image_path);
        return userPhotos;
     }
-
-    public void updateProfile(UserPhotodto userPhotodto) {
-        System.out.println(System.getProperty("catalina.home"));
-        File dir = new File(System.getProperty("catalina.home")+"/uploads");
-        System.out.println(dir);
-        if(!dir.exists()){
-            dir.mkdir();
-        }
-        byte[] decodedImage = Base64.getDecoder().decode(userPhotodto.getProfileImg());
-        String filename = decodedImage + ".jpg";
-        String pathToImage = dir +"/"+ filename;
-        try {
-            FileOutputStream fout = new FileOutputStream(pathToImage);
-            fout.write(decodedImage);
-            fout.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        User user = userService.getUser(userPhotodto.getUsername());
-        UserPhotos userPhotos = new UserPhotos();
-        userPhotos.setUser(user);
-        userPhotos.setProfileImg(filename);
-        photoRepository.save(userPhotos);
-    }
+//
+//    public void updateProfile(UserPhotodto userPhotodto) {
+//        File dir = new File(System.getProperty("catalina.home")+ "/uploads");
+//        if(!dir.exists()){
+//            dir.mkdir();
+//        }
+//        byte[] imageDecoded = Base64.getDecoder().decode(userPhotodto.getImage_path());
+//        String filename = imageDecoded.toString();
+////                    + ".jpg";
+//        String pathToImage = dir + "/" + filename;
+//        try {
+//            FileOutputStream fout = new FileOutputStream(pathToImage);
+//            fout.write(imageDecoded);
+//            fout.close();
+//        }catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        User user = userService.getUser(userPhotodto.getUsername());
+//        UserPhotos userPhotos = new UserPhotos();
+//        userPhotos.setUser(user);
+//        userPhotos.setProfileImg(filename);
+//        photoRepository.save(userPhotos);
+//    }
 }
