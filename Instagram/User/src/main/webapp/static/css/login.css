@@ -9,7 +9,7 @@ body{
     weight: 400px;
     height: 500px;
     background: lightblue;
-    color: #fff;
+    color: black;
     top: 0%;
     left:50%;
     position: absolute;
@@ -31,7 +31,9 @@ h1{
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
-    font-size: 20px;
+    font-size: 35px;
+    font-family: Corbert Condensed Italic;
+    font-style: italic;
 }
 
 .loginbox p{
@@ -69,10 +71,11 @@ h1{
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
-    color: darkgrey;
+    color: black;
 }
 
-.a{
-    font-size: 20px;
-}
+/*.a{*/
+    /*font-size: 40px;*/
+    /*color: black;*/
+/*}*/
 

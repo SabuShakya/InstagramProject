@@ -1,16 +1,19 @@
 package com.users.serviceImpl;
 
+import com.users.dto.UserSearchDto;
 import com.users.dto.Userdto;
 import com.users.model.User;
 import com.users.repository.UserRepository;
 import com.users.service.UserService;
 import com.users.service.UserTokenService;
+import com.users.utils.UserSearchUtils;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -24,6 +27,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserTokenService userTokenService;
+
+    @Autowired
+    public EntityManager em;
 
     public void saveUser(User user) {
         user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
@@ -50,8 +56,10 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-    @Override
-    public List<User> findBySearchTerm(String searchTerm) {
-        return userRepository.findByUsername(searchTerm);
+    public List<UserSearchDto> findBySearchTerm(String searchTerm) {
+        String sql = "Select u from User u where u.username like :username";
+        List<User> userList= em.createQuery(sql,User.class).setParameter("username",
+                "%"+searchTerm+"%").getResultList();
+        return UserSearchUtils.getSearchedUserInfo(userList);
     }
 }

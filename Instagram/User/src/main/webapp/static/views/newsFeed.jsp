@@ -1,17 +1,4 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Instagram</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#/main">Home</a></li>
-            <li><a href="/#!/profile">Profile</a></li>
-            <li><input type="text" ng-model="main.searchTerm">
-                <button ng-click="main.search()">Search</button>
-            </li>
-        </ul>
-    </div>
-</nav>
+<div ng-include src="'static/views/navigation.html'"></div>
 <section>
     <div align="center" ng-repeat="post in main.posts">
         <div class='insta fade-scroll'>
@@ -40,15 +27,20 @@
 
                 <div class='react'>
                     <a href='#' role='button'><span class='love'></span></a>
-                    <a href='#' role='button'><span class='comment'></span></a>
+                    <button role='button' ng-click="main.showComments(post)">
+                        <span class='comment'></span>
+                    </button>
                     <a href='#' role='button'><span class='save'></span></a>
 
                 </div>
                 <br>
 
                 <div class='comment-section'>
+                    <div ng-show="main.showList" ng-repeat="comment in main.commentList">
+                        {{comment.username}} : {{comment.comments}}
+                    </div>
                     <input type='text' id='cmnt' ng-model="post.comment" placeholder='Add a comment...'>
-                    <button ng-click="main.addComment()">Add</button>
+                    <button ng-click="main.addComment(post)">Add</button>
                     <span class='dot02'></span>
                 </div>
             </div> <!-- end Footer -->

@@ -20,8 +20,10 @@ public class UserPhotos {
     @Column(name="image_path", nullable = false)
     private String image_path;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name="created_date", nullable = false)
+//    @Column(name="profileImg")
+//    private String profileImg;
+
+    @Column(name="created_date")
     private Date created_date;
 
     @ManyToOne(fetch = FetchType.LAZY)

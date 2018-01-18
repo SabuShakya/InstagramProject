@@ -10,6 +10,7 @@ import java.util.Date;
 @Setter
 public class UserPhotodto {
     private String image_path;
+//    private String profileImg;
     private Date created_date;
     private String caption;
     private String username;

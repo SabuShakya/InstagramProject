@@ -19,6 +19,14 @@ angular.module('userModule').config(['$routeProvider',function ($routeProvider) 
             templateUrl: "/static/views/profile.jsp",
             controller:"ProfileController as profile"
         })
+        .when("/search",{
+            templateUrl: "/static/views/search.jsp",
+            controller:"SearchController as search"
+        })
+        .when("/searchedUser",{
+            templateUrl: "/static/views/searchedProfile.jsp",
+            controller:"SearchedProfileController as searched"
+        })
         .otherwise({
             redirectTo:'/login'
         });

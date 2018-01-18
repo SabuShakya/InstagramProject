@@ -9,7 +9,6 @@
     <input type = "text" name="caption" ng-model ="img.caption" placeholder="Write a caption...">
 
 </form>
-
     <img src="data:image/jpeg;base64,{{img.imageName.base64}}" width ="100px" height="100px">
 </div>
 

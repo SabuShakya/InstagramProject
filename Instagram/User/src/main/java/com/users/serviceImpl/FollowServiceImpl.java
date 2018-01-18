@@ -1,9 +1,12 @@
 package com.users.serviceImpl;
 
+import com.users.dto.FollowDto;
 import com.users.dto.UserPostDto;
+import com.users.model.Follow;
 import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.repository.FollowRepository;
+import com.users.repository.UserRepository;
 import com.users.service.FollowService;
 import com.users.service.PhotoService;
 import com.users.utils.UserPhotosPostUtil;
@@ -18,6 +21,9 @@ import java.util.List;
 public class FollowServiceImpl implements FollowService {
 
     @Autowired
+    private UserRepository userRepository;
+
+    @Autowired
     private FollowRepository followRepository;
 
     @Autowired
@@ -28,5 +34,36 @@ public class FollowServiceImpl implements FollowService {
         System.out.println(listOfFollowedUsers);
         List<UserPhotos> userPhotosList= photoService.getListOfPhotos(listOfFollowedUsers);
         return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList);
+    }
+
+    @Override
+    public void saveFollows(FollowDto followDto) {
+        User user = userRepository.getUserByUsername(followDto.getUserName());
+        User following_user = userRepository.getUserByUsername(followDto.getFollowing_userName());
+
+        Follow follow = new Follow();
+        follow.setUser(user);
+        follow.setFollowedUser(following_user);
+        follow.setIsFollowing(true);
+        followRepository.save(follow);
+    }
+
+    @Override
+    public boolean checkFollow(FollowDto followDto) {
+        Follow follow =followRepository.checkFollow(followDto.getUserName(),
+                                                    followDto.getFollowing_userName());
+        if(follow != null){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void unfollowUser(FollowDto followDto) {
+      Follow follow=followRepository.checkFollow(followDto.getUserName(),
+                                     followDto.getFollowing_userName());
+      if (follow !=null) {
+          followRepository.delete(follow);
+      }
     }
 }

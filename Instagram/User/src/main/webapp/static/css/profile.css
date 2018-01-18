@@ -1,20 +1,7 @@
 body {
-    /*background-color: background;*/
     font-family: 'Roboto Condensed';
 }
 
-/*.container {*/
-    /*margin: 0 auto;*/
-    /*background-color: white;*/
-    /*!*max-width: 400px;*!*/
-    /*!*max-height: 650px;*!*/
-    /*overflow: hidden;*/
-    /*!*box-shadow: 0px 0px 20px black;*!*/
-    /*margin-top: 50px;*/
-    /*color: black;*/
-/*}*/
-
-/*// Icons*/
 a {
     color: black;
 }
@@ -48,7 +35,6 @@ a {
     content: '\f03a';
 }
 
-/*// Header*/
 header {
     background: url(https://unsplash.it/1080/720?image=601) no-repeat;
     background-size: cover;
@@ -68,19 +54,10 @@ header {
 }
 
 .profile-pic-container {
-    bottom: -40px;
-    left: calc(50% - 40px);
+    bottom: -10px;
+    left: calc(50% - 90px);
     position: absolute;
-
 }
-/*.search-container {*/
-    /*background-color: pink;*/
-    /*border-radius: 50%;*/
-    /*width: 15px;*/
-    /*height: 15px;*/
-    /*position: absolute;*/
-    /*bottom: 1em;*/
-    /*right: 0;}*/
 
 i::after{
     width: 100%;
@@ -89,13 +66,6 @@ i::after{
     position: absolute;
     top: 50%;
     margin-top: -5px;
-}
-
-
-.profile-pic {
-    max-width: 80px;
-    border-radius: 50%;
-    border: 2px solid white;
 }
 
 .main{
