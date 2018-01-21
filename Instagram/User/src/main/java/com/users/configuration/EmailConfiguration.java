@@ -17,10 +17,6 @@ import java.util.Properties;
 @ComponentScan("com.users")
 @PropertySource(value = {"classpath:emailConfiguration.properties"})
 public class EmailConfiguration {
-
-//    @Autowired
-//    private Environment environment;
-
     @Bean
     public JavaMailSender getMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();

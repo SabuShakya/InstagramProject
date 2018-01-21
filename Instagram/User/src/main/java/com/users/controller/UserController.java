@@ -1,11 +1,9 @@
 package com.users.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.users.dto.*;
-import com.users.model.User;
-import com.users.model.UserPhotos;
-import com.users.model.UserToken;
+import com.users.model.*;
 import com.users.service.*;
+import com.users.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.http.HttpHeaders;
@@ -14,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sun.plugin.dom.core.Comment;
 
 import java.util.List;
 
@@ -34,14 +33,20 @@ public class UserController {
     @Autowired
     private LikesService likesService;
 
+    @Autowired
+    private EmailService emailService;
+
+    @Autowired
+    private ProfilePhotoService profilePhotoService;
+
     @PostMapping("/signup")
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
         userService.saveUser(user);
         userTokenService.saveToken(user);
-
         return new ResponseEntity<Boolean>(true, HttpStatus.OK);
     }
 
+    //smriti
     @PostMapping("/login")
     public ResponseEntity<UserTokenDto> getUser(@RequestBody Userdto userdto){
         boolean isUser = userService.loginUser(userdto);
@@ -53,9 +58,23 @@ public class UserController {
         return new ResponseEntity<UserTokenDto>(userTokenDto, HttpStatus.NOT_FOUND);
     }
 
+    //smriti
+    @PostMapping("/update")
+    public ResponseEntity<Boolean> updateUser(@RequestBody User user){
+        userService.updateUser(user);
+        return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+    }
+
     @PostMapping("/upload")
     public ResponseEntity<Boolean> uploads(@RequestBody UserPhotodto userPhotodto){
         photoService.savePhoto(userPhotodto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
+    //smriti
+    @PostMapping("/uploadProfilePhoto")
+    public ResponseEntity<Boolean> uploadPhoto(@RequestBody ProfilePhotoDto profilePhotoDto){
+        profilePhotoService.savePhoto(profilePhotoDto);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
@@ -66,6 +85,13 @@ public class UserController {
             return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.OK);
         }
         return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
+    }
+
+    //smriti
+    @GetMapping("/ProfilePhotos/{username}")
+    public ResponseEntity<ProfilePhotoDto> profilephoto(@PathVariable("username")String username){
+       ProfilePhotoDto profilePhotoDto= profilePhotoService.getProfilePhoto(username);
+        return new ResponseEntity<ProfilePhotoDto>(profilePhotoDto,HttpStatus.OK);
     }
 
     @GetMapping("/getPosts/{userName}")
@@ -91,6 +117,18 @@ public class UserController {
         return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.NO_CONTENT);
     }
 
+    @PostMapping("/deleteComment")
+    public ResponseEntity<Boolean> deleteComment(@RequestBody Commentsdto commentsdto){
+        commentsService.deleteComment(commentsdto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
+    @PostMapping("/editComment")
+    public ResponseEntity<Boolean> editComment(@RequestBody Commentsdto commentsdto){
+        commentsService.updateComment(commentsdto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
     @PostMapping(value="/addLikes")
     public ResponseEntity<Boolean> addLikes(@RequestBody Likesdto likesdto){
         likesService.saveLikes(likesdto);
@@ -112,16 +150,37 @@ public class UserController {
         userTokenService.logoutUser(user.getId(),userTokenDto.getTokenNo());
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
-
-    @GetMapping("/search/{searchTerm}")
-    public ResponseEntity<User> searchUsers(@PathVariable("searchTerm")String searchTerm){
-        List<User> list = userService.findBySearchTerm(searchTerm);
-        return new ResponseEntity<User>(HttpStatus.OK);
+//sabu
+//    @GetMapping("/search/{searchTerm}")
+//    public ResponseEntity<List<UserSearchDto>> searchUsers(@PathVariable("searchTerm")String searchTerm){
+//        List<UserSearchDto> list = userService.findBySearchTerm(searchTerm);
+//        if (list!=null) {
+//            return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.NOT_FOUND);
+//    }
+//sabu
+    @PostMapping("/followUser")
+    public ResponseEntity<Boolean> follow(@RequestBody FollowDto followDto){
+        followService.saveFollows(followDto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
-//    @PostMapping("/updateProfile")
-//    public ResponseEntity<Boolean> updateProfile(@RequestBody UserPhotodto userPhotodto){
-//        photoService.updateProfile(userPhotodto);
-//        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-//    }
+//sabu
+    @PostMapping("/checkFollow")
+    public ResponseEntity<Boolean> checkFollow(@RequestBody FollowDto followDto){
+        boolean following = followService.checkFollow(followDto);
+        if (following){
+            return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+        }
+        return new ResponseEntity<Boolean>(true,HttpStatus.NOT_FOUND);
+    }
+
+//sabu
+    @PostMapping("/unfollowUser")
+    public ResponseEntity<Boolean> unfollow(@RequestBody FollowDto followDto){
+        followService.unfollowUser(followDto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
 }

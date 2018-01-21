@@ -4,8 +4,6 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="static/css/newsFeed.css">
-    <%--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>--%>
-    <%--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>--%>
     <link href="static/css/comments.css" rel="stylesheet">
 
     <script type="text/javascript" src="angular.min.js"></script>
@@ -36,6 +34,10 @@
 <script src ="static/js/controller/ProfileController.js"></script>
 <script src="static/js/controller/CommentsController.js"></script>
 <script src="static/js/controller/LikesController.js"></script>
+<script src="static/js/controller/UploadProfilePhotoController.js"></script>
+<script src="static/js/controller/SearchController.js"></script>
+<script src="static/js/controller/SearchedProfileController.js"></script>
+<script src="static/js/controller/UpdateController.js"></script>
 
 <script src="static/js/service/HttpService.js"> </script>
 

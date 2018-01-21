@@ -1,21 +1,28 @@
 (function(){
     angular.module('userModule').controller("CommentsController", CommentsController);
 
-    CommentsController.$inject =['HttpService','$uibModalInstance','$rootScope','$localStorage'];
+    CommentsController.$inject =['HttpService','$uibModalInstance','$rootScope','$localStorage','$location'];
 
-    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage) {
+    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location) {
         var vm =this;
         vm.comments = '';
         vm.commentList=[];
         vm.showList=false;
+        vm.showCommentList= true;
+        $rootScope.saved= false;
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
+
         vm.add = add;
         vm.likesModal=likesModal;
         vm.saveLike=saveLike;
+        vm.openDeleteModal= openDeleteModal;
+        vm.openEditModal=openEditModal;
+        vm.edit=edit;
         vm.cancel=cancel;
-        vm.imageName = $rootScope.photo;
 
+        vm.imageName = $rootScope.photo;
+        $rootScope.clickedComment ='';
         function add() {
             vm.obj={
                 'comments': vm.comments,
@@ -25,6 +32,7 @@
 
             HttpService.post(vm.url,vm.obj).then(
                 function (value) {
+                    $rootScope.message="Comment added successfully.."
                     $rootScope.saved = true;
                 },function (reason) {
                     $rootScope.message = "Error Occurred";
@@ -64,6 +72,37 @@
                     $rootScope.saved = true;
                 });
         }
+
+        function openDeleteModal(comment) {
+            $rootScope.clickedComment=comment;
+            HttpService.post("/deleteComment", $rootScope.clickedComment).then(function (value) {
+                console.log("sucesss");
+                $rootScope.message = "Deleted successfully";
+                $rootScope.saved = true;
+            },function (reason) {
+                $rootScope.message = "Error Occurred";
+                $rootScope.saved = true;
+            });
+        }
+
+        function openEditModal(comment) {
+            $rootScope.clickedComment = comment;
+            vm.showCommentList = false;
+            $rootScope.saved = true;
+        }
+
+        function edit(){
+            HttpService.post("/editComment",  $rootScope.clickedComment).then(function (value) {
+                console.log("sucesss");
+                $rootScope.message = "Edited successfully";
+                $rootScope.saved = true;
+                vm.showCommentList=true;
+            },function (reason) {
+                $rootScope.message = "Error Occurred";
+                $rootScope.saved = true;
+            });
+        }
+
         function cancel(){
             $uibModalInstance.dismiss('close');
         }

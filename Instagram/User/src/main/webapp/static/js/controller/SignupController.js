@@ -7,14 +7,10 @@
             vm.fullName ='';
             vm.username ='';
             vm.email='';
-            vm.password='';
-            vm.repassword='';
 
             vm.match =false;
             vm.error_msg = false;
-            if(!(vm.password == vm.repassword)){
-                vm.match = true;
-            }
+
         vm.url="/signup";
         vm.createUser= createUser;
 
@@ -22,10 +18,10 @@
             vm.newUser ={
                 'fullName': vm.fullName,
                 'username': vm.username,
-                'email': vm.email,
-                'password': vm.password
+                'email': vm.email
             };
             HttpService.post(vm.url, vm.newUser).then(function(value){
+                alert("Check your email to verify your account...");
                 console.log("success");
                 $location.path("/login");
                 }, function(reason){

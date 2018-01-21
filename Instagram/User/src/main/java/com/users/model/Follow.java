@@ -22,4 +22,7 @@ public class Follow {
     @ManyToOne
     @JoinColumn(name = "following_userId")
     private User followedUser;
+
+    @Column(name = "isFollowing")
+    private Boolean isFollowing;
 }

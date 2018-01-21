@@ -34,14 +34,11 @@ public class PhotoServiceImpl implements PhotoService {
    @Autowired
    private UserService userService;
 
-//    public void savePhoto(UserPhotodto userPhotodto){
-    public List<UserPhotodto> savePhoto(List<UserPhotodto> userPhotosList){
+    public void savePhoto(UserPhotodto userPhotodto){
         File dir = new File(System.getProperty("catalina.home")+ "/uploads");
         if(!dir.exists()){
             dir.mkdir();
         }
-        List<UserPhotodto> userPhotodtoList = new ArrayList<UserPhotodto>();
-        for(UserPhotodto userPhotodto:userPhotosList) {
             byte[] imageDecoded = Base64.getDecoder().decode(userPhotodto.getImage_path());
             String filename = imageDecoded.toString();
             String pathToImage = dir + "/" + filename;
@@ -60,10 +57,7 @@ public class PhotoServiceImpl implements PhotoService {
             userPhotos.setCreated_date(new Date());
             userPhotos.setCaption(userPhotodto.getCaption());
             userPhotos.setImage_path(filename);
-//            userPhotos.setProfileImg(userPhotodto.getProfileImg());
             photoRepository.save(userPhotos);
-        }
-        return userPhotosList;
     }
 
 //sabu

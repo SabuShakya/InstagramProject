@@ -26,18 +26,18 @@
             </span>
         </p>
 
-        <p>
-            Password:
-            <input type="password" name="pass" ng-model="signup.password" placeholder="Password" required/>
-            <span style="color:red" ng-show="signupform.pass.$dirty && signupform.pass.$invalid">
-            <span class="error" ng-show="signupform.pass.$error.required"> Password is required</span>
-            </span>
-        </p>
+        <%--<p>--%>
+            <%--Password:--%>
+            <%--<input type="password" name="pass" ng-model="signup.password" placeholder="Password" required/>--%>
+            <%--<span style="color:red" ng-show="signupform.pass.$dirty && signupform.pass.$invalid">--%>
+            <%--<span class="error" ng-show="signupform.pass.$error.required"> Password is required</span>--%>
+            <%--</span>--%>
+        <%--</p>--%>
 
-        <p>Re-Password:
-        <input type ="password" name ="repass" ng-model ="signup.repassword" placeholder="Enter password again"required />
-        <span style="color:red" ng-show="signup.match">Password donot match</span>
-        </p>
+        <%--<p>Re-Password:--%>
+        <%--<input type ="password" name ="repass" ng-model ="signup.repassword" placeholder="Enter password again"required />--%>
+        <%--<span style="color:red" ng-show="signup.match">Password donot match</span>--%>
+        <%--</p>--%>
     </div>
 
     <button type="submit" class="btn btn-success btn-lg pull-centre" ng-click="signup.createUser()" ng-disabled="signupform.$invalid">
