@@ -3,8 +3,6 @@
 <link rel="stylesheet" type="text/css" href="static/css/profile.css">
 <header>
     <button class="btn btn-success btn-lg pull-right" ng-click="profile.openModal()"> Upload Photo</button>
-    <button class="btn btn-danger btn-lg pull-right" ng-click="profile.logout()">Logout</button>
-
     <button class="btn btn-success btn-lg" ng-click="profile.editProfile()">Edit Profile</button>
 
     <div class="profile-pic-container">
@@ -23,15 +21,15 @@
             <div class="text">Likes</div>
         </div>
         <div class="stat">
-            <div class="number">575</div>
+            <div class="number">{{profile.followers}}</div>
             <div class="text">Follower</div>
         </div>
         <div class="stat active">
-            <div class="number">147</div>
+            <div class="number">{{profile.totalPictures}}</div>
             <div class="text">Pictures</div>
         </div>
         <div class="stat">
-            <div class="number">386</div>
+            <div class="number">{{profile.following}}</div>
             <div class="text">following</div>
         </div>
     </div>
@@ -48,7 +46,6 @@
         <img src="uploads/{{photo.image_path}}" style="width:100%" ng-click="profile.commentModal(photo.image_path,photo.caption)">
         {{photo.caption}}
     </div>
-</div>
 </div>
 
 

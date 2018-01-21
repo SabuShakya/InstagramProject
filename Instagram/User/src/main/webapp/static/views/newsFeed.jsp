@@ -26,7 +26,10 @@
             <div class='footer'>
 
                 <div class='react'>
-                    <a href='#' role='button'><span class='love'></span></a>
+                    {{main.noOfLikes}}
+                    <button ng-click="main.like(post)">
+                        <span class='love'></span>
+                    </button>
                     <button role='button' ng-click="main.showComments(post)">
                         <span class='comment'></span>
                     </button>

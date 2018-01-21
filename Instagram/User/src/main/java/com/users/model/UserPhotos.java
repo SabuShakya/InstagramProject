@@ -20,6 +20,7 @@ public class UserPhotos {
     @Column(name="image_path", nullable = false)
     private String image_path;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="created_date")
     private Date created_date;
 
@@ -32,7 +33,4 @@ public class UserPhotos {
 
     @OneToMany(mappedBy = "userPhotos")
     private List<Comments> comments;
-
-    @OneToMany(mappedBy ="userPhotos")
-    private List<Likes> likes;
 }

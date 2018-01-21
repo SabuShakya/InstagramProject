@@ -31,6 +31,10 @@ angular.module('userModule').config(['$routeProvider',function ($routeProvider) 
             templateUrl: "/static/views/update.jsp",
             controller: "UpdateController as update"
         })
+        .when("/navigation",{
+            templateUrl: "/static/views/navigation.html",
+            controller:"NavigationController as navigate"
+        })
         .otherwise({
             redirectTo:'/login'
         });

@@ -129,37 +129,22 @@ public class UserController {
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
-    @PostMapping(value="/addLikes")
-    public ResponseEntity<Boolean> addLikes(@RequestBody Likesdto likesdto){
-        likesService.saveLikes(likesdto);
-        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-    }
-
-    @GetMapping(value="/showLikes/{image_path}")
-    public ResponseEntity<List<Likesdto>> likesList(@PathVariable("image_path")String image_path){
-        List<Likesdto> likesdtoList = likesService.getAllLikes(image_path);
-        if(likesdtoList!=null){
-            return new ResponseEntity<List<Likesdto>>(likesdtoList,HttpStatus.OK);
-        }
-        return new ResponseEntity<List<Likesdto>>(likesdtoList, HttpStatus.NO_CONTENT);
-    }
-
     @PostMapping("/logout")
     public ResponseEntity<Void> logoutUser(@RequestBody UserTokenDto userTokenDto){
         User user = userService.getUser(userTokenDto.getUsername());
         userTokenService.logoutUser(user.getId(),userTokenDto.getTokenNo());
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
-//sabu
-//    @GetMapping("/search/{searchTerm}")
-//    public ResponseEntity<List<UserSearchDto>> searchUsers(@PathVariable("searchTerm")String searchTerm){
-//        List<UserSearchDto> list = userService.findBySearchTerm(searchTerm);
-//        if (list!=null) {
-//            return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.OK);
-//        }
-//        return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.NOT_FOUND);
-//    }
-//sabu
+
+    @GetMapping("/search/{searchTerm}")
+    public ResponseEntity<List<UserSearchDto>> searchUsers(@PathVariable("searchTerm")String searchTerm){
+        List<UserSearchDto> list = userService.findBySearchTerm(searchTerm);
+        if (list!=null) {
+            return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.OK);
+        }
+        return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.NOT_FOUND);
+    }
+
     @PostMapping("/followUser")
     public ResponseEntity<Boolean> follow(@RequestBody FollowDto followDto){
         followService.saveFollows(followDto);
@@ -181,6 +166,20 @@ public class UserController {
     public ResponseEntity<Boolean> unfollow(@RequestBody FollowDto followDto){
         followService.unfollowUser(followDto);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+//sabu
+    @PostMapping("/likeAction")
+    public ResponseEntity<Integer> like(@RequestBody Commentsdto commentsdto ){
+        int likesCount=likesService.saveLike(commentsdto);
+        return new ResponseEntity<Integer>(likesCount,HttpStatus.OK);
+    }
+
+//    sabu
+    @GetMapping("/followsCount/{username}")
+    public ResponseEntity<FollowCountDto> getFollowCount(@PathVariable("username")String username){
+        FollowCountDto followCountDto = followService.getFollowCount(username);
+        followCountDto.setTotalPictures(photoService.getPhotoCount(username));
+        return new ResponseEntity<FollowCountDto>(followCountDto,HttpStatus.OK);
     }
 
 }

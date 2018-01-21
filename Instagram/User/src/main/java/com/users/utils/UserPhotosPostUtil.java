@@ -20,7 +20,7 @@ public class UserPhotosPostUtil {
             UserPostDto userPostDto = new UserPostDto();
             userPostDto.setUsername(userPhotos.getUser().getUsername());
             userPostDto.setImage_path(userPhotos.getImage_path());
-            userPostDto.setCreated_date(userPhotos.getCreated_date());
+            userPostDto.setCreated_date(userPhotos.getCreated_date().toString());
             userPostDto.setCaption(userPhotos.getCaption());
             userPostDtoList.add(userPostDto);
         }

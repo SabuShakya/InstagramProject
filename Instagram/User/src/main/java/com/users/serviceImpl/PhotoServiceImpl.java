@@ -41,14 +41,15 @@ public class PhotoServiceImpl implements PhotoService {
         }
             byte[] imageDecoded = Base64.getDecoder().decode(userPhotodto.getImage_path());
             String filename = imageDecoded.toString();
+//                    + ".jpg";
             String pathToImage = dir + "/" + filename;
             try {
                 FileOutputStream fout = new FileOutputStream(pathToImage);
                 fout.write(imageDecoded);
                 fout.close();
-            } catch (FileNotFoundException e) {
+            }catch (FileNotFoundException e) {
                 e.printStackTrace();
-            } catch (IOException e) {
+            }catch (IOException e) {
                 e.printStackTrace();
             }
             User user = userService.getUser(userPhotodto.getUsername());
@@ -57,6 +58,7 @@ public class PhotoServiceImpl implements PhotoService {
             userPhotos.setCreated_date(new Date());
             userPhotos.setCaption(userPhotodto.getCaption());
             userPhotos.setImage_path(filename);
+//            userPhotos.setProfileImg(userPhotodto.getProfileImg());
             photoRepository.save(userPhotos);
     }
 
@@ -87,4 +89,34 @@ public class PhotoServiceImpl implements PhotoService {
        UserPhotos userPhotos= photoRepository.getUserPhotosByImage_path(image_path);
        return userPhotos;
     }
+
+    public long getPhotoCount(String username) {
+        List<UserPhotos> userPhotosList=photoRepository.getUserPhotosByUserUsername(username);
+        return userPhotosList.size();
+    }
+//
+//    public void updateProfile(UserPhotodto userPhotodto) {
+//        File dir = new File(System.getProperty("catalina.home")+ "/uploads");
+//        if(!dir.exists()){
+//            dir.mkdir();
+//        }
+//        byte[] imageDecoded = Base64.getDecoder().decode(userPhotodto.getImage_path());
+//        String filename = imageDecoded.toString();
+////                    + ".jpg";
+//        String pathToImage = dir + "/" + filename;
+//        try {
+//            FileOutputStream fout = new FileOutputStream(pathToImage);
+//            fout.write(imageDecoded);
+//            fout.close();
+//        }catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        User user = userService.getUser(userPhotodto.getUsername());
+//        UserPhotos userPhotos = new UserPhotos();
+//        userPhotos.setUser(user);
+//        userPhotos.setProfileImg(filename);
+//        photoRepository.save(userPhotos);
+//    }
 }

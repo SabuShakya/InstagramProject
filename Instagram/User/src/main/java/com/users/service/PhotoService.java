@@ -12,4 +12,5 @@ public interface PhotoService {
     public List<UserPhotos> getListOfPhotos(List<User> listOfFollowedUsers);
     public List<UserPhotodto> getAllPhotos(String username);
     public UserPhotos getPhotos(String image_path);
+    public long getPhotoCount(String username);
 }

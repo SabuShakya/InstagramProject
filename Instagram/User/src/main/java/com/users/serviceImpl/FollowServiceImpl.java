@@ -1,5 +1,6 @@
 package com.users.serviceImpl;
 
+import com.users.dto.FollowCountDto;
 import com.users.dto.FollowDto;
 import com.users.dto.UserPostDto;
 import com.users.model.Follow;
@@ -62,5 +63,16 @@ public class FollowServiceImpl implements FollowService {
       if (follow !=null) {
           followRepository.delete(follow);
       }
+    }
+
+    @Override
+    public FollowCountDto getFollowCount(String username) {
+        FollowCountDto followCountDto = new FollowCountDto();
+        User user=userRepository.getUserByUsername(username);
+        List<Follow> followingList=followRepository.getByUserId(user.getId());
+        followCountDto.setFollowing(followingList.size());
+        List<User> followersList = followRepository.getByFollowedUserId(user.getId());
+        followCountDto.setFollowers(followersList.size());
+        return followCountDto;
     }
 }

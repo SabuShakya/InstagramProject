@@ -1,10 +1,7 @@
 package com.users.service;
 
-import com.users.dto.Likesdto;
-
-import java.util.List;
+import com.users.dto.Commentsdto;
 
 public interface LikesService {
-    public void saveLikes(Likesdto likesdto);
-    public List<Likesdto> getAllLikes(String image_path);
+    public int saveLike(Commentsdto commentsdto);
 }
