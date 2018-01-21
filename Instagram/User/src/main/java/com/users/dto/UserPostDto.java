@@ -14,4 +14,5 @@ public class UserPostDto {
     private List<String> comments;
     private String created_date;
     private String caption;
+    private int countOfLikes;
 }

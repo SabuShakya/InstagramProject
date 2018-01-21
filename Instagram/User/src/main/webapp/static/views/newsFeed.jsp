@@ -26,7 +26,7 @@
             <div class='footer'>
 
                 <div class='react'>
-                    {{main.noOfLikes}}
+                    {{post.countOfLikes}}
                     <button ng-click="main.like(post)">
                         <span class='love'></span>
                     </button>

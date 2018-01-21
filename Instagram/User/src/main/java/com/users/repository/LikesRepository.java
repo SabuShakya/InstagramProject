@@ -9,9 +9,11 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface LikesRepository extends JpaRepository<Likes,Long>{
-    @Query("select l from Likes l where l.userPhotos.image_path=:imageName and l.user.username=:userName")
-    public Likes getByUserPhotos_Image_pathAAndUser_Username(@Param("imageName") String imageName,
-                                                             @Param("userName") String userName);
+    @Query("select l from Likes l where l.user.id=:userId and l.userPhotos.id=:photoId")
+    public Likes getByUserIdAndPhotoId(@Param("userId") Long userId,
+                                                             @Param("photoId") Long photoId);
     @Query("select l from Likes l where l.userPhotos.image_path=:imageName")
     public List<Likes> getByUserPhotos_Image_path(@Param("imageName") String imageName);
+
+    public List<Likes> getByUserPhotos_Id(long id);
 }
