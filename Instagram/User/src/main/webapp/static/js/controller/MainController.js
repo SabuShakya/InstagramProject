@@ -10,8 +10,10 @@
         vm.commentList = [];
         vm.showList = false;
         vm.showing = false;
+        vm.noOfLikes = '';
         vm.addComment = addComment;
         vm.showComments = showComments;
+        vm.like = like;
 
         HttpService.get("/getPosts/" + $localStorage.storedObj.username).then(
             function (value) {
@@ -42,6 +44,7 @@
         function showComments(post) {
             if (vm.showing){
                 vm.showList = false;
+                vm.showing =false;
             }else {
                 vm.showing = true;
                 HttpService.get("/showComments/" + post.image_path).then(function (value) {
@@ -52,6 +55,13 @@
                     console.log("Error occured" + reason);
                 });
             }
+        }
+        function like(post) {
+            HttpService.post("/likeAction",post).then(function (value) {
+                vm.noOfLikes = value;
+            },function (reason) {
+                console.log("Error Occured:"+reason);
+            });
         }
 
     }

@@ -9,7 +9,7 @@
 </header>
 
 <div class="main">
-    <p align="center" class="description"> {{searched.userDisplayName}}</p><br>
+    <p align="center" class="description">{{searched.userDisplayName}}</p><br>
     <div align="center">
         <div ng-if="searched.showFollowBtn">
             <button type="button" class="btn-default" ng-click="searched.followUser()">Follow</button>
@@ -24,15 +24,15 @@
             <div class="text">Likes</div>
         </div>
         <div class="stat">
-            <div class="number">575</div>
+            <div class="number">{{searched.followers}}</div>
             <div class="text">Follower</div>
         </div>
         <div class="stat active">
-            <div class="number">147</div>
+            <div class="number">{{searched.totalPictures}}</div>
             <div class="text">Pictures</div>
         </div>
         <div class="stat">
-            <div class="number">386</div>
+            <div class="number">{{searched.following}}</div>
             <div class="text">following</div>
         </div>
     </div>
@@ -46,6 +46,4 @@
         {{photo.caption}}
     </div>
 </div>
-
-
 

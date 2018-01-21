@@ -38,6 +38,7 @@
 <script src="static/js/controller/EditProfileController.js"></script>
 <script src="static/js/controller/SearchController.js"></script>
 <script src="static/js/controller/SearchedProfileController.js"></script>
+<script src="static/js/controller/NavigationController.js"></script>
 
 <script src="static/js/service/HttpService.js"> </script>
 

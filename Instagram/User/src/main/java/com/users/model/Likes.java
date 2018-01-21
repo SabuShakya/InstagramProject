@@ -15,9 +15,6 @@ public class Likes implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name ="likes")
-    private int likes;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="user_id", nullable =false)
     private User user;
@@ -25,4 +22,7 @@ public class Likes implements Serializable{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="pic_id", nullable = false)
     private UserPhotos userPhotos;
+
+    @Column(name = "is_liked")
+    private boolean isLiked;
 }

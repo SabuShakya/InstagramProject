@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div ng-controller="NavigationController as navigate">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -13,12 +7,11 @@
         <ul class="nav navbar-nav">
             <li><a href="/#!/newsFeed">Home</a></li>
             <li><a href="/#!/profile">Profile</a></li>
-            <li><a href="/#!/search">Search</a>
-            <!--<li><input type="text" ng-model="main.searchTerm">-->
-                <!--<button ng-click="main.search()">Search</button>-->
-            </li>
+            <li><a href="/#!/search">Search</a></li>
+            <li><a href="/#!/profile" class="active">{{navigate.userName}}</a></li>
+            <li><a href="/#!/logout"  ng-click="navigate.logout">Logout</a></li>
         </ul>
+        <!--<button class="btn btn-default btn-lg pull-right" ng-click="navigate.logout()">Logout</button>-->
     </div>
 </nav>
-</body>
-</html>
+</div>

@@ -5,6 +5,9 @@
     function SearchedProfileController($uibModal, $rootScope, HttpService, $localStorage, $location){
         var vm =this;
         vm.photoList=[];
+        vm.followers = '';
+        vm.following = '';
+        vm.totalPictures = '';
         $rootScope.message='';
         $rootScope.saved = false;
         $rootScope.photo = '';
@@ -27,6 +30,13 @@
             console.log("Error occured"+reason);
         });
 
+        HttpService.get("/followsCount/"+vm.followObj.following_userName).then(function (value) {
+            vm.followers = value.followers;
+            vm.following = value.following;
+            vm.totalPictures = value.totalPictures;
+        },function (reason) {
+            console.log(reason);
+        });
         HttpService.post("/checkFollow",vm.followObj).then(function (value) {
             vm.showFollowBtn = false;
         },function (reason) {

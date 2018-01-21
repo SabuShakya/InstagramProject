@@ -1,5 +1,6 @@
 package com.users.service;
 
+import com.users.dto.FollowCountDto;
 import com.users.dto.FollowDto;
 import com.users.dto.UserPostDto;
 
@@ -10,4 +11,5 @@ public interface FollowService {
     public void saveFollows(FollowDto followDto);
     public boolean checkFollow(FollowDto followDto);
     public void unfollowUser(FollowDto followDto);
+    public FollowCountDto getFollowCount(String username);
 }

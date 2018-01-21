@@ -7,6 +7,9 @@
         vm.userDisplayName= '';
         vm.photoList=[];
         vm.showList = true;
+        vm.followers = '';
+        vm.following = '';
+        vm.totalPictures = '';
         $rootScope.message='';
         $rootScope.saved = false;
         $rootScope.photo = '';
@@ -16,7 +19,6 @@
 
         vm.openModal=openModal;
         vm.editProfile=editProfile;
-        vm.logout =logout;
         vm.commentModal=commentModal;
 
         HttpService.get(vm.url).then(function(value){
@@ -24,6 +26,14 @@
             vm.showList = false;
         },function (reason) {
             console.log("Error occured"+reason);
+        });
+
+        HttpService.get("/followsCount/"+$localStorage.storedObj.username).then(function (value) {
+            vm.followers = value.followers;
+            vm.following = value.following;
+            vm.totalPictures = value.totalPictures;
+        },function (reason) {
+            console.log(reason);
         });
 
         function openModal(){
@@ -36,18 +46,6 @@
                 size: 'lg'
             });
         }
-
-        function logout() {
-            HttpService.post("/logout", $localStorage.storedObj).then(
-                function (value) {
-                    $localStorage.storedObj={};
-                    $location.path("/login");
-                },
-                function (reason) {
-                    console.log(reason);
-                }
-            )
-        };
 
         function commentModal(image_path,caption) {
             $rootScope.photo = image_path;
@@ -72,7 +70,6 @@
                 controllerAs: 'editProfile',
                 size: 'lg'
             });
-
         }
     }
 })();

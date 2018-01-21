@@ -12,6 +12,6 @@ public class UserPostDto {
     private String username;
     private String image_path;
     private List<String> comments;
-    private Date created_date;
+    private String created_date;
     private String caption;
 }

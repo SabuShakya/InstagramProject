@@ -23,6 +23,7 @@ public class UserPhotos {
 //    @Column(name="profileImg")
 //    private String profileImg;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="created_date")
     private Date created_date;
 

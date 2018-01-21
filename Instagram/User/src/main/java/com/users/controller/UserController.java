@@ -35,6 +35,9 @@ public class UserController {
     @Autowired
     private FollowService followService;
 
+    @Autowired
+    private LikesService likesService;
+
     @PostMapping("/signup")
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
         userService.saveUser(user);
@@ -67,7 +70,7 @@ public class UserController {
         }
         return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
     }
-
+//sabu
     @GetMapping("/getPosts/{userName}")
     public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username){
         List<UserPostDto> userPostList=followService.getPosts(username);
@@ -128,6 +131,20 @@ public class UserController {
     public ResponseEntity<Boolean> unfollow(@RequestBody FollowDto followDto){
         followService.unfollowUser(followDto);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+//sabu
+    @PostMapping("/likeAction")
+    public ResponseEntity<Integer> like(@RequestBody Commentsdto commentsdto ){
+        int likesCount=likesService.saveLike(commentsdto);
+        return new ResponseEntity<Integer>(likesCount,HttpStatus.OK);
+    }
+
+//    sabu
+    @GetMapping("/followsCount/{username}")
+    public ResponseEntity<FollowCountDto> getFollowCount(@PathVariable("username")String username){
+        FollowCountDto followCountDto = followService.getFollowCount(username);
+        followCountDto.setTotalPictures(photoService.getPhotoCount(username));
+        return new ResponseEntity<FollowCountDto>(followCountDto,HttpStatus.OK);
     }
 
 //    @PostMapping("/updateProfile")

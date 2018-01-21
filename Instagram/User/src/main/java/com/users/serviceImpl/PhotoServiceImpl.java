@@ -89,6 +89,12 @@ public class PhotoServiceImpl implements PhotoService {
        UserPhotos userPhotos= photoRepository.getUserPhotosByImage_path(image_path);
        return userPhotos;
     }
+
+    @Override
+    public long getPhotoCount(String username) {
+        List<UserPhotos> userPhotosList=photoRepository.getUserPhotosByUserUsername(username);
+        return userPhotosList.size();
+    }
 //
 //    public void updateProfile(UserPhotodto userPhotodto) {
 //        File dir = new File(System.getProperty("catalina.home")+ "/uploads");
