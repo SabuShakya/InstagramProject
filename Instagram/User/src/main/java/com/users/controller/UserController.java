@@ -88,11 +88,20 @@ public class UserController {
     }
 
     //smriti
+//    @GetMapping("/ProfilePhotos/{username}")
+//    public ResponseEntity<ProfilePhotoDto> profilephoto(@PathVariable("username")String username){
+//       ProfilePhotoDto profilePhotoDto= profilePhotoService.getProfilePhotos(username);
+//        return new ResponseEntity<ProfilePhotoDto>(profilePhotoDto,HttpStatus.OK);
+//    }
     @GetMapping("/ProfilePhotos/{username}")
-    public ResponseEntity<ProfilePhotoDto> profilephoto(@PathVariable("username")String username){
-       ProfilePhotoDto profilePhotoDto= profilePhotoService.getProfilePhoto(username);
-        return new ResponseEntity<ProfilePhotoDto>(profilePhotoDto,HttpStatus.OK);
+    public ResponseEntity<List<ProfilePhotoDto>> profilephotoList(@PathVariable("username") String username){
+        List<ProfilePhotoDto> photoList= profilePhotoService.getProfilePhotos(username);
+        if(photoList != null && !photoList.isEmpty()){
+            return new ResponseEntity<List<ProfilePhotoDto>>(photoList,HttpStatus.OK);
+        }
+        return new ResponseEntity<List<ProfilePhotoDto>>(photoList,HttpStatus.NOT_FOUND);
     }
+
 
     @GetMapping("/getPosts/{userName}")
     public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username){

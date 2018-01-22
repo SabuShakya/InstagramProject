@@ -13,7 +13,7 @@
         $rootScope.message='';
         $rootScope.saved = false;
         $rootScope.photo = '';
-        $rootScope.profilepic='';
+        $rootScope.pic='';
 
         vm.url = "/allPhotos/" + $localStorage.storedObj.username;
         vm.userDisplayName = $localStorage.storedObj.username;
@@ -25,6 +25,14 @@
         HttpService.get(vm.url).then(function(value){
             vm.photoList = value;
             vm.showList = false;
+        },function (reason) {
+            console.log("Error occured"+reason);
+        });
+
+        HttpService.get("/ProfilePhotos/"+$localStorage.storedObj.username).then(function(value){
+            $rootScope.pic=value.profile_pic;
+            vm.profilePhotoList = value;
+            console.log("success");
         },function (reason) {
             console.log("Error occured"+reason);
         });

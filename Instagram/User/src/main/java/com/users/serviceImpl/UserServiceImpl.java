@@ -69,12 +69,12 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-//    public List<UserSearchDto> findBySearchTerm(String searchTerm) {
-//        String sql = "Select u from User u where u.username like :username";
-//        List<User> userList= em.createQuery(sql,User.class).setParameter("username",
-//                "%"+searchTerm+"%").getResultList();
-//        return UserSearchUtils.getSearchedUserInfo(userList);
-//    }
+    public List<UserSearchDto> findBySearchTerm(String searchTerm) {
+        String sql = "Select u from User u where u.username like :username";
+        List<User> userList= em.createQuery(sql,User.class).setParameter("username",
+                "%"+searchTerm+"%").getResultList();
+        return UserSearchUtils.getSearchedUserInfo(userList);
+    }
 
   //smriti
     public User getUserEmail(String email) {

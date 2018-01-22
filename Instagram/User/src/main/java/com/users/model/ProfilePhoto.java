@@ -18,6 +18,7 @@ public class ProfilePhoto implements Serializable {
     @Column(name="profile_pic")
     private String profile_pic;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id", nullable =false)
     private User user;
 }

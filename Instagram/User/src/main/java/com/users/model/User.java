@@ -47,7 +47,7 @@ public class User implements Serializable {
     @OneToOne(mappedBy = "user")
     private Likes likes;
 
-    @OneToOne(mappedBy = "user")
-    private ProfilePhoto profilePhoto;
+    @OneToMany(mappedBy = "user")
+    private List<ProfilePhoto> profilePhotos;
 }
 

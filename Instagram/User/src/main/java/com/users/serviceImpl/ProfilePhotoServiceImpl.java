@@ -64,13 +64,19 @@ public class ProfilePhotoServiceImpl implements ProfilePhotoService{
 //       return profilePhotoDto;
 //    }
 
-    public ProfilePhotoDto getProfilePhoto(String username){
-        String sql = "Select p from ProfilePhoto p where p.user.username like :username";
-        ProfilePhoto profilePhoto =em.createQuery(sql,ProfilePhoto.class).setParameter
-                ("username","%"+username+"%").getSingleResult();
-        ProfilePhotoDto profilePhotoDto= new ProfilePhotoDto();
-        profilePhotoDto.setProfile_pic(profilePhoto.getProfile_pic());
-        profilePhotoDto.setUsername(profilePhoto.getUser().getUsername());
-        return profilePhotoDto;
+//    public ProfilePhotoDto getProfilePhoto(String username){
+//        String sql = "Select p from ProfilePhoto p where p.user.username like :username";
+//        ProfilePhoto profilePhoto =em.createQuery(sql,ProfilePhoto.class).setParameter
+//                ("username","%"+username+"%").getSingleResult();
+//        ProfilePhotoDto profilePhotoDto= new ProfilePhotoDto();
+//        profilePhotoDto.setProfile_pic(profilePhoto.getProfile_pic());
+//        profilePhotoDto.setUsername(profilePhoto.getUser().getUsername());
+//        return profilePhotoDto;
+//    }
+
+    public List<ProfilePhotoDto> getProfilePhotos(String username) {
+        List<ProfilePhoto> profilePhotoList = profilePhotoRepository.getProfilePhotoByUserUsername(username);
+        List<ProfilePhotoDto> profilePhotoDtos = ProfilePhotoUtils.convertProfilePhotodto(profilePhotoList);
+        return profilePhotoDtos;
     }
 }

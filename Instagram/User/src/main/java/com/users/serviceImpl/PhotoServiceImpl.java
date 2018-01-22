@@ -94,29 +94,4 @@ public class PhotoServiceImpl implements PhotoService {
         List<UserPhotos> userPhotosList=photoRepository.getUserPhotosByUserUsername(username);
         return userPhotosList.size();
     }
-//
-//    public void updateProfile(UserPhotodto userPhotodto) {
-//        File dir = new File(System.getProperty("catalina.home")+ "/uploads");
-//        if(!dir.exists()){
-//            dir.mkdir();
-//        }
-//        byte[] imageDecoded = Base64.getDecoder().decode(userPhotodto.getImage_path());
-//        String filename = imageDecoded.toString();
-////                    + ".jpg";
-//        String pathToImage = dir + "/" + filename;
-//        try {
-//            FileOutputStream fout = new FileOutputStream(pathToImage);
-//            fout.write(imageDecoded);
-//            fout.close();
-//        }catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        User user = userService.getUser(userPhotodto.getUsername());
-//        UserPhotos userPhotos = new UserPhotos();
-//        userPhotos.setUser(user);
-//        userPhotos.setProfileImg(filename);
-//        photoRepository.save(userPhotos);
-//    }
 }

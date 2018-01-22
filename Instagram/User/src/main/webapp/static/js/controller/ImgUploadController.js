@@ -16,13 +16,7 @@
                         'created_date': new Date(),
                         'username':$localStorage.storedObj.username,
                         'caption': vm.caption
-                },
-                // {'image_path':vm.imageName.base64,
-                //     'created_date': new Date(),
-                //     'username':$localStorage.storedObj.username,
-                //     'caption': vm.caption
-                // }
-
+                }
 
             HttpService.post(vm.url, vm.obj).then(
                 function (value) {
