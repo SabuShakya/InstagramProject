@@ -1,8 +1,8 @@
 (function() {
     angular.module('userModule').controller("MainController", MainController);
-    MainController.$inject= ['HttpService','$localStorage'];
+    MainController.$inject= ['HttpService','$localStorage','$rootScope'];
 
-    function MainController(HttpService,$localStorage) {
+    function MainController(HttpService,$localStorage,$rootScope) {
         var vm = this;
         vm.posts = {};
         vm.message = '';
@@ -14,6 +14,7 @@
         vm.addComment = addComment;
         vm.showComments = showComments;
         vm.like = like;
+        vm.openLikeListModal = openLikeListModal;
 
         HttpService.get("/getPosts/" + $localStorage.storedObj.username).then(
             function (value) {
@@ -64,7 +65,17 @@
                 console.log("Error Occured:"+reason);
             });
         }
-
+        function openLikeListModal(post) {
+            $rootScope.imageName = post.image_path;
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/likesList.jsp',
+                controller :'LikesListController',
+                controllerAs: 'likesctrl',
+                size: 'lg'
+            });
+        }
     }
 })();
 

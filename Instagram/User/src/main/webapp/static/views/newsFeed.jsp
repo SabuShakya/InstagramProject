@@ -33,7 +33,9 @@
                     <button role='button' ng-click="main.showComments(post)">
                         <span class='comment'></span>
                     </button>
-                    <a href='#' role='button'><span class='save'></span></a>
+                    <button ng-click="main.openLikeListModal(post)">
+                        <span class='save'></span>
+                    </button>
 
                 </div>
                 <br>

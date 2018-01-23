@@ -16,10 +16,6 @@
 
     <div class="stats-container">
         <div class="stat">
-            <div class="number">3641</div>
-            <div class="text">Likes</div>
-        </div>
-        <div class="stat">
             <div class="number">{{profile.followers}}</div>
             <div class="text">Follower</div>
         </div>

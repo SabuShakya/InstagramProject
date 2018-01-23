@@ -26,17 +26,15 @@ public class Admin implements Serializable{
     @Column(name = "email",nullable = false)
     private String email;
 
-    @NotNull
     @Column(name = "user_name",nullable = false, unique = true)
     private String userName;
 
-    @NotNull
     @Column(name = "password" ,nullable = false)
     private String password;
 
     @Column(name = "image")
     private String image;
 
-    @OneToOne(mappedBy = "admin",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "admin",fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
     private TokenAuth tokenAuth;
 }

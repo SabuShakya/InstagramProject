@@ -1,6 +1,7 @@
 package com.users.serviceImpl;
 
 import com.users.dto.Commentsdto;
+import com.users.dto.Likesdto;
 import com.users.model.Likes;
 import com.users.model.User;
 import com.users.model.UserPhotos;
@@ -33,7 +34,7 @@ public class LikesServiceImpl implements LikesService {
         if(liked !=null){
             if(liked.isLiked()){
                 liked.setLiked(false);
-                likesRepository.save(liked);
+                likesRepository.delete(liked);
             }else {
                 liked.setLiked(true);
                 likesRepository.save(liked);
@@ -53,5 +54,17 @@ public class LikesServiceImpl implements LikesService {
     @Override
     public List<Likes> getByPhotoId(long id) {
         return likesRepository.getByUserPhotos_Id(id);
+    }
+
+    @Override
+    public int getLikesCountForImage(String imageName) {
+        List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(imageName);
+        return likesList.size();
+    }
+
+    @Override
+    public List<Likesdto> getLikesList(String imageName) {
+        List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(imageName);
+        return LikesUtil.convertLikesToLikesDto(likesList);
     }
 }

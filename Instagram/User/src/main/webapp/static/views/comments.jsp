@@ -15,9 +15,13 @@
 
     <div class='footer'>
         <div class='react'>
-            <button type="button" class="btn btn-default btn-lg"  ng-click="temp.likes = temp.likes+1">
-                <span class='love'></span>{{temp.likes}}</button>
-            <span class='comment'></span></a>
+            {{comment.likeCount}}
+            <button ng-click="comment.like()">
+                <span class='love'></span>
+            </button>
+            <button role='button' ng-click="comment.showComments()">
+                <span class='comment'></span>
+            </button>
             <span class='save'></span></a>
         </div>
 
