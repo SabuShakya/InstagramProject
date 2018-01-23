@@ -45,4 +45,20 @@ public class CommentsServiceImpl implements CommentsService {
         List<Commentsdto> commentsdtos = CommentUtils.convertCommentsdtoToComments(commentsList);
         return commentsdtos;
     }
+
+    public void updateComment(Commentsdto commentsdto){
+        User user = userService.getUser(commentsdto.getUsername());
+        UserPhotos userPhotos = photoService.getPhotos(commentsdto.getImage_path());
+        Comments comments = new Comments();
+        comments.setUser(user);
+        comments.setComments(commentsdto.getComments());
+        comments.setId(commentsdto.getComment_id());;
+        comments.setUserPhotos(userPhotos);
+        comments.setUserPhotos(comments.getUserPhotos());
+        commentsRepository.save(comments);
+    }
+
+    public void deleteComment(Commentsdto commentsdto) {
+        commentsRepository.delete(commentsdto.getComment_id());
+    }
 }

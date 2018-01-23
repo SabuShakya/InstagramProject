@@ -87,7 +87,6 @@ public class PhotoServiceImpl implements PhotoService {
        return userPhotos;
     }
 
-    @Override
     public long getPhotoCount(String username) {
         List<UserPhotos> userPhotosList=photoRepository.getUserPhotosByUserUsername(username);
         return userPhotosList.size();

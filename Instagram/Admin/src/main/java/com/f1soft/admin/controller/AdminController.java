@@ -68,8 +68,8 @@ public class AdminController {
     }
 
     @PostMapping("/update")
-    public ResponseEntity<Boolean> updateAdmin(@RequestBody Admin admin){
-        adminService.updateAdmin(admin);
+    public ResponseEntity<Boolean> updateAdmin(@RequestBody AdminInfoDto adminInfoDto){
+        adminService.updateAdmin(adminInfoDto);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 

@@ -13,5 +13,4 @@ public interface PhotoService {
     public List<UserPhotodto> getAllPhotos(String username);
     public UserPhotos getPhotos(String image_path);
     public long getPhotoCount(String username);
-//    public void updateProfile(UserPhotodto userPhotodto);
 }

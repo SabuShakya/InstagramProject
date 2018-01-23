@@ -14,15 +14,12 @@
         vm.uploadPhoto = uploadPhoto;
         vm.close = close;
 
-
         function uploadPhoto() {
-            // for(vm.i =0;vm.i<vm.listOfImages.length;vm.i++){
-                angular.forEach(vm.listOfImages, function(listOfImages, key) {
+            angular.forEach(vm.listOfImages, function(listOfImages, key) {
                     vm.imageList[vm.i]=listOfImages.base64;
                     vm.i++;
                 });
-                // vm.imageList[vm.i] = vm.listOfImages.base64;
-            // }
+
             vm.obj = {
                 'imageList': vm.imageList,
                 'image_path': '',
@@ -34,12 +31,12 @@
                 function (value) {
                     $rootScope.message = "Picture uploaded successfully";
                     $rootScope.saved = true;
+                    $uibModalInstance.close('save');
                 },
                 function(reason){
                     $rootScope.message ="Error occured";
                     $rootScope.saved = true;
                 });
-            $uibModalInstance.close('save');
         }
 
         function close(){

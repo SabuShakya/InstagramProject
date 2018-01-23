@@ -36,11 +36,32 @@
         <div ng-repeat="comment in comment.commentList">
             {{comment.username}} : {{comment.comments}}
         </div>
+        <div class='footer'>
+            <div class='react'>
+                <button ng-click="comment.like()">
+                <span class='love'></span></button>
+                <span class='comment'></span></a>
+                <span class='save'></span></a>
+            </div>
 
-        <div class='comment-section'>
+            <div ng-repeat="com in comment.commentList">
+                <td> {{com.username}} : {{com.comments}} </td>
+                <br>
+                <button type="button" class="btn btn-danger" ng-click="comment.openDeleteModal(com)"> Delete</button>
+                <button type="button" class="btn btn-success" ng-click="comment.openEditModal(com)">Edit</button>
+            </div>
+
+            <div class='comment-section'>
                 <input type='text' id='cmnt' ng-model="comment.comments" placeholder='Add a comment...'>
                 <button ng-click="comment.add()">Add</button>
-        </div>
+            </div>
+
+            <div ng-hide ="comment.showCommentList">
+                <div class="alert alert-success" ng-show="saved">
+                    <input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>
+                    <button ng-click="comment.edit()">Edit</button>
+                </div>
+            </div>
 
     </div>
 </section>

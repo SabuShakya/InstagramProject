@@ -11,6 +11,7 @@ import java.util.List;
 public interface PhotoRepository extends JpaRepository<UserPhotos, Long> {
 
     public List<UserPhotos> getUserPhotosByUserUsername(String username);
+
     public List<UserPhotos> getUserPhotosByUser_Id(long id);
     @Query("SELECT u from UserPhotos u where u.image_path=:image_path")
     public UserPhotos getUserPhotosByImage_path(@Param("image_path")String image_path);

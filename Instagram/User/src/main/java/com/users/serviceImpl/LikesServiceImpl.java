@@ -26,7 +26,7 @@ public class LikesServiceImpl implements LikesService {
     private PhotoRepository photoRepository;
     @Autowired
     private LikesRepository likesRepository;
-//sabu
+
     public int saveLike(Commentsdto commentsdto) {
         User user = userRepository.getUserByUsername(commentsdto.getUsername());
         UserPhotos userPhotos = photoRepository.getUserPhotosByImage_path(commentsdto.getImage_path());
@@ -45,7 +45,7 @@ public class LikesServiceImpl implements LikesService {
         likesRepository.save(likes);
         return getCountOfLikes(likes);
     }
-//sabu
+
     public int getCountOfLikes(Likes likes){
         List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(likes.getUserPhotos().getImage_path());
         return likesList.size();

@@ -23,7 +23,8 @@
                 .then(function(response){
                     $localStorage.storedObj={
                         username:response.username,
-                        tokenNo :response.tokenNo
+                        tokenNo :response.tokenNo,
+                        password:response.password
                     };
                     $location.path("/profile");
                 },

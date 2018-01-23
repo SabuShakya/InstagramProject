@@ -1,16 +1,23 @@
+<div ng-include src="'modules/views/DashBoard.html'"></div>
+
 <div ng-show="admin.showAll">
-    <h1>DashBoard</h1>
-    <div align="right">
-        <h4 align="right">{{admin.adminId}}</h4>
-        <button class="btn btn-danger" style="width: 20%" ng-click="admin.logout()">Logout</button>
-    </div>
+    <%--<h1>DashBoard</h1>--%>
+    <%--<div align="right">--%>
+        <%--<h4 align="right">{{admin.adminId}}</h4>--%>
+        <%--<button class="btn btn-danger" style="width: 20%" ng-click="admin.logout()">Logout</button>--%>
+    <%--</div>--%><br>
     <div>
         <button><a href="/#!/addAdmin">Add New Admin</a></button>
-        <button ng-show="admin.showList" ng-click="admin.showAdminList()">Manage Admins</button>
     </div>
+        <br>
+       <div>
+           <button ng-show="admin.showList" ng-click="admin.showAdminList()">Manage Admins</button>
+       </div>
+    <br>
     <div>
         <button type="button" class="btn-default" ng-click="admin.openUserLog()">Show User Log</button>
     </div>
+
     <div ng-hide="admin.showList">
         <h1> All users </h1>
         <div align="right">

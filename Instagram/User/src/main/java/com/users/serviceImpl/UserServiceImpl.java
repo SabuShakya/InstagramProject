@@ -4,11 +4,15 @@ import com.users.dto.UserSearchDto;
 import com.users.dto.Userdto;
 import com.users.model.User;
 import com.users.repository.UserRepository;
+import com.users.service.EmailService;
 import com.users.service.UserService;
 import com.users.service.UserTokenService;
+import com.users.utils.TokenUtils;
 import com.users.utils.UserSearchUtils;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,8 +35,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     public EntityManager em;
 
+    @Autowired
+    private EmailService emailService;
+
+    private JavaMailSender mailSender;
+
     public void saveUser(User user) {
-        user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
+        String password=TokenUtils.generateToken();
+        user.setPassword(password);
+        emailService.sendEmail(user);
+        user.setPassword(BCrypt.hashpw(password,BCrypt.gensalt()));
         userRepository.save(user);
     }
 
@@ -47,9 +59,10 @@ public class UserServiceImpl implements UserService {
         return userlist;
     }
 
+   //smriti
     public boolean loginUser(Userdto userdto) {
         User isUser = userRepository.getUserByUsername(userdto.getUsername());
-        if((isUser !=null) && BCrypt.checkpw(userdto.getPassword(),isUser.getPassword())){
+        if((isUser !=null) && (BCrypt.checkpw(userdto.getPassword(),isUser.getPassword()))){
             userdto.setId(isUser.getId());
             return true;
         }
@@ -61,5 +74,17 @@ public class UserServiceImpl implements UserService {
         List<User> userList= em.createQuery(sql,User.class).setParameter("username",
                 "%"+searchTerm+"%").getResultList();
         return UserSearchUtils.getSearchedUserInfo(userList);
+    }
+
+  //smriti
+    public User getUserEmail(String email) {
+        return userRepository.getUserByEmail(email);
+    }
+
+    public void updateUser(User user){
+        User userRepo= userRepository.getUserByUsername(user.getUsername());
+        userRepo.setUsername(user.getUsername());
+        userRepo.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
+        userRepository.save(userRepo);
     }
 }

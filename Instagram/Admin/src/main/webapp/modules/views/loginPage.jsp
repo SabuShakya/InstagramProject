@@ -1,8 +1,7 @@
-
 <form name="myForm" class="form-horizontal" novalidate>
-
+    <br>
     <div class="imgcontainer">
-        <img src="modules/images/img_avatar2.png" alt="Avatar" class="avatar">
+        <img src="modules/images/img_avatar2.png" width="100" height="150" alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
@@ -28,12 +27,6 @@
     <div ng-hide ="login.valid">
         <span style="color:red">{{login.errormsg}}</span>
     </div>
-        <input type="checkbox" checked="checked"> Remember me
 
-
-    <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
   </div>
 </form>

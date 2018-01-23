@@ -46,7 +46,6 @@ public class FollowServiceImpl implements FollowService {
         return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList);
     }
 
-    @Override
     public void saveFollows(FollowDto followDto) {
         User user = userRepository.getUserByUsername(followDto.getUserName());
         User following_user = userRepository.getUserByUsername(followDto.getFollowing_userName());
@@ -58,7 +57,6 @@ public class FollowServiceImpl implements FollowService {
         followRepository.save(follow);
     }
 
-    @Override
     public boolean checkFollow(FollowDto followDto) {
         Follow follow =followRepository.checkFollow(followDto.getUserName(),
                                                     followDto.getFollowing_userName());
@@ -68,7 +66,6 @@ public class FollowServiceImpl implements FollowService {
         return false;
     }
 
-    @Override
     public void unfollowUser(FollowDto followDto) {
       Follow follow=followRepository.checkFollow(followDto.getUserName(),
                                      followDto.getFollowing_userName());
