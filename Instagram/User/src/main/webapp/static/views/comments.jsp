@@ -22,9 +22,17 @@
             <button role='button' ng-click="comment.showComments()">
                 <span class='comment'></span>
             </button>
-            <span class='save'></span></a>
-        </div>
+            <button ng-click="comment.showLikeList()">
+                <span class='save'></span></a>
+            </button>
 
+        </div>
+        <div ng-show="comment.showLikes">
+            <h5 style="color: #0089d8">Liked By:</h5>
+            <div ng-repeat="like in comment.likes" >
+                <span style="color: #449d44">{{like.userName}}</span>
+            </div>
+        </div>
         <div ng-repeat="comment in comment.commentList">
             {{comment.username}} : {{comment.comments}}
         </div>

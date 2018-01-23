@@ -9,11 +9,13 @@
         vm.commentList=[];
         vm.showList=false;
         vm.showing = false;
+        vm.showLikes = false;
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
         vm.add = add;
         vm.like = like;
         vm.cancel=cancel;
+        vm.showLikeList = showLikeList;
         vm.imageName = $rootScope.photo;
 
         HttpService.get("/showComments/"+$rootScope.photo).then(function(value){
@@ -73,6 +75,20 @@
                 });
             }
         }
+
+        function showLikeList() {
+            if(vm.showLikes){
+                vm.showLikes = false;
+            }else{
+                HttpService.get("/getLikesList/"+vm.imageName).then(function (value) {
+                    vm.showLikes = true;
+                    vm.likes = value;
+                },function (reason) {
+                    console.log("This occurred:"+reason);
+                });
+            }
+        }
+
         function cancel(){
             $uibModalInstance.dismiss('close');
         }

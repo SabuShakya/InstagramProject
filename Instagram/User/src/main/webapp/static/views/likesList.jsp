@@ -3,10 +3,11 @@
 </div>
 
 <div class="modal-body" id="modal-body">
-    <div ng-repeat="like in likesctrl.likes"></div>
-    <%--<img src="/uploads/+">--%>
-    {{like.username}}
+    <div ng-repeat="like in likesctrl.likes">
+        <%--<img src="/uploads/+">--%>
+        {{like.userName}}
+    </div>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-warning" type="button" ng-click="likesctrl.cancel()">Cancel</button>
+    <button class="btn btn-warning" type="button" ng-click="likesctrl.ok()">OK</button>
 </div>

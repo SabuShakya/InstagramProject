@@ -1,8 +1,8 @@
 (function() {
     angular.module('userModule').controller("MainController", MainController);
-    MainController.$inject= ['HttpService','$localStorage','$rootScope'];
+    MainController.$inject= ['HttpService','$localStorage','$rootScope','$uibModal'];
 
-    function MainController(HttpService,$localStorage,$rootScope) {
+    function MainController(HttpService,$localStorage,$rootScope,$uibModal) {
         var vm = this;
         vm.posts = {};
         vm.message = '';
@@ -11,6 +11,7 @@
         vm.showList = false;
         vm.showing = false;
         vm.noOfLikes = '';
+        $rootScope.imageName = '';
         vm.addComment = addComment;
         vm.showComments = showComments;
         vm.like = like;
