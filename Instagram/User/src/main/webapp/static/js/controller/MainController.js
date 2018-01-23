@@ -57,13 +57,13 @@
             }
         }
         function like(post) {
+            post.username = $localStorage.storedObj.username;
             HttpService.post("/likeAction",post).then(function (value) {
                 vm.noOfLikes = value;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });
         }
-
     }
 })();
 

@@ -33,4 +33,7 @@ public class UserPhotos {
 
     @OneToMany(mappedBy = "userPhotos")
     private List<Comments> comments;
+
+    @OneToMany(mappedBy = "userPhotos")
+    private List<Likes> likes;
 }

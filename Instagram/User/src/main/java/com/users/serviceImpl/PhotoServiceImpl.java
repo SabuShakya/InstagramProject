@@ -39,9 +39,10 @@ public class PhotoServiceImpl implements PhotoService {
         if(!dir.exists()){
             dir.mkdir();
         }
-            byte[] imageDecoded = Base64.getDecoder().decode(userPhotodto.getImage_path());
+        User user = userService.getUser(userPhotodto.getUsername());
+        for (String s:userPhotodto.getImageList()){
+            byte[] imageDecoded = Base64.getDecoder().decode(s);
             String filename = imageDecoded.toString();
-//                    + ".jpg";
             String pathToImage = dir + "/" + filename;
             try {
                 FileOutputStream fout = new FileOutputStream(pathToImage);
@@ -52,14 +53,13 @@ public class PhotoServiceImpl implements PhotoService {
             }catch (IOException e) {
                 e.printStackTrace();
             }
-            User user = userService.getUser(userPhotodto.getUsername());
             UserPhotos userPhotos = new UserPhotos();
             userPhotos.setUser(user);
             userPhotos.setCreated_date(new Date());
             userPhotos.setCaption(userPhotodto.getCaption());
             userPhotos.setImage_path(filename);
-//            userPhotos.setProfileImg(userPhotodto.getProfileImg());
             photoRepository.save(userPhotos);
+        }
     }
 
 //sabu
@@ -80,9 +80,6 @@ public class PhotoServiceImpl implements PhotoService {
         List<UserPhotos> photoList = photoRepository.getUserPhotosByUserUsername(username);
         List<UserPhotodto> userPhotodto = PhotoUtils.convertUserPhotos(photoList);
         return userPhotodto;
-//        ModelMapper modelMapper = new ModelMapper();
-//        java.lang.reflect.Type targetListType = new TypeToken<List<UserPhotodto>>() {}.getType();
-//        List<UserPhotodto> userPhotodtoList = modelMapper.map(photoList, targetListType);
     }
 
     public UserPhotos getPhotos(String image_path) {

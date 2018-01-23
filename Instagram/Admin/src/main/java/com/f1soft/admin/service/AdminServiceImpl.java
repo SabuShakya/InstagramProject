@@ -1,5 +1,6 @@
 package com.f1soft.admin.service;
 
+import com.f1soft.admin.dto.AdminInfoDto;
 import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.model.Admin;
 import com.f1soft.admin.model.TokenAuth;
@@ -43,20 +44,25 @@ public class AdminServiceImpl implements AdminService{
         return adminFromrepo;
     }
 
+    @Override
+    public Admin getAdminId(int id) {
+        return adminRepository.getAdminById(id);
+    }
+
     public void createAdmin(Admin admin)
     {
         admin.setPassword(BCrypt.hashpw(admin.getPassword(),BCrypt.gensalt()));
         adminRepository.save(admin);
     }
 
-    public void updateAdmin(Admin admin) {
+    public void updateAdmin(AdminInfoDto adminInfoDto) {
         System.out.println(System.getProperty("catalina.home"));
         File dir = new File(System.getProperty("catalina.home")+"/uploads");
         System.out.println(dir);
         if(!dir.exists()){
             dir.mkdir();
         }
-        byte[] decodedImage = Base64.getDecoder().decode(admin.getImage());
+        byte[] decodedImage = Base64.getDecoder().decode(adminInfoDto.getImage());
         String filename = decodedImage + ".jpg";
         String pathToImage = dir +"/"+ filename;
         try {
@@ -68,8 +74,11 @@ public class AdminServiceImpl implements AdminService{
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Admin adminfromRepo= adminRepository.getAdminByUserName(admin.getUserName());
+        Admin admin= adminRepository.getAdminById(adminInfoDto.getId());
+        Admin adminfromRepo= new Admin();
+        adminfromRepo.setEmail(admin.getEmail());
+        adminfromRepo.setName(admin.getName());
+        adminfromRepo.setUserName(admin.getUserName());
         adminfromRepo.setImage(filename);
         adminRepository.save(adminfromRepo);
     }

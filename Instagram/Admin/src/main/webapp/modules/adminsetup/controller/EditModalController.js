@@ -35,6 +35,7 @@
             });
             $uibModalInstance.close('save');
         }
+
         function cancel(){
             $uibModalInstance.dismiss('close');
         }

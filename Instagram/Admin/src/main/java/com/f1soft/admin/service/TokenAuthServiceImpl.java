@@ -59,5 +59,4 @@ public class TokenAuthServiceImpl implements TokenAuthService{
         tokenAuth.setAdmin(admin);
         tokenRepository.save(tokenAuth);
     }
-
 }

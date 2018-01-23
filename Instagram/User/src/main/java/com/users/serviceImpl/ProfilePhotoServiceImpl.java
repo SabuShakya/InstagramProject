@@ -7,6 +7,7 @@ import com.users.repository.ProfilePhotoRepository;
 import com.users.service.ProfilePhotoService;
 import com.users.service.UserService;
 import com.users.utils.ProfilePhotoUtils;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,34 +50,25 @@ public class ProfilePhotoServiceImpl implements ProfilePhotoService{
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         User user = userService.getUser(profilePhotoDto.getUsername());
+        updateProfilePhotoStatus(profilePhotoDto.getUsername());
         ProfilePhoto profilePhoto = new ProfilePhoto();
         profilePhoto.setUser(user);
         profilePhoto.setProfile_pic(filename);
+        profilePhoto.setPhotoStatus('Y');
         profilePhotoRepository.save(profilePhoto);
     }
 
-//    public ProfilePhotoDto getProfilePhoto(String username){
-//        ProfilePhoto profilePhoto= profilePhotoRepository.getProfilePhotoByUserUsername(username);
-//        ProfilePhotoDto profilePhotoDto= new ProfilePhotoDto();
-//        profilePhotoDto.setProfile_pic(profilePhoto.getProfile_pic());
-//        profilePhotoDto.setUsername(profilePhoto.getUser().getUsername());
-//       return profilePhotoDto;
-//    }
-
-//    public ProfilePhotoDto getProfilePhoto(String username){
-//        String sql = "Select p from ProfilePhoto p where p.user.username like :username";
-//        ProfilePhoto profilePhoto =em.createQuery(sql,ProfilePhoto.class).setParameter
-//                ("username","%"+username+"%").getSingleResult();
-//        ProfilePhotoDto profilePhotoDto= new ProfilePhotoDto();
-//        profilePhotoDto.setProfile_pic(profilePhoto.getProfile_pic());
-//        profilePhotoDto.setUsername(profilePhoto.getUser().getUsername());
-//        return profilePhotoDto;
-//    }
-
-    public List<ProfilePhotoDto> getProfilePhotos(String username) {
-        List<ProfilePhoto> profilePhotoList = profilePhotoRepository.getProfilePhotoByUserUsername(username);
-        List<ProfilePhotoDto> profilePhotoDtos = ProfilePhotoUtils.convertProfilePhotodto(profilePhotoList);
-        return profilePhotoDtos;
-    }
+     public ProfilePhotoDto updateProfilePhotoStatus(String username) {
+         ProfilePhoto profilePhoto = profilePhotoRepository.getProfilePhotoByUserUsername(username, 'Y');
+         ProfilePhotoDto profilePhotoDto = new ProfilePhotoDto();
+         profilePhotoDto.setProfile_pic(profilePhoto.getProfile_pic());
+         profilePhotoDto.setUsername(profilePhoto.getUser().getUsername());
+         profilePhotoDto.setPhotoStatus('N');
+//         ModelMapper modelMapper = new ModelMapper();
+//         ProfilePhoto profilePhoto1 =modelMapper.map(profilePhotoDto,ProfilePhoto.class);
+//         profilePhotoRepository.save(profilePhoto1);
+         return profilePhotoDto;
+     }
 }

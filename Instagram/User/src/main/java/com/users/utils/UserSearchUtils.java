@@ -14,7 +14,6 @@ public class UserSearchUtils {
             userSearchDto.setFullname(user.getFullName());
             userSearchDto.setUserId(user.getId());
             userSearchDto.setUsername(user.getUsername());
-//            userSearchDto.setImagename();
             userSearchDtoList.add(userSearchDto);
         }
         return userSearchDtoList;

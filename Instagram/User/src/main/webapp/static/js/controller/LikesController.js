@@ -7,6 +7,7 @@
         vm.url="/addLikes";
         vm.likePhoto=likePhoto;
         vm.cancel=cancel;
+        vm.showLikes= showLikes;
 
         function likePhoto(){
             vm.obj={
@@ -23,12 +24,15 @@
             $uibModalInstance.close('save');
         }
 
-        HttpService.get("/showLikes/"+$rootScope.photo).then(function(value){
-            vm.LikesList = value;
-            vm.showList = false;
-        },function (reason) {
-            console.log("Error occured"+reason);
-        });
+        function showLikes(){
+            HttpService.get("/showLikes/"+$rootScope.photo).then(function(value){
+                vm.LikesList = value;
+                vm.showList = false;
+            },function (reason) {
+                console.log("Error occured"+reason);
+            });
+        }
+        $interval(vm.showLikes, 1000);
 
         function cancel(){
             $uibModalInstance.dismiss('close');

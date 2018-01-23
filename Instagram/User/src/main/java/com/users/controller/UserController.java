@@ -87,21 +87,11 @@ public class UserController {
         return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
     }
 
-    //smriti
-//    @GetMapping("/ProfilePhotos/{username}")
-//    public ResponseEntity<ProfilePhotoDto> profilephoto(@PathVariable("username")String username){
-//       ProfilePhotoDto profilePhotoDto= profilePhotoService.getProfilePhotos(username);
-//        return new ResponseEntity<ProfilePhotoDto>(profilePhotoDto,HttpStatus.OK);
-//    }
     @GetMapping("/ProfilePhotos/{username}")
-    public ResponseEntity<List<ProfilePhotoDto>> profilephotoList(@PathVariable("username") String username){
-        List<ProfilePhotoDto> photoList= profilePhotoService.getProfilePhotos(username);
-        if(photoList != null && !photoList.isEmpty()){
-            return new ResponseEntity<List<ProfilePhotoDto>>(photoList,HttpStatus.OK);
-        }
-        return new ResponseEntity<List<ProfilePhotoDto>>(photoList,HttpStatus.NOT_FOUND);
+    public ResponseEntity<ProfilePhotoDto> profilephotoList(@PathVariable("username") String username){
+        ProfilePhotoDto profilePhotoDto =profilePhotoService.updateProfilePhotoStatus(username);
+        return new ResponseEntity<ProfilePhotoDto>(profilePhotoDto,HttpStatus.OK);
     }
-
 
     @GetMapping("/getPosts/{userName}")
     public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username){
@@ -160,7 +150,6 @@ public class UserController {
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
-//sabu
     @PostMapping("/checkFollow")
     public ResponseEntity<Boolean> checkFollow(@RequestBody FollowDto followDto){
         boolean following = followService.checkFollow(followDto);
@@ -170,20 +159,18 @@ public class UserController {
         return new ResponseEntity<Boolean>(true,HttpStatus.NOT_FOUND);
     }
 
-//sabu
     @PostMapping("/unfollowUser")
     public ResponseEntity<Boolean> unfollow(@RequestBody FollowDto followDto){
         followService.unfollowUser(followDto);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
-//sabu
+
     @PostMapping("/likeAction")
     public ResponseEntity<Integer> like(@RequestBody Commentsdto commentsdto ){
         int likesCount=likesService.saveLike(commentsdto);
         return new ResponseEntity<Integer>(likesCount,HttpStatus.OK);
     }
 
-//    sabu
     @GetMapping("/followsCount/{username}")
     public ResponseEntity<FollowCountDto> getFollowCount(@PathVariable("username")String username){
         FollowCountDto followCountDto = followService.getFollowCount(username);

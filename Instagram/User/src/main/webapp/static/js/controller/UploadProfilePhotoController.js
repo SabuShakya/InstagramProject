@@ -20,13 +20,13 @@
                 function (value) {
                     $rootScope.message = "Picture uploaded successfully";
                     $rootScope.saved = true;
+                    $uibModalInstance.close('save');
                 },
                 function (reason) {
                     $rootScope.message = "Error occured";
                     $rootScope.saved = true;
                 }
             );
-            $uibModalInstance.close('save');
         }
 
         function close() {

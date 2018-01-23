@@ -84,9 +84,9 @@ i::after{
 
 .stat{
     display: inline-block;
-    width: 24%;
+    width: 30%;
     text-align: center;
-    border-right: 1px background solid;
+    /*border-right: 1px background solid;*/
 }
 
 .text{

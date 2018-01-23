@@ -8,4 +8,5 @@ import lombok.Setter;
 public class ProfilePhotoDto {
     private String profile_pic;
     private String username;
+    private Character photoStatus;
 }

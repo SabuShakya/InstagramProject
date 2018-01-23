@@ -17,10 +17,10 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter{
         configurer.enable();
     }
 
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry
-                .addResourceHandler("/uploads/**")
-                .addResourceLocations("file:/home/sabu/Downloads/apache-tomcat-8.5.24/uploads/");
-    }
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry
+//                .addResourceHandler("/uploads/**")
+//                .addResourceLocations("file:/home/sabu/Downloads/apache-tomcat-8.5.24/uploads/");
+//    }
 
 }

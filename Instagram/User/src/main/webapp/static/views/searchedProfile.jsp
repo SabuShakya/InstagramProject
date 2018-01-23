@@ -20,12 +20,8 @@
     </div>
     <div class="stats-container">
         <div class="stat">
-            <div class="number">3641</div>
-            <div class="text">Likes</div>
-        </div>
-        <div class="stat">
             <div class="number">{{searched.followers}}</div>
-            <div class="text">Follower</div>
+            <div class="text">Followers</div>
         </div>
         <div class="stat active">
             <div class="number">{{searched.totalPictures}}</div>
@@ -33,7 +29,7 @@
         </div>
         <div class="stat">
             <div class="number">{{searched.following}}</div>
-            <div class="text">following</div>
+            <div class="text">Following</div>
         </div>
     </div>
 </div>

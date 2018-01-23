@@ -9,10 +9,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ProfilePhotoRepository extends JpaRepository<ProfilePhoto,Long> {
-//    @Query("SELECT p from ProfilePhoto p where p.user.username=:username")
-//    public ProfilePhoto getProfilePhotoByUserUsername(@Param("username") String username);
-
-    public List<ProfilePhoto> getProfilePhotoByUserUsername(String username);
+    @Query("SELECT p from ProfilePhoto p where p.user.username=:username and p.photoStatus=:photoStatus" )
+    public ProfilePhoto getProfilePhotoByUserUsername(@Param("username") String username,
+                                                      @Param("photoStatus") Character photoStatus);
 }
 
 
