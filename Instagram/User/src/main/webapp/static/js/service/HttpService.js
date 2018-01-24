@@ -5,18 +5,14 @@ angular.module('userModule').factory('HttpService', HttpService);
 
         var vm= this;
         vm. REST_SERVICE_URI= "http://localhost:8080";
-
         return{
             get: get,
-            post: post,
-            postLogin:postLogin,
-            postPhotos: postPhotos,
-        }
+            post: post
+        };
 
         function get(url) {
             var defered = $q.defer();
-            $http.get(vm.REST_SERVICE_URI+url)
-                .then(
+            $http.get(vm.REST_SERVICE_URI+url).then(
                     function (response) {
                         defered.resolve(response.data);
                     },
@@ -30,8 +26,7 @@ angular.module('userModule').factory('HttpService', HttpService);
 
         function post(url,newUser) {
             var defered = $q.defer();
-            $http.post(vm.REST_SERVICE_URI+url,newUser)
-                .then(
+            $http.post(vm.REST_SERVICE_URI+url,newUser).then(
                     function (response) {
                         defered.resolve(response.data);
                     },
@@ -42,33 +37,5 @@ angular.module('userModule').factory('HttpService', HttpService);
                 );
             return defered.promise;
         }
-
-        function postLogin(url,user) {
-            var defered = $q.defer();
-            $http.post(vm.REST_SERVICE_URI+url,user)
-                .then(
-                    function (response) {
-                        defered.resolve(response.data);
-                    },
-                    function (reason) {
-                        defered.reject(reason);
-                    }
-                );
-            return defered.promise;
-        }
-
-        function postPhotos(url, imageName) {
-            var defered = $q.defer();
-            $http.post(vm.REST_SERVICE_URI +url, imageName)
-                .then(
-                    function (value) {
-                        defered.resolve(value.data);
-                    },
-                    function(error){
-                        defered.reject(error);
-                    }
-                );
-            return defered.promise;
-        }
     }
-})()
+})();

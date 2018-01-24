@@ -4,10 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,31 +14,41 @@ import java.io.Serializable;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-    @Column(name="firstName", nullable = false)
-    private String firstName;
+    @Column(name="fullName", nullable = false)
+    private String fullName;
 
-    @Column(name="lastName", nullable = false)
-    private String lastName;
-
-    @Column(name="uname", nullable = false)
-    private String uname;
+    @Column(name="username", nullable = false, unique = true)
+    private String username;
 
     @Column(name="email", nullable = false)
-    private String email;
+    public String email;
 
     @Column(name="password", nullable = false)
     private String password;
 
-//    @Column(name = "enabled")
-//    private boolean enabled;
-//
-//    @Column(name ="confirmation_token")
-//    private String confirmationToken;
+    @OneToMany(mappedBy = "user")
+    private List<UserPhotos> userPhotos;
 
-    @Column(name = "token_no" ,unique = true)
-    private String tokenNo;
+    @OneToOne(mappedBy = "user")
+    private UserToken userTokenAuth;
+
+    @OneToMany(mappedBy = "user")
+    private List<Follow> followingUser;
+
+    @OneToMany(mappedBy = "followedUser")
+    private List<Follow> followedUser;
+
+    @OneToMany(mappedBy = "user")
+    private List<Comments> comments;
+
+    @OneToOne(mappedBy = "user")
+    private Likes likes;
+
+    @OneToMany(mappedBy = "user")
+    private List<ProfilePhoto> profilePhotos;
 
 }
+

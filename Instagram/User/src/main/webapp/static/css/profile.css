@@ -1,0 +1,121 @@
+body {
+    font-family: 'Roboto Condensed';
+}
+
+a {
+    color: black;
+}
+
+.icon::after {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-size: 1.5em;
+    color: white;
+}
+
+.icon.burger::after {
+    content: '\f0c9';
+    float: left;
+}
+
+.icon.edit::after {
+    content: '\f040';
+    float: right;
+}
+
+.icon.search::after {
+    content: '\f002';
+}
+
+.icon.grid::after {
+    content: '\f00a';
+}
+
+.icon.list::after {
+    content: '\f03a';
+}
+
+header {
+    background: url(https://unsplash.it/1080/720?image=601) no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 230px;
+    margin-bottom: 40px;
+}
+
+.nav-bar {
+    padding: 1.5em 0.5em 0.5em;
+    color: white;
+    text-align: center;
+}
+
+.name {
+    font-size: 1.2em;
+}
+
+.profile-pic-container {
+    bottom: -10px;
+    left: calc(50% - 90px);
+    position: absolute;
+}
+
+i::after{
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.main{
+}
+
+.description{
+    padding: 0.5em 2em;
+    text-align: center;
+    font-size: 40px;
+}
+
+.stats-container{
+    padding-bottom: 0.5em;
+    border-bottom: 1px background solid;
+}
+
+.stat{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    /*border-right: 1px background solid;*/
+}
+
+.text{
+    color: grey;
+    font-weight: 100;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.view-options{
+    border-bottom: 1px background solid;
+}
+
+.view-option {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    border-left: 1px background solid;
+    margin: 0.8em 0;
+}
+
+.pictures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.picture{
+    width:33%;
+    height: 33%;
+    margin-bottom: 2px;
+}

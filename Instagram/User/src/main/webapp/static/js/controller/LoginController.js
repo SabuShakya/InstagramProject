@@ -1,33 +1,36 @@
 (function () {
     angular.module('userModule').controller('LoginController', LoginController);
-    LoginController.$inject=['$location','HttpService'];
+    LoginController.$inject=['$location','HttpService','$localStorage'];
 
-    function LoginController($location, HttpService) {
+    function LoginController($location, HttpService, $localStorage) {
         var vm= this;
-        vm.uname = '';
-        vm.email = '';
+        vm.username = '';
         vm.password = '';
-        vm.error_msg = '';
-        vm.url = "/login";
+        vm.errormsg = '';
         vm.valid= true;
+        vm.booleanValue = true;
 
+        vm.url = "/login";
         vm.loginUser = loginUser;
 
         function loginUser() {
             vm.user = {
-                uname: vm.uname,
-                email: vm.email,
-                password: vm.password
+                'username': vm.username,
+                'password': vm.password
             };
-            HttpService.postLogin(vm.url, vm.user).then(
-                function(value){
-                    console.log("success");
-                    $location.path("/main");
+
+            HttpService.post(vm.url, vm.user)
+                .then(function(response){
+                    $localStorage.storedObj={
+                        username:response.username,
+                        tokenNo :response.tokenNo,
+                        password:response.password
+                    };
+                    $location.path("/profile");
                 },
                 function(error){
                     vm.valid=false;
-                    vm.error_msg = "Incorrect username or password";
-                    console.log("error occurred");
+                    vm.errormsg = "Incorrect username or password";
                 }
             );
         }
