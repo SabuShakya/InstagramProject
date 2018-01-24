@@ -1,5 +1,5 @@
 (function () {
-    angular.module("userModule").controller("LogOutController",LogOutController);
+    angular.module("adminModule").controller("LogOutController",LogOutController);
 
     LogOutController.$inject = ['HttpService','$localStorage','$location'];
 

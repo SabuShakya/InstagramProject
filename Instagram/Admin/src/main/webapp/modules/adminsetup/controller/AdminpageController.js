@@ -24,6 +24,7 @@
         vm.openUserLog = openUserLog;
         vm.logout = logout;
         vm.openLoginModal = openLoginModal;
+        vm.openPhotoModal = openPhotoModal;
         vm.refreshList = refreshList;
 
         HttpService.get("/getAdminId/" + $localStorage.adminObj.tokenNo + "/"
@@ -103,6 +104,18 @@
                 controllerAs: 'modalController',
                 size: 'lg'
             });
+        }
+        function openPhotoModal(admin) {
+            $rootScope.clickedAdmin = admin;
+            vm.modalInstance = $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/modules/views/adminPhotoModal.jsp',
+                controller: 'EditModalController',
+                controllerAs: 'modalController',
+                size: 'lg'
+            });
+
         }
     }
 })();

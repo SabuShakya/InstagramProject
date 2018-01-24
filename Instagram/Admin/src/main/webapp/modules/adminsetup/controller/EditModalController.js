@@ -6,18 +6,32 @@
         var vm =  this;
         vm.admin = $rootScope.clickedAdmin;
         vm.url = "/update";
-        // vm.imageName = [];
+        vm.imageName = $rootScope.clickedAdmin.image;
         vm.cancel = cancel;
         vm.update = update;
         vm.deleteAdmin = deleteAdmin;
+        vm.updatePhoto =updatePhoto;
         vm.ok = ok;
 
         function update() {
-            $rootScope.clickedAdmin.image = vm.imageName.base64;
+            $rootScope.clickedAdmin.image = null;
             HttpService.post("/update",vm.admin).then(
                 function (value) {
                    $rootScope.message = "Updated successfully";
                    $rootScope.saved = true;
+                },function (reason) {
+                    $rootScope.message = "Error Occurred";
+                    $rootScope.saved = true;
+                });
+            $uibModalInstance.close('save');
+        }
+
+        function updatePhoto() {
+            $rootScope.clickedAdmin.image = vm.imageName.base64;
+            HttpService.post("/update",vm.admin).then(
+                function (value) {
+                    $rootScope.message = "Updated successfully";
+                    $rootScope.saved = true;
                 },function (reason) {
                     $rootScope.message = "Error Occurred";
                     $rootScope.saved = true;

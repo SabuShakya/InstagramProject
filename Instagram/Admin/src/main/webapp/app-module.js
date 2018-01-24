@@ -5,15 +5,15 @@
             controller:'LoginController as login',
             templateUrl:'/modules/views/loginPage.jsp'
             })
-            .when("/admin/signup",{
+            .when("/signup",{
                 controller:'SignupController as signup',
                 templateUrl:'/modules/views/signupPage.jsp'
             })
-            .when("/admin/adminPage",{
+            .when("/adminPage",{
                 controller:"AdminpageController as admin",
                 templateUrl:'/modules/views/adminPage.jsp'
             })
-            .when("/admin/addAdmin",{
+            .when("/addAdmin",{
                 controller:"NewAdminController as newadmin",
                 templateUrl:'/modules/views/addNewAdmin.jsp'
             })

@@ -6,10 +6,8 @@
 
 <div class="modal-body" id="modal-body">
     <form name="myForm" class="form-horizontal" novalidate>
-        <input type='file' ng-model='modalController.imageName' base-sixty-four-input>
-        <img src="data:image/jpeg;base64,{{modalController.imageName.base64}}" width="50%" height="50%">
+        <img src="uploads/{{clickedAdmin.image}}" width="50%" height="50%" />
         <div class="form-group">
-
             <label class="control-label col-sm-2" for="name">Name:</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" ng-model="clickedAdmin.name"
