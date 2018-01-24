@@ -1,7 +1,7 @@
 (function () {
     angular.module('adminModule',['ngRoute','ngAnimate','ngTouch','ui.bootstrap','naif.base64','ngStorage']);
-    angular.module('adminModule').config(['$routeProvider',function ($routeProvider) {
-        $routeProvider.when("/admin/login",{
+    angular.module('adminModule').config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
+        $routeProvider.when("/login",{
             controller:'LoginController as login',
             templateUrl:'/modules/views/loginPage.jsp'
             })
@@ -27,5 +27,9 @@
             .otherwise({
                 redirectTo:'/login'
             })
+        // $locationProvider.html5Mode({
+        //     enabled: true,
+        //     requireBase: false
+        // });
     }]);
 })();

@@ -1,7 +1,7 @@
 (function(){
 angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap', 'ngStorage']);
 
-angular.module('userModule').config(['$routeProvider',function ($routeProvider) {
+angular.module('userModule').config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
     $routeProvider
         .when("/login",{
             templateUrl:"/static/views/login.jsp",
@@ -38,5 +38,9 @@ angular.module('userModule').config(['$routeProvider',function ($routeProvider) 
         .otherwise({
             redirectTo:'/login'
         });
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        })
 }]);
 })();
