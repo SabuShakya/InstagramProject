@@ -4,8 +4,8 @@
 <div class="modal-body" id="modal-body">
 
 <form>
-    <input type='file' ng-model='img.imageName' base-sixty-four-input>
-    <br>
+    <%--<input type='file' ng-model='img.imageName' base-sixty-four-input>--%>
+    <%--<br>--%>
     <input type = "text" name="caption" ng-model ="img.caption" placeholder="Write a caption...">
     <input type="file" ng-model="img.listOfImages" name="files" multiple accept="image/*, .zip"
            maxsize="5000" required base-sixty-four-input>

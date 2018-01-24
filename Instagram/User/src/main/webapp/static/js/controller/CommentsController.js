@@ -23,7 +23,6 @@
         vm.showLikeList = showLikeList;
         vm.showComments=showComments;
 
-
         showComments();
         vm.imageName = $rootScope.photo;
 
@@ -113,7 +112,7 @@
                 $rootScope.saved = true;
             });
         }
-        $interval(vm.openDeleteModal,1000);
+        // $interval(vm.openDeleteModal,1000);
 
         function openEditModal(comment) {
             $rootScope.clickedComment = comment;
