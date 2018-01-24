@@ -12,7 +12,7 @@ public interface AdminService {
     public Admin getAdminId(int id);
     public Admin getAdmin(String userName);
     public void createAdmin(Admin admin);
-    public void updateAdmin(AdminInfoDto adminInfoDto);
+    public void updateAdmin(Admin admin);
     public List<Admin> getAllAdmins();
     public void deleteAdmin(Admin admin);
     public boolean loginAdmin(AdminLoginDto adminLoginDto);
