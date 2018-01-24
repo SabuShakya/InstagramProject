@@ -38,9 +38,9 @@ angular.module('userModule').config(['$routeProvider','$locationProvider',functi
         .otherwise({
             redirectTo:'/login'
         });
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        })
+        // $locationProvider.html5Mode({
+        //     enabled: true,
+        //     requireBase: false
+        // })
 }]);
 })();

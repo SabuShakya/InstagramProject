@@ -33,23 +33,15 @@
                 <span style="color: #449d44">{{like.userName}}</span>
             </div>
         </div>
-        <div ng-repeat="comment in comment.commentList">
-            {{comment.username}} : {{comment.comments}}
-        </div>
-        <div class='footer'>
-            <div class='react'>
-                <button ng-click="comment.like()">
-                <span class='love'></span></button>
-                <span class='comment'></span></a>
-                <span class='save'></span></a>
-            </div>
-
-            <div ng-repeat="com in comment.commentList">
-                <td> {{com.username}} : {{com.comments}} </td>
+        <div ng-show="comment.showList">
+            <div ng-repeat="commen in comment.commentList">
+                {{commen.username}} : {{commen.comments}}
                 <br>
-                <button type="button" class="btn btn-danger" ng-click="comment.openDeleteModal(com)"> Delete</button>
-                <button type="button" class="btn btn-success" ng-click="comment.openEditModal(com)">Edit</button>
+                <button type="button" class="btn btn-danger" ng-click="comment.openDeleteModal(commen)"> Delete
+                </button>
+                <button type="button" class="btn btn-success" ng-click="comment.openEditModal(commen)">Edit</button>
             </div>
+        </div>
 
             <div class='comment-section'>
                 <input type='text' id='cmnt' ng-model="comment.comments" placeholder='Add a comment...'>
@@ -57,10 +49,8 @@
             </div>
 
             <div ng-hide ="comment.showCommentList">
-                <div class="alert alert-success" ng-show="saved">
-                    <input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>
-                    <button ng-click="comment.edit()">Edit</button>
-                </div>
+                <input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>
+                <button ng-click="comment.edit()">Edit</button>
             </div>
     </div>
 </section>

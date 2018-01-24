@@ -6,8 +6,6 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.ServletRegistration;
 
-import static com.sun.prism.shape.ShapeRep.InvalidationType.LOCATION;
-import static sun.font.CreatedFontTracker.MAX_FILE_SIZE;
 
 @Configuration
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
