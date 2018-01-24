@@ -177,5 +177,17 @@ public class UserController {
         followCountDto.setTotalPictures(photoService.getPhotoCount(username));
         return new ResponseEntity<FollowCountDto>(followCountDto,HttpStatus.OK);
     }
+//sabu
+    @GetMapping("/likesCount/{imageName}")
+    public ResponseEntity<Integer> getLikesCount(@PathVariable("imageName")String imageName){
+        int likesCount = likesService.getLikesCountForImage(imageName);
+        return new ResponseEntity<Integer>(likesCount,HttpStatus.OK);
+    }
+//sabu
+    @GetMapping("/getLikesList/{imageName}")
+    public ResponseEntity<List<Likesdto>> getLikesList(@PathVariable("imageName")String imageName){
+        List<Likesdto> likesdtoList = likesService.getLikesList(imageName);
+        return new ResponseEntity<List<Likesdto>>(likesdtoList,HttpStatus.OK);
+    }
 
 }

@@ -6,6 +6,9 @@ import com.users.model.Likes;
 import com.users.model.User;
 import com.users.model.UserPhotos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LikesUtil {
     public static Likes generateLikes(User user, UserPhotos userPhotos){
         Likes likes = new Likes();
@@ -13,5 +16,15 @@ public class LikesUtil {
         likes.setUserPhotos(userPhotos);
         likes.setLiked(true);
         return likes;
+    }
+    public static List<Likesdto> convertLikesToLikesDto(List<Likes> likesList){
+        List<Likesdto> likesdtoList = new ArrayList<Likesdto>();
+        for (Likes likes:likesList){
+            Likesdto likesdto =  new Likesdto();
+//            likesdto.setImageName(likes.getUser().getProfilePicture);
+            likesdto.setUserName(likes.getUser().getUsername());
+            likesdtoList.add(likesdto);
+        }
+        return likesdtoList;
     }
 }

@@ -1,18 +1,40 @@
 <div class="modal-header">
-    <h1 class="modal-title" id="modal-title">{{comment.userDisplayName}}</h1>
+<h1 class="modal-title" id="modal-title">{{comment.userDisplayName}}</h1>
 </div>
 
 <div class="modal-body" id="modal-body">
-    <section>
-        <div align="center">
-            <img src="uploads/{{photo}}" width="100%">
-        </div>
+<section>
+    <div align="center">
+        <img src="uploads/{{photo}}" width="100%">
+    </div>
 
-        <div class='caption'>
-            </a><span>{{caption}}</span>
-        </div>
-        <br>
+    <div class='caption'>
+        </a><span>{{caption}}</span>
+    </div>
+    <br>
 
+    <div class='footer'>
+        <div class='react'>
+            {{comment.likeCount}}
+            <button ng-click="comment.like()">
+                <span class='love'></span>
+            </button>
+            <button role='button' ng-click="comment.showComments()">
+                <span class='comment'></span>
+            </button>
+            <button ng-click="comment.showLikeList()">
+                <span class='save'></span></a>
+            </button>
+        </div>
+        <div ng-show="comment.showLikes">
+            <h5 style="color: #0089d8">Liked By:</h5>
+            <div ng-repeat="like in comment.likes" >
+                <span style="color: #449d44">{{like.userName}}</span>
+            </div>
+        </div>
+        <div ng-repeat="comment in comment.commentList">
+            {{comment.username}} : {{comment.comments}}
+        </div>
         <div class='footer'>
             <div class='react'>
                 <button ng-click="comment.like()">
@@ -40,8 +62,8 @@
                 </div>
             </div>
 
-        </div>
-    </section>
+    </div>
+</section>
 </div>
 
 <div class="modal-footer">
