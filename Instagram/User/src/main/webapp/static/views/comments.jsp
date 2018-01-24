@@ -61,7 +61,6 @@
                     <button ng-click="comment.edit()">Edit</button>
                 </div>
             </div>
-
     </div>
 </section>
 </div>

@@ -22,7 +22,7 @@
                 <span style="color:red">{{login.errormsg}}</span>
         </div>
 
-        <a href="#!/signup">Signup </a>
+        <a href="/signup">Signup </a>
     </form>
 </div>
 </body>

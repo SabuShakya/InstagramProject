@@ -17,10 +17,6 @@
                 controller:"NewAdminController as newadmin",
                 templateUrl:'/modules/views/addNewAdmin.jsp'
             })
-            // .when("/admin/adminDashboard",{
-            //     controller:"AdminPageController as admin",
-            //     templateUrl:'/modules/views/DashBoard.html'
-            // })
             .when("/logout",{
                 controller:"LogOutController as logout"
             })
