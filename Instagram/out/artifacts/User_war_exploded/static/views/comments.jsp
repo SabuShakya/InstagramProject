@@ -27,17 +27,19 @@
             </button>
 
         </div>
+
         <div ng-show="comment.showLikes">
             <h5 style="color: #0089d8">Liked By:</h5>
             <div ng-repeat="like in comment.likes" >
                 <span style="color: #449d44">{{like.userName}}</span>
             </div>
         </div>
+
         <div ng-repeat="comment in comment.commentList">
             {{comment.username}} : {{comment.comments}}
             <br>
             <button type="button" class="btn btn-danger" ng-click="comment.openDeleteModal(com)"> Delete</button>
-            <button type="button" class="btn btn-success" ng-click="comment.openEditModal(com)">Edit</button>
+            <button type="button" ng-click="comment.openEditModal(com)">Edit</button>
         </div>
         </div>
         <%--<div class='footer'>--%>

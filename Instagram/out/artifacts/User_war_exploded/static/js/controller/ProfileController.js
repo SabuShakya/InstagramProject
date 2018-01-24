@@ -26,8 +26,8 @@
         vm.profilePhoto=profilePhoto;
 
         allPhotos();
-        followCount();
-        profilePhoto();
+        // followCount();
+        // profilePhoto();
 
         function followCount(){
             HttpService.get("/followsCount/"+$localStorage.storedObj.username).then(function (value) {
@@ -38,7 +38,7 @@
                 console.log(reason);
             });
         }
-        $interval(vm.followCount,1000);
+        // $interval(vm.followCount,1000);
 
         function allPhotos(){
             HttpService.get("/allPhotos/" + $localStorage.storedObj.username).then(function (value) {

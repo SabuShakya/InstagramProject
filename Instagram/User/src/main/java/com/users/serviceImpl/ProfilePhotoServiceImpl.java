@@ -52,7 +52,7 @@ public class ProfilePhotoServiceImpl implements ProfilePhotoService{
         }
 
         User user = userService.getUser(profilePhotoDto.getUsername());
-        updateProfilePhotoStatus(profilePhotoDto.getUsername());
+//        updateProfilePhotoStatus(profilePhotoDto.getUsername());
         ProfilePhoto profilePhoto = new ProfilePhoto();
         profilePhoto.setUser(user);
         profilePhoto.setProfile_pic(filename);

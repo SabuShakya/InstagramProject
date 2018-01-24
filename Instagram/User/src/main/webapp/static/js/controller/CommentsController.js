@@ -1,9 +1,9 @@
 (function(){
     angular.module('userModule').controller("CommentsController", CommentsController);
 
-    CommentsController.$inject =['HttpService','$uibModalInstance','$rootScope','$localStorage','$location','$interval'];
+    CommentsController.$inject =['HttpService','$uibModalInstance','$rootScope','$localStorage','$location'];
 
-    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location, $interval) {
+    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location) {
         var vm =this;
         vm.comments = '';
         vm.commentList=[];
@@ -12,6 +12,7 @@
         vm.showLikes = false;
         vm.showCommentList= true;
         $rootScope.saved= false;
+
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
         vm.add = add;
@@ -23,7 +24,7 @@
         vm.showLikeList = showLikeList;
         vm.showComments=showComments;
 
-        showComments();
+        // showComments();
         vm.imageName = $rootScope.photo;
 
         HttpService.get("/showComments/"+$rootScope.photo).then(function(value){
@@ -39,7 +40,7 @@
             console.log("This error occurred:"+reason);
         });
 
-        $rootScope.clickedComment ='';
+        // $rootScope.clickedComment ='';
         function add() {
             vm.obj={
                 'comments': vm.comments,
@@ -49,8 +50,8 @@
             HttpService.post(vm.url,vm.obj).then(
                 function (value) {
                     console.log("success");
-                    vm.comments = '';
-                    showComments();
+                    // vm.comments = '';
+                    // showComments();
                 },function (reason) {
                 });
         }
@@ -117,11 +118,11 @@
         function openEditModal(comment) {
             $rootScope.clickedComment = comment;
             vm.showCommentList = false;
-            $rootScope.saved = true;
+            // $rootScope.saved = true;
         }
 
         function edit(){
-            HttpService.post("/editComment",  $rootScope.clickedComment).then(function (value) {
+            HttpService.post("/editComment", $rootScope.clickedComment).then(function (value) {
                 console.log("sucesss");
                 $rootScope.saved = true;
                 vm.showCommentList=true;
