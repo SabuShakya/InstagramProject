@@ -19,13 +19,14 @@
             <button ng-click="comment.like()">
                 <span class='love'></span>
             </button>
+
             <button role='button' ng-click="comment.showComments()">
                 <span class='comment'></span>
             </button>
+
             <button ng-click="comment.showLikeList()">
                 <span class='save'></span></a>
             </button>
-
         </div>
 
         <div ng-show="comment.showLikes">
@@ -39,8 +40,7 @@
             {{comment.username}} : {{comment.comments}}
             <br>
             <button type="button" class="btn btn-danger" ng-click="comment.openDeleteModal(com)"> Delete</button>
-            <button type="button" ng-click="comment.openEditModal(com)">Edit</button>
-        </div>
+            <button type="button" ng-click="comment.openEditModal(comment)">Edit</button>
         </div>
         <%--<div class='footer'>--%>
             <%--<div class='react'>--%>

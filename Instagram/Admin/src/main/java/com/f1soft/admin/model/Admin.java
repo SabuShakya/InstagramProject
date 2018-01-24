@@ -35,6 +35,6 @@ public class Admin implements Serializable{
     @Column(name = "image")
     private String image;
 
-    @OneToOne(mappedBy = "admin",fetch = FetchType.LAZY,cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "admin",fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
     private TokenAuth tokenAuth;
 }

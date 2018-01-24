@@ -1,5 +1,6 @@
 package com.f1soft.admin.service;
 
+import antlr.collections.List;
 import com.f1soft.admin.dto.AdminInfoDto;
 import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.model.Admin;
@@ -17,7 +18,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Base64;
-import java.util.List;
+
 
 @Service
 @Transactional("transactionManager")
@@ -44,7 +45,6 @@ public class AdminServiceImpl implements AdminService{
         return adminFromrepo;
     }
 
-    @Override
     public Admin getAdminId(int id) {
         return adminRepository.getAdminById(id);
     }
@@ -56,35 +56,40 @@ public class AdminServiceImpl implements AdminService{
     }
 
     public void updateAdmin(AdminInfoDto adminInfoDto) {
-        System.out.println(System.getProperty("catalina.home"));
-        File dir = new File(System.getProperty("catalina.home")+"/uploads");
-        System.out.println(dir);
-        if(!dir.exists()){
-            dir.mkdir();
-        }
-        byte[] decodedImage = Base64.getDecoder().decode(adminInfoDto.getImage());
-        String filename = decodedImage + ".jpg";
-        String pathToImage = dir +"/"+ filename;
-        try {
-            FileOutputStream fout = new FileOutputStream(pathToImage);
-            fout.write(decodedImage);
-            fout.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Admin admin= adminRepository.getAdminById(adminInfoDto.getId());
-        Admin adminfromRepo= new Admin();
-        adminfromRepo.setEmail(admin.getEmail());
-        adminfromRepo.setName(admin.getName());
-        adminfromRepo.setUserName(admin.getUserName());
-        adminfromRepo.setImage(filename);
+            if(adminInfoDto.getImage()!=null) {
+                File dir = new File(System.getProperty("catalina.home") + "/uploads");
+                System.out.println(dir);
+                if (!dir.exists()) {
+                    dir.mkdir();
+                }
+                byte[] decodedImage = Base64.getDecoder().decode(adminInfoDto.getImage());
+                String filename = decodedImage.toString();
+                String pathToImage = dir + "/" + filename;
+                try {
+                    FileOutputStream fout = new FileOutputStream(pathToImage);
+                    fout.write(decodedImage);
+                    fout.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Admin adminfromRepo = adminRepository.getAdminById(adminInfoDto.getId());
+                adminfromRepo.setEmail(adminInfoDto.getEmail());
+                adminfromRepo.setName(adminInfoDto.getName());
+                adminfromRepo.setUserName(adminInfoDto.getUserName());
+                adminfromRepo.setImage(filename);
+                adminRepository.save(adminfromRepo);
+            }
+        Admin adminfromRepo = adminRepository.getAdminById(adminInfoDto.getId());
+        adminfromRepo.setEmail(adminInfoDto.getEmail());
+        adminfromRepo.setName(adminInfoDto.getName());
+        adminfromRepo.setUserName(adminInfoDto.getUserName());
         adminRepository.save(adminfromRepo);
     }
 
-    public List<Admin> getAllAdmins() {
-        List<Admin> list = adminRepository.findAll();
+    public java.util.List<Admin> getAllAdmins() {
+        java.util.List<Admin> list = adminRepository.findAll();
         return list;
     }
 

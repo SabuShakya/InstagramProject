@@ -7,13 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Admin" />
+        <module name="admin" />
+        <module name="user" />
         <module name="User" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="Admin" target="1.8" />
-      <module name="Instagram" target="1.8" />
-      <module name="User" target="1.8" />
+      <module name="admin" target="1.5" />
+      <module name="instagram" target="1.5" />
+      <module name="user" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
