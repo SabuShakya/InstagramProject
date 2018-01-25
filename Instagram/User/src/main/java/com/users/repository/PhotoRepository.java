@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Date;
 import java.util.List;
 
 public interface PhotoRepository extends JpaRepository<UserPhotos, Long> {
@@ -15,4 +16,7 @@ public interface PhotoRepository extends JpaRepository<UserPhotos, Long> {
     public List<UserPhotos> getUserPhotosByUser_Id(long id);
     @Query("SELECT u from UserPhotos u where u.image_path=:image_path")
     public UserPhotos getUserPhotosByImage_path(@Param("image_path")String image_path);
+
+    @Query("select u from UserPhotos u where u.created_date =:date")
+    public List<UserPhotos> getUploadsPerDay(Date date);
 }

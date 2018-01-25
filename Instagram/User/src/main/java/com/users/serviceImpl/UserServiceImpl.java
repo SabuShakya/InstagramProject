@@ -2,7 +2,9 @@ package com.users.serviceImpl;
 
 import com.users.dto.UserSearchDto;
 import com.users.dto.Userdto;
+import com.users.model.ProfilePhoto;
 import com.users.model.User;
+import com.users.repository.ProfilePhotoRepository;
 import com.users.repository.UserRepository;
 import com.users.service.EmailService;
 import com.users.service.UserService;
@@ -18,9 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 @Transactional("transactionManager")
@@ -28,6 +28,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private UserRepository userRepository;
+
+    @Resource
+    private ProfilePhotoRepository profilePhotoRepository;
 
     @Autowired
     private UserTokenService userTokenService;
@@ -46,6 +49,15 @@ public class UserServiceImpl implements UserService {
         emailService.sendEmail(user);
         user.setPassword(BCrypt.hashpw(password,BCrypt.gensalt()));
         userRepository.save(user);
+        setDefaultProfilePhoto(user);
+    }
+
+    public void setDefaultProfilePhoto(User user){
+        ProfilePhoto profilePhoto = new ProfilePhoto();
+        profilePhoto.setUser(user);
+        profilePhoto.setProfile_pic("login");
+        profilePhoto.setPhotoStatus('Y');
+        profilePhotoRepository.save(profilePhoto);
     }
 
     public User getUser(String username) {

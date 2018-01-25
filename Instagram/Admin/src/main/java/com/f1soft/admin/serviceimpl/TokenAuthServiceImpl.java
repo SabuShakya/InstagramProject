@@ -1,19 +1,18 @@
-package com.f1soft.admin.service;
+package com.f1soft.admin.serviceimpl;
 
 import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.dto.TokenAuthDto;
 import com.f1soft.admin.model.Admin;
 import com.f1soft.admin.model.TokenAuth;
 import com.f1soft.admin.repository.TokenRepository;
+import com.f1soft.admin.service.TokenAuthService;
 import com.f1soft.admin.utils.TokenUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.UUID;
-
 @Service
 @Transactional
-public class TokenAuthServiceImpl implements TokenAuthService{
+public class TokenAuthServiceImpl implements TokenAuthService {
 
     private final TokenRepository tokenRepository;
 

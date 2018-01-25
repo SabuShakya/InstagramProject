@@ -3,19 +3,18 @@ package com.f1soft.admin.controller;
 import com.f1soft.admin.dto.AdminInfoDto;
 import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.dto.TokenAuthDto;
+import com.f1soft.admin.dto.UserLogsDto;
 import com.f1soft.admin.model.Admin;
 import com.f1soft.admin.model.TokenAuth;
 import com.f1soft.admin.service.AdminService;
 import com.f1soft.admin.service.TokenAuthService;
+import com.f1soft.admin.service.UserLogService;
 import com.f1soft.admin.utils.AdminUtils;
-import com.f1soft.admin.utils.TokenUtils;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.security.auth.login.LoginException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,8 +67,8 @@ public class AdminController {
     }
 
     @PostMapping("/update")
-    public ResponseEntity<Boolean> updateAdmin(@RequestBody Admin admin){
-        adminService.updateAdmin(admin);
+    public ResponseEntity<Boolean> updateAdmin(@RequestBody AdminInfoDto adminInfoDto){
+        adminService.updateAdmin(adminInfoDto);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 

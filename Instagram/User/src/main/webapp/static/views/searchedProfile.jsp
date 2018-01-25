@@ -2,9 +2,8 @@
 
 <link rel="stylesheet" type="text/css" href="static/css/profile.css">
 <header>
-    <div class="profile-pic-container">
-        <img class="img-responsive img-circle margin" style="display:inline" alt="" width="120%"
-             src="https://s3.amazonaws.com/uifaces/faces/twitter/nuraika/128.jpg" alt=""/>
+    <div align="center" class="col-md-12">
+        <img class="img-responsive img-circle margin" src="uploads/{{searched.pic}}" width="30%" height="30%">
     </div>
 </header>
 

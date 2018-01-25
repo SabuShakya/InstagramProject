@@ -27,7 +27,7 @@
 
         allPhotos();
         followCount();
-        // profilePhoto();
+        profilePhoto();
 
         function followCount(){
             HttpService.get("/followsCount/"+$localStorage.storedObj.username).then(function (value) {
@@ -82,7 +82,7 @@
         }
 
         function profilePhoto() {
-            HttpService.get("/ProfilePhotos/" + $localStorage.storedObj.username).then(function (value) {
+            HttpService.get("/getProfilePhoto/" + $localStorage.storedObj.username).then(function (value) {
                 $rootScope.pic = value.profile_pic;
                 vm.profilePhotoList = value;
                 console.log("success");

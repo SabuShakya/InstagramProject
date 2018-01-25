@@ -8,6 +8,7 @@
         vm.followers = '';
         vm.following = '';
         vm.totalPictures = '';
+        vm.pic = '';
         $rootScope.message='';
         $rootScope.saved = false;
         $rootScope.photo = '';
@@ -22,7 +23,9 @@
         vm.commentModal=commentModal;
         vm.followUser = followUser;
         vm.unfollowUser = unfollowUser;
+        vm.profilePhoto= profilePhoto;
 
+        profilePhoto();
         HttpService.get(vm.url).then(function(value){
             vm.photoList = value;
             vm.showList = false;
@@ -81,6 +84,13 @@
             },function (reason) {
                 vm.showFollowBtn = false;
                 console.log("error following"+reason);
+            });
+        }
+        function profilePhoto() {
+            HttpService.get("/getProfilePhoto/" + $localStorage.openProfileOf.username).then(function (value) {
+                vm.pic = value.profile_pic;
+            }, function (reason) {
+                console.log("Error occured" + reason);
             });
         }
     }
