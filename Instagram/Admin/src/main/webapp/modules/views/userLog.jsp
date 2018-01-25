@@ -5,10 +5,10 @@
 </div>
 
 <div class="modal-body" id="modal-body">
-    <h4>Total Users:</h4>
-    <h4>Total Uploads:</h4>
-    <h4>No of Uploads/day:</h4>
-    <h4>Total Active Users:</h4>
+    <h4>Total Users:</h4>{{userLog.totalUsers}}
+    <h4>Total Active Users:</h4>{{userLog.activeUsers}}
+    <h4>Total Uploads:</h4>{{}}
+    <h4>No of Uploads/day:</h4>{{}}
 </div>
 
 <div class="modal-footer">

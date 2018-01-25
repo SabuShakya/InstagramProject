@@ -80,8 +80,8 @@
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
                 templateUrl: '/modules/views/userLog.jsp',
-                controller: 'EditModalController',
-                controllerAs: 'modalController',
+                controller: 'UserLogController',
+                controllerAs: 'userLog',
                 size: 'lg'
             });
         }
