@@ -34,6 +34,7 @@
                 <th>User Name</th>
                 <th>Email</th>
                 <th>Profile Picture</th>
+                <th>Add Admin Picture</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -46,10 +47,13 @@
                 <td>{{ad.email}}</td>
                 <td><img src="uploads/{{ad.image}}" width="50px" height="50px"></td>
                 <td>
-                    <button type="button" ng-click="admin.openEditModal(ad)" class="btn btn-info"> Edit</button>
+                    <button type="button" ng-click="admin.openPhotoModal(ad)" class="btn btn-info">AddPhoto</button>
                 </td>
                 <td>
-                    <button type="button" ng-click="admin.openDeleteModal(ad)" class="btn btn-danger"> Delete</button>
+                    <button type="button" ng-click="admin.openEditModal(ad)" class="btn btn-info">Edit</button>
+                </td>
+                <td>
+                    <button type="button" ng-click="admin.openDeleteModal(ad)" class="btn btn-danger">Delete</button>
                 </td>
             </tr>
             </tbody>

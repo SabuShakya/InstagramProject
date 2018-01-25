@@ -27,7 +27,7 @@
 
         allPhotos();
         followCount();
-        profilePhoto();
+        // profilePhoto();
 
         function followCount(){
             HttpService.get("/followsCount/"+$localStorage.storedObj.username).then(function (value) {
@@ -38,7 +38,7 @@
                 console.log(reason);
             });
         }
-        $interval(vm.followCount,1000);
+        // $interval(vm.followCount,1000);
 
         function allPhotos(){
             HttpService.get("/allPhotos/" + $localStorage.storedObj.username).then(function (value) {
@@ -62,7 +62,7 @@
             vm.modalInstance.result.then(
                 function(){
                    allPhotos();
-                   followCount();
+                   // followCount();
                 },
                 function(){})
         }

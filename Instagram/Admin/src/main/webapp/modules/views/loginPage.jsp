@@ -20,9 +20,9 @@
       </span>
 
     <div class="form-group">
-        <button type="button" class="btn btn-default" ng-disabled="myForm.$invalid" ng-click="login.loginUser();">Login
+        <button type="button" class="btn btn-default" ng-disabled="myForm.$invalid" ng-click="login.loginUser()">Login
         </button>
-        <button type="button" class="btn btn-default" ng-click="login.signup();">Signup</button>
+        <button type="button" class="btn btn-default" ng-click="login.signup()">Signup</button>
     </div>
     <div ng-hide ="login.valid">
         <span style="color:red">{{login.errormsg}}</span>

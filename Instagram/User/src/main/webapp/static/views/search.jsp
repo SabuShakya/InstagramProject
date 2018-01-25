@@ -1,7 +1,7 @@
 <div ng-include src="'static/views/navigation.html'"></div>
 
 <div align="center">
-    <input type="text" placeholder="Enter Username of peron you want to search"
+    <input type="text" placeholder="Enter Username of person you want to search"
            ng-model="search.searchTerm" style="width: 50%"/><br><br>
     <button type="button" class="btn-default" ng-click="search.search()">Search</button>
 </div>

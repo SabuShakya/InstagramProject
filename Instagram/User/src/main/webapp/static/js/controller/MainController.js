@@ -10,7 +10,7 @@
         vm.commentList = [];
         vm.showList = false;
         vm.showing = false;
-        vm.noOfLikes = '';
+        vm.countOfLikes = '';
         $rootScope.imageName = '';
         vm.addComment = addComment;
         vm.showComments = showComments;
@@ -61,7 +61,8 @@
         function like(post) {
             post.username = $localStorage.storedObj.username;
             HttpService.post("/likeAction",post).then(function (value) {
-                vm.noOfLikes = value;
+                post.countOfLikes = value;
+                vm.countOfLikes = value;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });

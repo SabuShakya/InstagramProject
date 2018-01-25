@@ -44,6 +44,7 @@ public class AdminServiceImpl implements AdminService{
         return adminFromrepo;
     }
 
+    @Override
     public Admin getAdminId(int id) {
         return adminRepository.getAdminById(id);
     }
@@ -54,30 +55,36 @@ public class AdminServiceImpl implements AdminService{
         adminRepository.save(admin);
     }
 
-    public void updateAdmin(Admin admin) {
-        System.out.println(System.getProperty("catalina.home"));
-        File dir = new File(System.getProperty("catalina.home")+"/uploads");
-        System.out.println(dir);
-        if(!dir.exists()){
-            dir.mkdir();
-        }
-        byte[] decodedImage = Base64.getDecoder().decode(admin.getImage());
-        String filename = decodedImage + ".jpg";
-        String pathToImage = dir +"/"+ filename;
-        try {
-            FileOutputStream fout = new FileOutputStream(pathToImage);
-            fout.write(decodedImage);
-            fout.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Admin adminfromRepo= adminRepository.getAdminById(admin.getId());
-        adminfromRepo.setEmail(admin.getEmail());
-        adminfromRepo.setName(admin.getName());
-        adminfromRepo.setUserName(admin.getUserName());
-        adminfromRepo.setImage(filename);
+    public void updateAdmin(AdminInfoDto adminInfoDto) {
+            if(adminInfoDto.getImage()!=null) {
+                File dir = new File(System.getProperty("catalina.home") + "/uploads");
+                System.out.println(dir);
+                if (!dir.exists()) {
+                    dir.mkdir();
+                }
+                byte[] decodedImage = Base64.getDecoder().decode(adminInfoDto.getImage());
+                String filename = decodedImage.toString();
+                String pathToImage = dir + "/" + filename;
+                try {
+                    FileOutputStream fout = new FileOutputStream(pathToImage);
+                    fout.write(decodedImage);
+                    fout.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Admin adminfromRepo = adminRepository.getAdminById(adminInfoDto.getId());
+                adminfromRepo.setEmail(adminInfoDto.getEmail());
+                adminfromRepo.setName(adminInfoDto.getName());
+                adminfromRepo.setUserName(adminInfoDto.getUserName());
+                adminfromRepo.setImage(filename);
+                adminRepository.save(adminfromRepo);
+            }
+        Admin adminfromRepo = adminRepository.getAdminById(adminInfoDto.getId());
+        adminfromRepo.setEmail(adminInfoDto.getEmail());
+        adminfromRepo.setName(adminInfoDto.getName());
+        adminfromRepo.setUserName(adminInfoDto.getUserName());
         adminRepository.save(adminfromRepo);
     }
 
