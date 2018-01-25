@@ -29,7 +29,6 @@
             };
             HttpService.post(vm.url, vm.obj).then(
                 function (value) {
-                    $rootScope.message = "Picture uploaded successfully";
                     $rootScope.saved = true;
                     $uibModalInstance.close('save');
                 },

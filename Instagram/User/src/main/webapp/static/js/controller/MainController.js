@@ -1,8 +1,8 @@
 (function() {
     angular.module('userModule').controller("MainController", MainController);
-    MainController.$inject= ['HttpService','$localStorage','$rootScope','$uibModal'];
+    MainController.$inject= ['HttpService','$localStorage','$rootScope','$uibModal','$log'];
 
-    function MainController(HttpService,$localStorage,$rootScope,$uibModal) {
+    function MainController(HttpService,$localStorage,$rootScope,$uibModal, $log) {
         var vm = this;
         vm.posts = {};
         vm.message = '';
@@ -10,12 +10,25 @@
         vm.commentList = [];
         vm.showList = false;
         vm.showing = false;
-        vm.noOfLikes = '';
+        vm.showCommentList= true;
+        vm.countOfLikes = '';
         $rootScope.imageName = '';
         vm.addComment = addComment;
         vm.showComments = showComments;
         vm.like = like;
         vm.openLikeListModal = openLikeListModal;
+        vm.openDeleteModal= openDeleteModal;
+        vm.openEditModal=openEditModal;
+        vm.edit=edit;
+
+        vm.totalItems = 64;
+        vm.currentPage = 1;
+        vm.maxSize = 5;
+        vm.bigTotalItems = 175;
+        vm.bigCurrentPage = 1;
+        vm.setPage= setPage;
+        vm. pageChanged= pageChanged;
+
 
         HttpService.get("/getPosts/" + $localStorage.storedObj.username).then(
             function (value) {
@@ -36,7 +49,6 @@
                     vm.showing = false;
                     post.comment = '';
                     showComments(post);
-
                 },function (reason) {
                     vm.message = "Error Occurred";
                     vm.commentSuccessMsg = false;
@@ -58,10 +70,38 @@
                 });
             }
         }
+
+        function openDeleteModal(comment) {
+            $rootScope.clickedComment=comment;
+            HttpService.post("/deleteComment", $rootScope.clickedComment).then(function (value) {
+                console.log("success");
+                $rootScope.saved = true;
+                showComments();
+            },function (reason) {
+                $rootScope.saved = true;
+            });
+        }
+
+        function openEditModal(comment) {
+            $rootScope.clickedComment = comment;
+            vm.showCommentList = false;
+        }
+
+        function edit(){
+            HttpService.post("/editComment",  $rootScope.clickedComment).then(function (value) {
+                console.log("sucesss");
+                $rootScope.saved = true;
+                vm.showCommentList=true;
+            },function (reason) {
+                $rootScope.saved = true;
+            });
+        }
+
         function like(post) {
             post.username = $localStorage.storedObj.username;
             HttpService.post("/likeAction",post).then(function (value) {
-                vm.noOfLikes = value;
+                post.countOfLikes = value;
+                vm.countOfLikes = value;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });
@@ -77,6 +117,14 @@
                 size: 'lg'
             });
         }
+
+        function setPage(pageNo) {
+            vm.currentPage = pageNo;
+        };
+
+        function pageChanged () {
+            $log.log('Page changed to: ' +vm.currentPage);
+        };
     }
 })();
 

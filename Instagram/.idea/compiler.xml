@@ -13,8 +13,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="admin" target="1.5" />
-      <module name="instagram" target="1.5" />
+      <module name="admin" target="1.8" />
+      <module name="instagram" target="1.8" />
       <module name="user" target="1.8" />
     </bytecodeTargetLevel>
   </component>

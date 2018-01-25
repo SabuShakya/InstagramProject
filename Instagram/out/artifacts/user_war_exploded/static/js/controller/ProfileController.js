@@ -11,7 +11,6 @@
         vm.followers = '';
         vm.following = '';
         vm.totalPictures = '';
-        $rootScope.message='';
         $rootScope.saved = false;
         $rootScope.photo = '';
         $rootScope.pic='';
@@ -24,6 +23,8 @@
         vm.allPhotos= allPhotos;
         vm.followCount=followCount;
         vm.profilePhoto=profilePhoto;
+        vm.followersList=followersList;
+        vm.followingList=followingList;
 
         allPhotos();
         // followCount();
@@ -39,6 +40,28 @@
             });
         }
         // $interval(vm.followCount,1000);
+
+        function followersList(){
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/followersList.jsp',
+                controller :'FollowersListController',
+                controllerAs: 'followersCtrl',
+                size: 'lg'
+            });
+        }
+
+        function followingList(){
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/followingList.jsp',
+                controller :'FollowingListController',
+                controllerAs: 'followingCtrl',
+                size: 'lg'
+            });
+        }
 
         function allPhotos(){
             HttpService.get("/allPhotos/" + $localStorage.storedObj.username).then(function (value) {
@@ -106,6 +129,5 @@
                 },
                 function(){})
         }
-
     }
 })();

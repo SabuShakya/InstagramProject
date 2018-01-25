@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sun.plugin.dom.core.Comment;
+
 
 import java.util.List;
 
@@ -177,17 +177,28 @@ public class UserController {
         followCountDto.setTotalPictures(photoService.getPhotoCount(username));
         return new ResponseEntity<FollowCountDto>(followCountDto,HttpStatus.OK);
     }
-//sabu
+
+    @GetMapping("/getFollowersList/{username}")
+    public ResponseEntity<List<FollowDto>> getFollowerList(@PathVariable("username")String username){
+        List<FollowDto> followDtoList = followService.getFollowersList(username);
+        return new ResponseEntity<List<FollowDto>>(followDtoList,HttpStatus.OK);
+    }
+
+    @GetMapping("/getFollowingList/{username}")
+    public ResponseEntity<List<FollowDto>> getFollowingList(@PathVariable("username")String username){
+        List<FollowDto> followDtoList = followService.getFollowingList(username);
+        return new ResponseEntity<List<FollowDto>>(followDtoList,HttpStatus.OK);
+    }
+
     @GetMapping("/likesCount/{imageName}")
     public ResponseEntity<Integer> getLikesCount(@PathVariable("imageName")String imageName){
         int likesCount = likesService.getLikesCountForImage(imageName);
         return new ResponseEntity<Integer>(likesCount,HttpStatus.OK);
     }
-//sabu
+
     @GetMapping("/getLikesList/{imageName}")
     public ResponseEntity<List<Likesdto>> getLikesList(@PathVariable("imageName")String imageName){
         List<Likesdto> likesdtoList = likesService.getLikesList(imageName);
         return new ResponseEntity<List<Likesdto>>(likesdtoList,HttpStatus.OK);
     }
-
 }

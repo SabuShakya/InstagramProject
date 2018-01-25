@@ -3,7 +3,6 @@
     <div align="center" ng-repeat="post in main.posts">
         <div class='insta fade-scroll'>
             <div class='top-insta'>
-                <%--<a href="#" target='_blank'><img class="profile-pic" src='static/images/login.png'></a>--%>
                 <a href='#' target='_blank' class='user'>{{post.username}}
                 </a>
                 <span class='dot'></span>
@@ -41,14 +40,35 @@
                 <br>
 
                 <div class='comment-section'>
-                    <div ng-show="main.showList" ng-repeat="comment in main.commentList">
-                        {{comment.username}} : {{comment.comments}}
+                    <div ng-show="main.showList" ng-repeat="comm in main.commentList">
+                        {{comm.username}} : {{comm.comments}}
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-danger" ng-click="main.openDeleteModal(comm)"> Delete
+                        </button>
+                        <button type="button" class="btn btn-success" ng-click="main.openEditModal(comm)">Edit</button>
                     </div>
+
+                    <div ng-hide ="main.showCommentList">
+                        <input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>
+                        <button ng-click="main.edit()">Edit</button>
+                    </div>
+
                     <input type='text' id='cmnt' ng-model="post.comment" placeholder='Add a comment...'>
                     <button ng-click="main.addComment(post)">Add</button>
-                    <span class='dot02'></span>
+                    <br>
                 </div>
-            </div> <!-- end Footer -->
         </div>
     </div>
+    </div>
 </section>
+
+<%--<h4>Default</h4>--%>
+<ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
+<ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul>
+<ul uib-pagination direction-links="false" boundary-links="true" total-items="totalItems" ng-model="currentPage"></ul>
+<ul uib-pagination direction-links="false" total-items="totalItems" ng-model="currentPage" num-pages="smallnumPages"></ul>
+<pre>The selected page no: {{main.currentPage}}</pre>
+<%--<button type="button" class="btn btn-info" ng-click="setPage(3)">Set current page to: 3</button>--%>
+
+<%--<hr />--%>

@@ -1,9 +1,9 @@
 (function(){
     angular.module('userModule').controller("CommentsController", CommentsController);
 
-    CommentsController.$inject =['HttpService','$uibModalInstance','$rootScope','$localStorage','$location'];
+    CommentsController.$inject =['HttpService','$uibModalInstance','$rootScope','$localStorage','$location','$interval'];
 
-    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location) {
+    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location, $interval) {
         var vm =this;
         vm.comments = '';
         vm.commentList=[];
@@ -12,7 +12,6 @@
         vm.showLikes = false;
         vm.showCommentList= true;
         $rootScope.saved= false;
-
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
         vm.add = add;
@@ -23,16 +22,9 @@
         vm.cancel=cancel;
         vm.showLikeList = showLikeList;
         vm.showComments=showComments;
+        vm.commentsList=commentsList;
 
-        // showComments();
         vm.imageName = $rootScope.photo;
-
-        HttpService.get("/showComments/"+$rootScope.photo).then(function(value){
-            vm.commentList = value;
-            vm.showList = false;
-        },function (reason) {
-            console.log("Error occured"+reason);
-        });
 
         HttpService.get("/likesCount/"+vm.imageName).then(function (value) {
             vm.likeCount = value;
@@ -40,7 +32,7 @@
             console.log("This error occurred:"+reason);
         });
 
-        // $rootScope.clickedComment ='';
+        $rootScope.clickedComment ='';
         function add() {
             vm.obj={
                 'comments': vm.comments,
@@ -68,19 +60,22 @@
             });
         }
 
+        function commentsList(){
+            HttpService.get("/showComments/" + $rootScope.photo).then(function (value) {
+                vm.commentList = value;
+                vm.showList = true;
+                vm.showing = true;
+            }, function (reason) {
+                console.log("Error occured" + reason);
+            });
+        }
+
         function showComments() {
             if (vm.showing){
                 vm.showList = false;
                 vm.showing =false;
             }else {
-                vm.showing = true;
-                HttpService.get("/showComments/" + $rootScope.photo).then(function (value) {
-                    vm.commentList = value;
-                    vm.showList = true;
-                    vm.showing = true;
-                }, function (reason) {
-                    console.log("Error occured" + reason);
-                });
+                commentsList();
             }
         }
 
@@ -96,33 +91,25 @@
                 });
             }
         }
-        // function showComments(){
-        //     HttpService.get("/showComments/" + $rootScope.photo).then(function (value) {
-        //         vm.commentList = value;
-        //         }, function (reason) {
-        //             console.log("Error occured" + reason);
-        //     });
-        // }
 
         function openDeleteModal(comment) {
             $rootScope.clickedComment=comment;
             HttpService.post("/deleteComment", $rootScope.clickedComment).then(function (value) {
-                console.log("sucesss");
+                console.log("success");
                 $rootScope.saved = true;
+                commentsList();
             },function (reason) {
                 $rootScope.saved = true;
             });
         }
-        // $interval(vm.openDeleteModal,1000);
 
         function openEditModal(comment) {
             $rootScope.clickedComment = comment;
             vm.showCommentList = false;
-            // $rootScope.saved = true;
         }
 
         function edit(){
-            HttpService.post("/editComment", $rootScope.clickedComment).then(function (value) {
+            HttpService.post("/editComment",  $rootScope.clickedComment).then(function (value) {
                 console.log("sucesss");
                 $rootScope.saved = true;
                 vm.showCommentList=true;
@@ -130,14 +117,6 @@
                 $rootScope.saved = true;
             });
         }
-
-        // function like() {
-        //     HttpService.post("/likeAction/",+ $rootScope.photo).then(function (value) {
-        //         vm.noOfLikes = value;
-        //     },function (reason) {
-        //         console.log("Error Occured:"+reason);
-        //     });
-        // }
 
         function cancel(){
             $uibModalInstance.dismiss('close');

@@ -12,11 +12,13 @@ import com.users.repository.UserRepository;
 import com.users.service.FollowService;
 import com.users.service.LikesService;
 import com.users.service.PhotoService;
+import com.users.utils.FollowUtils;
 import com.users.utils.UserPhotosPostUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -83,5 +85,17 @@ public class FollowServiceImpl implements FollowService {
         List<User> followersList = followRepository.getByFollowedUserId(user.getId());
         followCountDto.setFollowers(followersList.size());
         return followCountDto;
+    }
+
+    public List<FollowDto> getFollowersList(String username) {
+        User user = userRepository.getUserByUsername(username);
+        List<User> followersList = followRepository.getByFollowedUserId(user.getId());
+        return FollowUtils.convertFollowtoFollowingDto(followersList);
+    }
+
+    public List<FollowDto> getFollowingList(String username) {
+        User user = userRepository.getUserByUsername(username);
+        List<User> followingList = followRepository.getByFollowingUserId(user.getId());
+        return FollowUtils.convertFollowtoFollowDto(followingList);
     }
 }

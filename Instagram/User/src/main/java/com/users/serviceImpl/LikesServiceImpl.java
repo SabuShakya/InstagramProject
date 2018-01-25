@@ -35,9 +35,6 @@ public class LikesServiceImpl implements LikesService {
             if(liked.isLiked()){
                 liked.setLiked(false);
                 likesRepository.delete(liked);
-            }else {
-                liked.setLiked(true);
-                likesRepository.save(liked);
             }
             return getCountOfLikes(liked);
         }

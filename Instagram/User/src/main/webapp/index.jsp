@@ -40,6 +40,8 @@
 <script src="static/js/controller/NavigationController.js"></script>
 <script src="static/js/controller/LikesListController.js"></script>
 <script src="static/js/controller/UpdateController.js"></script>
+<script src="static/js/controller/FollowersListController.js"></script>
+<script src="static/js/controller/FollowingListController.js"></script>
 
 <script src="static/js/service/HttpService.js"> </script>
 

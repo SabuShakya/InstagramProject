@@ -12,4 +12,7 @@ public interface FollowService {
     public boolean checkFollow(FollowDto followDto);
     public void unfollowUser(FollowDto followDto);
     public FollowCountDto getFollowCount(String username);
+    public List<FollowDto> getFollowersList(String username);
+    public List<FollowDto> getFollowingList(String username);
+
 }
