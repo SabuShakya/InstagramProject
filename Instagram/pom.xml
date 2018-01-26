@@ -27,6 +27,7 @@
   <modules>
     <module>Admin</module>
     <module>User</module>
+    <module>user</module>
   </modules>
   <groupId>com.f1soft</groupId>
   <artifactId>instagram</artifactId>
