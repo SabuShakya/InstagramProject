@@ -1,8 +1,8 @@
 (function () {
     angular.module("adminModule").controller("NewAdminController",NewAdminController);
 
-    NewAdminController.$inject = ['NewAdminService','$location'];
-    function NewAdminController(NewAdminService,$location) {
+    NewAdminController.$inject = ['NewAdminService','$location','$rootScope'];
+    function NewAdminController(NewAdminService,$location,$rootScope) {
         var vm = this;
         vm.name = '';
         vm.userName = '';
@@ -22,6 +22,7 @@
             vm.response = NewAdminService.saveNewAdmin(vm.url,vm.newAdminObj);
             console.log("response"+vm.response);
             if(vm.response){
+                $rootScope.message = "Admin added successfully";
                 $location.path("/adminPage");
             }else {
                 vm.show_error_msg = true;

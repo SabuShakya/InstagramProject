@@ -1,5 +1,6 @@
 package com.f1soft.admin.serviceimpl;
 
+import antlr.collections.List;
 import com.f1soft.admin.dto.AdminInfoDto;
 import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.model.Admin;
@@ -19,7 +20,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Base64;
-import java.util.List;
+
 
 @Service
 @Transactional("transactionManager")
@@ -89,8 +90,8 @@ public class AdminServiceImpl implements AdminService {
         adminRepository.save(adminfromRepo);
     }
 
-    public List<Admin> getAllAdmins() {
-        List<Admin> list = adminRepository.findAll();
+    public java.util.List<Admin> getAllAdmins() {
+        java.util.List<Admin> list = adminRepository.findAll();
         return list;
     }
 

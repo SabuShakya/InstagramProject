@@ -44,9 +44,6 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     private List<Comments> comments;
 
-//    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY)
-//    private Likes likes;
-
     @OneToMany(mappedBy = "user")
     private List<ProfilePhoto> profilePhotos;
 
