@@ -1,8 +1,8 @@
 (function () {
     angular.module("adminModule").controller("NewAdminController",NewAdminController);
 
-    NewAdminController.$inject = ['NewAdminService','$location'];
-    function NewAdminController(NewAdminService,$location) {
+    NewAdminController.$inject = ['NewAdminService','$location','$rootScope'];
+    function NewAdminController(NewAdminService,$location,$rootScope) {
         var vm = this;
         vm.name = '';
         vm.userName = '';
