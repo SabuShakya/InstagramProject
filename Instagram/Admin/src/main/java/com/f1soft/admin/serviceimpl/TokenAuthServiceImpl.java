@@ -10,8 +10,6 @@ import com.f1soft.admin.utils.TokenUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.UUID;
-
 @Service
 @Transactional
 public class TokenAuthServiceImpl implements TokenAuthService {

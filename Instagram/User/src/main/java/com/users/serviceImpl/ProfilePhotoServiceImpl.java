@@ -65,7 +65,7 @@ public class ProfilePhotoServiceImpl implements ProfilePhotoService{
         profilePhoto.setPhotoStatus('Y');
         profilePhotoRepository.save(profilePhoto);
     }
-//sabu
+
     public ProfilePhotoDto getProfilePhoto(String username) {
         ProfilePhoto profilePhoto = profilePhotoRepository.getProfilePhotoByUserUsername(username);
         ProfilePhotoDto profilePhotoDto =  new ProfilePhotoDto();
@@ -74,6 +74,4 @@ public class ProfilePhotoServiceImpl implements ProfilePhotoService{
         profilePhotoDto.setPhotoStatus('Y');
         return profilePhotoDto;
     }
-
-
 }

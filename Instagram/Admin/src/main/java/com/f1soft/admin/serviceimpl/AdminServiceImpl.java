@@ -46,7 +46,6 @@ public class AdminServiceImpl implements AdminService {
         return adminFromrepo;
     }
 
-    @Override
     public Admin getAdminId(int id) {
         return adminRepository.getAdminById(id);
     }

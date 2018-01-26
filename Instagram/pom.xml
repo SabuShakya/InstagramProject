@@ -27,7 +27,6 @@
   <modules>
     <module>Admin</module>
     <module>User</module>
-    <module>user</module>
   </modules>
   <groupId>com.f1soft</groupId>
   <artifactId>instagram</artifactId>
@@ -48,6 +47,14 @@
           </connectors>
           <webAppSourceDirectory>${project.build.directory}/${pom.artifactId}-${pom.version}</webAppSourceDirectory>
           <contextPath>/</contextPath>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
         </configuration>
       </plugin>
     </plugins>

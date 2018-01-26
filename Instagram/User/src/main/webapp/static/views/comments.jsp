@@ -25,7 +25,6 @@
             <button ng-click="comment.showLikeList()">
                 <span class='save'></span></a>
             </button>
-
         </div>
         <div ng-show="comment.showLikes">
             <h5 style="color: #0089d8">Liked By:</h5>

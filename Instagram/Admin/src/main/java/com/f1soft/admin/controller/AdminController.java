@@ -93,7 +93,7 @@ public class AdminController {
     }
 
     @GetMapping("/getUserLogs")
-    public ResponseEntity<UserLogsDto> getLogs(){
+    public ResponseEntity<UserLogsDto> getUserLog(){
         UserLogsDto userLogsDto = userLogService.getUserLogs();
         return new ResponseEntity<UserLogsDto>(userLogsDto,HttpStatus.OK);
     }

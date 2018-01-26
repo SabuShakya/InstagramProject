@@ -5,7 +5,6 @@
 
     function LogOutController(HttpService,$localStorage,$location) {
         var vm = this;
-        vm.userName = $localStorage.storedObj.username;
         vm.logout =logout;
 
         function logout() {
