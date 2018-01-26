@@ -1,13 +1,13 @@
 package com.f1soft.admin.serviceimpl;
 
 import com.f1soft.admin.dto.UserLogsDto;
+import com.f1soft.admin.model.User;
+import com.f1soft.admin.model.UserPhotos;
+import com.f1soft.admin.model.UserToken;
+import com.f1soft.admin.repository.PhotoRepository;
+import com.f1soft.admin.repository.UserRepository;
+import com.f1soft.admin.repository.UserTokenRepository;
 import com.f1soft.admin.service.UserLogService;
-import com.users.model.User;
-import com.users.model.UserPhotos;
-import com.users.model.UserToken;
-import com.users.repository.PhotoRepository;
-import com.users.repository.UserRepository;
-import com.users.repository.UserTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

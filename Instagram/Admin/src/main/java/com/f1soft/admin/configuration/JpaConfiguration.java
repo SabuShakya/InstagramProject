@@ -22,7 +22,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @ComponentScan("com.f1soft.admin")
 @PropertySource(value = {"classpath:application.properties"})
-@EnableJpaRepositories(basePackages = {"com.f1soft.admin.repository","com.users.repository"},
+@EnableJpaRepositories(basePackages = "com.f1soft.admin.repository",
         entityManagerFactoryRef = "entityManagerFactoryBean")
 @EnableSpringDataWebSupport
 public class JpaConfiguration {
