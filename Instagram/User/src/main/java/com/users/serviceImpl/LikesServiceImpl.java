@@ -47,19 +47,16 @@ public class LikesServiceImpl implements LikesService {
         List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(likes.getUserPhotos().getImage_path());
         return likesList.size();
     }
-
-    @Override
     public List<Likes> getByPhotoId(long id) {
         return likesRepository.getByUserPhotos_Id(id);
     }
 
-    @Override
+
     public int getLikesCountForImage(String imageName) {
         List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(imageName);
         return likesList.size();
     }
 
-    @Override
     public List<Likesdto> getLikesList(String imageName) {
         List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(imageName);
         return LikesUtil.convertLikesToLikesDto(likesList);

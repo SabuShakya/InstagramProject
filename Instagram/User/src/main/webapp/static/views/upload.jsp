@@ -10,9 +10,9 @@
     <input type="file" ng-model="img.listOfImages" name="files" multiple accept="image/*, .zip"
            maxsize="5000" required base-sixty-four-input>
 </form>
-    <img src="data:image/jpeg;base64,{{img.listOfImages.base64}}" width="100px" height="100px">
+    <%--<img src="data:image/jpeg;base64,{{img.listOfImages.base64}}" width="100px" height="100px">--%>
 
-    <div ng-repeat="i in img.listOfImages">
+    <div ng-repeat="i in img.listOfImages" class = "col-lg-4">
         <img src="data:image/jpeg;base64,{{i.base64}}" width="100px" height="100px">
     </div>
 </div>

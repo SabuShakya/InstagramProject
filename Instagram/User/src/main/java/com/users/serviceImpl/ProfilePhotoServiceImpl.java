@@ -52,23 +52,26 @@ public class ProfilePhotoServiceImpl implements ProfilePhotoService{
         }
 
         User user = userService.getUser(profilePhotoDto.getUsername());
-//        updateProfilePhotoStatus(profilePhotoDto.getUsername());
-        ProfilePhoto profilePhoto = new ProfilePhoto();
-        profilePhoto.setUser(user);
+        ProfilePhoto profilePhoto = profilePhotoRepository.getProfilePhotoByUserUsername(
+                profilePhotoDto.getUsername());
+        if (profilePhoto == null){
+            ProfilePhoto profilePhoto1 = new ProfilePhoto();
+            profilePhoto1.setProfile_pic(filename);
+            profilePhoto1.setUser(user);
+            profilePhoto1.setPhotoStatus('Y');
+            profilePhotoRepository.save(profilePhoto1);
+        }
         profilePhoto.setProfile_pic(filename);
         profilePhoto.setPhotoStatus('Y');
         profilePhotoRepository.save(profilePhoto);
     }
 
-     public ProfilePhotoDto updateProfilePhotoStatus(String username) {
-         ProfilePhoto profilePhoto = profilePhotoRepository.getProfilePhotoByUserUsername(username, 'Y');
-         ProfilePhotoDto profilePhotoDto = new ProfilePhotoDto();
-         profilePhotoDto.setProfile_pic(profilePhoto.getProfile_pic());
-         profilePhotoDto.setUsername(profilePhoto.getUser().getUsername());
-         profilePhotoDto.setPhotoStatus('N');
-//         ModelMapper modelMapper = new ModelMapper();
-//         ProfilePhoto profilePhoto1 =modelMapper.map(profilePhotoDto,ProfilePhoto.class);
-//         profilePhotoRepository.save(profilePhoto1);
-         return profilePhotoDto;
-     }
+    public ProfilePhotoDto getProfilePhoto(String username) {
+        ProfilePhoto profilePhoto = profilePhotoRepository.getProfilePhotoByUserUsername(username);
+        ProfilePhotoDto profilePhotoDto =  new ProfilePhotoDto();
+        profilePhotoDto.setProfile_pic(profilePhoto.getProfile_pic());
+        profilePhotoDto.setUsername(profilePhoto.getUser().getUsername());
+        profilePhotoDto.setPhotoStatus('Y');
+        return profilePhotoDto;
+    }
 }

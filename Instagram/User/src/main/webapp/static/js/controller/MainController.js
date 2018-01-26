@@ -21,21 +21,23 @@
         vm.openEditModal=openEditModal;
         vm.edit=edit;
 
-        vm.totalItems = 64;
-        vm.currentPage = 1;
+        vm.totalItems = '';
+        vm.currentPage =1;
         vm.maxSize = 5;
-        vm.bigTotalItems = 175;
-        vm.bigCurrentPage = 1;
-        vm.setPage= setPage;
-        vm. pageChanged= pageChanged;
+        vm.pageChanged= pageChanged;
+        vm.getPosts=getPosts;
 
-
-        HttpService.get("/getPosts/" + $localStorage.storedObj.username).then(
-            function (value) {
-                vm.posts = value;
-            }, function (reason) {
-                vm.message = "Follow Others to see their posts.";
-            });
+        getPosts();
+        function getPosts() {
+            var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.currentPage+"&size="+vm.maxSize;
+            HttpService.get(URL).then(
+                function (value) {
+                    vm.posts = value;
+                    vm.totalItems=value[0].totalItems;
+                }, function (reason) {
+                    vm.message = "Follow Others to see their posts.";
+                });
+        }
 
         function addComment(post) {
             vm.obj={
@@ -118,12 +120,9 @@
             });
         }
 
-        function setPage(pageNo) {
-            vm.currentPage = pageNo;
-        };
-
-        function pageChanged () {
-            $log.log('Page changed to: ' +vm.currentPage);
+        function pageChanged() {
+            $log.log("Page changed to:"+vm.currentPage);
+            getPosts();
         };
     }
 })();

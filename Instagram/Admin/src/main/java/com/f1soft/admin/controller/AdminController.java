@@ -3,19 +3,17 @@ package com.f1soft.admin.controller;
 import com.f1soft.admin.dto.AdminInfoDto;
 import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.dto.TokenAuthDto;
+import com.f1soft.admin.dto.UserLogsDto;
 import com.f1soft.admin.model.Admin;
 import com.f1soft.admin.model.TokenAuth;
 import com.f1soft.admin.service.AdminService;
 import com.f1soft.admin.service.TokenAuthService;
 import com.f1soft.admin.utils.AdminUtils;
-import com.f1soft.admin.utils.TokenUtils;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.security.auth.login.LoginException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +26,9 @@ public class AdminController {
 
     @Autowired
     private TokenAuthService tokenAuthService;
+
+//    @Autowired
+//    private UserLogService userLogService;
 
     @PostMapping("/login")
     public ResponseEntity<TokenAuthDto> getAdmin(@RequestBody AdminLoginDto adminLoginDto) {
@@ -89,4 +90,10 @@ public class AdminController {
         adminService.deleteAdmin(admin);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
+
+//    @GetMapping("/getUserLogs")
+//    public ResponseEntity<UserLogsDto> getLogs(){
+//        UserLogsDto userLogsDto = userLogService.getUserLogs();
+//        return new ResponseEntity<UserLogsDto>(userLogsDto,HttpStatus.OK);
+//    }
 }

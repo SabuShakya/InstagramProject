@@ -11,6 +11,7 @@
         vm.followers = '';
         vm.following = '';
         vm.totalPictures = '';
+        $rootScope.message='';
         $rootScope.saved = false;
         $rootScope.photo = '';
         $rootScope.pic='';
@@ -25,10 +26,11 @@
         vm.profilePhoto=profilePhoto;
         vm.followersList=followersList;
         vm.followingList=followingList;
+        vm.deletePhotos=deletePhotos;
 
         allPhotos();
         // followCount();
-        // profilePhoto();
+        profilePhoto();
 
         function followCount(){
             HttpService.get("/followsCount/"+$localStorage.storedObj.username).then(function (value) {
@@ -85,7 +87,7 @@
             vm.modalInstance.result.then(
                 function(){
                    allPhotos();
-                   followCount();
+                   // followCount();
                 },
                 function(){})
         }
@@ -105,7 +107,7 @@
         }
 
         function profilePhoto() {
-            HttpService.get("/ProfilePhotos/" + $localStorage.storedObj.username).then(function (value) {
+            HttpService.get("/getProfilePhoto/" + $localStorage.storedObj.username).then(function (value) {
                 $rootScope.pic = value.profile_pic;
                 vm.profilePhotoList = value;
                 console.log("success");
@@ -128,6 +130,29 @@
                     profilePhoto();
                 },
                 function(){})
+        }
+
+
+        function openDeleteModal(comment) {
+            $rootScope.clickedComment=comment;
+            HttpService.post("/deleteComment", $rootScope.clickedComment).then(function (value) {
+                console.log("success");
+                $rootScope.saved = true;
+                commentsList();
+            },function (reason) {
+                $rootScope.saved = true;
+            });
+        }
+
+        function deletePhotos(image_path) {
+            $rootScope.photo = image_path;
+            HttpService.post("/deletePhoto",$rootScope.photo).then(function(value){
+                $rootScope.saved=true;
+                allPhotos();
+            },function (reason) {
+                console.log("error");
+                $rootScope.saved=true;
+            });
         }
     }
 })();

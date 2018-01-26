@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface ProfilePhotoService {
     public void savePhoto(ProfilePhotoDto profilePhotoDto);
-    public ProfilePhotoDto updateProfilePhotoStatus(String username);
+    public ProfilePhotoDto getProfilePhoto(String username);
+
 }

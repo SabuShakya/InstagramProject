@@ -4,7 +4,8 @@
 
 <div class="modal-body" id="modal-body">
     <div ng-repeat="follow in followersCtrl.followers">
-        {{follow.userName}}
+        <%--<img src="{{follow.profile_pic.profile_pic}}">--%>
+        {{follow.following_userName}}
     </div>
 </div>
 

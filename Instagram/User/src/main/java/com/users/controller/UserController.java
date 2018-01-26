@@ -6,6 +6,8 @@ import com.users.service.*;
 import com.users.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 
@@ -14,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 @RestController
@@ -72,12 +75,6 @@ public class UserController {
     }
 
     //smriti
-    @PostMapping("/uploadProfilePhoto")
-    public ResponseEntity<Boolean> uploadPhoto(@RequestBody ProfilePhotoDto profilePhotoDto){
-        profilePhotoService.savePhoto(profilePhotoDto);
-        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-    }
-
     @GetMapping("/allPhotos/{username}")
     public ResponseEntity<List<UserPhotodto>> photoList(@PathVariable("username") String username){
         List<UserPhotodto> photoList= photoService.getAllPhotos(username);
@@ -87,15 +84,29 @@ public class UserController {
         return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/ProfilePhotos/{username}")
-    public ResponseEntity<ProfilePhotoDto> profilephotoList(@PathVariable("username") String username){
-        ProfilePhotoDto profilePhotoDto =profilePhotoService.updateProfilePhotoStatus(username);
-        return new ResponseEntity<ProfilePhotoDto>(profilePhotoDto,HttpStatus.OK);
+    @PostMapping("/deletePhoto")
+    public ResponseEntity<Boolean> deletePhoto(@RequestBody UserPhotodto userPhotodto){
+        photoService.deletePhoto(userPhotodto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
+    @PostMapping("/uploadProfilePhoto")
+    public ResponseEntity<Boolean> uploadPhoto(@RequestBody ProfilePhotoDto profilePhotoDto){
+        profilePhotoService.savePhoto(profilePhotoDto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
+    @GetMapping("/getProfilePhoto/{username}")
+    public ResponseEntity<ProfilePhotoDto> getProfilePhoto(@PathVariable("username") String username){
+        ProfilePhotoDto profilePhoto = profilePhotoService.getProfilePhoto(username);
+        return new ResponseEntity<ProfilePhotoDto>(profilePhoto,HttpStatus.OK);
     }
 
     @GetMapping("/getPosts/{userName}")
-    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username){
-        List<UserPostDto> userPostList=followService.getPosts(username);
+    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username,
+    @RequestParam("page") int page, @RequestParam("size") int size){
+        org.springframework.data.domain.Pageable pageable = new PageRequest(page,size);
+        List<UserPostDto> userPostList=followService.getPosts(username, pageable);
         if (userPostList!= null) {
             return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
         }

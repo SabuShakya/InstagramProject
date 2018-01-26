@@ -1,4 +1,4 @@
-package com.f1soft.admin.service;
+package com.f1soft.admin.serviceimpl;
 
 import antlr.collections.List;
 import com.f1soft.admin.dto.AdminInfoDto;
@@ -6,6 +6,8 @@ import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.model.Admin;
 import com.f1soft.admin.model.TokenAuth;
 import com.f1soft.admin.repository.AdminRepository;
+import com.f1soft.admin.service.AdminService;
+import com.f1soft.admin.service.TokenAuthService;
 import com.f1soft.admin.utils.TokenUtils;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,7 @@ import java.util.Base64;
 
 @Service
 @Transactional("transactionManager")
-public class AdminServiceImpl implements AdminService{
+public class AdminServiceImpl implements AdminService {
 
     @Resource
     private AdminRepository adminRepository;

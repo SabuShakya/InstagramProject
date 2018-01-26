@@ -14,6 +14,7 @@
             console.log("This occurred:"+reason);
         });
 
+
         function ok() {
             $uibModalInstance.dismiss('close');
         }

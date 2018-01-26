@@ -22,6 +22,7 @@
             vm.response = NewAdminService.saveNewAdmin(vm.url,vm.newAdminObj);
             console.log("response"+vm.response);
             if(vm.response){
+                $rootScope.message = "Admin added successfully";
                 $location.path("/adminPage");
             }else {
                 vm.show_error_msg = true;

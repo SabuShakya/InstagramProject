@@ -23,6 +23,7 @@ public class UserPhotosPostUtil {
             userPostDto.setCreated_date(userPhotos.getCreated_date().toString());
             userPostDto.setCaption(userPhotos.getCaption());
             userPostDto.setCountOfLikes(userPhotos.getLikes().size());
+            userPostDto.setTotalItems(userPhotos.getTotalItems());
             userPostDtoList.add(userPostDto);
         }
         return userPostDtoList;

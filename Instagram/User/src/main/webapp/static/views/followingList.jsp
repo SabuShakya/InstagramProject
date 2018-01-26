@@ -4,7 +4,7 @@
 
 <div class="modal-body" id="modal-body">
     <div ng-repeat="follow in followingCtrl.following">
-        {{follow.following_userName}}
+        {{follow.userName}}
     </div>
 </div>
 
