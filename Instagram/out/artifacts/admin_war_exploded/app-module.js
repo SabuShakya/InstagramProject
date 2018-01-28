@@ -17,19 +17,16 @@
                 controller:"NewAdminController as newadmin",
                 templateUrl:'modules/views/addNewAdmin.jsp'
             })
-            // .when("/admin/adminDashboard",{
-            //     controller:"AdminPageController as admin",
-            //     templateUrl:'/modules/views/DashBoard.html'
-            // })
-            .when("/logout",{
-                controller:"LogOutController as logout"
+            .when("/manageAdmin",{
+                controller:"ManageAdminController as manage",
+                templateUrl:'modules/views/manageAdmin.jsp'
+            })
+            .when("/navigation",{
+                templateUrl: "modules/views/Dashboard.html",
+                controller:"NavigationController as navigate"
             })
             .otherwise({
                 redirectTo:'/login'
             })
-        // $locationProvider.html5Mode({
-        //     enabled: true,
-        //     requireBase: false
-        // });
     }]);
 })();

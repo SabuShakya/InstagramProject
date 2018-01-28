@@ -67,7 +67,6 @@ public class PhotoServiceImpl implements PhotoService {
         }
     }
 
-//sabu
     public List<UserPhotos> getListOfPhotos(List<User> listOfFollowedUsers, Pageable pageable) {
         final String SQL_QUERY="SELECT u from UserPhotos u where u.user.id=:id";
         Query query = entityManager.createQuery(SQL_QUERY,UserPhotos.class);
@@ -104,10 +103,6 @@ public class PhotoServiceImpl implements PhotoService {
     public long getPhotoCount(String username) {
         List<UserPhotos> userPhotosList=photoRepository.getUserPhotosByUserUsername(username);
         return userPhotosList.size();
-    }
-
-    public void deletePhoto(UserPhotodto userPhotodto) {
-        photoRepository.delete(userPhotodto.getId());
     }
 }
 

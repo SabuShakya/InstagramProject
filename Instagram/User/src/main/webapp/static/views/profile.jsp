@@ -34,14 +34,11 @@
 <br>
 
 <div ng-hide="profile.showList">
-
     <div class="col-md-4" ng-repeat="photo in profile.photoList">
         <div class="thumbnail">
             <img src="uploads/{{photo.image_path}}" style="width:100%"
                  ng-click="profile.commentModal(photo.image_path,photo.caption)">
-            <button ng-click="profile.deletePhoto(photo.image_path)"></button>
             {{photo.caption}}
         </div>
     </div>
-
 </div>

@@ -8,7 +8,6 @@
         vm.userName = '';
         vm.email = '';
         vm.password = '';
-
         vm.repassword = '';
         vm.response = '';
         vm.match = false;

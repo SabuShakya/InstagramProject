@@ -12,13 +12,13 @@
         vm.adminId = '';
 
         vm.openUserLog = openUserLog;
-        vm.logout = logout;
         vm.openLoginModal = openLoginModal;
 
         HttpService.get("/getAdminId/" + $localStorage.adminObj.tokenNo + "/"
             + $localStorage.adminObj.userName).then(
             function (value) {
                 vm.adminId = $localStorage.adminObj.name;
+                $rootScope.adminId=$localStorage.adminObj.name;
                 console.log(vm.adminId);
             }, function (reason) {
                 vm.showAll = false;
@@ -33,15 +33,6 @@
                 controller: 'UserLogController',
                 controllerAs: 'userLog',
                 size: 'lg'
-            });
-        }
-
-        function logout() {
-            HttpService.post("/logout", $localStorage.adminObj).then(function (value) {
-                $localStorage.adminObj = {};
-                $location.path("/login");
-            }, function (reason) {
-                alert("Error Occurred");
             });
         }
 
