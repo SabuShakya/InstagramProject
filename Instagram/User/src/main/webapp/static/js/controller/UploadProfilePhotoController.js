@@ -19,13 +19,14 @@
 
             HttpService.post(vm.url, vm.obj).then(
                 function (value) {
-                    $uibModalInstance.close('save');
+                    $rootScope.saved = true;
                 },
                 function (reason) {
                     $rootScope.message = "Error occured";
                     $rootScope.saved = true;
                 }
             );
+            $uibModalInstance.close('save');
         }
 
         function close() {
