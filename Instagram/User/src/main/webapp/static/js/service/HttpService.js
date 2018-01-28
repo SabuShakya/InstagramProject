@@ -13,14 +13,13 @@ angular.module('userModule').factory('HttpService', HttpService);
         function get(url) {
             var defered = $q.defer();
             $http.get(vm.REST_SERVICE_URI+url).then(
-                    function (response) {
-                        defered.resolve(response.data);
+                function (response) {
+                    defered.resolve(response.data);
                     },
-                    function (error) {
-                        console.log("Error occured");
-                        defered.reject(error.data);
-                    }
-                );
+                function (error) {
+                    console.log("Error occured");
+                    defered.reject(error.data);
+                });
             return defered.promise;
         }
 

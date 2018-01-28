@@ -21,8 +21,9 @@
                 controller:"ManageAdminController as manage",
                 templateUrl:'modules/views/manageAdmin.jsp'
             })
-            .when("/logout",{
-                controller:"AdminpageController as admin"
+            .when("/navigation",{
+                templateUrl: "modules/views/Dashboard.html",
+                controller:"NavigationController as navigate"
             })
             .otherwise({
                 redirectTo:'/login'

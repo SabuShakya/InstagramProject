@@ -1,6 +1,8 @@
 package com.users.utils;
 
+import com.users.dto.ProfilePhotoDto;
 import com.users.dto.UserSearchDto;
+import com.users.model.ProfilePhoto;
 import com.users.model.User;
 
 import java.util.ArrayList;

@@ -10,6 +10,7 @@
         vm.listOfImages = [];
         vm.i = 0;
         vm.caption = '';
+        vm.submitClicked=false;
         vm.url="/upload";
         vm.uploadPhoto = uploadPhoto;
         vm.close = close;
@@ -29,6 +30,7 @@
             };
             HttpService.post(vm.url, vm.obj).then(
                 function (value) {
+                    vm.submitClicked=true;
                     $rootScope.saved = true;
                     $uibModalInstance.close('save');
                 },

@@ -63,7 +63,7 @@
                 vm.showing =false;
             }else {
                 vm.showing = true;
-                HttpService.get("/showComments/" + post.image_path).then(function (value) {
+                HttpService.get("/showComments/" +post.image_path).then(function (value) {
                     vm.commentList = value;
                     vm.showList = true;
                     vm.showing = true;
@@ -108,6 +108,7 @@
                 console.log("Error Occured:"+reason);
             });
         }
+
         function openLikeListModal(post) {
             $rootScope.imageName = post.image_path;
             vm.modalInstance=$uibModal.open({

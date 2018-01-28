@@ -49,7 +49,6 @@ public class UserController {
         return new ResponseEntity<Boolean>(true, HttpStatus.OK);
     }
 
-    //smriti
     @PostMapping("/login")
     public ResponseEntity<UserTokenDto> getUser(@RequestBody Userdto userdto){
         boolean isUser = userService.loginUser(userdto);
@@ -84,12 +83,6 @@ public class UserController {
         return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("/deletePhoto")
-    public ResponseEntity<Boolean> deletePhoto(@RequestBody UserPhotodto userPhotodto){
-        photoService.deletePhoto(userPhotodto);
-        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-    }
-
     @PostMapping("/uploadProfilePhoto")
     public ResponseEntity<Boolean> uploadPhoto(@RequestBody ProfilePhotoDto profilePhotoDto){
         profilePhotoService.savePhoto(profilePhotoDto);
@@ -112,6 +105,7 @@ public class UserController {
         }
         return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
     }
+
     @PostMapping("/addComment")
     public ResponseEntity<Boolean> addComment( @RequestBody Commentsdto commentsdto ){
         commentsService.saveComments(commentsdto);

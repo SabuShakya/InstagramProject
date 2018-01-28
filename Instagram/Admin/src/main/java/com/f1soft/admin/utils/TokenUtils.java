@@ -15,7 +15,6 @@ public class TokenUtils {
         tokenAuthDto.setStatus(tokenAuth.getStatus());
         tokenAuthDto.setName(tokenAuth.getAdmin().getName());
         tokenAuthDto.setUserName(tokenAuth.getAdmin().getUserName());
-//        tokenAuthDto.setAdmin(tokenAuth.getAdmin());
         return tokenAuthDto;
     }
 }
