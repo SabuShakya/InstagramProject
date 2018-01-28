@@ -3,6 +3,7 @@
     <div align="center" ng-repeat="post in main.posts">
         <div class='insta fade-scroll'>
             <div class='top-insta'>
+                <img src=""
                 <a href='#' target='_blank' class='user'>{{post.username}}
                 </a>
                 <span class='dot'></span>

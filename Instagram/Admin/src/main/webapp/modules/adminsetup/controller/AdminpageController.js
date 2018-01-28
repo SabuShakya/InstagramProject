@@ -29,7 +29,7 @@
             vm.modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/modules/views/userLog.jsp',
+                templateUrl: 'modules/views/userLog.jsp',
                 controller: 'UserLogController',
                 controllerAs: 'userLog',
                 size: 'lg'
@@ -40,7 +40,7 @@
             vm.modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/modules/views/sessionLostModal.jsp',
+                templateUrl: 'modules/views/sessionLostModal.jsp',
                 controller: 'EditModalController',
                 controllerAs: 'modalController',
                 size: 'lg'
