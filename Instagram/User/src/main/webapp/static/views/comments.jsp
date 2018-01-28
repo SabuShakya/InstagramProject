@@ -42,15 +42,15 @@
             </div>
         </div>
 
-            <div class='comment-section'>
-                <input type='text' id='cmnt' ng-model="comment.comments" placeholder='Add a comment...'>
-                <button ng-click="comment.add()">Add</button>
-            </div>
+        <div class='comment-section'>
+            <input type='text' id='cmnt' ng-model="comment.comments" placeholder='Add a comment...'>
+            <button ng-click="comment.add()">Add</button>
+        </div><br>
 
-            <div ng-hide ="comment.showCommentList">
-                <input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>
-                <button ng-click="comment.edit()">Edit</button>
-            </div>
+        <div ng-hide ="comment.showCommentList">
+            <input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>
+            <button ng-click="comment.edit()">Edit</button>
+        </div>
     </div>
 </section>
 </div>

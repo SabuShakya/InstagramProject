@@ -6,6 +6,8 @@ import com.users.service.*;
 import com.users.utils.TokenUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 
@@ -14,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 @RestController
@@ -46,7 +49,6 @@ public class UserController {
         return new ResponseEntity<Boolean>(true, HttpStatus.OK);
     }
 
-    //smriti
     @PostMapping("/login")
     public ResponseEntity<UserTokenDto> getUser(@RequestBody Userdto userdto){
         boolean isUser = userService.loginUser(userdto);
@@ -72,12 +74,6 @@ public class UserController {
     }
 
     //smriti
-    @PostMapping("/uploadProfilePhoto")
-    public ResponseEntity<Boolean> uploadPhoto(@RequestBody ProfilePhotoDto profilePhotoDto){
-        profilePhotoService.savePhoto(profilePhotoDto);
-        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-    }
-
     @GetMapping("/allPhotos/{username}")
     public ResponseEntity<List<UserPhotodto>> photoList(@PathVariable("username") String username){
         List<UserPhotodto> photoList= photoService.getAllPhotos(username);
@@ -86,7 +82,13 @@ public class UserController {
         }
         return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
     }
-//sabu
+
+    @PostMapping("/uploadProfilePhoto")
+    public ResponseEntity<Boolean> uploadPhoto(@RequestBody ProfilePhotoDto profilePhotoDto){
+        profilePhotoService.savePhoto(profilePhotoDto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
     @GetMapping("/getProfilePhoto/{username}")
     public ResponseEntity<ProfilePhotoDto> getProfilePhoto(@PathVariable("username") String username){
         ProfilePhotoDto profilePhoto = profilePhotoService.getProfilePhoto(username);
@@ -94,13 +96,16 @@ public class UserController {
     }
 
     @GetMapping("/getPosts/{userName}")
-    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username){
-        List<UserPostDto> userPostList=followService.getPosts(username);
+    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username,
+    @RequestParam("page") int page, @RequestParam("size") int size){
+        org.springframework.data.domain.Pageable pageable = new PageRequest(page,size);
+        List<UserPostDto> userPostList=followService.getPosts(username, pageable);
         if (userPostList!= null) {
             return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
         }
         return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
     }
+
     @PostMapping("/addComment")
     public ResponseEntity<Boolean> addComment( @RequestBody Commentsdto commentsdto ){
         commentsService.saveComments(commentsdto);
@@ -177,17 +182,28 @@ public class UserController {
         followCountDto.setTotalPictures(photoService.getPhotoCount(username));
         return new ResponseEntity<FollowCountDto>(followCountDto,HttpStatus.OK);
     }
-//sabu
+
+    @GetMapping("/getFollowersList/{username}")
+    public ResponseEntity<List<FollowDto>> getFollowerList(@PathVariable("username")String username){
+        List<FollowDto> followDtoList = followService.getFollowersList(username);
+        return new ResponseEntity<List<FollowDto>>(followDtoList,HttpStatus.OK);
+    }
+
+    @GetMapping("/getFollowingList/{username}")
+    public ResponseEntity<List<FollowDto>> getFollowingList(@PathVariable("username")String username){
+        List<FollowDto> followDtoList = followService.getFollowingList(username);
+        return new ResponseEntity<List<FollowDto>>(followDtoList,HttpStatus.OK);
+    }
+
     @GetMapping("/likesCount/{imageName}")
     public ResponseEntity<Integer> getLikesCount(@PathVariable("imageName")String imageName){
         int likesCount = likesService.getLikesCountForImage(imageName);
         return new ResponseEntity<Integer>(likesCount,HttpStatus.OK);
     }
-//sabu
+
     @GetMapping("/getLikesList/{imageName}")
     public ResponseEntity<List<Likesdto>> getLikesList(@PathVariable("imageName")String imageName){
         List<Likesdto> likesdtoList = likesService.getLikesList(imageName);
         return new ResponseEntity<List<Likesdto>>(likesdtoList,HttpStatus.OK);
     }
-
 }

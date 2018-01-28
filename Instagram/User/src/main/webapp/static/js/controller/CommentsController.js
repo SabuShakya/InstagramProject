@@ -23,16 +23,7 @@
         vm.showLikeList = showLikeList;
         vm.showComments=showComments;
         vm.commentsList=commentsList;
-
-        // showComments();
         vm.imageName = $rootScope.photo;
-
-        // HttpService.get("/showComments/"+$rootScope.photo).then(function(value){
-        //     vm.commentList = value;
-        //     vm.showList = false;
-        // },function (reason) {
-        //     console.log("Error occured"+reason);
-        // });
 
         HttpService.get("/likesCount/"+vm.imageName).then(function (value) {
             vm.likeCount = value;
@@ -77,6 +68,7 @@
                 console.log("Error occured" + reason);
             });
         }
+
         function showComments() {
             if (vm.showing){
                 vm.showList = false;
@@ -102,14 +94,13 @@
         function openDeleteModal(comment) {
             $rootScope.clickedComment=comment;
             HttpService.post("/deleteComment", $rootScope.clickedComment).then(function (value) {
-                console.log("sucesss");
+                console.log("success");
                 $rootScope.saved = true;
                 commentsList();
             },function (reason) {
                 $rootScope.saved = true;
             });
         }
-        // $interval(vm.openDeleteModal,1000);
 
         function openEditModal(comment) {
             $rootScope.clickedComment = comment;
@@ -125,14 +116,6 @@
                 $rootScope.saved = true;
             });
         }
-
-        // function like() {
-        //     HttpService.post("/likeAction/",+ $rootScope.photo).then(function (value) {
-        //         vm.noOfLikes = value;
-        //     },function (reason) {
-        //         console.log("Error Occured:"+reason);
-        //     });
-        // }
 
         function cancel(){
             $uibModalInstance.dismiss('close');

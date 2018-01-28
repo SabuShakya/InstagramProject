@@ -7,8 +7,6 @@
             vm.fullName ='';
             vm.username ='';
             vm.email='';
-
-            vm.match =false;
             vm.error_msg = false;
 
         vm.url="/signup";

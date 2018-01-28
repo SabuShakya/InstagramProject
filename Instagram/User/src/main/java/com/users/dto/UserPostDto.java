@@ -15,4 +15,5 @@ public class UserPostDto {
     private String created_date;
     private String caption;
     private int countOfLikes;
+    private int totalItems;
 }
