@@ -14,6 +14,7 @@
         $rootScope.message='';
         $rootScope.saved = false;
         $rootScope.photo = '';
+        $rootScope.clickedPhoto='';
         $rootScope.pic='';
 
         vm.userDisplayName = $localStorage.storedObj.username;
@@ -26,7 +27,6 @@
         vm.profilePhoto=profilePhoto;
         vm.followersList=followersList;
         vm.followingList=followingList;
-        vm.deletePhotos=deletePhotos;
 
         allPhotos();
         // followCount();
@@ -130,29 +130,6 @@
                     profilePhoto();
                 },
                 function(){})
-        }
-
-
-        function openDeleteModal(comment) {
-            $rootScope.clickedComment=comment;
-            HttpService.post("/deleteComment", $rootScope.clickedComment).then(function (value) {
-                console.log("success");
-                $rootScope.saved = true;
-                commentsList();
-            },function (reason) {
-                $rootScope.saved = true;
-            });
-        }
-
-        function deletePhotos(image_path) {
-            $rootScope.photo = image_path;
-            HttpService.post("/deletePhoto",$rootScope.photo).then(function(value){
-                $rootScope.saved=true;
-                allPhotos();
-            },function (reason) {
-                console.log("error");
-                $rootScope.saved=true;
-            });
         }
     }
 })();

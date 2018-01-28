@@ -23,7 +23,6 @@
         vm.showLikeList = showLikeList;
         vm.showComments=showComments;
         vm.commentsList=commentsList;
-
         vm.imageName = $rootScope.photo;
 
         HttpService.get("/likesCount/"+vm.imageName).then(function (value) {

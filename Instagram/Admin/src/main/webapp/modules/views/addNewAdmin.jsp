@@ -1,3 +1,4 @@
+<div ng-include src="'modules/views/DashBoard.html'"></div>
 <h2 class="text-center">Create New </h2>
 <form name="myForm" class="form-horizontal" novalidate>
     <div class="form-group">
@@ -47,7 +48,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-default" ng-click="newadmin.saveNewAdmin()">Save</button>
+            <button class="btn btn-default" ng-click="newadmin.saveNewAdmin()" ng-disabled="myForm.$invalid">Save</button>
         </div>
     </div>
 </form>

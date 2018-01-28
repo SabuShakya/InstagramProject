@@ -11,6 +11,7 @@ import java.util.List;
 @Setter
 public class UserPhotodto {
     private long id;
+    private long photo_id;
     private List<String> imageList;
     private String image_path;
     private Date created_date;

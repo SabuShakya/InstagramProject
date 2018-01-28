@@ -7,6 +7,7 @@ import com.users.model.User;
 import com.users.repository.ProfilePhotoRepository;
 import com.users.repository.UserRepository;
 import com.users.service.EmailService;
+import com.users.service.ProfilePhotoService;
 import com.users.service.UserService;
 import com.users.service.UserTokenService;
 import com.users.utils.TokenUtils;
@@ -20,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -42,6 +44,10 @@ public class UserServiceImpl implements UserService {
     private EmailService emailService;
 
     private JavaMailSender mailSender;
+
+    @Autowired
+    private ProfilePhotoService profilePhotoService;
+
 
     public void saveUser(User user) {
         String password=TokenUtils.generateToken();
@@ -85,7 +91,7 @@ public class UserServiceImpl implements UserService {
         String sql = "Select u from User u where u.username like :username";
         List<User> userList= em.createQuery(sql,User.class).setParameter("username",
                 "%"+searchTerm+"%").getResultList();
-        return UserSearchUtils.getSearchedUserInfo(userList);
+       return UserSearchUtils.getSearchedUserInfo(userList);
     }
 
   //smriti
