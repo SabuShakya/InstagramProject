@@ -6,435 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="328f2c9d-bf7b-42b8-98e6-1014526f3c71" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ManageAdminController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/manageAdmin.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/FollowUtils.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/FollowersListController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/FollowingListController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/followersList.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/followingList.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/META-INF/MANIFEST.MF" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/META-INF/context.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/ApplicationConfiguration.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/ApplicationInitializer.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/JpaConfiguration.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/RootConfig.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/controller/AdminController.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/AdminInfoDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/AdminLoginDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/TokenAuthDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/model/Admin.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/model/TokenAuth.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/repository/AdminRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/repository/TokenRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/AdminService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/AdminServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/TokenAuthService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/TokenAuthServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/utils/AdminUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/utils/TokenUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/aspectjrt-1.8.10.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/classmate-1.3.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-core-4.2.3.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-entitymanager-4.2.3.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-validator-6.0.7.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jackson-annotations-2.9.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jackson-core-2.9.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jackson-databind-2.9.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/javassist-3.15.0-GA.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jbcrypt-0.3m.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.24.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/lombok-1.16.10.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/modelmapper-0.7.5.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.30.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/slf4j-api-1.7.24.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-aop-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-beans-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-context-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-core-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-data-commons-1.13.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-data-jpa-1.11.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-expression-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-jdbc-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-orm-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-tx-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-web-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-webmvc-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/validation-api-2.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/app-module.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/css/login.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/index.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/AdminpageController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/EditModalController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/LogOutController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/LoginController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/NewAdminController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/SignupController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/service/HttpService.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/service/LoginService.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/service/NewAdminService.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/service/SignupService.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/images/img_avatar2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/DashBoard.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/addNewAdmin.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/adminPage.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/confirmDelete.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/editModal.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/existingUsers.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/loginPage.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/sessionLostModal.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/signupPage.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/userLog.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/static/angular-base64-upload.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/static/angular-route.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/static/angular.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/META-INF/MANIFEST.MF" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/activation-1.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/aspectjrt-1.8.10.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/classmate-1.3.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-core-4.2.3.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-entitymanager-4.2.3.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-validator-6.0.7.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jackson-annotations-2.9.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jackson-core-2.9.3.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jackson-databind-2.9.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/javassist-3.15.0-GA.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/javax.mail-1.5.6.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jbcrypt-0.3m.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.24.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/joda-money-0.6.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/joda-time-2.9.9.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jul-to-slf4j-1.7.22.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/log4j-over-slf4j-1.7.22.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/logback-classic-1.1.9.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/logback-core-1.1.9.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/lombok-1.16.10.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/modelmapper-0.7.5.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.30.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/slf4j-api-1.7.24.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/snakeyaml-1.17.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-aop-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-beans-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-autoconfigure-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-starter-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-starter-logging-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-starter-mail-1.5.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-starter-security-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-context-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-context-support-4.3.8.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-core-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-data-commons-1.13.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-data-jpa-1.11.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-expression-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-jdbc-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-orm-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-security-config-4.2.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-security-core-4.2.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-security-web-4.2.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-tx-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-web-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-webmvc-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/usertype.core-3.0.0.CR1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/usertype.spi-3.0.0.CR1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/validation-api-2.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/META-INF/context.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/ApplicationConfiguration.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/ApplicationInitializer.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/JpaConfiguration.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/RootConfig.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/controller/AdminController.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/AdminInfoDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/AdminLoginDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/TokenAuthDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/model/Admin.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/model/TokenAuth.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/repository/AdminRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/repository/TokenRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/AdminService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/AdminServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/TokenAuthService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/TokenAuthServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/utils/AdminUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/utils/TokenUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/aspectjrt-1.8.10.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/classmate-1.3.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-core-4.2.3.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-entitymanager-4.2.3.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-validator-6.0.7.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jackson-annotations-2.9.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jackson-core-2.9.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jackson-databind-2.9.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/javassist-3.15.0-GA.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jbcrypt-0.3m.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.24.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/lombok-1.16.10.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/modelmapper-0.7.5.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.30.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/slf4j-api-1.7.24.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/slf4j-simple-1.7.21.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-aop-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-beans-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-context-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-core-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-data-commons-1.13.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-data-jpa-1.11.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-expression-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-jdbc-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-orm-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-tx-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-web-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-webmvc-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/validation-api-2.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/app-module.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/css/login.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/index.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/AdminpageController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/EditModalController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/LoginController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/MainController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/NewAdminController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/SignupController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/service/HttpService.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/service/LoginService.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/service/NewAdminService.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/service/SignupService.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/images/img_avatar2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/DashBoard.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/addNewAdmin.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/adminDashboard.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/adminPage.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/adminPhotoModal.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/confirmDelete.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/editModal.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/existingUsers.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/loginPage.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/sessionLostModal.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/signupPage.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/userLog.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/static/angular-base64-upload.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/static/angular-route.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/static/angular.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/META-INF/MANIFEST.MF" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/META-INF/context.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/AppConfiguration.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/AppInitializer.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/EmailConfiguration.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/JPAConfiguration.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/RootConfiguration.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/controller/UserController.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/Commentsdto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/FollowCountDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/FollowDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/Likesdto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/ProfilePhotoDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/UserPhotodto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/UserPostDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/UserSearchDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/UserTokenDto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/Userdto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/Comments.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/Follow.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/Likes.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/ProfilePhoto.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/User.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/UserPhotos.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/UserToken.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/CommentsRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/FollowRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/LikesRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/PhotoRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/ProfilePhotoRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/UserRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/UserTokenRepository.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/CommentsService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/EmailService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/FollowService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/LikesService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/PhotoService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/ProfilePhotoService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/UserService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/UserTokenService.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/CommentsServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/FollowServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/LikesServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/PhotoServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/ProfilePhotoServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/UserServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/UserTokenServiceImpl.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/CommentUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/FollowUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/LikesUtil.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/PhotoUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/ProfilePhotoUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/TokenUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/UserPhotosPostUtil.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/UserSearchUtils.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/activation-1.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/aspectjrt-1.8.10.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/classmate-1.3.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-core-4.2.3.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-entitymanager-4.2.3.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-validator-6.0.7.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jackson-annotations-2.9.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jackson-core-2.9.3.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jackson-databind-2.9.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/javassist-3.15.0-GA.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/javax.mail-1.5.6.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jbcrypt-0.3m.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.24.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/joda-money-0.6.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/joda-time-2.9.9.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jul-to-slf4j-1.7.22.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/log4j-over-slf4j-1.7.22.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/logback-classic-1.1.9.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/logback-core-1.1.9.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/lombok-1.16.10.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/modelmapper-0.7.5.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.30.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/slf4j-api-1.7.24.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/snakeyaml-1.17.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-aop-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-beans-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-autoconfigure-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-starter-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-starter-logging-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-starter-mail-1.5.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-starter-security-1.5.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-context-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-context-support-4.3.8.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-core-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-data-commons-1.13.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-data-jpa-1.11.3.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-expression-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-jdbc-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-orm-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-security-config-4.2.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-security-core-4.2.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-security-web-4.2.1.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-tx-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-web-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-webmvc-4.3.5.RELEASE.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/usertype.core-3.0.0.CR1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/usertype.spi-3.0.0.CR1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/validation-api-2.0.1.Final.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/angular-base64-upload.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/angular-route.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/angular.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/app.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/index.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/comments.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/login.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/newsFeed.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/profile.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/images/friendship.jpeg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/images/login.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/CommentsController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/FollowersListController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/FollowingListController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/ImgUploadController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/LikesController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/LikesListController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/LoginController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/MainController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/NavigationController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/ProfileController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/SearchController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/SearchedProfileController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/SignupController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/UpdateController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/UploadProfilePhotoController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/service/HttpService.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/comments.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/followersList.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/followingList.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/likesList.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/login.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/navigation.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/newsFeed.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/profile.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/search.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/searchedProfile.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/signup.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/update.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/upload.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/uploadProfilePhoto.jsp" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/AdminServiceImpl.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/AdminServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/AdminpageController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/AdminpageController.js" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/EditModalController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/EditModalController.js" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LogOutController.js" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/LogOutController.js" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/NewAdminController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/NewAdminController.js" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminDashboard.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/adminDashboard.jsp" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminPage.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminPage.jsp" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/existingUsers.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/MainController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppConfiguration.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppConfiguration.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/FollowDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/FollowDto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPhotodto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPhotodto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPostDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPostDto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/model/User.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/User.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/model/UserPhotos.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/UserPhotos.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/repository/FollowRepository.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/FollowRepository.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/service/FollowService.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/FollowService.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/service/PhotoService.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/PhotoService.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserPhotosPostUtil.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserPhotosPostUtil.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/css/login.css" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/css/login.css" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ImgUploadController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ImgUploadController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UploadProfilePhotoController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UploadProfilePhotoController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" />
-    </list>
+    <list default="true" id="328f2c9d-bf7b-42b8-98e6-1014526f3c71" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/Admin/target/" />
@@ -468,37 +40,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashBoard.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DashBoard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="270">
               <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app-module.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app-module.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/app-module.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
               <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.js" pinned="false" current-in-tab="false">
-        <entry file="http://localhost:8080/admin/modules/adminsetup/controller/LoginController.js">
-          <provider selected="true" editor-type-id="httpFileEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpService.js" pinned="false" current-in-tab="false">
-        <entry file="http://localhost:8080/admin/modules/adminsetup/service/HttpService.js">
-          <provider selected="true" editor-type-id="httpFileEditor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -814,12 +372,17 @@
       <listeners />
     </configuration>
     <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.24" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/admin/" />
       <option name="START_JAVASCRIPT_DEBUGGER" value="true" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="Admin:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/admin" />
+          </settings>
+        </artifact>
+        <artifact name="User:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -886,6 +449,7 @@
       <method>
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Admin:war exploded" />
+          <artifact name="User:war exploded" />
         </option>
       </method>
     </configuration>
@@ -909,12 +473,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1517114098815</updated>
-      <workItem from="1517114101149" duration="2670000" />
+      <workItem from="1517114101149" duration="3342000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2670000" />
+    <option name="totallyTimeSpent" value="3342000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="44" width="1325" height="772" extended-state="6" />
@@ -929,7 +493,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39968896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39968896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -939,8 +503,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24941361" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24941361" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -1091,11 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="http://localhost:8080/admin/modules/adminsetup/controller/LoginController.js">
-      <provider selected="true" editor-type-id="httpFileEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="http://localhost:8080/admin/modules/adminsetup/service/HttpService.js">
       <provider selected="true" editor-type-id="httpFileEditor">
         <state />
@@ -1127,14 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/app-module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LoginController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1145,8 +696,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="270">
           <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="http://localhost:8080/admin/modules/adminsetup/controller/LoginController.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/app-module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
           <folding />
         </state>
       </provider>
