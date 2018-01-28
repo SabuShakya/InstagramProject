@@ -1,9 +1,9 @@
-(function(){
-    angular.module('userModule').controller("CommentsController", CommentsController);
+(function () {
+    angular.module('userModule').controller('PostCommentModalController', PostCommentModalController);
 
-    CommentsController.$inject =['HttpService','$uibModalInstance','$rootScope','$localStorage','$location','$interval'];
+    PostCommentModalController.$inject = ['HttpService','$uibModalInstance','$rootScope','$localStorage','$location','$interval'];
 
-    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location, $interval) {
+    function PostCommentModalController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location, $interval) {
         var vm =this;
         vm.comments = '';
         vm.commentList=[];
@@ -14,53 +14,35 @@
         $rootScope.saved= false;
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
+
         vm.add = add;
-        vm.like = like;
         vm.openDeleteModal= openDeleteModal;
         vm.openEditModal=openEditModal;
         vm.edit=edit;
         vm.cancel=cancel;
-        vm.showLikeList = showLikeList;
         vm.showComments=showComments;
         vm.commentsList=commentsList;
-        vm.imageName = $rootScope.photo;
 
-        HttpService.get("/likesCount/"+vm.imageName).then(function (value) {
-            vm.likeCount = value;
-        },function (reason) {
-            console.log("This error occurred:"+reason);
-        });
+        commentsList();
 
         $rootScope.clickedComment ='';
         function add() {
             vm.obj={
                 'comments': vm.comments,
                 'username':$localStorage.storedObj.username,
-                'image_path':$rootScope.photo
+                'image_path':$rootScope.photoName
             };
             HttpService.post(vm.url,vm.obj).then(
                 function (value) {
                     console.log("success");
                     vm.comments = '';
-                    showComments();
+                    commentsList();
                 },function (reason) {
                 });
         }
 
-        function like() {
-            vm.obj = {
-                'username':$localStorage.storedObj.username,
-                'image_path':$rootScope.photo
-            };
-            HttpService.post("/likeAction",vm.obj).then(function (value) {
-                vm.likeCount = value;
-            },function (reason) {
-                console.log("Error Occured:"+reason);
-            });
-        }
-
         function commentsList(){
-            HttpService.get("/showComments/" + $rootScope.photo).then(function (value) {
+            HttpService.get("/showComments/" + $rootScope.photoName).then(function (value) {
                 vm.commentList = value;
                 angular.forEach(vm.commentList , function(commentList , key) {
                     if( commentList.username == $localStorage.storedObj.username){
@@ -82,19 +64,6 @@
                 vm.showing =false;
             }else {
                 commentsList();
-            }
-        }
-
-        function showLikeList() {
-            if(vm.showLikes){
-                vm.showLikes = false;
-            }else{
-                HttpService.get("/getLikesList/"+vm.imageName).then(function (value) {
-                    vm.showLikes = true;
-                    vm.likes = value;
-                },function (reason) {
-                    console.log("This occurred:"+reason);
-                });
             }
         }
 
