@@ -1,4 +1,3 @@
-
 <div class="modal-header">
     <div class="modal-title" id="modal-title">
         <h1>Delete</h1>
