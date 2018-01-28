@@ -28,7 +28,8 @@
 <div>
 <ng-view></ng-view>
 </div>
-</body>
+<%--module--%>
+<script type="text/javascript" src="app-module.js"></script>
 <%--Controllers--%>
 
 <%--<script type="text/javascript" src="modules/adminsetup/controller/MainController.js"></script>--%>
