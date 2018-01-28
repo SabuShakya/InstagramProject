@@ -29,7 +29,7 @@
             vm.modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/modules/views/editModal.jsp',
+                templateUrl: 'modules/views/editModal.jsp',
                 controller: 'EditModalController',
                 controllerAs: 'modalController',
                 size: 'lg'
@@ -46,7 +46,7 @@
             vm.modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/modules/views/confirmDelete.jsp',
+                templateUrl: 'modules/views/confirmDelete.jsp',
                 controller: 'EditModalController',
                 controllerAs: 'modalController',
                 size: 'lg'
@@ -63,7 +63,7 @@
             vm.modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/modules/views/adminPhotoModal.jsp',
+                templateUrl: 'modules/views/adminPhotoModal.jsp',
                 controller: 'EditModalController',
                 controllerAs: 'modalController',
                 size: 'lg'

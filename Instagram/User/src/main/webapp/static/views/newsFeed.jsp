@@ -39,25 +39,28 @@
                 </div>
                 <br>
 
-                <div class='comment-section'>
-                    <div ng-show="main.showList" ng-repeat="comm in main.commentList">
-                        {{comm.username}} : {{comm.comments}}
-                        <br>
-                        <br>
-                        <button type="button" class="btn btn-danger" ng-click="main.openDeleteModal(comm)"> Delete
-                        </button>
-                        <button type="button" class="btn btn-success" ng-click="main.openEditModal(comm)">Edit</button>
-                    </div>
+                <%--<div class='comment-section'>--%>
+                    <%--&lt;%&ndash;<div ng-show="main.showList" ng-repeat="comm in main.commentList">&ndash;%&gt;--%>
+                    <%--<div ng-show="main.showList" ng-repeat="comm in post.comments">--%>
+                        <%--{{comm.username}} : {{comm.comments}}--%>
+                        <%--<br>--%>
+                        <%--<br>--%>
+                        <%--<div ng-show="comm.showCommentButtons">--%>
+                            <%--<button type="button" class="btn btn-success" ng-click="main.openEditModal(comm)">Edit</button>--%>
+                        <%--</div>--%>
+                        <%--<button type="button" class="btn btn-danger" ng-click="main.openDeleteModal(comm)"> Delete--%>
+                        <%--</button>--%>
+                    <%--</div>--%>
 
-                    <div ng-hide ="main.showCommentList">
-                        <input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>
-                        <button ng-click="main.edit()">Edit</button>
-                    </div>
+                    <%--<div ng-hide ="main.showCommentList">--%>
+                        <%--<input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>--%>
+                        <%--<button ng-click="main.edit()">Edit</button>--%>
+                    <%--</div>--%>
 
-                    <input type='text' id='cmnt' ng-model="post.comment" placeholder='Add a comment...'>
-                    <button ng-click="main.addComment(post)">Add</button>
-                    <br>
-                </div>
+                    <%--<input type='text' id='cmnt' ng-model="post.comment" placeholder='Add a comment...'>--%>
+                    <%--<button ng-click="main.addComment(post)">Add</button>--%>
+                    <%--<br>--%>
+                <%--</div>--%>
         </div>
     </div>
     </div>

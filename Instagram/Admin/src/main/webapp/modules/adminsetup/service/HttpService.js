@@ -3,7 +3,7 @@
     HttpService.$inject = ['$http','$q'];
     function HttpService($http,$q) {
         var vm = this;
-        vm.Rest_Service_Url = "http://localhost:8080";
+        vm.Rest_Service_Url = "http://localhost:8080/admin";
 
         return {
             get:get,

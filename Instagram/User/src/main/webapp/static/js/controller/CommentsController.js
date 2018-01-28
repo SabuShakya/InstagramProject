@@ -62,6 +62,13 @@
         function commentsList(){
             HttpService.get("/showComments/" + $rootScope.photo).then(function (value) {
                 vm.commentList = value;
+                angular.forEach(vm.commentList , function(commentList , key) {
+                    if( commentList.username == $localStorage.storedObj.username){
+                        commentList.showCommentButtons = true;
+                    }else {
+                        commentList.showCommentButtons = false;
+                    }
+                });
                 vm.showList = true;
                 vm.showing = true;
             }, function (reason) {
