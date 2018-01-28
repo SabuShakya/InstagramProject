@@ -6,11 +6,439 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd5a31d5-53e5-4916-9c0d-c0c3c7628b4d" name="Default" comment="" />
-    <ignored path="$PROJECT_DIR$/Admin/target/" />
+    <list default="true" id="328f2c9d-bf7b-42b8-98e6-1014526f3c71" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ManageAdminController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/manageAdmin.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/FollowUtils.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/FollowersListController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/FollowingListController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/followersList.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/followingList.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/META-INF/MANIFEST.MF" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/META-INF/context.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/ApplicationConfiguration.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/ApplicationInitializer.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/JpaConfiguration.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/RootConfig.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/controller/AdminController.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/AdminInfoDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/AdminLoginDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/TokenAuthDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/model/Admin.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/model/TokenAuth.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/repository/AdminRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/repository/TokenRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/AdminService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/AdminServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/TokenAuthService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/TokenAuthServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/utils/AdminUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/classes/com/f1soft/admin/utils/TokenUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/aspectjrt-1.8.10.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/classmate-1.3.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-core-4.2.3.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-entitymanager-4.2.3.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/hibernate-validator-6.0.7.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jackson-annotations-2.9.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jackson-core-2.9.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jackson-databind-2.9.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/javassist-3.15.0-GA.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jbcrypt-0.3m.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.24.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/lombok-1.16.10.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/modelmapper-0.7.5.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.30.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/slf4j-api-1.7.24.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-aop-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-beans-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-context-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-core-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-data-commons-1.13.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-data-jpa-1.11.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-expression-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-jdbc-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-orm-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-tx-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-web-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/spring-webmvc-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/WEB-INF/lib/validation-api-2.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/app-module.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/css/login.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/index.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/AdminpageController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/EditModalController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/LogOutController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/LoginController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/NewAdminController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/SignupController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/service/HttpService.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/service/LoginService.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/service/NewAdminService.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/service/SignupService.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/images/img_avatar2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/DashBoard.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/addNewAdmin.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/adminPage.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/confirmDelete.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/editModal.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/existingUsers.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/loginPage.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/sessionLostModal.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/signupPage.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/userLog.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/static/angular-base64-upload.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/static/angular-route.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/static/angular.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/META-INF/MANIFEST.MF" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/activation-1.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/aspectjrt-1.8.10.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/classmate-1.3.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-core-4.2.3.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-entitymanager-4.2.3.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/hibernate-validator-6.0.7.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jackson-annotations-2.9.0.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jackson-core-2.9.3.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jackson-databind-2.9.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/javassist-3.15.0-GA.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/javax.mail-1.5.6.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jbcrypt-0.3m.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.24.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/joda-money-0.6.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/joda-time-2.9.9.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/jul-to-slf4j-1.7.22.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/log4j-over-slf4j-1.7.22.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/logback-classic-1.1.9.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/logback-core-1.1.9.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/lombok-1.16.10.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/modelmapper-0.7.5.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.30.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/slf4j-api-1.7.24.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/snakeyaml-1.17.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-aop-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-beans-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-autoconfigure-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-starter-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-starter-logging-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-starter-mail-1.5.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-boot-starter-security-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-context-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-context-support-4.3.8.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-core-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-data-commons-1.13.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-data-jpa-1.11.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-expression-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-jdbc-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-orm-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-security-config-4.2.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-security-core-4.2.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-security-web-4.2.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-tx-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-web-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/spring-webmvc-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/usertype.core-3.0.0.CR1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/usertype.spi-3.0.0.CR1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/User_war_exploded/WEB-INF/lib/validation-api-2.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/META-INF/context.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/ApplicationConfiguration.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/ApplicationInitializer.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/JpaConfiguration.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/configuration/RootConfig.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/controller/AdminController.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/AdminInfoDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/AdminLoginDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/dto/TokenAuthDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/model/Admin.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/model/TokenAuth.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/repository/AdminRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/repository/TokenRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/AdminService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/AdminServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/TokenAuthService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/service/TokenAuthServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/utils/AdminUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/classes/com/f1soft/admin/utils/TokenUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/aspectjrt-1.8.10.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/classmate-1.3.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-core-4.2.3.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-entitymanager-4.2.3.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/hibernate-validator-6.0.7.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jackson-annotations-2.9.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jackson-core-2.9.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jackson-databind-2.9.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/javassist-3.15.0-GA.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jbcrypt-0.3m.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.24.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/lombok-1.16.10.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/modelmapper-0.7.5.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.30.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/slf4j-api-1.7.24.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/slf4j-simple-1.7.21.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-aop-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-beans-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-context-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-core-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-data-commons-1.13.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-data-jpa-1.11.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-expression-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-jdbc-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-orm-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-tx-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-web-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/spring-webmvc-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/WEB-INF/lib/validation-api-2.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/app-module.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/css/login.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/index.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/AdminpageController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/EditModalController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/LoginController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/MainController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/NewAdminController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/SignupController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/service/HttpService.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/service/LoginService.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/service/NewAdminService.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/service/SignupService.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/images/img_avatar2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/DashBoard.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/addNewAdmin.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/adminDashboard.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/adminPage.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/adminPhotoModal.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/confirmDelete.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/editModal.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/existingUsers.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/loginPage.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/sessionLostModal.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/signupPage.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/views/userLog.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/static/angular-base64-upload.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/static/angular-route.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/static/angular.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/META-INF/MANIFEST.MF" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/META-INF/context.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/AppConfiguration.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/AppInitializer.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/EmailConfiguration.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/JPAConfiguration.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/configuration/RootConfiguration.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/controller/UserController.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/Commentsdto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/FollowCountDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/FollowDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/Likesdto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/ProfilePhotoDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/UserPhotodto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/UserPostDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/UserSearchDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/UserTokenDto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/dto/Userdto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/Comments.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/Follow.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/Likes.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/ProfilePhoto.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/User.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/UserPhotos.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/model/UserToken.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/CommentsRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/FollowRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/LikesRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/PhotoRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/ProfilePhotoRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/UserRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/repository/UserTokenRepository.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/CommentsService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/EmailService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/FollowService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/LikesService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/PhotoService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/ProfilePhotoService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/UserService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/service/UserTokenService.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/CommentsServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/FollowServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/LikesServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/PhotoServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/ProfilePhotoServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/UserServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/serviceImpl/UserTokenServiceImpl.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/CommentUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/FollowUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/LikesUtil.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/PhotoUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/ProfilePhotoUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/TokenUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/UserPhotosPostUtil.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/classes/com/users/utils/UserSearchUtils.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/activation-1.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/antlr-2.7.7.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/aspectjrt-1.8.10.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/classmate-1.3.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/commons-logging-1.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-commons-annotations-4.0.2.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-core-4.2.3.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-entitymanager-4.2.3.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/hibernate-validator-6.0.7.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jackson-annotations-2.9.0.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jackson-core-2.9.3.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jackson-databind-2.9.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/javassist-3.15.0-GA.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/javax.mail-1.5.6.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jbcrypt-0.3m.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jboss-logging-3.1.0.GA.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jboss-transaction-api_1.1_spec-1.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.24.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/joda-money-0.6.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/joda-time-2.9.9.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/jul-to-slf4j-1.7.22.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/log4j-over-slf4j-1.7.22.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/logback-classic-1.1.9.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/logback-core-1.1.9.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/lombok-1.16.10.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/modelmapper-0.7.5.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.30.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/slf4j-api-1.7.24.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/snakeyaml-1.17.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-aop-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-beans-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-autoconfigure-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-starter-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-starter-logging-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-starter-mail-1.5.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-boot-starter-security-1.5.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-context-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-context-support-4.3.8.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-core-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-data-commons-1.13.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-data-jpa-1.11.3.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-expression-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-jdbc-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-orm-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-security-config-4.2.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-security-core-4.2.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-security-web-4.2.1.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-tx-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-web-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/spring-webmvc-4.3.5.RELEASE.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/usertype.core-3.0.0.CR1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/usertype.spi-3.0.0.CR1.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/WEB-INF/lib/validation-api-2.0.1.Final.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/angular-base64-upload.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/angular-route.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/angular.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/app.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/index.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/bootstrap.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/comments.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/login.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/newsFeed.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/css/profile.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/images/friendship.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/images/login.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/CommentsController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/FollowersListController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/FollowingListController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/ImgUploadController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/LikesController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/LikesListController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/LoginController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/MainController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/NavigationController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/ProfileController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/SearchController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/SearchedProfileController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/SignupController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/UpdateController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/controller/UploadProfilePhotoController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/js/service/HttpService.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/comments.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/followersList.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/followingList.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/likesList.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/login.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/navigation.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/newsFeed.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/profile.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/search.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/searchedProfile.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/signup.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/update.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/upload.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/user_war_exploded/static/views/uploadProfilePhoto.jsp" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/AdminServiceImpl.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/AdminServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/AdminpageController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/AdminpageController.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/EditModalController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/EditModalController.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LogOutController.js" afterPath="$PROJECT_DIR$/out/artifacts/admin_war_exploded/modules/adminsetup/controller/LogOutController.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/NewAdminController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/NewAdminController.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminDashboard.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/views/adminDashboard.jsp" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminPage.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminPage.jsp" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/existingUsers.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Admin_war_exploded/modules/adminsetup/controller/MainController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppConfiguration.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppConfiguration.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/FollowDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/FollowDto.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPhotodto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPhotodto.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPostDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPostDto.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/model/User.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/User.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/model/UserPhotos.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/UserPhotos.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/repository/FollowRepository.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/FollowRepository.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/service/FollowService.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/FollowService.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/service/PhotoService.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/PhotoService.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserPhotosPostUtil.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserPhotosPostUtil.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/css/login.css" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/css/login.css" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ImgUploadController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ImgUploadController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UploadProfilePhotoController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UploadProfilePhotoController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/Admin/target/" />
     <ignored path="$PROJECT_DIR$/User/target/" />
-    <ignored path="$PROJECT_DIR$/user/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,79 +446,67 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand />
-    <select />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/AdminController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1404">
-              <caret line="94" column="18" lean-forward="false" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+            <state relative-caret-position="198">
+              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Admin/pom.xml">
+      <file leaf-file-name="loginPage.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/loginPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="342">
+              <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/AdminServiceImpl.java">
+      <file leaf-file-name="DashBoard.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+            <state relative-caret-position="216">
+              <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="72" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository/PhotoRepository.java">
+      <file leaf-file-name="app-module.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/app-module.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="54">
+              <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserLogServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserLogServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
+      <file leaf-file-name="LoginController.js" pinned="false" current-in-tab="false">
+        <entry file="http://localhost:8080/admin/modules/adminsetup/controller/LoginController.js">
+          <provider selected="true" editor-type-id="httpFileEditor">
+            <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserLogController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserLogController.js">
+      <file leaf-file-name="HttpService.js" pinned="false" current-in-tab="false">
+        <entry file="http://localhost:8080/admin/modules/adminsetup/service/HttpService.js">
+          <provider selected="true" editor-type-id="httpFileEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginService.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/LoginService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+            <state relative-caret-position="-54">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,7 +515,7 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
+            <state relative-caret-position="144">
               <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
@@ -107,30 +523,6 @@
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Jsp File" />
-        <option value="JavaScript File" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>2.2</find>
-      <find>maven-war-plugin</find>
-      <find>maven</find>
-      <find>1.8</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/User/src/main/webapp/static/views</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -143,57 +535,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/User/src/main/webapp/app.js" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/navigation.html" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/search.jsp" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/configuration/AppInitializer.java" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/model/User.java" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/repository/ProfilePhotoRepository.java" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/service/ProfilePhotoService.java" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/css/profile.css" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UploadProfilePhotoController.js" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" />
-        <option value="$PROJECT_DIR$/User/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SearchedProfileController.js" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/searchedProfile.jsp" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/upload.jsp" />
-        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/AdminpageController.js" />
-        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserLogController.js" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserLogsDto.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/AdminServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/TokenAuthServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/UserLogService.java" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/repository/UserTokenRepository.java" />
-        <option value="$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/Admin/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/user/pom.xml" />
-        <option value="$PROJECT_DIR$/User/pom.xml" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/configuration/JpaConfiguration.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository/UserTokenRepository.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/User.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/ProfilePhoto.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/Likes.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/META-INF/context.xml" />
         <option value="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/userLog.jsp" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserLogServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository/PhotoRepository.java" />
-        <option value="$PROJECT_DIR$/Admin/pom.xml" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/UserPhotos.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/AdminController.java" />
       </list>
     </option>
   </component>
@@ -206,72 +551,15 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="false" />
-    <option name="FILTER_DEBUG" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="admin" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="instagram" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="instagram" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="51" />
     <option name="y" value="44" />
     <option name="width" value="1303" />
     <option name="height" value="668" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Java</id>
-          </State>
-          <State>
-            <id>Java language level migration aidsJava</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>Since15</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -289,8 +577,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -349,39 +636,7 @@
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="Admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceimpl" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
@@ -390,6 +645,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
@@ -429,6 +693,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="adminsetup" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -437,38 +712,18 @@
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.40227705" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.f1soft.admin.model" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model" />
-      <recent name="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository" />
-      <recent name="$PROJECT_DIR$/User/src/main/webapp/static/images" />
-      <recent name="$PROJECT_DIR$/User/src/main/resources" />
-      <recent name="$PROJECT_DIR$/Admin/src/main/webapp" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -482,7 +737,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.TomCat">
+  <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -524,29 +779,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="instagram [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="clean" />
-              </list>
-            </option>
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -581,10 +813,11 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="TomCat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.24" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.24" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="START_JAVASCRIPT_DEBUGGER" value="true" />
-      <option name="UPDATING_POLICY" value="restart-server" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
         <artifact name="Admin:war exploded">
           <settings>
@@ -593,7 +826,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Instagram_3" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Instagram_6" />
         <option name="DEPLOY_TOMCAT_APPS" value="true" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
@@ -603,7 +836,7 @@
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="41815" />
+        <option name="DEBUG_PORT" value="46783" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -656,99 +889,12 @@
         </option>
       </method>
     </configuration>
-    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.35" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="START_JAVASCRIPT_DEBUGGER" value="true" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="User:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/user" />
-          </settings>
-        </artifact>
-        <artifact name="Admin:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Instagram_5" />
-        <option name="DEPLOY_TOMCAT_APPS" value="true" />
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="Tomcat Catalina" enabled="true" />
-      <predefined_log_file id="Tomcat Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
-      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="36553" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method>
-        <option name="BuildArtifacts" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.TomCat" />
-      <item index="2" class="java.lang.String" itemvalue="Maven.instagram [clean]" />
-    </list>
-    <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Maven.instagram [clean]" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -758,142 +904,54 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bd5a31d5-53e5-4916-9c0d-c0c3c7628b4d" name="Default" comment="" />
-      <created>1515602031317</created>
+      <changelist id="328f2c9d-bf7b-42b8-98e6-1014526f3c71" name="Default" comment="" />
+      <created>1517114098815</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1515602031317</updated>
-      <workItem from="1515602032541" duration="673000" />
-      <workItem from="1515602735968" duration="947000" />
-      <workItem from="1515635128268" duration="2179000" />
-      <workItem from="1515651594635" duration="11144000" />
-      <workItem from="1515666470074" duration="2914000" />
-      <workItem from="1515669628495" duration="1574000" />
-      <workItem from="1515682883307" duration="1978000" />
-      <workItem from="1515685867553" duration="5542000" />
-      <workItem from="1515729397827" duration="16638000" />
-      <workItem from="1515756297295" duration="1006000" />
-      <workItem from="1515858051490" duration="1434000" />
-      <workItem from="1515893785226" duration="1166000" />
-      <workItem from="1515903278636" duration="5616000" />
-      <workItem from="1515910186346" duration="7071000" />
-      <workItem from="1515924090626" duration="2385000" />
-      <workItem from="1515941921857" duration="2217000" />
-      <workItem from="1515988122413" duration="12649000" />
-      <workItem from="1516074802456" duration="14510000" />
-      <workItem from="1516096690059" duration="6744000" />
-      <workItem from="1516163059828" duration="4702000" />
-      <workItem from="1516169900246" duration="14621000" />
-      <workItem from="1516200955792" duration="59000" />
-      <workItem from="1516233206611" duration="3906000" />
-      <workItem from="1516247653413" duration="1306000" />
-      <workItem from="1516249631810" duration="21152000" />
-      <workItem from="1516319351949" duration="1300000" />
-      <workItem from="1516357663968" duration="4226000" />
-      <workItem from="1516410667283" duration="4506000" />
-      <workItem from="1516493897299" duration="5400000" />
-      <workItem from="1516507291088" duration="1840000" />
-      <workItem from="1516510580454" duration="18805000" />
-      <workItem from="1516682835944" duration="12416000" />
-      <workItem from="1516699438893" duration="5079000" />
-      <workItem from="1516756856399" duration="3156000" />
-      <workItem from="1516766869528" duration="764000" />
-      <workItem from="1516767832609" duration="9919000" />
-      <workItem from="1516778348352" duration="13992000" />
-      <workItem from="1516807776542" duration="18788000" />
-      <workItem from="1516925033217" duration="2120000" />
-      <workItem from="1516939698280" duration="8407000" />
-      <workItem from="1516949982643" duration="1746000" />
-      <workItem from="1516951911539" duration="4543000" />
-      <workItem from="1516964675686" duration="960000" />
-      <workItem from="1516967661721" duration="36000" />
+      <updated>1517114098815</updated>
+      <workItem from="1517114101149" duration="2670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280334000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="2670000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="44" width="1327" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="51" y="44" width="1325" height="772" extended-state="6" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5645412" sideWeight="0.5027365" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16419077" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24941361" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63763607" sideWeight="0.4972635" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38569206" sideWeight="0.4972635" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.4972635" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32503888" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24315871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36391914" sideWeight="0.49569976" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5645412" sideWeight="0.5027365" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2713057" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24941361" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.61119753" sideWeight="0.4972635" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36391914" sideWeight="0.49569976" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39968896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24941361" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.4972635" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40124416" sideWeight="0.4972635" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32503888" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25957778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -904,548 +962,194 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/AdminController.java</url>
+          <line>35</line>
+          <properties />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/AdminController.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/AdminController.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/AdminController.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js</url>
-          <line>84</line>
-          <option name="timeStamp" value="438" />
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LoginController.js</url>
+          <line>18</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js</url>
-          <line>85</line>
-          <option name="timeStamp" value="439" />
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LoginController.js</url>
+          <line>22</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js</url>
-          <line>86</line>
-          <option name="timeStamp" value="440" />
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/HttpService.js</url>
+          <line>23</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserLogController.js</url>
-          <line>16</line>
-          <option name="timeStamp" value="477" />
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/HttpService.js</url>
+          <line>24</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="441" />
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/HttpService.js</url>
+          <line>26</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java</url>
-          <line>69</line>
-          <properties />
-          <option name="timeStamp" value="442" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java</url>
-          <line>74</line>
-          <properties />
-          <option name="timeStamp" value="443" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java</url>
-          <line>71</line>
-          <properties />
-          <option name="timeStamp" value="446" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java</url>
-          <line>54</line>
-          <properties />
-          <option name="timeStamp" value="450" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="451" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java</url>
-          <line>61</line>
-          <properties />
-          <option name="timeStamp" value="453" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java</url>
-          <line>65</line>
-          <properties />
-          <option name="timeStamp" value="454" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="455" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="457" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="458" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java</url>
-          <line>57</line>
-          <properties />
-          <option name="timeStamp" value="459" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java</url>
-          <line>75</line>
-          <properties />
-          <option name="timeStamp" value="460" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java</url>
-          <line>76</line>
-          <properties />
-          <option name="timeStamp" value="462" />
+        <line-breakpoint enabled="true" type="javascript">
+          <url>http://localhost:8080/admin/modules/adminsetup/controller/LoginController.js</url>
+          <line>22</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="479" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="41" column="108" lean-forward="false" selection-start-line="41" selection-start-column="108" selection-end-line="41" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/MainController.js" />
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/AdminpageController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="84" column="26" lean-forward="false" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/EditModalController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-755">
-          <caret line="3" column="67" lean-forward="false" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/TokenAuthServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="125">
+          <caret line="507" column="3" lean-forward="false" selection-start-line="507" selection-start-column="3" selection-end-line="507" selection-end-column="3" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/UserLogService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/META-INF/context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/UserToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserLogsDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="29" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/repository/UserTokenRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/repository/PhotoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Admin/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/UserPhotos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UploadProfilePhotoController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/management/remote/rmi/RMIConnectionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="1308" column="0" lean-forward="false" selection-start-line="1308" selection-start-column="0" selection-end-line="1308" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/TokenAuth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/WEB-INF/web.xml" />
-    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/users/dto/Commentsdto.java" />
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/META-INF/context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/configuration/ApplicationInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-290">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/configuration/ApplicationConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/configuration/RootConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/pom.xml" />
-    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/users/configuration/AppConfiguration.java" />
-    <entry file="file://$PROJECT_DIR$/user/src/main/java/com/users/configuration/JPAConfiguration.java" />
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/configuration/JpaConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository/TokenRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/UserToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/Follow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/Comments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/ProfilePhoto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/UserTokenRepository.java" />
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository/UserTokenRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/Likes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/userLog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="56" lean-forward="false" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/repository/PhotoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/UserPhotos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="52" column="20" lean-forward="true" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
-          <folding>
-            <element signature="n#plugin#0;n#plugins#0;n#build#0;n#project#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="126">
+          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+        <state relative-caret-position="118">
+          <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/sessionLostModal.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/META-INF/context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/LoginService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/HttpService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="http://localhost:8080/admin/modules/adminsetup/controller/LoginController.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="http://localhost:8080/admin/modules/adminsetup/service/HttpService.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="http://localhost:8080/modules/adminsetup/controller/LoginController.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1404">
-          <caret line="94" column="18" lean-forward="false" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+        <state relative-caret-position="198">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserLogController.js">
+    <entry file="http://localhost:8080/modules/adminsetup/service/HttpService.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/loginPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="12" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state relative-caret-position="342">
+          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserLogServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/app-module.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="54">
+          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>Admin:war exploded</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.40227705" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Admin</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.40227705" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Maven: com.fasterxml:classmate:1.3.1</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.40227705" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LoginController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

@@ -17,11 +17,15 @@
                 controller:"NewAdminController as newadmin",
                 templateUrl:'modules/views/addNewAdmin.jsp'
             })
+            .when("/manageAdmin",{
+                controller:"ManageAdminController as manage",
+                templateUrl:'modules/views/manageAdmin.jsp'
+            })
             .when("/logout",{
-                controller:"LogOutController as logout"
+                controller:"AdminpageController as admin"
             })
             .otherwise({
                 redirectTo:'/login'
-            });
+            })
     }]);
 })();

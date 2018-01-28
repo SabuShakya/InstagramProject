@@ -19,11 +19,11 @@
                 function (value) {
                    $rootScope.message = "Updated successfully";
                    $rootScope.saved = true;
+                    $uibModalInstance.close('save');
                 },function (reason) {
                     $rootScope.message = "Error Occurred";
                     $rootScope.saved = true;
                 });
-            $uibModalInstance.close('save');
         }
 
         function updatePhoto() {
@@ -32,27 +32,28 @@
                 function (value) {
                     $rootScope.message = "Updated successfully";
                     $rootScope.saved = true;
+                    $uibModalInstance.close('save');
                 },function (reason) {
                     $rootScope.message = "Error Occurred";
                     $rootScope.saved = true;
                 });
-            $uibModalInstance.close('save');
         }
 
         function deleteAdmin() {
             HttpService.post("/deleteAdmin",vm.admin).then(function (value) {
                 $rootScope.message = "Deleted successfully";
                 $rootScope.saved = true;
+                $uibModalInstance.close('save');
             },function (reason) {
                 $rootScope.message = "Error Occurred";
                 $rootScope.saved = true;
             });
-            $uibModalInstance.close('save');
         }
 
         function cancel(){
             $uibModalInstance.dismiss('close');
         }
+
         function ok() {
             $location.path("/login");
             $uibModalInstance.dismiss();

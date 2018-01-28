@@ -36,8 +36,9 @@
 <script type="text/javascript" src="modules/adminsetup/controller/SignupController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/AdminpageController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/NewAdminController.js"></script>
+<script type ="text/javascript" src="modules/adminsetup/controller/ManageAdminController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/EditModalController.js"></script>
-<script type="text/javascript" src="modules/adminsetup/controller/LogOutController.js"></script>
+<%--<script type="text/javascript" src="modules/adminsetup/controller/LogOutController.js"></script>--%>
 <script type="text/javascript" src="modules/adminsetup/controller/UserLogController.js"></script>
 
 <%--Services--%>

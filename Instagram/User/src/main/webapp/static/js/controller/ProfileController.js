@@ -24,9 +24,12 @@
         vm.allPhotos= allPhotos;
         vm.followCount=followCount;
         vm.profilePhoto=profilePhoto;
+        vm.followersList=followersList;
+        vm.followingList=followingList;
+        vm.deletePhotos=deletePhotos;
 
         allPhotos();
-        followCount();
+        // followCount();
         profilePhoto();
 
         function followCount(){
@@ -39,6 +42,28 @@
             });
         }
         // $interval(vm.followCount,1000);
+
+        function followersList(){
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/followersList.jsp',
+                controller :'FollowersListController',
+                controllerAs: 'followersCtrl',
+                size: 'lg'
+            });
+        }
+
+        function followingList(){
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/followingList.jsp',
+                controller :'FollowingListController',
+                controllerAs: 'followingCtrl',
+                size: 'lg'
+            });
+        }
 
         function allPhotos(){
             HttpService.get("/allPhotos/" + $localStorage.storedObj.username).then(function (value) {
@@ -107,5 +132,27 @@
                 function(){})
         }
 
+
+        function openDeleteModal(comment) {
+            $rootScope.clickedComment=comment;
+            HttpService.post("/deleteComment", $rootScope.clickedComment).then(function (value) {
+                console.log("success");
+                $rootScope.saved = true;
+                commentsList();
+            },function (reason) {
+                $rootScope.saved = true;
+            });
+        }
+
+        function deletePhotos(image_path) {
+            $rootScope.photo = image_path;
+            HttpService.post("/deletePhoto",$rootScope.photo).then(function(value){
+                $rootScope.saved=true;
+                allPhotos();
+            },function (reason) {
+                console.log("error");
+                $rootScope.saved=true;
+            });
+        }
     }
 })();

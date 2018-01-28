@@ -10,10 +10,13 @@ import com.users.utils.TokenUtils;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -32,6 +35,9 @@ public class PhotoServiceImpl implements PhotoService {
 
    @Autowired
    private UserService userService;
+
+   @Autowired
+   private EntityManager entityManager;
 
     public void savePhoto(UserPhotodto userPhotodto){
         File dir = new File(System.getProperty("catalina.home")+ "/uploads");
@@ -62,13 +68,22 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
 //sabu
-    public List<UserPhotos> getListOfPhotos(List<User> listOfFollowedUsers) {
+    public List<UserPhotos> getListOfPhotos(List<User> listOfFollowedUsers, Pageable pageable) {
+        final String SQL_QUERY="SELECT u from UserPhotos u where u.user.id=:id";
+        Query query = entityManager.createQuery(SQL_QUERY,UserPhotos.class);
         List<UserPhotos> userPhotosList = new ArrayList<UserPhotos>();
         for (User user:listOfFollowedUsers){
             long id = user.getId();
             System.out.println(id);
+            query.setParameter("id",id).getResultList();
+            int totalItems =query.getResultList().size();
+
+            query.setFirstResult((pageable.getPageNumber()-1)*pageable.getPageSize());
+            query.setMaxResults(pageable.getPageSize());
+            List <UserPhotos> userPhotosList1 = query.getResultList();
             List<UserPhotos> list = photoRepository.getUserPhotosByUser_Id(id);
-            for(UserPhotos userPhotos:list) {
+            for(UserPhotos userPhotos:userPhotosList1) {
+                userPhotos.setTotalItems(totalItems);
                 userPhotosList.add(userPhotos);
             }
         }
@@ -90,4 +105,9 @@ public class PhotoServiceImpl implements PhotoService {
         List<UserPhotos> userPhotosList=photoRepository.getUserPhotosByUserUsername(username);
         return userPhotosList.size();
     }
+
+    public void deletePhoto(UserPhotodto userPhotodto) {
+        photoRepository.delete(userPhotodto.getId());
+    }
 }
+
