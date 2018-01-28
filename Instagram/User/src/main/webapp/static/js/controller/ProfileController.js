@@ -29,7 +29,7 @@
         vm.followingList=followingList;
 
         allPhotos();
-        // followCount();
+        followCount();
         profilePhoto();
 
         function followCount(){
@@ -87,7 +87,7 @@
             vm.modalInstance.result.then(
                 function(){
                    allPhotos();
-                   // followCount();
+                   followCount();
                 },
                 function(){})
         }
@@ -115,6 +115,7 @@
                 console.log("Error occured" + reason);
             });
         }
+        $interval(vm.profilePhoto,1000);
 
         function editProfile() {
             vm.modalInstance=$uibModal.open({

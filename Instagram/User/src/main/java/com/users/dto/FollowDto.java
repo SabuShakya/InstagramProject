@@ -11,5 +11,5 @@ import java.util.List;
 public class FollowDto {
     private String userName;
     private String following_userName;
-//    private List<ProfilePhoto> profile_pic;
+    private String image;
 }

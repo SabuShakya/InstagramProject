@@ -1,6 +1,5 @@
 package com.f1soft.admin.serviceimpl;
 
-import antlr.collections.List;
 import com.f1soft.admin.dto.AdminInfoDto;
 import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.model.Admin;
