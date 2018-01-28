@@ -3,10 +3,12 @@ package com.f1soft.admin.controller;
 import com.f1soft.admin.dto.AdminInfoDto;
 import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.dto.TokenAuthDto;
+import com.f1soft.admin.dto.UserLogsDto;
 import com.f1soft.admin.model.Admin;
 import com.f1soft.admin.model.TokenAuth;
 import com.f1soft.admin.service.AdminService;
 import com.f1soft.admin.service.TokenAuthService;
+import com.f1soft.admin.service.UserLogService;
 import com.f1soft.admin.utils.AdminUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,8 +28,8 @@ public class AdminController {
     @Autowired
     private TokenAuthService tokenAuthService;
 
-//    @Autowired
-//    private UserLogService userLogService;
+    @Autowired
+    private UserLogService userLogService;
 
     @PostMapping("/login")
     public ResponseEntity<TokenAuthDto> getAdmin(@RequestBody AdminLoginDto adminLoginDto) {
@@ -88,5 +90,11 @@ public class AdminController {
     public ResponseEntity<Boolean> deleteAdmin(@RequestBody Admin admin){
         adminService.deleteAdmin(admin);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
+
+    @GetMapping("/getUserLogs")
+    public ResponseEntity<UserLogsDto> getUserLog(){
+        UserLogsDto userLogsDto = userLogService.getUserLogs();
+        return new ResponseEntity<UserLogsDto>(userLogsDto,HttpStatus.OK);
     }
 }
