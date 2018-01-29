@@ -11,7 +11,7 @@
 </header>
 
 <div class="main">
-    <p class="description"> {{profile.userDisplayName}}</p>
+    <%--<p class="description"> {{profile.userDisplayName}}</p>--%>
     <div class="wrapper">
         <button class="btn btn-success" ng-click="profile.editProfile()">Upload profile photo</button>
     </div>

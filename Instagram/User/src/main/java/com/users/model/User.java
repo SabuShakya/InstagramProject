@@ -44,7 +44,7 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     private List<Comments> comments;
 
-    @OneToMany(mappedBy = "user",cascade=CascadeType.REMOVE)
-    private List<ProfilePhoto> profilePhotos;
+    @OneToOne(mappedBy = "user",cascade=CascadeType.REMOVE)
+    private ProfilePhoto profilePhotos;
 }
 

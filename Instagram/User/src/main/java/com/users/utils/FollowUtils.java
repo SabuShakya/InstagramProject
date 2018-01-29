@@ -15,7 +15,7 @@ public class FollowUtils {
             FollowDto followDto =  new FollowDto();
             followDto.setUserName(user.getUsername());
 //            followDto.setFollowing_userName(user.getFullName());
-
+            followDto.setImage(user.getProfilePhotos().getProfile_pic());
             followDtoList.add(followDto);
         }
         return followDtoList;
@@ -26,7 +26,7 @@ public class FollowUtils {
         for (User user:userList){
             FollowDto followDto =  new FollowDto();
             followDto.setFollowing_userName(user.getUsername());
-//            followDto.setProfile_pic(user.getProfilePhotos());
+            followDto.setImage(user.getProfilePhotos().getProfile_pic());
             followDtoList.add(followDto);
         }
         return followDtoList;
