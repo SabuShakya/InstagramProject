@@ -117,7 +117,7 @@ public class UserController {
         List<Commentsdto> commentsdtoList=commentsService.getAllComments(image_path);
         if(commentsdtoList!=null){
         return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
-    }
+        }
         return new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.NO_CONTENT);
     }
 

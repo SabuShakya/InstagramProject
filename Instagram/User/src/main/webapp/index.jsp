@@ -33,7 +33,6 @@
 <script src="static/js/controller/ImgUploadController.js"> </script>
 <script src ="static/js/controller/ProfileController.js"></script>
 <script src="static/js/controller/CommentsController.js"></script>
-<script src="static/js/controller/LikesController.js"></script>
 <script src="static/js/controller/UploadProfilePhotoController.js"></script>
 <script src="static/js/controller/SearchController.js"></script>
 <script src="static/js/controller/SearchedProfileController.js"></script>

@@ -3,7 +3,7 @@
     <div align="center" ng-repeat="post in main.posts">
         <div class='insta fade-scroll'>
             <div class='top-insta'>
-                <img src=""
+                <img class="img-responsive img-circle margin" src="/uploads/{{post.profilePic}}" width="10%" height="10%">
                 <a href='#' target='_blank' class='user'>{{post.username}}
                 </a>
                 <span class='dot'></span>
@@ -12,12 +12,11 @@
                 <div class="overlay">
                     <span></span>
                 </div>
-                <div class='caption'>
-                    </a><span>{{post.caption}}</span>
-                </div>
-
                 <div class="thumbnail principal-post">
                     <img src="/uploads/{{post.image_path}}">
+                </div>
+                <div class='caption'>
+                    </a><span>{{post.caption}}</span>
                 </div>
             </div>
             <label>Created On:

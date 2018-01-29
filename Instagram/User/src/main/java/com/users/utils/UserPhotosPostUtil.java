@@ -24,6 +24,7 @@ public class UserPhotosPostUtil {
             userPostDto.setCaption(userPhotos.getCaption());
             userPostDto.setCountOfLikes(userPhotos.getLikes().size());
             userPostDto.setTotalItems(userPhotos.getTotalItems());
+            userPostDto.setProfilePic(userPhotos.getUser().getProfilePhotos().getProfile_pic());
             userPostDtoList.add(userPostDto);
         }
         return userPostDtoList;

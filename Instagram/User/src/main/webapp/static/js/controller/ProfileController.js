@@ -87,7 +87,6 @@
             vm.modalInstance.result.then(
                 function(){
                    allPhotos();
-                   followCount();
                 },
                 function(){})
         }
