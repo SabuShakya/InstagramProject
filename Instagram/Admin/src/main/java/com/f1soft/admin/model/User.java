@@ -44,8 +44,11 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     private List<Comments> comments;
 
-    @OneToMany(mappedBy = "user")
-    private List<ProfilePhoto> profilePhotos;
+    @OneToOne(mappedBy = "user")
+    private ProfilePhoto profilePhotos;
+
+    @Transient
+    private int totalItems;
 
 }
 

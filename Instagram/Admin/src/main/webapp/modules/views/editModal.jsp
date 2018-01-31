@@ -43,6 +43,6 @@
 </div>
 
 <div class="modal-footer">
-    <button class="btn btn-default" type="button" ng-click="modalController.update()">Update</button>
+    <button class="btn btn-default" type="button" ng-disabled="modalController.clickButton" ng-click="modalController.update()">Update</button>
     <button class="btn btn-warning" type="button" ng-click="modalController.cancel()">Cancel</button>
 </div>

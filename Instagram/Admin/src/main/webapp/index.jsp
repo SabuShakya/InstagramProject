@@ -38,17 +38,17 @@
 <script type="text/javascript" src="modules/adminsetup/controller/SignupController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/AdminpageController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/NewAdminController.js"></script>
-<script type ="text/javascript" src="modules/adminsetup/controller/ManageAdminController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/ManageAdminController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/EditModalController.js"></script>
-
 <script type="text/javascript" src="modules/adminsetup/controller/NavigationController.js"></script>
-
 <script type="text/javascript" src="modules/adminsetup/controller/UserLogController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/UsersListController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/ActiveUsersListController.js"></script>
 
 <%--Services--%>
 <script type="text/javascript" src="modules/adminsetup/service/LoginService.js"></script>
 <script type="text/javascript" src="modules/adminsetup/service/SignupService.js"></script>
 <script type="text/javascript" src="modules/adminsetup/service/HttpService.js"></script>
 <script type="text/javascript" src="modules/adminsetup/service/NewAdminService.js"></script>
-
+</body>
 </html>

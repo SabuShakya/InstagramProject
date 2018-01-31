@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h1 class="modal-title" id="modal-title">{{comment.userDisplayName}}</h1>
+    <%--<h1 class="modal-title" id="modal-title">{{comment.userDisplayName}}</h1>--%>
 </div>
 
 <div class="modal-body" id="modal-body">
@@ -32,6 +32,7 @@
                     <span style="color: #449d44">{{like.userName}}</span>
                 </div>
             </div>
+
             <div ng-show="comment.showList">
                 <div ng-repeat="commen in comment.commentList">
                     {{commen.username}} : {{commen.comments}}

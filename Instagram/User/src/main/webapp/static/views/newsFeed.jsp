@@ -1,23 +1,26 @@
 <div ng-include src="'static/views/navigation.html'"></div>
+<div ng-show ="{{main.showFollowMessgae}}">
+    {{main.message}}
+</div>
 <section>
     <div align="center" ng-repeat="post in main.posts">
         <div class='insta fade-scroll'>
             <div class='top-insta'>
-                <img src=""
-                <a href='#' target='_blank' class='user'>{{post.username}}
-                </a>
+                <img class="img-responsive img-circle margin" src="/uploads/{{post.profilePic}}" width="10%" height="10%">
+                <%--<a href='/#!/searchedUser' ng-click="main.openProfile(post)" target='_blank' class='user'>{{post.username}}--%>
+                {{post.username}}
+                <%--</a>--%>
                 <span class='dot'></span>
             </div>
             <div class='post'>
                 <div class="overlay">
                     <span></span>
                 </div>
-                <div class='caption'>
-                    </a><span>{{post.caption}}</span>
-                </div>
-
                 <div class="thumbnail principal-post">
                     <img src="/uploads/{{post.image_path}}">
+                </div>
+                <div class='caption'>
+                    </a><span>{{post.caption}}</span>
                 </div>
             </div>
             <label>Created On:

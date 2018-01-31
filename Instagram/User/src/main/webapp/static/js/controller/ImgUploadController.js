@@ -16,6 +16,7 @@
         vm.close = close;
 
         function uploadPhoto() {
+            vm.submitClicked = true;
             angular.forEach(vm.listOfImages, function(listOfImages, key) {
                     vm.imageList[vm.i]=listOfImages.base64;
                     vm.i++;

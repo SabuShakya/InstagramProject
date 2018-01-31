@@ -1,12 +1,9 @@
-package com.users.dto;
+package com.f1soft.admin.dto;
 
-import com.users.model.Comments;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 @Getter
 @Setter

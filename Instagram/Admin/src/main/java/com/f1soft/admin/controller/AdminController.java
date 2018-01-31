@@ -28,9 +28,6 @@ public class AdminController {
     @Autowired
     private TokenAuthService tokenAuthService;
 
-    @Autowired
-    private UserLogService userLogService;
-
     @PostMapping("/login")
     public ResponseEntity<TokenAuthDto> getAdmin(@RequestBody AdminLoginDto adminLoginDto) {
         boolean loginAdmin = adminService.loginAdmin(adminLoginDto);
@@ -92,9 +89,5 @@ public class AdminController {
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
-    @GetMapping("/getUserLogs")
-    public ResponseEntity<UserLogsDto> getUserLog(){
-        UserLogsDto userLogsDto = userLogService.getUserLogs();
-        return new ResponseEntity<UserLogsDto>(userLogsDto,HttpStatus.OK);
-    }
+
 }
