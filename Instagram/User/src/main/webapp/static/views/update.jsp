@@ -1,6 +1,4 @@
 <div ng-include src="'static/views/navigation.html'"></div>
-
-
 <h2 class="text-center">Update Password Here {{update.userDisplayName}} !!</h2>
 <br>
 <form name="editform" novalidate>
