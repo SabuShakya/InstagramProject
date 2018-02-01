@@ -11,6 +11,6 @@
 </div>
 
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="profilePhoto.uploadPhoto()">Upload</button>
+    <button class="btn btn-primary" type="button" ng-click="profilePhoto.uploadPhoto()" ng-disabled="profilePhoto.submitClicked">Upload</button>
     <button class="btn btn-warning" type="button" ng-click="profilePhoto.close()">Cancel</button>
 </div>

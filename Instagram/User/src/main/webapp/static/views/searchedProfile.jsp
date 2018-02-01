@@ -17,6 +17,14 @@
             <button type="button" class="btn-default" ng-click="searched.unfollowUser()">Un-Follow</button>
         </div>
     </div>
+
+    <div class ="center">
+        <div ng-show="searched.showStatus">
+            <h1> This account is private </h1>
+            Follow this account to see their photos.
+        </div>
+    </div>
+
     <div class="stats-container">
         <div class="stat">
             <div class="number">{{searched.followers}}</div>
@@ -34,11 +42,13 @@
 </div>
 <br>
 
+<div ng-show="searched.showPhotoList">
 <div class="col-md-4" ng-repeat="photo in searched.photoList">
     <div class="thumbnail">
         <img src="uploads/{{photo.image_path}}" style="width:100%"
              ng-click="searched.commentModal(photo.image_path,photo.caption)">
         {{photo.caption}}
     </div>
+</div>
 </div>
 

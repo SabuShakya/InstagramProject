@@ -42,7 +42,7 @@ public class CommentsServiceImpl implements CommentsService {
 
     public List<Commentsdto> getAllComments(String image_path) {
         List<Comments> commentsList = commentsRepository.getCommentsByUserPhotosImage_path(image_path);
-        List<Commentsdto> commentsdtos = CommentUtils.convertCommentsdtoToComments(commentsList);
+        List<Commentsdto> commentsdtos = CommentUtils.convertCommentsToCommentsdto(commentsList);
         return commentsdtos;
     }
 

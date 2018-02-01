@@ -29,4 +29,12 @@
                 redirectTo:'/login'
             })
     }]);
+
+    // angular.module("adminModule").config(['$routeProvider','$httpProvider',function($routeProvider,$httpProvider) {
+    //     $httpProvider.defaults.headers.common = {};
+    //     $httpProvider.defaults.headers.post = {};
+    //     $httpProvider.defaults.headers.put = {};
+    //     $httpProvider.defaults.headers.patch = {};
+    // }]);
+
 })();

@@ -14,7 +14,10 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="admin" target="1.8" />
+      <module name="Admin" target="1.8" />
+      <module name="Instagram" target="1.8" />
       <module name="instagram" target="1.8" />
+      <module name="User" target="1.8" />
       <module name="user" target="1.8" />
     </bytecodeTargetLevel>
   </component>

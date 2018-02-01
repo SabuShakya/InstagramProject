@@ -13,5 +13,9 @@ public interface UserService {
     public List<User> findAllUsers();
     public boolean loginUser(Userdto userdto);
     public List<UserSearchDto> findBySearchTerm(String searchTerm);
-    public void updateUser(User user);
+    public void updateUser(Userdto userdto);
+    public boolean checkPassword(Userdto userdto);
+    public void privateAccount(String username);
+    public void publicAccount(String username);
+    public boolean checkAccountStatus(Userdto userdto);
 }

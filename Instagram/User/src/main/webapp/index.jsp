@@ -18,6 +18,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.3.0/ng-infinite-scroll.min.js"></script>
     <script type="text/javascript" src="angular-base64-upload.js"></script>
     <script type="text/javascript" src="app.js"></script>
 
@@ -33,7 +34,6 @@
 <script src="static/js/controller/ImgUploadController.js"> </script>
 <script src ="static/js/controller/ProfileController.js"></script>
 <script src="static/js/controller/CommentsController.js"></script>
-<script src="static/js/controller/LikesController.js"></script>
 <script src="static/js/controller/UploadProfilePhotoController.js"></script>
 <script src="static/js/controller/SearchController.js"></script>
 <script src="static/js/controller/SearchedProfileController.js"></script>
@@ -42,6 +42,11 @@
 <script src="static/js/controller/UpdateController.js"></script>
 <script src="static/js/controller/FollowersListController.js"></script>
 <script src="static/js/controller/FollowingListController.js"></script>
+<script src="static/js/controller/PostCommentModalController.js"></script>
+<script src="static/js/directives/EnterDirective.js"></script>
+<script src="static/js/controller/mainController.js"></script>
+
+<script src="static/js/controller/ScrollDirective.js"></script>
 
 <script src="static/js/service/HttpService.js"> </script>
 

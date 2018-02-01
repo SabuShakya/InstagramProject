@@ -10,4 +10,5 @@ public class UserSearchDto {
     private String username;
     private String fullname;
     private String imagename;
+    public boolean showResultButtons;
 }

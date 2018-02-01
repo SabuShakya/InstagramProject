@@ -29,10 +29,16 @@ public class User implements Serializable {
     @Column(name="password", nullable = false)
     private String password;
 
+    @Transient
+    private String oldPassword;
+
+    @Column(name="accountStatus")
+    private String accountStatus;
+
     @OneToMany(mappedBy = "user")
     private List<UserPhotos> userPhotos;
 
-    @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "user",cascade=CascadeType.REMOVE)
     private UserToken userTokenAuth;
 
     @OneToMany(mappedBy = "user")
@@ -44,7 +50,7 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     private List<Comments> comments;
 
-    @OneToOne(mappedBy = "user",cascade = CascadeType.REMOVE)
+    @OneToOne(mappedBy = "user",cascade=CascadeType.REMOVE)
     private ProfilePhoto profilePhotos;
 }
 

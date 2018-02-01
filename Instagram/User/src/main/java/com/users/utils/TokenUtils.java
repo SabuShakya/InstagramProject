@@ -15,6 +15,7 @@ public class TokenUtils {
         userTokenDto.setTokenNo(userToken.getTokenNo());
         userTokenDto.setStatus(userToken.getStatus());
         userTokenDto.setUsername(userToken.getUser().getUsername());
+        userTokenDto.setPassword(userToken.getUser().getPassword());
         return userTokenDto;
     }
 }

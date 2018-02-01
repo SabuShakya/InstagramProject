@@ -1,10 +1,13 @@
 (function () {
 angular.module('userModule').factory('HttpService', HttpService);
-    HttpService.$inject =['$http', '$q','$rootScope'];
-    function HttpService($http, $q, $rootScope) {
+    HttpService.$inject =['$http', '$q','$rootScope','$location'];
+    function HttpService($http, $q, $rootScope, $location) {
 
         var vm= this;
-        vm. REST_SERVICE_URI= "http://localhost:8080";
+        vm.url = $location.absUrl();
+        var r = vm.url.indexOf("#");
+        vm.REST_SERVICE_URI= vm.url.slice(0,r-1);
+
         return{
             get: get,
             post: post
@@ -31,7 +34,7 @@ angular.module('userModule').factory('HttpService', HttpService);
                     },
                     function (error) {
                         console.log("Error occured");
-                        defered.reject(error);
+                        defered.reject(error.data);
                     }
                 );
             return defered.promise;

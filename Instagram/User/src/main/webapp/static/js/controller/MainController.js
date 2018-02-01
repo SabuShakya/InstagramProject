@@ -4,6 +4,7 @@
 
     function MainController(HttpService,$localStorage,$rootScope,$uibModal, $log) {
         var vm = this;
+        var i= 0;
         vm.posts = {};
         vm.message = '';
         vm.commentSuccessMsg = false;
@@ -13,6 +14,7 @@
         vm.showCommentList= true;
         vm.countOfLikes = '';
         $rootScope.imageName = '';
+        $rootScope.showPostComments= '';
         vm.addComment = addComment;
         vm.showComments = showComments;
         vm.like = like;
@@ -58,19 +60,15 @@
         }
 
         function showComments(post) {
-            if (vm.showing){
-                vm.showList = false;
-                vm.showing =false;
-            }else {
-                vm.showing = true;
-                HttpService.get("/showComments/" +post.image_path).then(function (value) {
-                    vm.commentList = value;
-                    vm.showList = true;
-                    vm.showing = true;
-                }, function (reason) {
-                    console.log("Error occured" + reason);
-                });
-            }
+            $rootScope.photoName =post.image_path;
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/postCommentModal.jsp',
+                controller :'PostCommentModalController',
+                controllerAs: 'comment',
+                size: 'lg'
+            });
         }
 
         function openDeleteModal(comment) {

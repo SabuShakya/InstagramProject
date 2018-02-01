@@ -1,6 +1,5 @@
 (function(){
-angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap', 'ngStorage']);
-
+angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap', 'ngStorage','infinite-scroll']);
 angular.module('userModule').config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
     $routeProvider
         .when("/login",{
@@ -11,9 +10,13 @@ angular.module('userModule').config(['$routeProvider','$locationProvider',functi
             templateUrl:"/static/views/signup.jsp",
             controller:"SignupController as signup"
         })
+        // .when("/newsFeed",{
+        //     templateUrl:"/static/views/newsFeed.jsp",
+        //     controller:"MainController as main"
+        // })
         .when("/newsFeed",{
-            templateUrl:"/static/views/newsFeed.jsp",
-            controller:"MainController as main"
+            templateUrl:"/static/views/infinityPage.jsp",
+            controller:"mainController as main"
         })
         .when("/profile",{
             templateUrl: "/static/views/profile.jsp",
@@ -42,5 +45,6 @@ angular.module('userModule').config(['$routeProvider','$locationProvider',functi
         //     enabled: true,
         //     requireBase: false
         // })
+
 }]);
 })();

@@ -1,16 +1,12 @@
 package com.users.serviceImpl;
 
-import com.users.dto.FollowCountDto;
-import com.users.dto.FollowDto;
-import com.users.dto.ProfilePhotoDto;
-import com.users.dto.UserPostDto;
+import com.users.dto.*;
 import com.users.model.*;
+import com.users.repository.CommentsRepository;
 import com.users.repository.FollowRepository;
 import com.users.repository.UserRepository;
-import com.users.service.FollowService;
-import com.users.service.LikesService;
-import com.users.service.PhotoService;
-import com.users.service.ProfilePhotoService;
+import com.users.service.*;
+import com.users.utils.CommentUtils;
 import com.users.utils.FollowUtils;
 import com.users.utils.UserPhotosPostUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +34,10 @@ public class FollowServiceImpl implements FollowService {
     @Autowired
     private LikesService likesService;
     @Autowired
-    private ProfilePhotoService profilePhotoService;
+    private CommentsService commentsService;
+
+    @Autowired
+    private CommentsRepository commentsRepository;
 
     public List<UserPostDto> getPosts(String username, Pageable pageable) {
         List<User> listOfFollowedUsers = followRepository.getFollowedUser(username);
@@ -50,6 +49,7 @@ public class FollowServiceImpl implements FollowService {
         }
         return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList);
     }
+
 
     public void saveFollows(FollowDto followDto) {
         User user = userRepository.getUserByUsername(followDto.getUserName());

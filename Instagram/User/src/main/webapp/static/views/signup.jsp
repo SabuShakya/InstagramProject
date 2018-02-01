@@ -27,7 +27,8 @@
         </p>
     </div>
 
-    <button type="submit" class="btn btn-success btn-lg pull-centre" ng-click="signup.createUser()" ng-disabled="signupform.$invalid">
+    <button type="submit" class="btn btn-success btn-lg pull-centre" ng-click="signup.createUser()" ng-disabled="signupform.$invalid"
+            ng-disabled="signup.submitClicked" ng-enter="signup.createUser()">
         Submit form
     </button>
     </div>

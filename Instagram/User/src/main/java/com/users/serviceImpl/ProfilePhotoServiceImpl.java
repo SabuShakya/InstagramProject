@@ -58,11 +58,9 @@ public class ProfilePhotoServiceImpl implements ProfilePhotoService{
             ProfilePhoto profilePhoto1 = new ProfilePhoto();
             profilePhoto1.setProfile_pic(filename);
             profilePhoto1.setUser(user);
-            profilePhoto1.setPhotoStatus('Y');
             profilePhotoRepository.save(profilePhoto1);
         }
         profilePhoto.setProfile_pic(filename);
-        profilePhoto.setPhotoStatus('Y');
         profilePhotoRepository.save(profilePhoto);
     }
 
@@ -71,7 +69,6 @@ public class ProfilePhotoServiceImpl implements ProfilePhotoService{
         ProfilePhotoDto profilePhotoDto =  new ProfilePhotoDto();
         profilePhotoDto.setProfile_pic(profilePhoto.getProfile_pic());
         profilePhotoDto.setUsername(profilePhoto.getUser().getUsername());
-        profilePhotoDto.setPhotoStatus('Y');
         return profilePhotoDto;
     }
 }

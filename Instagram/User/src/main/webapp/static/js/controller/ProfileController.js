@@ -41,7 +41,6 @@
                 console.log(reason);
             });
         }
-        // $interval(vm.followCount,1000);
 
         function followersList(){
             vm.modalInstance=$uibModal.open({
@@ -109,6 +108,7 @@
         function profilePhoto() {
             HttpService.get("/getProfilePhoto/" + $localStorage.storedObj.username).then(function (value) {
                 $rootScope.pic = value.profile_pic;
+                $localStorage.profilePicture=value.profile_pic;
                 vm.profilePhotoList = value;
                 console.log("success");
             }, function (reason) {

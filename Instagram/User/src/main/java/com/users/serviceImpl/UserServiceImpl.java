@@ -48,10 +48,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private ProfilePhotoService profilePhotoService;
 
-
     public void saveUser(User user) {
         String password=TokenUtils.generateToken();
         user.setPassword(password);
+        user.setAccountStatus("public");
         emailService.sendEmail(user);
         user.setPassword(BCrypt.hashpw(password,BCrypt.gensalt()));
         userRepository.save(user);
@@ -62,7 +62,6 @@ public class UserServiceImpl implements UserService {
         ProfilePhoto profilePhoto = new ProfilePhoto();
         profilePhoto.setUser(user);
         profilePhoto.setProfile_pic("login");
-        profilePhoto.setPhotoStatus('Y');
         profilePhotoRepository.save(profilePhoto);
     }
 
@@ -94,15 +93,43 @@ public class UserServiceImpl implements UserService {
        return UserSearchUtils.getSearchedUserInfo(userList);
     }
 
-  //smriti
     public User getUserEmail(String email) {
         return userRepository.getUserByEmail(email);
     }
 
-    public void updateUser(User user){
-        User userRepo= userRepository.getUserByUsername(user.getUsername());
-        userRepo.setUsername(user.getUsername());
-        userRepo.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
+    public boolean checkPassword(Userdto userdto){
+        User isUser = userRepository.getUserByUsername(userdto.getUsername());
+        if((isUser !=null) && (BCrypt.checkpw(userdto.getOldPassword(),isUser.getPassword()))){
+            return true;
+        }
+        return false;
+    }
+
+    public void updateUser(Userdto userdto){
+        User userRepo= userRepository.getUserByUsername(userdto.getUsername());
+        userRepo.setPassword(BCrypt.hashpw(userdto.getPassword(),BCrypt.gensalt()));
         userRepository.save(userRepo);
+    }
+
+    public void privateAccount(String username){
+        User user= userRepository.getUserByUsername(username);
+        user.setAccountStatus("private");
+        userRepository.save(user);
+    }
+
+    public void publicAccount(String username){
+        User user = userRepository.getUserByUsername(username);
+        user.setAccountStatus("public");
+        userRepository.save(user);
+    }
+
+    public boolean checkAccountStatus(Userdto userdto){
+        User isUser = userRepository.getUserByUsername(userdto.getUsername());
+        if((isUser!=null)&& (isUser.getAccountStatus().equals("public"))){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
