@@ -8,6 +8,7 @@
         vm.posts = {};
         vm.message = '';
         vm.commentSuccessMsg = false;
+        vm.showFollowMessgae =false;
         vm.commentList = [];
         vm.showList = false;
         vm.showing = false;
@@ -22,6 +23,7 @@
         vm.openDeleteModal= openDeleteModal;
         vm.openEditModal=openEditModal;
         vm.edit=edit;
+        vm.openProfile= openProfile;
 
         vm.totalItems = '';
         vm.currentPage =1;
@@ -37,6 +39,7 @@
                     vm.posts = value;
                     vm.totalItems=value[0].totalItems;
                 }, function (reason) {
+                    vm.showFollowMessgae =true;
                     vm.message = "Follow Others to see their posts.";
                 });
         }
@@ -123,6 +126,10 @@
             $log.log("Page changed to:"+vm.currentPage);
             getPosts();
         };
+
+        function openProfile(user) {
+            $localStorage.openProfileOf = user;
+        }
     }
 })();
 

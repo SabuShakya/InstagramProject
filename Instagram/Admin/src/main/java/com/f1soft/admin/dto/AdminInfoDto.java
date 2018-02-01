@@ -11,4 +11,5 @@ public class AdminInfoDto {
     private String email;
     private String userName;
     private String image;
+    private boolean disableEditDeleteButtons;
 }

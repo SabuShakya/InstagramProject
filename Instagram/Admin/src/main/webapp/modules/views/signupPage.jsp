@@ -47,7 +47,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-default" ng-click="signup.saveAdmin()">SignUp</button>
+            <button class="btn btn-default" ng-disabled="signup.clickButton" ng-click="signup.saveAdmin()">SignUp</button>
         </div>
     </div>
 </form>

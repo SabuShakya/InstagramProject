@@ -7,6 +7,7 @@ import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.repository.LikesRepository;
 import com.users.repository.PhotoRepository;
+import com.users.repository.ProfilePhotoRepository;
 import com.users.repository.UserRepository;
 import com.users.service.LikesService;
 import com.users.utils.LikesUtil;

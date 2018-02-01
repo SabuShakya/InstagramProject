@@ -3,19 +3,18 @@
     HttpService.$inject = ['$http','$q','$location'];
     function HttpService($http,$q,$location) {
         var vm = this;
+        // vm.Rest_Service_Url = "http://localhost:8080/admin";
         vm.url = $location.absUrl();
         var r = vm.url.indexOf("#");
-        vm.REST_SERVICE_URI= vm.url.slice(0,r-1);
-
+        vm.Rest_Service_Url= vm.url.slice(0,r-1);
         return {
             get:get,
             post:post,
         };
         function get(url) {
             var defered = $q.defer();
-            $http.get(vm.REST_SERVICE_URI+url).then(function (value) {
+            $http.get(vm.Rest_Service_Url+url).then(function (value) {
                 defered.resolve(value.data);
-                console.log(vm.url);
             },function (reason) {
                 defered.reject(reason.data);
             });
@@ -24,7 +23,7 @@
 
         function post(url,newAdmin) {
             var  defered = $q.defer();
-            $http.post(vm.REST_SERVICE_URI+url,newAdmin).then(function (value) {
+            $http.post(vm.Rest_Service_Url+url,newAdmin).then(function (value) {
                 defered.resolve(value.data)
             },function (reason) {
                 defered.reject(reason.data);

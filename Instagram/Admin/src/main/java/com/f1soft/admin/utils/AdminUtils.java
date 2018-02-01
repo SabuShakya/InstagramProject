@@ -20,9 +20,16 @@ public class AdminUtils {
         ModelMapper modelMapper = new ModelMapper();
         for(Admin admin:adminList){
             AdminInfoDto mapAdmin = modelMapper.map(admin, AdminInfoDto.class);
+            mapAdmin.setDisableEditDeleteButtons(false);
             adminInfoDtoList.add(mapAdmin);
             System.out.println(adminInfoDtoList);
         }
         return adminInfoDtoList;
+    }
+
+    public static AdminInfoDto convertAdminToAdminDto(Admin admin){
+        AdminInfoDto adminInfoDto = new AdminInfoDto();
+        adminInfoDto.setImage(admin.getImage());
+        return adminInfoDto;
     }
 }

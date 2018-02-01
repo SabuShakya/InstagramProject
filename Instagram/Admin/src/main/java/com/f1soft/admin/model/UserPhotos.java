@@ -36,4 +36,7 @@ public class UserPhotos {
 
     @OneToMany(mappedBy = "userPhotos")
     private List<Likes> likes;
+
+    @Transient
+    private int totalItems;
 }
