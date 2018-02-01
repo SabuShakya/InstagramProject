@@ -1,5 +1,11 @@
 (function () {
-    angular.module('adminModule', ['ngRoute', 'ngAnimate', 'ngTouch', 'ui.bootstrap', 'naif.base64', 'ngStorage']);
+    angular.module('adminModule', ['ngRoute',
+        'ngAnimate',
+        'ngTouch',
+        'ui.bootstrap',
+        'naif.base64',
+        'ngStorage',
+        'ngTable']);
     angular.module('adminModule').config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when("/login", {
             controller: 'LoginController as login',
@@ -36,6 +42,14 @@
             .when("/showClickedUserProfile", {
                 templateUrl: "modules/views/userProfilePage.jsp",
                 controller: "UserProfilePageController as uppc"
+            })
+            .when("/totalUploads", {
+                templateUrl: "modules/views/totalUploads.jsp",
+                controller: "TotalUploadsController as totalUploads"
+            })
+            .when("/totalUploadsPerDay", {
+                templateUrl: "modules/views/totalUploads.jsp",
+                controller: "TotalUploadsController as totalUploads"
             })
             .otherwise({
                 redirectTo: '/login'

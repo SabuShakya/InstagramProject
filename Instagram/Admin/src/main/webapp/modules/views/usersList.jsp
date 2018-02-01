@@ -1,7 +1,7 @@
 <div ng-include src="'modules/views/DashBoard.html'"></div>
 
 <div align="center">
-    <h1>TotalUsers</h1>
+    <h1>{{usersList.title}}</h1>
 </div>
 <div class="container">
     <div ng-repeat="user in usersList.listOfUsers">

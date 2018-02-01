@@ -6,6 +6,7 @@
     function UsersListController(HttpService, $log, $localStorage) {
         var vm = this;
         vm.listOfUsers = '';
+        vm.title = "Total Users";
         //for Pagination
         vm.totalItems = '';
         vm.currentPage = 1;

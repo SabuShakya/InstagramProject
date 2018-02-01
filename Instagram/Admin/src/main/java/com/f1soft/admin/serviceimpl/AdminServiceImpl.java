@@ -7,6 +7,7 @@ import com.f1soft.admin.model.TokenAuth;
 import com.f1soft.admin.repository.AdminRepository;
 import com.f1soft.admin.service.AdminService;
 import com.f1soft.admin.service.TokenAuthService;
+import com.f1soft.admin.utils.AdminUtils;
 import com.f1soft.admin.utils.TokenUtils;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,12 @@ public class AdminServiceImpl implements AdminService {
            return true;
         }
         return false;
+    }
+
+    @Override
+    public AdminInfoDto getAdminPhoto(String userName) {
+        Admin admin=adminRepository.getAdminByUserName(userName);
+        return AdminUtils.convertAdminToAdminDto(admin);
     }
 
     public Admin getAdmin(String userName) {

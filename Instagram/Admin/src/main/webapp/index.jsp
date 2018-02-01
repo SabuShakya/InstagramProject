@@ -22,6 +22,9 @@
     <script type="text/javascript" src="app-module.js"></script>
     <%--for photo upload--%>
     <script type="text/javascript" src="static/angular-base64-upload.js"></script>
+    <%--ngTable--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.js"></script>
 
 </head>
 <body>
@@ -44,6 +47,8 @@
 <script type="text/javascript" src="modules/adminsetup/controller/UserLogController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/UsersListController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/ActiveUsersListController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/TotalUploadsController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/AdminPhotoModalController.js"></script>
 
 <%--Services--%>
 <script type="text/javascript" src="modules/adminsetup/service/LoginService.js"></script>

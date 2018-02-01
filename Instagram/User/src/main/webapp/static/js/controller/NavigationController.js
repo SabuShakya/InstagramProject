@@ -6,12 +6,15 @@
     function NavigationController(HttpService,$localStorage,$location) {
         var vm = this;
         vm.userName = $localStorage.storedObj.username;
+        vm.user = {};
         vm.logout =logout;
 
         function logout() {
-            HttpService.post("/logout", $localStorage.storedObj).then(
+            vm.user = $localStorage.storedObj;
+            $localStorage.storedObj = null;
+            HttpService.post("/logout", vm.user).then(
                 function (value) {
-                    $localStorage.storedObj = {};
+                    // $localStorage.storedObj = {};
                     $location.path("/login");
                 },
                 function (reason) {

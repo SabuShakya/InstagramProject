@@ -16,4 +16,5 @@ public interface AdminService {
     public List<Admin> getAllAdmins();
     public void deleteAdmin(Admin admin);
     public boolean loginAdmin(AdminLoginDto adminLoginDto);
+    public AdminInfoDto getAdminPhoto(String userName);
 }

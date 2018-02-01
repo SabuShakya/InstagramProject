@@ -7,6 +7,7 @@
 <div class="modal-body" id="modal-body">
     <form name="myForm" class="form-horizontal" novalidate>
         <img src="uploads/{{clickedAdmin.image}}" width="50%" height="50%" />
+        <button ng-click="modalController.openPhotoUploadModal()">Upload Photo</button>
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Name:</label>
             <div class="col-sm-10">

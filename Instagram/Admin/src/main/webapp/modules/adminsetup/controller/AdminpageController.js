@@ -30,7 +30,7 @@
                     console.log(vm.adminId);
                 }, function (reason) {
                     vm.showAll = false;
-                    openLoginModal();
+                    // openLoginModal();
                 });
         }
 
