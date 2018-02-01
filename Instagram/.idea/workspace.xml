@@ -7,67 +7,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd5a31d5-53e5-4916-9c0d-c0c3c7628b4d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/controller/CommentsController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/controller/FollowController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/controller/LikesController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/controller/PhotoController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/MessageDto.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/PostCommentModalController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ScrollDirective.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/directives/EnterDirective.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/infinityPage.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/postCommentModal.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/successMsg.jsp" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Admin/pom.xml" afterPath="$PROJECT_DIR$/Admin/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/configuration/ApplicationConfiguration.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/configuration/ApplicationConfiguration.java" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/HttpService.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/HttpService.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/Commentsdto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/Commentsdto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/ProfilePhotoDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/ProfilePhotoDto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPostDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPostDto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserSearchDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserSearchDto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserTokenDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserTokenDto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/Userdto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/Userdto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/model/ProfilePhoto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/ProfilePhoto.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/model/User.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/model/User.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/repository/ProfilePhotoRepository.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/repository/ProfilePhotoRepository.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/service/UserService.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/UserService.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/CommentUtils.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/CommentUtils.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/TokenUtils.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/TokenUtils.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserPhotosPostUtil.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserPhotosPostUtil.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserSearchUtils.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserSearchUtils.java" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/app.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/app.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ImgUploadController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ImgUploadController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/LikesController.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ProfileController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SearchController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SearchController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SearchedProfileController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SearchedProfileController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SignupController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SignupController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UpdateController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UpdateController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UploadProfilePhotoController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UploadProfilePhotoController.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/service/HttpService.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/service/HttpService.js" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/navigation.html" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/navigation.html" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/search.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/search.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/searchedProfile.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/searchedProfile.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/signup.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/signup.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/update.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/update.jsp" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/uploadProfilePhoto.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/uploadProfilePhoto.jsp" />
-    </list>
+    <list default="true" id="bd5a31d5-53e5-4916-9c0d-c0c3c7628b4d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/Admin/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/User/target/" />
@@ -96,8 +36,8 @@
       <file leaf-file-name="SignupController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SignupController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="-216">
+              <caret line="3" column="52" lean-forward="true" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -133,17 +73,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/User/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="250">
-              <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="19" />
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/User/src/main/webapp/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
@@ -280,9 +220,9 @@
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/dto/ProfilePhotoDto.java" />
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/repository/ProfilePhotoRepository.java" />
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/ProfilePhotoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SignupController.js" />
         <option value="$PROJECT_DIR$/User/src/main/webapp/app.js" />
+        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SignupController.js" />
+        <option value="$PROJECT_DIR$/User/src/main/webapp/index.jsp" />
       </list>
     </option>
   </component>
@@ -817,12 +757,12 @@
       <workItem from="1517238774710" duration="59113000" />
       <workItem from="1517396667733" duration="14635000" />
       <workItem from="1517458187732" duration="20052000" />
-      <workItem from="1517483578951" duration="2099000" />
+      <workItem from="1517483578951" duration="2351000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="396268000" />
+    <option name="totallyTimeSpent" value="396520000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,7 +775,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="44" width="1315" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5645412" sideWeight="0.5027365" order="7" side_tool="true" content_ui="tabs" />
@@ -847,7 +786,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24901497" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43856922" sideWeight="0.4972635" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43856922" sideWeight="0.4972635" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15863141" sideWeight="0.49569976" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -857,7 +796,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.4972635" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31570762" sideWeight="0.4972635" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4230171" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4230171" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30890465" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939324" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1309,26 +1248,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/successMsg.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SignupController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1353,6 +1276,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="120" lean-forward="false" selection-start-line="1" selection-start-column="120" selection-end-line="1" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SignupController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="3" column="52" lean-forward="true" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
