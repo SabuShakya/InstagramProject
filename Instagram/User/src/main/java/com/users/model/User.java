@@ -52,5 +52,8 @@ public class User implements Serializable {
 
     @OneToOne(mappedBy = "user",cascade=CascadeType.REMOVE)
     private ProfilePhoto profilePhotos;
+
+    @OneToOne(mappedBy = "user")
+    private UserActivation userActivation;
 }
 

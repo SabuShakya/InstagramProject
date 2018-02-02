@@ -18,19 +18,12 @@
         </div>
     </div>
 
-    <div class ="center">
-        <div ng-show="searched.showStatus">
-            <h1> This account is private </h1>
-            Follow this account to see their photos.
-        </div>
-    </div>
-
     <div class="stats-container">
         <div class="stat">
             <div class="number">{{searched.followers}}</div>
             <div class="text">Followers</div>
         </div>
-        <div class="stat active">
+        <div class="stat">
             <div class="number">{{searched.totalPictures}}</div>
             <div class="text">Pictures</div>
         </div>
@@ -41,6 +34,16 @@
     </div>
 </div>
 <br>
+
+<div class="container">
+    <div align="center">
+        <div ng-show="searched.showStatus">
+            <span class="glyphicon glyphicon-lock" style="width:100%"></span>
+        <h2> This account is private </h2>
+        Follow this account to see their photos.
+        </div>
+    </div>
+</div>
 
 <div ng-show="searched.showPhotoList">
 <div class="col-md-4" ng-repeat="photo in searched.photoList">

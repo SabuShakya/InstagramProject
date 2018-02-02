@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="static/css/newsFeed.css">
     <link href="static/css/comments.css" rel="stylesheet">
+    <link href="static/css/update.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
 
     <script type="text/javascript" src="angular.min.js"></script>
     <script type="text/javascript" src="angular-route.min.js"></script>

@@ -13,13 +13,17 @@
         vm.error_msg = false;
         vm.successMsg= false;
         vm.match = false;
-        // vm.showPrivateBtn=true;
+        vm.changePasswordOption=false;
+        vm.status='';
+
         vm.url = "/update";
         vm.userDisplayName = $localStorage.storedObj.username;
         vm.updateUser = updateUser;
-        vm.privateUser=privateUser;
-        vm.publicUser=publicUser;
+        // vm.privateUser=privateUser;
+        // vm.publicUser=publicUser;
 
+        vm.init=init;
+        vm.changeStatus=changeStatus;
 
         function updateUser() {
             vm.obj={
@@ -43,30 +47,56 @@
             }else{
                 vm.match=true;
             }
+
         }
 
-        function privateUser(){
-            HttpService.post("/makePrivate/"+$localStorage.storedObj.username).then(
-                function (value) {
-                   // vm.showPrivateBtn=false;
-                    console.log("success");
-                },
-                function (reason) {
-                    // vm.showPrivateBtn=true;
-                    console.log("error");
-                });
-        }
+        // function privateUser(){
+        //     HttpService.post("/makePrivate/"+$localStorage.storedObj.username).then(
+        //         function (value) {
+        //            // vm.showPrivateBtn=false;
+        //             console.log("success");
+        //         },
+        //         function (reason) {
+        //             // vm.showPrivateBtn=true;
+        //             console.log("error");
+        //         });
+        // }
 
-        function publicUser(){
+        // function publicUser(){
+        //     HttpService.post("/makePublic/"+$localStorage.storedObj.username).then(
+        //         function (value) {
+        //             // vm.showPrivateBtn=true;
+        //             console.log("success");
+        //         },
+        //         function (reason) {
+        //             // vm.showPrivateBtn=false;
+        //             console.log("error");
+        //         });
+        // }
+
+        function init(){
+            vm.status = false;
             HttpService.post("/makePublic/"+$localStorage.storedObj.username).then(
                 function (value) {
-                    // vm.showPrivateBtn=true;
                     console.log("success");
                 },
                 function (reason) {
-                    // vm.showPrivateBtn=false;
                     console.log("error");
                 });
         }
+
+        function changeStatus(){
+            vm.status=!vm.status;
+            HttpService.post("/makePrivate/"+$localStorage.storedObj.username).then(
+                function (value) {
+                    // vm.status=value;
+                    console.log("success");
+                },
+                function (reason) {
+                    console.log("error");
+                });
+
+        }
+
     }
 })();
