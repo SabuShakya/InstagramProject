@@ -1,22 +1,24 @@
 (function () {
-    angular.module("adminModule").controller("NavigationController",NavigationController);
+    angular.module("adminModule").controller("NavigationController", NavigationController);
 
-    NavigationController.$inject = ['HttpService','$localStorage','$location'];
+    NavigationController.$inject = ['HttpService', '$localStorage', '$location'];
 
-    function NavigationController(HttpService,$localStorage,$location) {
+    function NavigationController(HttpService, $localStorage, $location) {
         var vm = this;
-        vm.logout =logout;
+        vm.admin = {};
+        vm.logout = logout;
 
         function logout() {
-            HttpService.post("/logout", $localStorage.storedObj).then(
+            vm.admin = $localStorage.adminObj;
+            $localStorage.adminObj = null;
+            HttpService.post("/logout", vm.admin).then(
                 function (value) {
-                    $localStorage.storedObj = {};
+                    // $localStorage.adminObj = {};
                     $location.path("/login");
                 },
                 function (reason) {
                     console.log(reason);
-                }
-            )
+                })
         };
     }
 })();

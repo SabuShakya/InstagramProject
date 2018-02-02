@@ -26,7 +26,7 @@ public class UserTokenServiceImpl implements UserTokenService {
     }
 
     public UserToken getUserByTokenNo(String tokenNo, Long id) {
-        return userTokenRepository.getUserByTokenNoAndId(tokenNo, id);
+        return userTokenRepository.findByUser_IdAndAndTokenNo(id,tokenNo);
 
     }
 
@@ -45,7 +45,7 @@ public class UserTokenServiceImpl implements UserTokenService {
     }
 
     public void logoutUser(long id, String tokenNo){
-       UserToken userToken=userTokenRepository.getUserByTokenNoAndId(tokenNo,id);
+       UserToken userToken=userTokenRepository.findByUser_IdAndAndTokenNo(id,tokenNo);
        userToken.setStatus('N');
        userTokenRepository.save(userToken);
    }

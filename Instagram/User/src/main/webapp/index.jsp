@@ -49,6 +49,7 @@
 <script src="static/js/controller/mainController.js"></script>
 
 <script src="static/js/controller/ScrollDirective.js"></script>
+<script src="static/js/controller/UsersListController.js"></script>
 
 <script src="static/js/service/HttpService.js"> </script>
 

@@ -115,7 +115,7 @@
                 console.log("Error occured" + reason);
             });
         }
-        $interval(vm.profilePhoto,1000);
+        // $interval(vm.profilePhoto,1000);
 
         function editProfile() {
             vm.modalInstance=$uibModal.open({

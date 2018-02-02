@@ -200,8 +200,6 @@
             <artifactId>modelmapper</artifactId>
             <version>0.7.5</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
     </dependencies>
 
 </project>

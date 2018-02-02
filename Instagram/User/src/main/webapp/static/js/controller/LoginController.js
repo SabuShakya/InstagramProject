@@ -13,6 +13,11 @@
         vm.url = "/login";
         vm.loginUser = loginUser;
 
+        //checking if logged in
+        if(!($localStorage.storedObj == null)){
+            $location.path("/profile");
+        }
+
         function loginUser() {
             vm.user = {
                 'username': vm.username,

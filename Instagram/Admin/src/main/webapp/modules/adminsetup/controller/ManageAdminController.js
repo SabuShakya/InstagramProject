@@ -1,10 +1,11 @@
 (function () {
     angular.module("adminModule").controller("ManageAdminController", ManageAdminController);
-    ManageAdminController.$inject = ['HttpService', '$uibModal', '$rootScope', '$localStorage'];
+    ManageAdminController.$inject = ['HttpService', '$uibModal', '$rootScope', '$localStorage', 'NgTableParams'];
 
-    function ManageAdminController(HttpService, $uibModal, $rootScope, $localStorage) {
-        var vm =this;
+    function ManageAdminController(HttpService, $uibModal, $rootScope, $localStorage, NgTableParams) {
+        var vm = this;
         vm.adminList = [];
+        vm.disableEditDeleteButtons = false;
         $rootScope.clickedAdmin = '';
         $rootScope.message = '';
         $rootScope.saved = false;
@@ -14,11 +15,25 @@
         vm.openEditModal = openEditModal;
         vm.openDeleteModal = openDeleteModal;
         vm.openPhotoModal = openPhotoModal;
+
         showAdminList();
 
         function showAdminList() {
             HttpService.get(vm.url).then(function (value) {
                 vm.adminList = value;
+                angular.forEach(vm.adminList, function (admin, k) {
+                    if ($localStorage.adminObj.userName == admin.userName) {
+                        vm.disableEditDeleteButtons = true;
+                        admin.disableEditDeleteButtons = vm.disableEditDeleteButtons;
+                    }
+                });
+                // for ng-Table
+                vm.tableParams = new NgTableParams({
+                    page: 1,
+                    count: 3,
+                    sorting: {userName: 'asc'}
+                }, {dataset: vm.adminList});
+
             }, function (reason) {
                 console.log("Something occurred" + reason);
             });
@@ -35,10 +50,11 @@
                 size: 'lg'
             });
             vm.modalInstance.result.then(
-                function(){
+                function () {
                     showAdminList();
                 },
-                function(){})
+                function () {
+                })
         }
 
         function openDeleteModal(admin) {
@@ -52,10 +68,11 @@
                 size: 'lg'
             });
             vm.modalInstance.result.then(
-                function(){
+                function () {
                     showAdminList();
                 },
-                function(){})
+                function () {
+                })
         }
 
         function openPhotoModal(admin) {
@@ -69,10 +86,11 @@
                 size: 'lg'
             });
             vm.modalInstance.result.then(
-                function(){
+                function () {
                     showAdminList();
                 },
-                function(){})
+                function () {
+                })
         }
     }
-})()
+})();

@@ -32,7 +32,7 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     private List<UserPhotos> userPhotos;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user",cascade=CascadeType.REMOVE)
     private UserToken userTokenAuth;
 
     @OneToMany(mappedBy = "user")
@@ -44,8 +44,11 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user")
     private List<Comments> comments;
 
-    @OneToMany(mappedBy = "user")
-    private List<ProfilePhoto> profilePhotos;
+    @OneToOne(mappedBy = "user",cascade=CascadeType.REMOVE)
+    private ProfilePhoto profilePhotos;
+
+    @Transient
+    private int totalItems;
 
 }
 

@@ -7,6 +7,7 @@
 <div class="modal-body" id="modal-body">
     <form name="myForm" class="form-horizontal" novalidate>
         <img src="uploads/{{clickedAdmin.image}}" width="50%" height="50%" />
+        <button ng-click="modalController.openPhotoUploadModal()">Upload Photo</button>
         <div class="form-group">
             <label class="control-label col-sm-2" for="name">Name:</label>
             <div class="col-sm-10">
@@ -43,6 +44,6 @@
 </div>
 
 <div class="modal-footer">
-    <button class="btn btn-default" type="button" ng-click="modalController.update()">Update</button>
+    <button class="btn btn-default" type="button" ng-disabled="modalController.clickButton" ng-click="modalController.update()">Update</button>
     <button class="btn btn-warning" type="button" ng-click="modalController.cancel()">Cancel</button>
 </div>
