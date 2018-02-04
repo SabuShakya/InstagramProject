@@ -7,35 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd5a31d5-53e5-4916-9c0d-c0c3c7628b4d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/UserPhotoController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/Commentsdto.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserUploadsDto.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UsersTotalUploadsDto.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/CommentsService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/UserPhotosService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/CommentsServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserPhotosServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/CommentsUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/UserPostUtils.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/css/newsFeed.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserUploadsController.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Admin/Admin.iml" afterPath="$PROJECT_DIR$/Admin/Admin.iml" />
-      <change beforePath="$PROJECT_DIR$/Admin/pom.xml" afterPath="$PROJECT_DIR$/Admin/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/UserActionController.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/UserActionController.java" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserPostDto.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserPostDto.java" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/PhotoService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/ProfilePhotoService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/UserService.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/UserService.java" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/UserTokenService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/TotalUploadsController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/TotalUploadsController.js" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/DashBoard.html" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/manageAdmin.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/manageAdmin.jsp" />
-      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/totalUploads.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/totalUploads.jsp" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/Admin/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,8 +43,8 @@
       <file leaf-file-name="uploadsOfUser.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-54">
-              <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state relative-caret-position="-72">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -176,6 +148,11 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -755,12 +732,12 @@
       <workItem from="1517567799203" duration="11779000" />
       <workItem from="1517708099259" duration="1115000" />
       <workItem from="1517717833128" duration="12639000" />
-      <workItem from="1517732582071" duration="7466000" />
+      <workItem from="1517732582071" duration="7621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="455866000" />
+    <option name="totallyTimeSpent" value="456021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,10 +769,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34059098" sideWeight="0.4972635" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34059098" sideWeight="0.4972635" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.4972635" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32503888" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32503888" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32212666" sideWeight="0.48857144" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994527" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22126661" sideWeight="0.5114286" order="6" side_tool="true" content_ui="tabs" />
@@ -1420,8 +1397,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        <state relative-caret-position="-72">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
