@@ -26,12 +26,16 @@
                     <span class='save'></span></a>
                 </button>
             </div>
+
             <div ng-show="comment.showLikes">
                 <h5 style="color: #0089d8">Liked By:</h5>
-                <div ng-repeat="like in comment.likes">
+                <div ng-show="comment.showUserLikes">
+                <div ng-repeat="like in comment.likeList">
                     <span style="color: #449d44">{{like.userName}}</span>
                 </div>
+                </div>
             </div>
+
 
             <div ng-show="comment.showList">
                 <div ng-repeat="commen in comment.commentList">

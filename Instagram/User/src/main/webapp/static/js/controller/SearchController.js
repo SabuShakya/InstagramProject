@@ -89,7 +89,12 @@
         vm.showResult = false;
         vm.showMessage = false;
         vm.showFollowBtn = true;
+        vm.showList=false;
         $localStorage.openProfileOf={};
+        vm.followObj={
+            userName : $localStorage.storedObj.username,
+            following_userName : $localStorage.openProfileOf.username
+        };
 
         vm.search = search;
         vm.openProfile = openProfile;
@@ -97,12 +102,21 @@
         vm.followUser = followUser;
         vm.unfollowUser = unfollowUser;
 
+        checkFollow();
+
         function search() {
             HttpService.get("/search/"+vm.searchTerm).then(function (value) {
                 vm.searchResult = value;
-                vm.showResult = true;
+                angular.forEach(vm.searchResult , function(searchResult , key) {
+                    if(searchResult.activationStatus == "activated"){
+                        vm.showList = true;
+                        vm.showMessage = false;
+                    }else {
+                        vm.showList = false;
+                        vm.showMessage = true;
+                    }
+                });
             },function (reason) {
-                vm.message = "No result found";
                 vm.showMessage = true;
                 console.log("Error+ "+reason);
             });

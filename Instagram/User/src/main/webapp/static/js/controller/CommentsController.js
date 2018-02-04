@@ -7,12 +7,15 @@
         var vm =this;
         vm.comments = '';
         vm.commentList=[];
+        vm.likeList = [];
         vm.showList=false;
         vm.showing = false;
         vm.showLikes = false;
         vm.showCommentList= true;
         $rootScope.saved= false;
         vm.submitClicked=false;
+
+        vm.showUserLikes=false;
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
         vm.add = add;
@@ -89,14 +92,25 @@
                 commentsList();
             }
         }
-
+        // var i =0;
         function showLikeList() {
             if(vm.showLikes){
                 vm.showLikes = false;
             }else{
                 HttpService.get("/getLikesList/"+vm.imageName).then(function (value) {
                     vm.showLikes = true;
-                    vm.likes = value;
+                    vm.likeList = value;
+                    //
+                    // angular.forEach(vm.likes,function(likes,key){
+                    //     if(likes.activationStatus=="activated"){
+                    //         vm.likeList[i]=likes;
+                    //         i++;
+                    //         vm.showUserLikes=true;
+                    //     }
+                    //     else{
+                    //         vm.showUserLikes=false;
+                    //     }
+                    // });
                 },function (reason) {
                     console.log("This occurred:"+reason);
                 });

@@ -53,6 +53,7 @@
                 vm.showStatus=false;
             }, function (reason) {
                 vm.showStatus = true;
+                vm.showPhotoList=false;
                 console.log("Error occured" + reason);
             });
         }
@@ -68,7 +69,7 @@
         }
 
         function checkFollow() {
-            HttpService.post("/checkFollow", vm.followObj).then(function (value) {
+            HttpService.post("/checkFollow", vm.followObj).then(function(value){
                 vm.showFollowBtn = false;
                  searchedUserPhotos();
             }, function (reason) {
@@ -113,10 +114,10 @@
         }
 
         function unfollowUser() {
-            HttpService.post("/unfollowUser",vm.followObj).then(function (value) {
+            HttpService.post("/unfollowUser",vm.followObj).then(function(value){
                 vm.showFollowBtn = true;
                 vm.showStatus=true;
-                vm.showPhotoList=false;
+                userStatusPhotos();
             },function (reason) {
                 vm.showFollowBtn = false;
                 console.log("error following"+reason);

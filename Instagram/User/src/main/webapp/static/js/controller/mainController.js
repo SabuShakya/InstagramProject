@@ -4,7 +4,7 @@
 
     function mainController(HttpService,$localStorage,$rootScope,$uibModal, $log) {
         var vm = this;
-        vm.posts = {};
+        vm.posts = [];
         vm.fetching = false;
         vm.totalItems = '';
         vm.CurrentPage =1;
@@ -15,11 +15,11 @@
 
         function getPosts() {
             vm.currentPage++;
-            vm.fetching=true;
+            // vm.fetching=true;
             var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
             HttpService.get(URL).then(
                 function (value) {
-                    vm.posts = value;
+                    vm.posts = vm.posts.concat(value);
                     vm.totalItems=value[0].totalItems;
                     vm.fetching=false;
                 }, function (reason) {
@@ -27,16 +27,14 @@
                 });
         }
 
-        getPosts(vm.CurrentPage);
-
         function pageChanged() {
             $log.log("Page changed to:"+vm.CurrentPage);
+            // getPosts();
 
             if (vm.CurrentPage < vm.totalItems) {
                 vm.CurrentPage += 1;
                 getPosts(vm.CurrentPage);
             }
-            getPosts(vm.CurrentPage);
         };
 
     }

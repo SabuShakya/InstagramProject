@@ -38,6 +38,14 @@ angular.module('userModule').config(['$routeProvider','$locationProvider',functi
             templateUrl: "/static/views/navigation.html",
             controller:"NavigationController as navigate"
         })
+        .when("/changePassword",{
+            templateUrl:"/static/views/changePassword.jsp",
+            controller:"UpdateController as update"
+        })
+        .when("/deactivateAccount",{
+            templateUrl:"/static/views/deactivateAccount.jsp",
+            controller:"UpdateController as update"
+        })
         .otherwise({
             redirectTo:'/login'
         });

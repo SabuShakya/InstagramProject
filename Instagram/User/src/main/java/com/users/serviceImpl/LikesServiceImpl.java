@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -45,13 +46,21 @@ public class LikesServiceImpl implements LikesService {
     }
 
     public int getCountOfLikes(Likes likes){
-        List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(likes.getUserPhotos().getImage_path());
-        return likesList.size();
+        int countofLikes = 0;
+//        List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(likes.getUserPhotos().getImage_path());
+        List<Likesdto>  list =getLikesList(likes.getUserPhotos().getImage_path());
+        for (Likesdto like: list){
+            if(like.getActivationStatus().equals("activated")) {
+                countofLikes +=1;
+            }
+        }
+//        return likesList.size();
+        return countofLikes;
     }
+
     public List<Likes> getByPhotoId(long id) {
         return likesRepository.getByUserPhotos_Id(id);
     }
-
 
     public int getLikesCountForImage(String imageName) {
         List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(imageName);
@@ -60,6 +69,14 @@ public class LikesServiceImpl implements LikesService {
 
     public List<Likesdto> getLikesList(String imageName) {
         List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(imageName);
-        return LikesUtil.convertLikesToLikesDto(likesList);
+        List<Likesdto> list = LikesUtil.convertLikesToLikesDto(likesList);
+        List<Likesdto> resultList = new ArrayList<Likesdto>();
+        for (Likesdto like: list){
+            if(like.getActivationStatus().equals("activated")) {
+               resultList.add(like);
+            }
+        }
+//       return LikesUtil.convertLikesToLikesDto(likesList);
+        return resultList;
     }
 }

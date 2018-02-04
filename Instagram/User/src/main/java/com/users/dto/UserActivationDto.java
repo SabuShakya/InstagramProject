@@ -5,9 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Likesdto {
-    private String userName;
-    private String imageName;
-    private int likeCount;
+public class UserActivationDto {
     private String activationStatus;
+    private String username;
 }

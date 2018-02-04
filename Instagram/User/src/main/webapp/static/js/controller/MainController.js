@@ -32,6 +32,7 @@
         vm.getPosts=getPosts;
 
         getPosts();
+        
         function getPosts() {
             var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.currentPage+"&size="+vm.maxSize;
             HttpService.get(URL).then(
