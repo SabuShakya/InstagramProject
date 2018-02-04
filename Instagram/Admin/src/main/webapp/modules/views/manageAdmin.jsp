@@ -6,7 +6,7 @@
         <strong>{{message}}</strong>
     </div>
     <%--<table class="table table-striped">--%>
-    <table ng-table="manage.tableParams" class="table" show-filter="true">
+    <table ng-table="manage.tableParams" class="table table-bordered table-striped" show-filter="true">
         <%--<thead>--%>
         <%--<tr>--%>
         <%--<th>Index</th>--%>

@@ -1,20 +1,15 @@
 package com.f1soft.admin.serviceimpl;
 
 import com.f1soft.admin.dto.UserListInfoDto;
-import com.f1soft.admin.model.ProfilePhoto;
 import com.f1soft.admin.model.User;
-import com.f1soft.admin.repository.ProfilePhotoRepository;
 import com.f1soft.admin.repository.UserRepository;
-import com.f1soft.admin.service.ProfilePhotoService;
 import com.f1soft.admin.service.UserService;
-import com.f1soft.admin.service.UserTokenService;
 import com.f1soft.admin.utils.TotalUsersUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.ArrayList;

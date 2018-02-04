@@ -1,21 +1,41 @@
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-<div ng-controller="NavigationController as navigate" id="top-nav" class="navbar navbar-inverse navbar-static-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#!/adminPage">Dashboard</a>
+<!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">-->
+
+<!--<div ng-controller="NavigationController as navigate">-->
+    <!--<nav class="navbar navbar-inverse">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="navbar-header">-->
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <!--<a class="navbar-brand" href="#!/adminPage">Dashboard</a>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;<div class="navbar-collapse collapse">&ndash;&gt;-->
+            <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" role="button" data-toggle="dropdown"><i class="fa fa-user-circle"></i> {{adminId}} <span class="caret"></span></a>-->
+                <!--<li><a href="#!/logout" ng-click="navigate.logout()"><i class="fa fa-sign-out"></i> Logout</a></li>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--</div>-->
+    <!--</nav>-->
+<!--</div>-->
+
+<div ng-controller="NavigationController as navigate">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#!/adminPage">Dashboard</a>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
+        <div>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" role="button" data-toggle="dropdown"><i class="fa fa-user-circle"></i> {{adminId}} <span class="caret"></span></a>
-                        <li><a href="#!/logout" ng-click="navigate.logout()"><i class="fa fa-sign-out"></i> Logout</a></li>
-                </li>
+                <li>
+                    <a>{{adminId}}</a></li>
+                <li><a href="#!/logout" ng-click="navigate.logout()">Logout</a></li>
             </ul>
         </div>
-    </div>
+    </nav>
 </div>

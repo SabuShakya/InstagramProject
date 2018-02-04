@@ -9,4 +9,5 @@ import java.util.List;
 public interface UserService {
     public List<UserListInfoDto> getTotalUsers(Pageable pageable);
     public List<UserListInfoDto> getTotalActiveUsers(Pageable pageable);
+
 }
