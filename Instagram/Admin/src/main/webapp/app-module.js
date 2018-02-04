@@ -51,6 +51,10 @@
                 templateUrl: "modules/views/totalUploads.jsp",
                 controller: "TotalUploadsController as totalUploads"
             })
+            .when("/showUploadsOfUser", {
+                templateUrl: "modules/views/uploadsOfUser.jsp",
+                controller: "UserUploadsController as userUploads"
+            })
             .otherwise({
                 redirectTo: '/login'
             })

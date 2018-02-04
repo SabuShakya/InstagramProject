@@ -3,10 +3,13 @@
     <meta charset="utf-8">
     <title>Welcome</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <%--<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">--%>
+    <link href="css/newsFeed.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>--%>
     <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>--%>
@@ -49,6 +52,7 @@
 <script type="text/javascript" src="modules/adminsetup/controller/ActiveUsersListController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/TotalUploadsController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/AdminPhotoModalController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/UserUploadsController.js"></script>
 
 <%--Services--%>
 <script type="text/javascript" src="modules/adminsetup/service/LoginService.js"></script>

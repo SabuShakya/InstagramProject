@@ -2,7 +2,9 @@ package com.f1soft.admin.controller;
 
 import com.f1soft.admin.dto.UserListInfoDto;
 import com.f1soft.admin.dto.UserLogsDto;
+import com.f1soft.admin.dto.UsersTotalUploadsDto;
 import com.f1soft.admin.service.UserLogService;
+import com.f1soft.admin.service.UserPhotosService;
 import com.f1soft.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
