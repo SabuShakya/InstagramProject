@@ -53,12 +53,10 @@ public class User implements Serializable {
     @OneToOne(mappedBy = "user",cascade=CascadeType.REMOVE)
     private ProfilePhoto profilePhotos;
 
-<<<<<<< HEAD
     @OneToOne(mappedBy = "user")
     private UserActivation userActivation;
-=======
+
     @Transient
     private int totalItems;
->>>>>>> 557fa4916fad15031096a247f8babc90105b5531
 }
 

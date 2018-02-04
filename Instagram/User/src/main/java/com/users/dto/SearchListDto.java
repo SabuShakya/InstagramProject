@@ -5,11 +5,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserSearchDto {
-    private Long userId;
+public class SearchListDto {
+    private long id;
     private String username;
-    private String fullname;
-    private String imagename;
-    public boolean showResultButtons;
     private String activationStatus;
 }

@@ -21,8 +21,8 @@ public class LikesUtil {
         List<Likesdto> likesdtoList = new ArrayList<Likesdto>();
         for (Likes likes:likesList){
             Likesdto likesdto =  new Likesdto();
-//            likesdto.setImageName(likes.getUser().getProfilePicture);
             likesdto.setUserName(likes.getUser().getUsername());
+            likesdto.setActivationStatus(likes.getUser().getUserActivation().getActivationStatus());
             likesdtoList.add(likesdto);
         }
         return likesdtoList;

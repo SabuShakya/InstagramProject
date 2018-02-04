@@ -50,7 +50,6 @@ public class FollowServiceImpl implements FollowService {
         return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList);
     }
 
-
     public void saveFollows(FollowDto followDto) {
         User user = userRepository.getUserByUsername(followDto.getUserName());
         User following_user = userRepository.getUserByUsername(followDto.getFollowing_userName());

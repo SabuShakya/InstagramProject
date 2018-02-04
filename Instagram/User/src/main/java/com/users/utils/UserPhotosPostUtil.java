@@ -1,5 +1,6 @@
 package com.users.utils;
 
+import com.users.dto.Likesdto;
 import com.users.dto.UserPostDto;
 import com.users.model.UserPhotos;
 import org.modelmapper.ModelMapper;
@@ -16,13 +17,25 @@ public class UserPhotosPostUtil {
 //        List<UserPostDto> userPostDtoList = modelMapper.map(userPhotosList,targetListType);
 //        return userPostDtoList;
         List<UserPostDto> userPostDtoList = new ArrayList<UserPostDto>();
+
         for (UserPhotos userPhotos:userPhotosList){
+            int countofLikes=0;
             UserPostDto userPostDto = new UserPostDto();
             userPostDto.setUsername(userPhotos.getUser().getUsername());
             userPostDto.setImage_path(userPhotos.getImage_path());
             userPostDto.setCreated_date(userPhotos.getCreated_date().toString());
             userPostDto.setCaption(userPhotos.getCaption());
-            userPostDto.setCountOfLikes(userPhotos.getLikes().size());
+
+            List<Likesdto> likesdtoListt=LikesUtil.convertLikesToLikesDto(userPhotos.getLikes());
+            for (Likesdto likesdto:likesdtoListt){
+                if(likesdto.getActivationStatus().equals("activated")) {
+                    countofLikes = countofLikes+1;
+                }
+            }
+//           userPhotos.setLikes(likes);
+//            userPostDto.setCountOfLikes(userPhotos.getLikes().size());
+            userPostDto.setCountOfLikes(countofLikes);
+
             userPostDto.setTotalItems(userPhotos.getTotalItems());
             userPostDto.setProfilePic(userPhotos.getUser().getProfilePhotos().getProfile_pic());
             userPostDtoList.add(userPostDto);

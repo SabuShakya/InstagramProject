@@ -32,10 +32,14 @@ public class UserController {
     @Autowired
     private EmailService emailService;
 
+    @Autowired
+    private UserActivationService userActivationService;
+
     @PostMapping("/signup")
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
         userService.saveUser(user);
         userTokenService.saveToken(user);
+        userActivationService.saveUserActivationStatus(user);
         return new ResponseEntity<Boolean>(true, HttpStatus.OK);
     }
 
@@ -52,16 +56,22 @@ public class UserController {
 
     //smriti
     @PostMapping("/update")
-    public ResponseEntity<MessageDto> updateUser(@RequestBody Userdto userdto){
+    public ResponseEntity<Boolean> updateUser(@RequestBody Userdto userdto){
         boolean isUser = userService.checkPassword(userdto);
-        MessageDto messageDto = new MessageDto();
         if(isUser){
            userService.updateUser(userdto);
-           messageDto.setMessage("PasswordChanged");
-           return new ResponseEntity<MessageDto>(messageDto, HttpStatus.OK);
+           return new ResponseEntity<Boolean>(true, HttpStatus.OK);
         }
-        messageDto.setMessage("Password didnt match");
-        return new ResponseEntity<MessageDto>(messageDto, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<Boolean>(false, HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping("/checkPassword")
+    public ResponseEntity<Boolean> checkPassword(@RequestBody Userdto userdto){
+        boolean isUser= userService.loginUser(userdto);
+        if(isUser){
+            return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+        }
+        return new ResponseEntity<Boolean>(false, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/getPosts/{userName}")
@@ -102,4 +112,20 @@ public class UserController {
         userService.publicAccount(username);
         return new ResponseEntity<Boolean>(true, HttpStatus.OK);
     }
+
+    @PostMapping("/checkPrivacy/{username}")
+    public ResponseEntity<Boolean> checkPrivacy(@PathVariable("username") String username){
+        boolean isPublic = userService.checkAccountStatus(username);
+        if (isPublic){
+            return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+        }
+        return new ResponseEntity<Boolean>(false,HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping("/deActivateAccount/{username}")
+    public ResponseEntity<Boolean> deActivateAccount(@PathVariable("username")String username){
+        userActivationService.deactivateAccount(username);
+        return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+    }
+
 }

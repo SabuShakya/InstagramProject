@@ -16,6 +16,8 @@
         //checking if logged in
         if(!($localStorage.storedObj == null)){
             $location.path("/profile");
+        }else{
+            $location.path("/login");
         }
 
         function loginUser() {
