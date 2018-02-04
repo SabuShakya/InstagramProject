@@ -14,7 +14,7 @@
         getPosts();
 
         function getPosts() {
-            vm.currentPage++;
+           // vm.currentPage++;
             // vm.fetching=true;
             var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
             HttpService.get(URL).then(
@@ -33,7 +33,7 @@
 
             if (vm.CurrentPage < vm.totalItems) {
                 vm.CurrentPage += 1;
-                getPosts(vm.CurrentPage);
+                getPosts();
             }
         };
 
