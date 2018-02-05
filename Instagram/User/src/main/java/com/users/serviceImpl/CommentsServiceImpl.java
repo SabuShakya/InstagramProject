@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -43,7 +44,15 @@ public class CommentsServiceImpl implements CommentsService {
     public List<Commentsdto> getAllComments(String image_path) {
         List<Comments> commentsList = commentsRepository.getCommentsByUserPhotosImage_path(image_path);
         List<Commentsdto> commentsdtos = CommentUtils.convertCommentsToCommentsdto(commentsList);
-        return commentsdtos;
+
+        List<Commentsdto> resultList = new ArrayList<Commentsdto>();
+        for (Commentsdto commentsdto: commentsdtos){
+            if(commentsdto.getActivationStatus().equals("activated")) {
+                resultList.add(commentsdto);
+            }
+        }
+//       return LikesUtil.convertLikesToLikesDto(likesList);
+        return resultList;
     }
 
     public void updateComment(Commentsdto commentsdto){

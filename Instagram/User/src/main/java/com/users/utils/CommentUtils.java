@@ -19,6 +19,7 @@ public class CommentUtils {
             commentsdto.setComments(comments.getComments());
             commentsdto.setComment_id(comments.getId());
             commentsdto.setShowCommentButtons(true);
+            commentsdto.setActivationStatus(comments.getUser().getUserActivation().getActivationStatus());
             commentsdtoList.add(commentsdto);
         }
         return commentsdtoList;

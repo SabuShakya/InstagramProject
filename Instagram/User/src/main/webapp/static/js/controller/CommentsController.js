@@ -15,7 +15,7 @@
         $rootScope.saved= false;
         vm.submitClicked=false;
 
-        vm.showUserLikes=false;
+        // vm.showUserLikes=false;
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
         vm.add = add;

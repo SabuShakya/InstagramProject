@@ -108,7 +108,7 @@
             HttpService.get("/search/"+vm.searchTerm).then(function (value) {
                 vm.searchResult = value;
                 angular.forEach(vm.searchResult , function(searchResult , key) {
-                    if(searchResult.activationStatus == "activated"){
+                    if((searchResult!=null) &&(searchResult.activationStatus == "activated")){
                         vm.showList = true;
                         vm.showMessage = false;
                     }else {
@@ -117,6 +117,7 @@
                     }
                 });
             },function (reason) {
+                vm.showList = false;
                 vm.showMessage = true;
                 console.log("Error+ "+reason);
             });
