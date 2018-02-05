@@ -35,6 +35,9 @@ public class UserController {
     @Autowired
     private UserActivationService userActivationService;
 
+    @Autowired
+    private BlockService blockService;
+
     @PostMapping("/signup")
     public ResponseEntity<Boolean> createUser(@RequestBody User user) {
         userService.saveUser(user);
@@ -92,10 +95,21 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
+//    @GetMapping("/search/{searchTerm}")
+//    public ResponseEntity<List<UserSearchDto>> searchUsers(@PathVariable("searchTerm")String searchTerm){
+//        List<UserSearchDto> list = userService.findBySearchTerm(searchTerm);
+//        if (list!=null) {
+//            return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.NOT_FOUND);
+//    }
+
     @GetMapping("/search/{searchTerm}")
     public ResponseEntity<List<UserSearchDto>> searchUsers(@PathVariable("searchTerm")String searchTerm){
         List<UserSearchDto> list = userService.findBySearchTerm(searchTerm);
         if (list!=null) {
+//            List<BlockUser> blockUsers=blockService.checkBlocked()
+
             return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.OK);
         }
         return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.NOT_FOUND);

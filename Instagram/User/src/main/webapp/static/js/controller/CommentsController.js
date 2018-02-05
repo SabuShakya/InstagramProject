@@ -15,7 +15,9 @@
         $rootScope.saved= false;
         vm.submitClicked=false;
 
-        // vm.showUserLikes=false;
+       vm.myButton = 'default';
+
+
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
         vm.add = add;
@@ -61,6 +63,7 @@
                 'image_path':$rootScope.photo
             };
             HttpService.post("/likeAction",vm.obj).then(function (value) {
+               vm.myButton = 'clicked';
                 vm.likeCount = value;
             },function (reason) {
                 console.log("Error Occured:"+reason);
@@ -92,7 +95,7 @@
                 commentsList();
             }
         }
-        // var i =0;
+
         function showLikeList() {
             if(vm.showLikes){
                 vm.showLikes = false;
@@ -150,4 +153,9 @@
             $uibModalInstance.dismiss('close');
         }
     }
+
 })();
+
+
+
+

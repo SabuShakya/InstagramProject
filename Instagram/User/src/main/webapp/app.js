@@ -46,6 +46,10 @@ angular.module('userModule').config(['$routeProvider','$locationProvider',functi
             templateUrl:"/static/views/deactivateAccount.jsp",
             controller:"UpdateController as update"
         })
+        .when("/blockUsersList",{
+            templateUrl:"/static/views/blockList.jsp",
+            controller:"UpdateController as update"
+        })
         .otherwise({
             redirectTo:'/login'
         });

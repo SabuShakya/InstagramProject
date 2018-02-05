@@ -16,7 +16,8 @@
         <div class='footer'>
             <div class='react'>
                 {{comment.likeCount}}
-                <button ng-click="comment.like()">
+                <%--<button ng-click="comment.like()">--%>
+                    <button class="{{myButton}}" ng-click="comment.like()">
                     <span class='love'></span>
                 </button>
                 <button role='button' ng-click="comment.showComments()">
@@ -69,3 +70,12 @@
 <div class="modal-footer">
     <button class="btn btn-warning" type="button" ng-click="comment.cancel()">Cancel</button>
 </div>
+
+<style type="text/css">
+    .default{
+        background:white;
+    }
+    .clicked{
+        background:red;
+    }
+</style>

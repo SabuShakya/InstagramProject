@@ -147,17 +147,23 @@
         function checkBlocked(){
             HttpService.post("/checkBlock",vm.blockObj).then(function (value) {
                 vm.showBlockBtn=false;
+                vm.showBlockMessage=true;
+                vm.showFollowOptionsBtn=false;
+                vm.showPhotoList=false;
             },function (reason) {
                vm.showBlockBtn=true;
+                vm.showBlockMessage=false;
+                vm.showFollowOptionsBtn=true;
+                vm.showPhotoList=true;
             });
         }
 
         function blockUser() {
             HttpService.post("/blockUser",vm.blockObj).then(function(value){
                 vm.showBlockBtn=false;
-                vm.showBlockMessage=true;
-                vm.showFollowOptionsBtn=false;
-                vm.showPhotoList=false;
+                // vm.showBlockMessage=true;
+                // vm.showFollowOptionsBtn=false;
+                // vm.showPhotoList=false;
                 console.log("success");
             },function (reason) {
                vm.showBlockBtn=true;
@@ -168,9 +174,9 @@
        function unblockUser () {
            HttpService.post("/unblockUser",vm.blockObj).then(function(value){
                vm.showBlockBtn=true;
-               vm.showBlockMessage=false;
-               vm.showFollowOptionsBtn=true;
-               vm.showPhotoList=true;
+               // vm.showBlockMessage=false;
+               // vm.showFollowOptionsBtn=true;
+               // vm.showPhotoList=true;
                console.log("success");
            },function (reason) {
               vm.showBlockBtn=false;

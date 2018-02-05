@@ -10,13 +10,6 @@
     <br>
     <br>
 
-<%--<div>--%>
-    <%--Private account:--%>
-    <%--<i class="fa fa-toggle-on active" ng-if="update.status == true" ng-click="update.init()" ng-model="update.status"></i>--%>
-    <%--<i class="fa fa-toggle-on fa-rotate-180 inactive" ng-if="update.status == false" ng-click="update.changeStatus()" ng-model="update.status"></i>--%>
-    <%--&lt;%&ndash;<pre>{{update.status }}</pre>&ndash;%&gt;--%>
-<%--</div>--%>
-
 <div>
     <div ng-if="update.showPrivateBtn">
         Private account:<i class="fa fa-toggle-on active" ng-click="update.init()"></i>
@@ -31,6 +24,10 @@
 <div>
     <a href="#!/deactivateAccount">Temporarily disable my account</a>
 </div>
+
+    <div>
+        <a href="#!/blockUsersList" ng-click="update.blockUsersList()">Blocked Users</a>
+    </div>
 </div>
 
 

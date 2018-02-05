@@ -10,6 +10,7 @@ import com.users.repository.FollowRepository;
 import com.users.repository.UserRepository;
 import com.users.service.BlockService;
 import com.users.service.FollowService;
+import com.users.utils.BlockUtils;
 import jdk.nashorn.internal.ir.Block;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,11 +60,15 @@ public class BlockServiceImpl implements BlockService {
 
     public void unblockUser(BlockUserdto blockUserdto){
         BlockUser blockUser=blockRepository.checkBlock(blockUserdto.getUserName(),blockUserdto.getBlockedUsername());
-//       List<FollowDto> followList = followService.getFollowersList(blockUserdto.getUserName());
         if(blockUser !=null){
             blockRepository.delete(blockUser);
         }
     }
 
+    public List<BlockUserdto> getBlockedUserList(String username){
+        User user=userRepository.getUserByUsername(username);
+        List<User> blockUsers = blockRepository.getByBlockedUser(user.getId());
+        return BlockUtils.convertBlocktoBlockdto(blockUsers);
+    }
 //    SELECT b.blocked_userId,b.userId,b.blockStatus From blockedUsers_table b JOIN user_table u ON b.blocked_userId = u.id
 }

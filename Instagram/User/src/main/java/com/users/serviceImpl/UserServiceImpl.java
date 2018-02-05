@@ -108,7 +108,6 @@ public class UserServiceImpl implements UserService {
         List<User> userList= em.createQuery(sql,User.class).setParameter("username",
                 "%"+searchTerm+"%").getResultList();
         return UserSearchUtils.getSearchedUserInfo(userList);
-
     }
 
     public User getUserEmail(String email) {

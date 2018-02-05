@@ -17,6 +17,7 @@
         vm.image=$localStorage.profilePicture;
         vm.submitClicked=false;
         vm.showDeactivateBtn=false;
+        vm.blockList=[];
         vm.user={};
 
         vm.url = "/update";
@@ -29,6 +30,7 @@
         vm.checkPrivacy=checkPrivacy;
         vm.deActivateAccount=deActivateAccount;
         vm.checkPassword=checkPassword;
+        vm.blockUsersList=blockUsersList;
 
         checkPrivacy();
 
@@ -125,6 +127,16 @@
                    vm. error_msg = "Error occured";
                     console.log("error"+reason);
                 });
+        }
+
+        function blockUsersList(){
+            HttpService.get("/blockUsersList/"+$localStorage.storedObj.username).then(
+                function (value) {
+                    vm.blockList=value;
+                },function (reason) {
+
+                }
+            )
         }
 
 
