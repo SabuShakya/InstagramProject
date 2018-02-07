@@ -12,15 +12,23 @@
         $rootScope.message='';
         $rootScope.saved = false;
         vm.showStatus=false;
+        vm.showBlockMessage=false;
         vm.showPhotoList=true;
         $rootScope.photo = '';
 
         vm.url = "/searchedUserPhotos/" + $localStorage.openProfileOf.username;
         vm.userDisplayName = $localStorage.openProfileOf.username;
         vm.showFollowBtn = true;
+        vm.showBlockBtn=true;
+        vm.showFollowOptionsBtn=true;
         vm.followObj={
             userName : $localStorage.storedObj.username,
             following_userName : $localStorage.openProfileOf.username
+        };
+
+        vm.blockObj={
+            userName : $localStorage.storedObj.username,
+            blockedUsername : $localStorage.openProfileOf.username
         };
         vm.openModal=openModal;
         vm.commentModal=commentModal;
@@ -31,10 +39,14 @@
         vm.userStatusPhotos=userStatusPhotos;
         vm.followCount=followCount;
         vm.checkFollow =checkFollow;
+        vm.blockUser=blockUser;
+        vm.unblockUser=unblockUser;
+        vm.checkBlocked=checkBlocked;
 
         profilePhoto();
         checkFollow();
         followCount();
+        checkBlocked();
 
         function searchedUserPhotos() {
             HttpService.get(vm.url).then(function (value) {
@@ -131,5 +143,38 @@
                 console.log("Error occured" + reason);
             });
         }
+
+        function checkBlocked(){
+            HttpService.post("/checkBlock",vm.blockObj).then(function (value) {
+                vm.showBlockBtn=false;
+            },function (reason) {
+               vm.showBlockBtn=true;
+            });
+        }
+
+        function blockUser() {
+            HttpService.post("/blockUser",vm.blockObj).then(function(value){
+                vm.showBlockBtn=false;
+                vm.showBlockMessage=true;
+                vm.showFollowOptionsBtn=false;
+                vm.showPhotoList=false;
+                console.log("success");
+            },function (reason) {
+               vm.showBlockBtn=true;
+
+            });
+        }
+
+       function unblockUser () {
+           HttpService.post("/unblockUser",vm.blockObj).then(function(value){
+               vm.showBlockBtn=true;
+               vm.showBlockMessage=false;
+               vm.showFollowOptionsBtn=true;
+               vm.showPhotoList=true;
+               console.log("success");
+           },function (reason) {
+              vm.showBlockBtn=false;
+           });
+       }
     }
 })();

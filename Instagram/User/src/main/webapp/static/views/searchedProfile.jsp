@@ -10,11 +10,23 @@
 <div class="main">
     <p align="center" class="description">{{searched.userDisplayName}}</p><br>
     <div align="center">
+        <div ng-show="searched.showFollowOptionsBtn">
         <div ng-if="searched.showFollowBtn">
             <button type="button" class="btn-default" ng-click="searched.followUser()">Follow</button>
         </div>
         <div ng-hide="searched.showFollowBtn">
             <button type="button" class="btn-default" ng-click="searched.unfollowUser()">Un-Follow</button>
+        </div>
+        </div>
+    </div>
+    <br>
+
+    <div align="center">
+        <div ng-if="searched.showBlockBtn">
+            <button type="button" class="btn-default" ng-click="searched.blockUser()">Block</button>
+        </div>
+        <div ng-hide="searched.showBlockBtn">
+            <button type="button" class="btn-default" ng-click="searched.unblockUser()">UnBlock</button>
         </div>
     </div>
 
@@ -42,6 +54,15 @@
         <h2> This account is private </h2>
         Follow this account to see their photos.
         </div>
+    </div>
+</div>
+
+<div class="container">
+    <div align="center">
+<div ng-show="searched.showBlockMessage">
+    <span class="glyphicon glyphicon-camera"></span>
+    <h2> No posts yet </h2>
+</div>
     </div>
 </div>
 

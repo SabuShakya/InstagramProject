@@ -29,7 +29,7 @@
 
             <div ng-show="comment.showLikes">
                 <h5 style="color: #0089d8">Liked By:</h5>
-                <div ng-show="comment.showUserLikes">
+                <%--<div ng-show="comment.showUserLikes">--%>
                 <div ng-repeat="like in comment.likeList">
                     <span style="color: #449d44">{{like.userName}}</span>
                 </div>
