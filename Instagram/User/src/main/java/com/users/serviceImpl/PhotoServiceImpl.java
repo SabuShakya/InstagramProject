@@ -1,11 +1,17 @@
 package com.users.serviceImpl;
+
 import com.users.dto.UserPhotodto;
+import com.users.dto.UserPostDto;
+import com.users.model.Likes;
 import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.repository.PhotoRepository;
+import com.users.service.FollowService;
+import com.users.service.LikesService;
 import com.users.service.PhotoService;
 import com.users.service.UserService;
 import com.users.utils.PhotoUtils;
+import com.users.utils.UserPhotosPostUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -27,22 +33,28 @@ import java.util.List;
 @Transactional
 public class PhotoServiceImpl implements PhotoService {
 
-   @Resource
-   private PhotoRepository photoRepository;
+    @Resource
+    private PhotoRepository photoRepository;
 
-   @Autowired
-   private UserService userService;
+    @Autowired
+    private UserService userService;
 
-   @Autowired
-   private EntityManager entityManager;
+    @Autowired
+    private FollowService followService;
 
-    public void savePhoto(UserPhotodto userPhotodto){
-        File dir = new File(System.getProperty("catalina.home")+ "/uploads");
-        if(!dir.exists()){
+    @Autowired
+    private LikesService likesService;
+
+    @Autowired
+    private EntityManager entityManager;
+
+    public void savePhoto(UserPhotodto userPhotodto) {
+        File dir = new File(System.getProperty("catalina.home") + "/uploads");
+        if (!dir.exists()) {
             dir.mkdir();
         }
         User user = userService.getUser(userPhotodto.getUsername());
-        for (String s:userPhotodto.getImageList()){
+        for (String s : userPhotodto.getImageList()) {
             byte[] imageDecoded = Base64.getDecoder().decode(s);
             String filename = imageDecoded.toString();
             String pathToImage = dir + "/" + filename;
@@ -50,9 +62,9 @@ public class PhotoServiceImpl implements PhotoService {
                 FileOutputStream fout = new FileOutputStream(pathToImage);
                 fout.write(imageDecoded);
                 fout.close();
-            }catch (FileNotFoundException e) {
+            } catch (FileNotFoundException e) {
                 e.printStackTrace();
-            }catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
             UserPhotos userPhotos = new UserPhotos();
@@ -64,27 +76,53 @@ public class PhotoServiceImpl implements PhotoService {
         }
     }
 
-    public List<UserPhotos> getListOfPhotos(List<User> listOfFollowedUsers, Pageable pageable) {
-        final String SQL_QUERY="SELECT u from UserPhotos u where u.user.id=:id";
-        Query query = entityManager.createQuery(SQL_QUERY,UserPhotos.class);
+    @Override
+    public List<UserPostDto> getPosts(String userName, Pageable pageable) {
+
+        //getting List of Followed Users
+        List<User> listOfFollowedUsers = followService.getFollowedUsers(userName);
         List<UserPhotos> userPhotosList = new ArrayList<UserPhotos>();
-        for (User user:listOfFollowedUsers){
+        final String SQL_QUERY =
+                "SELECT t.image_path,t.created_date,t.caption,f.following_userId FROM photo_table t " +
+                        "LEFT JOIN user_table u ON t.user_id = u.id " +
+                        "LEFT JOIN follow f ON u.id = f.userId " +
+                        "where f.following_userId=:id ORDER BY t.created_date DESC";
+        Query query = entityManager.createNativeQuery(SQL_QUERY);
+
+        //getting followed users photo List
+        for (User user : listOfFollowedUsers) {
             long id = user.getId();
             System.out.println(id);
-            query.setParameter("id",id).getResultList();
-            int totalItems =query.getResultList().size();
+            query.setParameter("id", id);
+            int totalItems = query.getResultList().size();
 
-            query.setFirstResult((pageable.getPageNumber()-1)*pageable.getPageSize());
-            query.setMaxResults(pageable.getPageSize());
-            List <UserPhotos> userPhotosList1 = query.getResultList();
-            List<UserPhotos> list = photoRepository.getUserPhotosByUser_Id(id);
-            for(UserPhotos userPhotos:userPhotosList1) {
+            List<UserPhotos> allList = query.getResultList();
+            System.out.println(allList.toString());
+
+
+            //setting total Items
+            List<UserPhotos> userPhotosList1 = query.getResultList();
+            for (UserPhotos userPhotos : userPhotosList1) {
                 userPhotos.setTotalItems(totalItems);
                 userPhotosList.add(userPhotos);
             }
         }
-        return userPhotosList;
+        //get LikesCount
+        for (UserPhotos userPhotos : userPhotosList) {
+            List<Likes> likes = likesService.getByPhotoId(userPhotos.getId());
+            userPhotos.setLikes(likes);
+        }
+
+        query.setFirstResult((pageable.getPageNumber() - 1) * pageable.getPageSize());
+        query.setMaxResults(pageable.getPageSize());
+
+        return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList);
+
     }
+
+//    public List<UserPhotos> getListOfPhotos(String userName, Pageable pageable) {
+//
+//    }
 
     public List<UserPhotodto> getAllPhotos(String username) {
         List<UserPhotos> photoList = photoRepository.getUserPhotosByUserUsername(username);
@@ -93,12 +131,12 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     public UserPhotos getPhotos(String image_path) {
-       UserPhotos userPhotos= photoRepository.getUserPhotosByImage_path(image_path);
-       return userPhotos;
+        UserPhotos userPhotos = photoRepository.getUserPhotosByImage_path(image_path);
+        return userPhotos;
     }
 
     public long getPhotoCount(String username) {
-        List<UserPhotos> userPhotosList=photoRepository.getUserPhotosByUserUsername(username);
+        List<UserPhotos> userPhotosList = photoRepository.getUserPhotosByUserUsername(username);
         return userPhotosList.size();
     }
 }

@@ -19,7 +19,7 @@
             <div class="number">{{profile.followers}}</div>
             <button ng-click="profile.followersList()"> Followers</button>
         </div>
-        <div class="stat active">
+        <div class="stat">
             <div class="number">{{profile.totalPictures}}</div>
             <div class="text">Pictures</div>
         </div>

@@ -15,4 +15,5 @@ public class Userdto implements Serializable{
     private String oldPassword;
     private String image;
     private String accountStatus;
+    private String activationStatus;;
 }

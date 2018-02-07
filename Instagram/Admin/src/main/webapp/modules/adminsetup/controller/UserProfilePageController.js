@@ -86,6 +86,7 @@
                 console.log("error following"+reason);
             });
         }
+
         function profilePhoto() {
             HttpService.get("/getProfilePhoto/" + $localStorage.openProfileOf.username).then(function (value) {
                 vm.pic = value.profile_pic;

@@ -69,7 +69,7 @@ public class PhotoController {
         Userdto userdto = new Userdto();
         userdto.setUsername(user.getUsername());
         List<UserPhotodto> photoList= photoService.getAllPhotos(username);
-        boolean isPublic= userService.checkAccountStatus(userdto);
+        boolean isPublic= userService.checkAccountStatus(username);
           if (isPublic){
               return new ResponseEntity<List<UserPhotodto>>(photoList, HttpStatus.OK);
           }

@@ -1,4 +1,5 @@
 <div ng-include src="'modules/views/DashBoard.html'"></div>
+<div ng-include src="'modules/views/breadcrumb.html'"></div>
 
 <div align="center">
     <h1>{{usersList.title}}</h1>

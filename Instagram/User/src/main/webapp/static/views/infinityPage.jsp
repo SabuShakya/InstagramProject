@@ -1,5 +1,5 @@
 <div ng-include src="'static/views/navigation.html'"></div>
-<div infinityscroll="main.pageChanged()" style="height:400px; overflow:auto;"  infinite-scroll-distance="3">
+<div infinite-scroll="main.pageChanged()" ng-model="main.currentPage"infinite-scroll-distance="1">
 <section>
     <div align="center" ng-repeat="post in main.posts">
         <div class='insta fade-scroll'>

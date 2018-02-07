@@ -15,6 +15,7 @@ import com.f1soft.admin.utils.UserPostUtils;
 import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -58,7 +59,7 @@ public class UserPhotosServiceImpl implements UserPhotosService {
     }
 
     @Override
-    public List<UserPostDto> getUserUploads(String userName) {
+    public List<UserPostDto> getUserUploads(String userName, Pageable pageable) {
         List<UserPostDto> resultList =  new ArrayList<UserPostDto>();
         String sql = "SELECT u.username,pt.image_path, pt.created_date, pt.caption," +
                 " t2.profile_pic " +
@@ -67,7 +68,13 @@ public class UserPhotosServiceImpl implements UserPhotosService {
                 " LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id" +
                 " WHERE u.username = :userName";
         Query query = entityManager.createNativeQuery(sql).setParameter("userName", userName);
+
+        query.setFirstResult((pageable.getPageNumber() - 1) * pageable.getPageSize());
+        query.setMaxResults(pageable.getPageSize());
+
         List<Object[]> list = query.getResultList();
+        int totalItems = query.getResultList().size();
+
         for (Object[] o:list){
             System.out.println(o[0].toString());
             System.out.println(o[1].toString());
@@ -76,7 +83,7 @@ public class UserPhotosServiceImpl implements UserPhotosService {
             System.out.println(o[4].toString());
 //            getting likesCount
             int likesCount=(likesRepository.getByUserPhotos_Image_path(o[1].toString())).size();
-            resultList.add(UserPostUtils.convertToUserPostDto(o,likesCount));
+            resultList.add(UserPostUtils.convertToUserPostDto(o,likesCount,totalItems));
         }
             return resultList;
     }

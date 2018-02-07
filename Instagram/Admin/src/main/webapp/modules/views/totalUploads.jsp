@@ -1,4 +1,6 @@
 <div ng-include src="'modules/views/DashBoard.html'"></div>
+<div ng-include src="'modules/views/breadcrumb.html'"></div>
+
 <h1>{{totalUploads.title}}</h1>
 <table ng-table="totalUploads.tableParams" class="table table-condensed table-bordered table-striped"
        show-filter="false">
@@ -17,7 +19,7 @@
         </td>
         <td data-title="'User Name'">{{user.userName}}</td>
         <td data-title="'Users TotalUploads'">{{user.totalUploads}}</td>
-        <td><a href="#!/showUploadsOfUser" ng-click="totalUploads.showUploadsOfUser(user)">
+        <td><a href="#!/adminPage/totalUploads/showUploadsOfUser" ng-click="totalUploads.showUploadsOfUser(user)">
             Show Uploads
         </a>
         </td>

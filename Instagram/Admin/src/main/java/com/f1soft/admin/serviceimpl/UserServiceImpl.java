@@ -27,7 +27,6 @@ public class UserServiceImpl implements UserService {
 //    gets all users in ascending order
     @Override
     public List<UserListInfoDto> getTotalUsers(Pageable pageable) {
-
         final String SQL_QUERY = "SELECT u from User u ORDER BY username";
         return getList(SQL_QUERY,pageable);
     }

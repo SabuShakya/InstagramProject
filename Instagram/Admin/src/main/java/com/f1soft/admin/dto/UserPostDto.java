@@ -17,4 +17,5 @@ public class UserPostDto {
     private String caption;
     private int countOfLikes;
     private int totalItems;
+
 }

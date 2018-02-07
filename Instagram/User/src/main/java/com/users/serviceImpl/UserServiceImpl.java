@@ -1,10 +1,13 @@
 package com.users.serviceImpl;
 
+import com.users.dto.SearchListDto;
 import com.users.dto.UserSearchDto;
 import com.users.dto.Userdto;
 import com.users.model.ProfilePhoto;
 import com.users.model.User;
+import com.users.model.UserActivation;
 import com.users.repository.ProfilePhotoRepository;
+import com.users.repository.UserActivationRepository;
 import com.users.repository.UserRepository;
 import com.users.service.EmailService;
 import com.users.service.ProfilePhotoService;
@@ -20,7 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.persistence.EntityManager;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +36,9 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private ProfilePhotoRepository profilePhotoRepository;
+
+    @Autowired
+    private UserActivationRepository userActivationRepository;
 
     @Autowired
     private UserTokenService userTokenService;
@@ -76,21 +82,33 @@ public class UserServiceImpl implements UserService {
         return userlist;
     }
 
-   //smriti
     public boolean loginUser(Userdto userdto) {
         User isUser = userRepository.getUserByUsername(userdto.getUsername());
+
         if((isUser !=null) && (BCrypt.checkpw(userdto.getPassword(),isUser.getPassword()))){
             userdto.setId(isUser.getId());
+            UserActivation userActivation = userActivationRepository.getByUserUsername(userdto.getUsername());
+            userActivation.setActivationStatus("activated");
+            userActivationRepository.save(userActivation);
             return true;
         }
         return false;
     }
 
+//    public List<UserSearchDto> findBySearchTerm(String searchTerm) {
+//        String sql="SELECT u.username,uAt.activationStatus FROM user_table u JOIN userActivation_table uAt ON u.id = uAt.user_id WHERE u.username LIKE :searchTerm and  uAt.activationStatus LIKE :status";
+//        Query query=em.createNativeQuery(sql,"SearchListResults");
+////        query.setParameter("searchTerm","%"+searchTerm+"%").setParameter("status","activated");
+////        List<User> userList=query.getResultList();
+//       return UserSearchUtils.getSearchedUserInfo(userList);
+//    }
+
     public List<UserSearchDto> findBySearchTerm(String searchTerm) {
         String sql = "Select u from User u where u.username like :username";
         List<User> userList= em.createQuery(sql,User.class).setParameter("username",
                 "%"+searchTerm+"%").getResultList();
-       return UserSearchUtils.getSearchedUserInfo(userList);
+        return UserSearchUtils.getSearchedUserInfo(userList);
+
     }
 
     public User getUserEmail(String email) {
@@ -123,8 +141,8 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-    public boolean checkAccountStatus(Userdto userdto){
-        User isUser = userRepository.getUserByUsername(userdto.getUsername());
+    public boolean checkAccountStatus(String username){
+        User isUser = userRepository.getUserByUsername(username);
         if((isUser!=null)&& (isUser.getAccountStatus().equals("public"))){
             return true;
         }

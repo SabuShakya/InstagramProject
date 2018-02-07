@@ -17,5 +17,5 @@ public interface UserService {
     public boolean checkPassword(Userdto userdto);
     public void privateAccount(String username);
     public void publicAccount(String username);
-    public boolean checkAccountStatus(Userdto userdto);
+    public boolean checkAccountStatus(String username);
 }

@@ -10,5 +10,4 @@ public class UserTokenDto {
     private String password;
     private String tokenNo;
     private Character status;
-
 }

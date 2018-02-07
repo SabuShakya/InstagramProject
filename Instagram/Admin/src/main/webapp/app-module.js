@@ -5,7 +5,9 @@
         'ui.bootstrap',
         'naif.base64',
         'ngStorage',
-        'ngTable']);
+        'ngTable',
+        'ng-breadcrumbs',
+        'infinite-scroll']);
     angular.module('adminModule').config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when("/login", {
             controller: 'LoginController as login',
@@ -17,43 +19,52 @@
             })
             .when("/adminPage", {
                 controller: "AdminpageController as admin",
-                templateUrl: 'modules/views/adminPage.jsp'
+                templateUrl: 'modules/views/adminPage.jsp',
+                label: 'Dashboard'
             })
-            .when("/addAdmin", {
+            .when("/adminPage/addAdmin", {
                 controller: "NewAdminController as newadmin",
-                templateUrl: 'modules/views/addNewAdmin.jsp'
+                templateUrl: 'modules/views/addNewAdmin.jsp',
+                label:'Add Admin'
             })
-            .when("/manageAdmin", {
+            .when("/adminPage/manageAdmin", {
                 controller: "ManageAdminController as manage",
-                templateUrl: 'modules/views/manageAdmin.jsp'
+                templateUrl: 'modules/views/manageAdmin.jsp',
+                label:'Manage Admin'
             })
             .when("/navigation", {
                 templateUrl: "modules/views/Dashboard.html",
                 controller: "NavigationController as navigate"
             })
-            .when("/usersList", {
+            .when("/adminPage/usersList", {
                 templateUrl: "modules/views/usersList.jsp",
-                controller: "UsersListController as usersList"
+                controller: "UsersListController as usersList",
+                label:'UsersList'
             })
-            .when("/activeUsersList", {
+            .when("/adminPage/activeUsersList", {
                 templateUrl: "modules/views/usersList.jsp",
-                controller: "ActiveUsersListController as usersList"
+                controller: "ActiveUsersListController as usersList",
+                label:'ActiveUsersList'
             })
-            .when("/showClickedUserProfile", {
+            .when("/adminPage/showClickedUserProfile", {
                 templateUrl: "modules/views/userProfilePage.jsp",
-                controller: "UserProfilePageController as uppc"
+                controller: "UserProfilePageController as uppc",
+                label:'UserProfile'
             })
-            .when("/totalUploads", {
+            .when("/adminPage/totalUploads", {
                 templateUrl: "modules/views/totalUploads.jsp",
-                controller: "TotalUploadsController as totalUploads"
+                controller: "TotalUploadsController as totalUploads",
+                label:'TotalUploads'
             })
-            .when("/totalUploadsPerDay", {
+            .when("/adminPage/totalUploadsPerDay", {
                 templateUrl: "modules/views/totalUploads.jsp",
-                controller: "TotalUploadsController as totalUploads"
+                controller: "TotalUploadsController as totalUploads",
+                label:'Uploads per Day'
             })
-            .when("/showUploadsOfUser", {
+            .when("/adminPage/totalUploads/showUploadsOfUser", {
                 templateUrl: "modules/views/uploadsOfUser.jsp",
-                controller: "UserUploadsController as userUploads"
+                controller: "UserUploadsController as userUploads",
+                label:'Uploads'
             })
             .otherwise({
                 redirectTo: '/login'
