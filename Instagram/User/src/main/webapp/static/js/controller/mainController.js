@@ -28,14 +28,13 @@
         }
 
         function pageChanged() {
-            $log.log("Page changed to:"+vm.CurrentPage);
-            // getPosts();
 
+            $log.log("Page changed to:"+vm.CurrentPage);
             if (vm.CurrentPage < vm.totalItems) {
-                vm.CurrentPage += 1;
-                getPosts();
+                vm.CurrentPage = vm.CurrentPage+1;
             }
-        };
+            getPosts();
+        }
 
     }
 

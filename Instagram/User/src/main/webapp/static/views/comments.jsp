@@ -17,7 +17,8 @@
             <div class='react'>
                 {{comment.likeCount}}
                 <%--<button ng-click="comment.like()">--%>
-                    <button class="{{myButton}}" ng-click="comment.like()">
+
+                <button ng-class="{'active':comment.isActive}" ng-click="comment.like()">
                     <span class='love'></span>
                 </button>
                 <button role='button' ng-click="comment.showComments()">
@@ -30,7 +31,6 @@
 
             <div ng-show="comment.showLikes">
                 <h5 style="color: #0089d8">Liked By:</h5>
-                <%--<div ng-show="comment.showUserLikes">--%>
                 <div ng-repeat="like in comment.likeList">
                     <span style="color: #449d44">{{like.userName}}</span>
                 </div>
@@ -64,6 +64,7 @@
                 <button ng-click="comment.edit()" ng-disabled="comment.submitClicked">Edit</button>
             </div>
         </div>
+
     </section>
 </div>
 
@@ -72,10 +73,7 @@
 </div>
 
 <style type="text/css">
-    .default{
-        background:white;
-    }
-    .clicked{
+    .active{
         background:red;
     }
 </style>

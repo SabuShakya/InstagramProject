@@ -14,9 +14,7 @@
         vm.showCommentList= true;
         $rootScope.saved= false;
         vm.submitClicked=false;
-
-       vm.myButton = 'default';
-
+       vm.isActive=false;
 
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
@@ -63,7 +61,7 @@
                 'image_path':$rootScope.photo
             };
             HttpService.post("/likeAction",vm.obj).then(function (value) {
-               vm.myButton = 'clicked';
+                vm.isActive=!(vm.isActive);
                 vm.likeCount = value;
             },function (reason) {
                 console.log("Error Occured:"+reason);

@@ -77,11 +77,22 @@ public class UserController {
         return new ResponseEntity<Boolean>(false, HttpStatus.NOT_FOUND);
     }
 
+//    @GetMapping("/getPosts/{userName}")
+//    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username,
+//    @RequestParam("page") int page, @RequestParam("size") int size){
+//        org.springframework.data.domain.Pageable pageable = new PageRequest(page,size);
+//        List<UserPostDto> userPostList=followService.getPosts(username, pageable);
+//        if (userPostList!= null) {
+//            return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
+//    }
+
     @GetMapping("/getPosts/{userName}")
     public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username,
-    @RequestParam("page") int page, @RequestParam("size") int size){
+                                                      @RequestParam("page") int page, @RequestParam("size") int size){
         org.springframework.data.domain.Pageable pageable = new PageRequest(page,size);
-        List<UserPostDto> userPostList=followService.getPosts(username, pageable);
+        List<UserPostDto> userPostList=photoService.getPosts(username, pageable);
         if (userPostList!= null) {
             return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
         }
