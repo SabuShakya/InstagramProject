@@ -42,4 +42,10 @@ public class UserPhotoController {
         List<Commentsdto> commentsdtoList = commentsService.getComments(imageName);
         return  new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
     }
+
+    @GetMapping("/List<UserPostDto>")
+    public ResponseEntity<List<UserPostDto>> getUploadsPerDay(){
+        List<UserPostDto> posts =userPhotosService.getUploadsPerDay();
+        return new ResponseEntity<List<UserPostDto>>(posts,HttpStatus.OK);
+    }
 }

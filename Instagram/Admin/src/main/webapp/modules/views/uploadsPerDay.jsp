@@ -3,7 +3,7 @@
 
 <link href="css/newsFeed.css">
 
-<div infinite-scroll="userUploads.pageChanged()" ng-model="userUploads.currentPage" infinite-scroll-distance="2">
+<%--<div infinite-scroll="userUploads.pageChanged()" ng-model="userUploads.currentPage" infinite-scroll-distance="2">--%>
     <section>
         <div align="center" ng-repeat="uploads in userUploads.uploadList">
             <div class='insta fade-scroll'>
@@ -48,5 +48,5 @@
             </div>
         </div>
     </section>
-</div>
+<%--</div>--%>
 

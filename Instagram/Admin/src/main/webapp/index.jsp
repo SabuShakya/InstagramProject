@@ -58,6 +58,7 @@
 <script type="text/javascript" src="modules/adminsetup/controller/TotalUploadsController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/AdminPhotoModalController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/UserUploadsController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/UploadsPerDayController.js"></script>
 
 <%--Services--%>
 <script type="text/javascript" src="modules/adminsetup/service/LoginService.js"></script>

@@ -1,30 +1,25 @@
 (function () {
-    angular.module("adminModule").controller("UserUploadsController", UserUploadsController);
+    angular.module('adminModule').controller('UploadsPerDayController',UploadsPerDayController);
 
-    UserUploadsController.$inject = ['HttpService', '$localStorage','$log'];
+    UploadsPerDayController.$inject =['HttpService'];
 
-    function UserUploadsController(HttpService, $localStorage,$log) {
+    function UploadsPerDayController(HttpService) {
         var vm = this;
-        vm.uploadList = [];
-        vm.showing = false;
-        vm.showList = true;
-
-        vm.totalItems = '';
-        vm.CurrentPage =1;
-        vm.maxSize = 2;
-        vm.pageChanged= pageChanged;
-
-        vm.getUploadsOfUser = getUploadsOfUser;
+        vm.uploadList=[];
+        vm.commentList = [];
+        vm.getUploadsOfDay = getUploadsOfDay;
         vm.showComments = showComments;
         vm.openLikeListModal=openLikeListModal;
-        getUploadsOfUser();
 
-        function getUploadsOfUser() {
-            var URL = "/getUploadsOf/"+$localStorage.showUploadsOfUser+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
+        getUploadsOfDay();
+
+        function getUploadsOfDay() {
+            // var URL = "/"+$localStorage.showUploadsOfUser+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
+            var URL ="/getUploadsOfDay";
             HttpService.get(URL).then(
                 function (value) {
                     vm.uploadList = value;
-                    vm.totalItems = value[0].totalItems;
+                    // vm.totalItems = value[0].totalItems;
                 }, function (reason) {
                     console.log(reason);
                 });
@@ -44,15 +39,6 @@
                     console.log(reason);
                 });
         }
-
-        function pageChanged() {
-            $log.log("Page changed to:"+vm.CurrentPage);
-            if (vm.CurrentPage < (vm.totalItems/vm.maxSize)) {
-                vm.CurrentPage += 1;
-            }
-            getUploadsOfUser();
-        };
-
         function openLikeListModal(post) {
             $rootScope.imageName = post.image_path;
             vm.modalInstance=$uibModal.open({
@@ -65,5 +51,12 @@
             });
         }
 
+        // function pageChanged() {
+        //     $log.log("Page changed to:"+vm.CurrentPage);
+        //     if (vm.CurrentPage < vm.totalItems) {
+        //         vm.CurrentPage += 1;
+        //     }
+        //     getUploadsOfDay();
+        // };
     }
 })();

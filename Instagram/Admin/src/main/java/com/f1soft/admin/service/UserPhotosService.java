@@ -9,4 +9,6 @@ import java.util.List;
 public interface UserPhotosService {
     public List<UsersTotalUploadsDto> getUsersUploadsCount();
     public List<UserPostDto> getUserUploads(String userName , Pageable pageable);
+    public List<UserPostDto> getUploadsPerDay();
+
 }

@@ -25,12 +25,12 @@
             .when("/adminPage/addAdmin", {
                 controller: "NewAdminController as newadmin",
                 templateUrl: 'modules/views/addNewAdmin.jsp',
-                label:'Add Admin'
+                label: 'Add Admin'
             })
             .when("/adminPage/manageAdmin", {
                 controller: "ManageAdminController as manage",
                 templateUrl: 'modules/views/manageAdmin.jsp',
-                label:'Manage Admin'
+                label: 'Manage Admin'
             })
             .when("/navigation", {
                 templateUrl: "modules/views/Dashboard.html",
@@ -39,32 +39,37 @@
             .when("/adminPage/usersList", {
                 templateUrl: "modules/views/usersList.jsp",
                 controller: "UsersListController as usersList",
-                label:'UsersList'
+                label: 'UsersList'
             })
             .when("/adminPage/activeUsersList", {
                 templateUrl: "modules/views/usersList.jsp",
                 controller: "ActiveUsersListController as usersList",
-                label:'ActiveUsersList'
+                label: 'ActiveUsersList'
             })
             .when("/adminPage/showClickedUserProfile", {
                 templateUrl: "modules/views/userProfilePage.jsp",
                 controller: "UserProfilePageController as uppc",
-                label:'UserProfile'
+                label: 'UserProfile'
             })
             .when("/adminPage/totalUploads", {
                 templateUrl: "modules/views/totalUploads.jsp",
                 controller: "TotalUploadsController as totalUploads",
-                label:'TotalUploads'
+                label: 'TotalUploads'
             })
             .when("/adminPage/totalUploadsPerDay", {
                 templateUrl: "modules/views/totalUploads.jsp",
                 controller: "TotalUploadsController as totalUploads",
-                label:'Uploads per Day'
+                label: 'Uploads per Day'
             })
             .when("/adminPage/totalUploads/showUploadsOfUser", {
                 templateUrl: "modules/views/uploadsOfUser.jsp",
                 controller: "UserUploadsController as userUploads",
-                label:'Uploads'
+                label: 'Uploads'
+            })
+            .when("/adminPage/totalUploadsPerDay", {
+                templateUrl: "modules/views/uploadsPerDay.jsp",
+                controller: "UploadsPerDayController as userUploads",
+                label: 'Uploads/Day'
             })
             .otherwise({
                 redirectTo: '/login'

@@ -6,6 +6,7 @@ import com.users.model.Likes;
 import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.repository.PhotoRepository;
+import com.users.repository.UserRepository;
 import com.users.service.FollowService;
 import com.users.service.LikesService;
 import com.users.service.PhotoService;
@@ -38,6 +39,9 @@ public class PhotoServiceImpl implements PhotoService {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private FollowService followService;
@@ -80,49 +84,36 @@ public class PhotoServiceImpl implements PhotoService {
     public List<UserPostDto> getPosts(String userName, Pageable pageable) {
 
         //getting List of Followed Users
-        List<User> listOfFollowedUsers = followService.getFollowedUsers(userName);
-        List<UserPhotos> userPhotosList = new ArrayList<UserPhotos>();
+//        List<User> listOfFollowedUsers = followService.getFollowedUsers(userName);
+        User user = userRepository.getUserByUsername(userName);
         final String SQL_QUERY =
-                "SELECT t.image_path,t.created_date,t.caption,f.following_userId FROM photo_table t " +
+                "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId " +
+                        "FROM photo_table t " +
                         "LEFT JOIN user_table u ON t.user_id = u.id " +
-                        "LEFT JOIN follow f ON u.id = f.userId " +
-                        "where f.following_userId=:id ORDER BY t.created_date DESC";
-        Query query = entityManager.createNativeQuery(SQL_QUERY);
+                        "LEFT JOIN follow f ON u.id = f.following_userId " +
+                        "LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id " +
+                        "where f.userId=:id ORDER BY t.created_date DESC";
 
-        //getting followed users photo List
-        for (User user : listOfFollowedUsers) {
-            long id = user.getId();
-            System.out.println(id);
-            query.setParameter("id", id);
-            int totalItems = query.getResultList().size();
-
-            List<UserPhotos> allList = query.getResultList();
-            System.out.println(allList.toString());
-
-
-            //setting total Items
-            List<UserPhotos> userPhotosList1 = query.getResultList();
-            for (UserPhotos userPhotos : userPhotosList1) {
-                userPhotos.setTotalItems(totalItems);
-                userPhotosList.add(userPhotos);
-            }
-        }
-        //get LikesCount
-        for (UserPhotos userPhotos : userPhotosList) {
-            List<Likes> likes = likesService.getByPhotoId(userPhotos.getId());
-            userPhotos.setLikes(likes);
-        }
-
+        Query query = entityManager.createNativeQuery(SQL_QUERY).setParameter("id",user.getId());
+        int totalItems = query.getResultList().size();
         query.setFirstResult((pageable.getPageNumber() - 1) * pageable.getPageSize());
         query.setMaxResults(pageable.getPageSize());
 
-        return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList);
+        List<Object[]> allList = query.getResultList();
+        List<UserPhotodto> userPhotosList = new ArrayList<UserPhotodto>();
+
+        for (Object[] o :allList){
+            UserPhotodto userPhotodto= PhotoUtils.convertObjectToUserPhotos(o);
+            userPhotosList.add(userPhotodto);
+        }
+        //get LikesCount
+//        for (UserPhotos userPhotos : userPhotosList) {
+//            List<Likes> likes = likesService.getByPhotoId(userPhotos.getId());
+//            userPhotos.setLikes(likes);
+//        }
+        return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList,totalItems);
 
     }
-
-//    public List<UserPhotos> getListOfPhotos(String userName, Pageable pageable) {
-//
-//    }
 
     public List<UserPhotodto> getAllPhotos(String username) {
         List<UserPhotos> photoList = photoRepository.getUserPhotosByUserUsername(username);
