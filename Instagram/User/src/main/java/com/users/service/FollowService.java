@@ -10,7 +10,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface FollowService {
-//    public List<UserPostDto> getPosts(String username, Pageable pageable);
+    public List<User> getFollowedUsers(String username);
 
     public void saveFollows(FollowDto followDto);
     public boolean checkFollow(FollowDto followDto);
@@ -18,7 +18,5 @@ public interface FollowService {
     public FollowCountDto getFollowCount(String username);
     public List<FollowDto> getFollowersList(String username);
     public List<FollowDto> getFollowingList(String username);
-
-    public List<User> getFollowedUsers(String username);
 
 }

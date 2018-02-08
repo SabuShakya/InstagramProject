@@ -1,4 +1,6 @@
 <div ng-include src="'modules/views/DashBoard.html'"></div>
+<div ng-include src="'modules/views/breadcrumb.html'"></div>
+
 <div>
     <h1> All users </h1>
 

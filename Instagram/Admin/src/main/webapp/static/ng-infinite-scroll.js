@@ -28,28 +28,10 @@ mod.directive('infiniteScroll', [
         }
         handler = function() {
           var elementBottom, remaining, shouldScroll, windowBottom;
-          windowBottom = $(window).height() + $window.scrollTop();
+          windowBottom = $window.height() + $window.scrollTop();
           elementBottom = elem.offset().top + elem.height();
           remaining = elementBottom - windowBottom;
-          shouldScroll = remaining <= $(window).height() * scrollDistance;
-          //
-          //   console.API;
-          //
-          //   if (typeof console._commandLineAPI !== 'undefined') {
-          //       console.API = console._commandLineAPI; //chrome
-          //   } else if (typeof console._inspectorCommandLineAPI !== 'undefined') {
-          //       console.API = console._inspectorCommandLineAPI; //Safari
-          //   } else if (typeof console.clear !== 'undefined') {
-          //       console.API = console;
-          //   }
-          //
-          //   console.API.clear();
-          // console.log("elementBottom: "+elementBottom);
-          // console.log("windowBottom: "+windowBottom);
-          // console.log("remaining: "+remaining);
-          // console.log("$window.height() * scrollDistance: "+$window.height() * scrollDistance);
-          // console.log("scrollDistance: "+scrollDistance);
-          // console.log("shouldScroll: "+shouldScroll);
+          shouldScroll = remaining <= $window.height() * scrollDistance;
           if (shouldScroll && scrollEnabled) {
             if ($rootScope.$$phase) {
               return scope.$eval(attrs.infiniteScroll);

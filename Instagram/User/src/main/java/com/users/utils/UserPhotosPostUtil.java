@@ -11,12 +11,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-//public class UserPhotosPostUtil {
+public class UserPhotosPostUtil {
 //    public static List<UserPostDto> convertUserPhotosToUserPostDto(List<UserPhotos> userPhotosList){
-////        Type targetListType = new TypeToken<List<UserPostDto>>(){}.getType();
-////        ModelMapper modelMapper = new ModelMapper();
-////        List<UserPostDto> userPostDtoList = modelMapper.map(userPhotosList,targetListType);
-////        return userPostDtoList;
 //        List<UserPostDto> userPostDtoList = new ArrayList<UserPostDto>();
 //
 //        for (UserPhotos userPhotos:userPhotosList){
@@ -43,22 +39,21 @@ import java.util.List;
 //        }
 //        return userPostDtoList;
 //    }
-//}
-//
 
-public class UserPhotosPostUtil {
-    public static List<UserPostDto> convertUserPhotosToUserPostDto(List<UserPhotodto> userPhotosList){
-        List<UserPostDto> userPostDtoList = new ArrayList<UserPostDto>();
 
-        for (UserPhotodto userPhotos:userPhotosList){
-            int countofLikes=0;
-            UserPostDto userPostDto = new UserPostDto();
-            userPostDto.setUsername(userPhotos.getUsername());
-            userPostDto.setProfilePic(userPhotos.getProfile_pic());
-            userPostDto.setImage_path(userPhotos.getImage_path());
-            userPostDto.setCaption(userPhotos.getCaption());
-            userPostDto.setCreated_date(userPhotos.getCreated_date().toString());
-            userPostDto.setTotalItems(userPhotos.getTotalItems());
+
+        public static List<UserPostDto> convertUserPhotosToUserPostDto(List<UserPhotodto> userPhotosList,int totalItems) {
+            List<UserPostDto> userPostDtoList = new ArrayList<UserPostDto>();
+
+            for (UserPhotodto userPhotos : userPhotosList) {
+                int countofLikes = 0;
+                UserPostDto userPostDto = new UserPostDto();
+                userPostDto.setUsername(userPhotos.getUsername());
+                userPostDto.setProfilePic(userPhotos.getProfile_pic());
+                userPostDto.setImage_path(userPhotos.getImage_path());
+                userPostDto.setCaption(userPhotos.getCaption());
+                userPostDto.setCreated_date(userPhotos.getCreated_date().toString());
+                userPostDto.setTotalItems(totalItems);
 
 //            List<Likesdto> likesdtoListt=LikesUtil.convertLikesToLikesDto(userPhotos.getLikes());
 //            for (Likesdto likesdto:likesdtoListt){
@@ -68,12 +63,9 @@ public class UserPhotosPostUtil {
 //            }
 //           userPhotos.setLikes(likes);
 //            userPostDto.setCountOfLikes(userPhotos.getLikes().size());
-            userPostDto.setCountOfLikes(countofLikes);
-            userPostDto.setTotalItems(userPhotos.getTotalItems());
-            userPostDtoList.add(userPostDto);
+                userPostDto.setCountOfLikes(countofLikes);
+                userPostDtoList.add(userPostDto);
+            }
+            return userPostDtoList;
         }
-        return userPostDtoList;
     }
-}
-
-

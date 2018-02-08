@@ -15,7 +15,7 @@
 
         function getPosts() {
            // vm.currentPage++;
-            // vm.fetching=true;
+            vm.fetching=true;
             var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
             HttpService.get(URL).then(
                 function (value) {
@@ -28,13 +28,13 @@
         }
 
         function pageChanged() {
-
             $log.log("Page changed to:"+vm.CurrentPage);
-            if (vm.CurrentPage < vm.totalItems) {
-                vm.CurrentPage = vm.CurrentPage+1;
+            if (vm.CurrentPage < (vm.totalItems/vm.maxSize)) {
+                vm.CurrentPage += 1;
             }
             getPosts();
-        }
+
+        };
 
     }
 
