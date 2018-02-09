@@ -1,15 +1,17 @@
 <div ng-include src="'static/views/navigation.html'"></div>
 <section class = "section-content">
-    <div infinite-scroll="main.pageChanged()" ng-model="main.currentPage"infinite-scroll-distance="1"
-         infinite-scroll-container='".section-content"'
-         infinite-scroll-parent='".section-content"' >
+    <div infinite-scroll="main.pageChanged()" ng-model="main.currentPage" infinite-scroll-distance="1"
+         infinite-scroll-immediate-check="false" infinite-scroll-container='".constrained"'
+         infinite-scroll-parent="true" >`
+
+         <%--infinite-scroll-parent='".section-content"' >--%>
+        <%--<div lazy-scroll="main.pageChanged()" lazy-scroll-trigger="80" >--%>
         <div align="center" ng-repeat="post in main.posts">
             <div class='insta fade-scroll'>
                 <div class='top-insta'>
                     <img class="img-responsive img-circle margin" src="/uploads/{{post.profilePic}}" width="10%" height="10%">
                     {{post.username}}
 
-                    <span class='dot'></span>
                 </div>
                 <div class='post'>
                     <div class="overlay">

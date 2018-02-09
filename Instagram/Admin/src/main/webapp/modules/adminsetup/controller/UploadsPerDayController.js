@@ -15,13 +15,13 @@
 
         function getUploadsOfDay() {
             // var URL = "/"+$localStorage.showUploadsOfUser+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
-            var URL ="/getUploadsOfDay";
-            HttpService.get(URL).then(
+            // var URL ="/getUploadsPerDay";
+            HttpService.get("/getUploadsPerDay").then(
                 function (value) {
                     vm.uploadList = value;
                     // vm.totalItems = value[0].totalItems;
                 }, function (reason) {
-                    console.log(reason);
+                    console.log("UploadsperDayError: "+reason);
                 });
         }
 

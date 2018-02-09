@@ -8,8 +8,11 @@
     <link href="static/css/update.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="angular.min.js"></script>
+    <%--LazyScroll--%>
+    <%--<script type="text/javascript" src="lazy-scroll.min.js"></script>--%>
+
     <script type="text/javascript" src="angular-route.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
@@ -48,10 +51,7 @@
 <script src="static/js/controller/PostCommentModalController.js"></script>
 <script src="static/js/directives/EnterDirective.js"></script>
 <script src="static/js/controller/mainController.js"></script>
-
-<script src="static/js/controller/ScrollDirective.js"></script>
-<script src="static/js/controller/UsersListController.js"></script>
-
+s
 <script src="static/js/service/HttpService.js"> </script>
 
 </html>

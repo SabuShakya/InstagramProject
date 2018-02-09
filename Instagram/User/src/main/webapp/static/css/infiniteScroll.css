@@ -1,0 +1,7 @@
+.constrained {
+    margin: 10px;
+    padding: 10px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid lightgray;
+}

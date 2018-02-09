@@ -11,7 +11,7 @@
         vm.totalItems = '';
         vm.currentPage = 1;
         vm.maxSize = 3;
-
+        $localStorage.openProfileOf = {};
         vm.getTotalUsers = getTotalUsers;
         vm.getTotalActiveUsers = getTotalActiveUsers();
         vm.openProfile = openProfile;

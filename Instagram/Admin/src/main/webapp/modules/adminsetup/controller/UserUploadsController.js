@@ -1,14 +1,14 @@
 (function () {
     angular.module("adminModule").controller("UserUploadsController", UserUploadsController);
 
-    UserUploadsController.$inject = ['HttpService', '$localStorage','$log'];
+    UserUploadsController.$inject = ['HttpService', '$localStorage','$log','$rootScope'];
 
-    function UserUploadsController(HttpService, $localStorage,$log) {
+    function UserUploadsController(HttpService, $localStorage,$log,$rootScope) {
         var vm = this;
         vm.uploadList = [];
         vm.showing = false;
         vm.showList = true;
-
+        vm.fetching = true;
         vm.totalItems = '';
         vm.CurrentPage =1;
         vm.maxSize = 2;
@@ -20,11 +20,13 @@
         getUploadsOfUser();
 
         function getUploadsOfUser() {
+            vm.fetching = false;
             var URL = "/getUploadsOf/"+$localStorage.showUploadsOfUser+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
             HttpService.get(URL).then(
                 function (value) {
-                    vm.uploadList = value;
+                    vm.uploadList = vm.uploadList.concat(value);
                     vm.totalItems = value[0].totalItems;
+                    vm.fetching = true;
                 }, function (reason) {
                     console.log(reason);
                 });
@@ -46,11 +48,14 @@
         }
 
         function pageChanged() {
-            $log.log("Page changed to:"+vm.CurrentPage);
-            if (vm.CurrentPage < (vm.totalItems/vm.maxSize)) {
-                vm.CurrentPage += 1;
+            if (vm.fetching) {
+                $log.log("Page changed to:" + vm.CurrentPage);
+                vm.totalPage = (vm.totalItems / vm.maxSize) + 1;
+                if (vm.CurrentPage < vm.totalPage) {
+                    vm.CurrentPage += 1;
+                }
+                getUploadsOfUser();
             }
-            getUploadsOfUser();
         };
 
         function openLikeListModal(post) {

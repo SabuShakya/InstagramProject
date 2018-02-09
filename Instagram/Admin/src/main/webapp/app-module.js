@@ -46,9 +46,9 @@
                 controller: "ActiveUsersListController as usersList",
                 label: 'ActiveUsersList'
             })
-            .when("/adminPage/showClickedUserProfile", {
-                templateUrl: "modules/views/userProfilePage.jsp",
-                controller: "UserProfilePageController as uppc",
+            .when("/showClickedUserProfile", {
+                templateUrl: "modules/views/profile.jsp",
+                controller: "ProfileController as profile",
                 label: 'UserProfile'
             })
             .when("/adminPage/totalUploads", {

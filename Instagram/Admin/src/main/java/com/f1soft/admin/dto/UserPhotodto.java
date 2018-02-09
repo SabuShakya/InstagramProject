@@ -13,7 +13,8 @@ public class UserPhotodto {
     private long photo_id;
     private List<String> imageList;
     private String image_path;
-    private Date created_date;
+    private String created_date;
     private String caption;
     private String username;
+    private String profile_pic;
 }
