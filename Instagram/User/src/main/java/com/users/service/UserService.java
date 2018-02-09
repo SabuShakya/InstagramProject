@@ -12,7 +12,7 @@ public interface UserService {
     public void saveUser(User user);
     public List<User> findAllUsers();
     public boolean loginUser(Userdto userdto);
-    public List<UserSearchDto> findBySearchTerm(String searchTerm);
+    public List<UserSearchDto> findBySearchTerm(String searchTerm,String username);
     public void updateUser(Userdto userdto);
     public boolean checkPassword(Userdto userdto);
     public void privateAccount(String username);

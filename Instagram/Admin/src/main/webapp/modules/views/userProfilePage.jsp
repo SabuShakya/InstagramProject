@@ -1,4 +1,6 @@
 <div ng-include src="'static/views/navigation.html'"></div>
+<div ng-include src="'modules/views/breadcrumb.html'"></div>
+
 
 <link rel="stylesheet" type="text/css" href="static/css/profile.css">
 <header>

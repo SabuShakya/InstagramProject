@@ -6,12 +6,10 @@ import com.f1soft.admin.dto.UsersTotalUploadsDto;
 import com.f1soft.admin.service.CommentsService;
 import com.f1soft.admin.service.UserPhotosService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,8 +30,10 @@ public class UserPhotoController {
     }
 
     @GetMapping("/getUploadsOf/{userName}")
-    public ResponseEntity<List<UserPostDto>> getUploads(@PathVariable("userName") String userName){
-        List<UserPostDto> posts =userPhotosService.getUserUploads(userName);
+    public ResponseEntity<List<UserPostDto>> getUploads(@PathVariable("userName") String userName,
+                                                        @RequestParam("page") int page, @RequestParam("size") int size){
+        org.springframework.data.domain.Pageable pageable = new PageRequest(page,size);
+        List<UserPostDto> posts =userPhotosService.getUserUploads(userName,pageable);
         return new ResponseEntity<List<UserPostDto>>(posts,HttpStatus.OK);
     }
 
@@ -41,5 +41,11 @@ public class UserPhotoController {
     public ResponseEntity<List<Commentsdto>> getComments(@PathVariable("imageName") String imageName){
         List<Commentsdto> commentsdtoList = commentsService.getComments(imageName);
         return  new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
+    }
+
+    @GetMapping("/List<UserPostDto>")
+    public ResponseEntity<List<UserPostDto>> getUploadsPerDay(){
+        List<UserPostDto> posts =userPhotosService.getUploadsPerDay();
+        return new ResponseEntity<List<UserPostDto>>(posts,HttpStatus.OK);
     }
 }

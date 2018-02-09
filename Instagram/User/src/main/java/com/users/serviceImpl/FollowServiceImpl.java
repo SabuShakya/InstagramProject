@@ -8,7 +8,7 @@ import com.users.repository.UserRepository;
 import com.users.service.*;
 import com.users.utils.CommentUtils;
 import com.users.utils.FollowUtils;
-import com.users.utils.UserPhotosPostUtil;
+//import com.users.utils.UserPhotosPostUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -39,18 +39,6 @@ public class FollowServiceImpl implements FollowService {
 
     @Autowired
     private CommentsRepository commentsRepository;
-
-//    public List<UserPostDto> getPosts(String username, Pageable pageable) {
-//        List<User> listOfFollowedUsers = followRepository.getFollowedUser(username);
-//        System.out.println(listOfFollowedUsers);
-//        List<UserPhotos> userPhotosList= photoService.getListOfPhotos(listOfFollowedUsers,pageable);
-//        for (UserPhotos userPhotos: userPhotosList){
-//            List<Likes> likes = likesService.getByPhotoId(userPhotos.getId());
-//            userPhotos.setLikes(likes);
-//        }
-//        return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList);
-//    }
-
 
     public List<User> getFollowedUsers(String username) {
         List<User> listOfFollowedUsers = followRepository.getFollowedUser(username);

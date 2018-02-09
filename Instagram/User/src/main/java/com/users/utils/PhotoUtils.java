@@ -8,27 +8,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoUtils {
+    public static UserPostDto convertObjectToUserPhotos(Object[] object, int likesCount, int totalItems) {
+        UserPostDto userPostDto = new UserPostDto();
+        userPostDto.setUsername(object[0].toString());
+        userPostDto.setProfilePic(object[1].toString());
+        userPostDto.setImage_path(object[2].toString());
+        userPostDto.setCreated_date(object[3].toString());
+        userPostDto.setCaption(object[4].toString());
+        userPostDto.setCountOfLikes(likesCount);
+         userPostDto.setTotalItems(totalItems);
+        return userPostDto;
+    }
+
     public static List<UserPhotodto> convertUserPhotos(List<UserPhotos> userPhotodtos) {
         List<UserPhotodto> userPhotodtoList = new ArrayList<UserPhotodto>();
         for (UserPhotos userPhotos : userPhotodtos) {
             UserPhotodto userPhotodto = new UserPhotodto();
             userPhotodto.setUsername(userPhotos.getUser().getUsername());
             userPhotodto.setImage_path(userPhotos.getImage_path());
-//            userPhotodto.setCreated_date(userPhotos.getCreated_date());
+            userPhotodto.setCreated_date(userPhotos.getCreated_date().toString());
             userPhotodto.setCaption(userPhotos.getCaption());
             userPhotodtoList.add(userPhotodto);
         }
         return userPhotodtoList;
     }
-
-   public static UserPhotodto convertObjectListtoUserPhotosList(Object object[] ){
-       UserPhotodto userPhotodto = new UserPhotodto();
-       userPhotodto.setUsername(object[0].toString());
-       userPhotodto.setProfile_pic(object[1].toString());
-//       userPhotodto.setId(object[3]);
-       userPhotodto.setImage_path(object[3].toString());
-       userPhotodto.setCreated_date(object[4].toString());
-       userPhotodto.setCaption(object[5].toString());
-       return userPhotodto;
-   }
 }

@@ -7,19 +7,17 @@
 </div>
 
 <div ng-show="search.showList">
-<div ng-repeat="user in search.searchResult">
+<div ng-repeat="user in search.finalList">
 
      <img class="img-responsive img-circle margin" src="/uploads/{{user.imagename}}" width="10%" height="10%">
     <h4><a href="/#!/searchedUser" ng-click="search.openProfile(user)">{{user.username}}</a></h4>
         <h5>{{user.fullname}}</h5>
 
-    <%--<div ng-show="search.showResultButtons">--%>
-
-    <div ng-if="search.showFollowBtn">
+    <div ng-hide="user.showResultButtons">
         <button type="button" class="btn-default" ng-click="search.followUser(user)">Follow</button>
     </div>
 
-    <div ng-hide="search.showFollowBtn">
+    <div ng-show="user.showResultButtons">
         <button type="button" class="btn-default" ng-click="search.unfollowUser(user)">Un-Follow</button>
     </div>
     </div>

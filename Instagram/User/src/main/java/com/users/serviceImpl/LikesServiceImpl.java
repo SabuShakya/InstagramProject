@@ -7,7 +7,6 @@ import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.repository.LikesRepository;
 import com.users.repository.PhotoRepository;
-import com.users.repository.ProfilePhotoRepository;
 import com.users.repository.UserRepository;
 import com.users.service.LikesService;
 import com.users.utils.LikesUtil;
@@ -47,14 +46,12 @@ public class LikesServiceImpl implements LikesService {
 
     public int getCountOfLikes(Likes likes){
         int countofLikes = 0;
-//        List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(likes.getUserPhotos().getImage_path());
         List<Likesdto>  list =getLikesList(likes.getUserPhotos().getImage_path());
         for (Likesdto like: list){
             if(like.getActivationStatus().equals("activated")) {
                 countofLikes +=1;
             }
         }
-//        return likesList.size();
         return countofLikes;
     }
 
@@ -63,8 +60,15 @@ public class LikesServiceImpl implements LikesService {
     }
 
     public int getLikesCountForImage(String imageName) {
-        List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(imageName);
-        return likesList.size();
+        List<Likes> likesList= likesRepository.getByUserPhotos_Image_path(imageName);
+        List<Likesdto> list=LikesUtil.convertLikesToLikesDto(likesList);
+        List<Likesdto> likesResult= new ArrayList<>();
+        for(Likesdto likesdto:list){
+            if(likesdto.getActivationStatus().equals("activated")){
+                likesResult.add(likesdto);
+            }
+        }
+        return likesResult.size();
     }
 
     public List<Likesdto> getLikesList(String imageName) {
@@ -76,7 +80,7 @@ public class LikesServiceImpl implements LikesService {
                resultList.add(like);
             }
         }
-//       return LikesUtil.convertLikesToLikesDto(likesList);
         return resultList;
     }
+
 }

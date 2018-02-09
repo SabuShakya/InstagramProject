@@ -9,12 +9,18 @@
     <%--<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">--%>
     <link href="css/newsFeed.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
+    <link href="css/breadcrumb.css" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>--%>
     <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script type="text/javascript" src="static/angular.min.js"></script>
     <script type="text/javascript" src="static/angular-route.min.js"></script>
+    <script type="text/javascript" src="static/ng-breadcrumbs.js"></script>
+    <script type="text/javascript" src="static/ng-breadcrumbs.min.js"></script>
+    <script type="text/javascript" src="static/ng-infinite-scroll.js"></script>
     <%--uiModal--%>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-touch.js"></script>
@@ -30,14 +36,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-table/1.0.0/ng-table.js"></script>
 
 </head>
-<body>
+<body ng-controller="MainController">
+
 <div>
-<ng-view></ng-view>
+    <ng-view></ng-view>
 </div>
 <%--module--%>
 <script type="text/javascript" src="app-module.js"></script>
 <%--Controllers--%>
-<%--<script type="text/javascript" src="modules/adminsetup/controller/MainController.js"></script>--%>
+<script type="text/javascript" src="modules/adminsetup/controller/MainController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/LoginController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/SignupController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/AdminpageController.js"></script>
@@ -51,6 +58,7 @@
 <script type="text/javascript" src="modules/adminsetup/controller/TotalUploadsController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/AdminPhotoModalController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/UserUploadsController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/UploadsPerDayController.js"></script>
 
 <%--Services--%>
 <script type="text/javascript" src="modules/adminsetup/service/LoginService.js"></script>

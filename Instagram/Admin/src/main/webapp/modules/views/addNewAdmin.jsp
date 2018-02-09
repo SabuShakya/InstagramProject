@@ -1,4 +1,6 @@
 <div ng-include src="'modules/views/DashBoard.html'"></div>
+<div ng-include src="'modules/views/breadcrumb.html'"></div>
+
 <h2 class="text-center">Create New </h2>
 <form name="myForm" class="form-horizontal" novalidate>
     <div class="form-group">

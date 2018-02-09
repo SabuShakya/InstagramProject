@@ -4,8 +4,7 @@
 
     function MainController(HttpService,$localStorage,$rootScope,$uibModal, $log) {
         var vm = this;
-        var i= 0;
-        vm.posts = {};
+        vm.posts = [];
         vm.message = '';
         vm.commentSuccessMsg = false;
         vm.showFollowMessgae =false;
@@ -13,9 +12,11 @@
         vm.showList = false;
         vm.showing = false;
         vm.showCommentList= true;
+        vm.fetching=true;
         vm.countOfLikes = '';
         $rootScope.imageName = '';
         $rootScope.showPostComments= '';
+
         vm.addComment = addComment;
         vm.showComments = showComments;
         vm.like = like;
@@ -26,24 +27,26 @@
         vm.openProfile= openProfile;
 
         vm.totalItems = '';
-        vm.currentPage =1;
-        vm.maxSize = 5;
+        vm.CurrentPage =1;
+        vm.maxSize= 3;
         vm.pageChanged= pageChanged;
         vm.getPosts=getPosts;
 
         getPosts();
-        
+
         function getPosts() {
-            var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.currentPage+"&size="+vm.maxSize;
+            vm.fetching=false;
+            var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
             HttpService.get(URL).then(
                 function (value) {
-                    vm.posts = value;
+                    vm.posts = vm.posts.concat(value);
                     vm.totalItems=value[0].totalItems;
+                    vm.fetching=true;
                 }, function (reason) {
-                    vm.showFollowMessgae =true;
                     vm.message = "Follow Others to see their posts.";
                 });
         }
+
 
         function addComment(post) {
             vm.obj={
@@ -104,8 +107,8 @@
         function like(post) {
             post.username = $localStorage.storedObj.username;
             HttpService.post("/likeAction",post).then(function (value) {
-                post.countOfLikes = value;
                 vm.countOfLikes = value;
+                post.countOfLikes = value;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });
@@ -124,9 +127,17 @@
         }
 
         function pageChanged() {
-            $log.log("Page changed to:"+vm.currentPage);
-            getPosts();
-        };
+            if (vm.fetching) {
+                vm.totalPage = (vm.totalItems / vm.maxSize) + 1;
+                $log.log("Page changed to:" + vm.CurrentPage);
+
+                if (vm.CurrentPage < vm.totalPage) {
+                    vm.CurrentPage += 1;
+                    getPosts();
+
+                }
+            };
+        }
 
         function openProfile(user) {
             $localStorage.openProfileOf = user;

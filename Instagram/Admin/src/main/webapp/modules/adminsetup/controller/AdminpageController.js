@@ -5,9 +5,12 @@
         '$uibModal',
         '$rootScope',
         '$localStorage',
-        '$location'];
+        '$location',
+        'breadcrumbs',
+        '$scope'];
 
-    function AdminpageController(HttpService, $uibModal, $rootScope, $localStorage, $location) {
+    function AdminpageController(HttpService, $uibModal, $rootScope, $localStorage, $location, breadcrumbs,$scope) {
+        // $scope.breadcrumbs = breadcrumbs;
         var vm = this;
         vm.adminId = '';
         vm.totalUsers = '';
@@ -44,6 +47,7 @@
                 console.log("Error:" + reason);
             });
         }
+
         // function openUserLog() {
         //     vm.modalInstance = $uibModal.open({
         //         ariaLabelledBy: 'modal-title',

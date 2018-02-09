@@ -1,5 +1,6 @@
 package com.users.dto;
 
+import com.users.model.Likes;
 import com.users.model.User;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,15 +14,13 @@ public class UserPhotodto {
     private long id;
     private long photo_id;
     private List<String> imageList;
-
-//    private Date created_date;
-
-    private String username;
-    private String profile_pic;
     private String image_path;
     private String created_date;
+
+    private String profile_pic;
     private String caption;
-    private String following_userId;
-    private int totalItems;
+    private String username;
+    private List<Likes> likes;
+    private  int likesCount;
 
 }

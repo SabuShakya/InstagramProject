@@ -1,18 +1,17 @@
 package com.users.serviceImpl;
 
+import com.users.dto.FollowDto;
 import com.users.dto.SearchListDto;
 import com.users.dto.UserSearchDto;
 import com.users.dto.Userdto;
+import com.users.model.Follow;
 import com.users.model.ProfilePhoto;
 import com.users.model.User;
 import com.users.model.UserActivation;
 import com.users.repository.ProfilePhotoRepository;
 import com.users.repository.UserActivationRepository;
 import com.users.repository.UserRepository;
-import com.users.service.EmailService;
-import com.users.service.ProfilePhotoService;
-import com.users.service.UserService;
-import com.users.service.UserTokenService;
+import com.users.service.*;
 import com.users.utils.TokenUtils;
 import com.users.utils.UserSearchUtils;
 import org.mindrot.jbcrypt.BCrypt;
@@ -42,7 +41,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserTokenService userTokenService;
-
+    @Autowired
+    private FollowService followService;
     @Autowired
     public EntityManager em;
 
@@ -103,11 +103,20 @@ public class UserServiceImpl implements UserService {
 //       return UserSearchUtils.getSearchedUserInfo(userList);
 //    }
 
-    public List<UserSearchDto> findBySearchTerm(String searchTerm) {
+    public List<UserSearchDto> findBySearchTerm(String searchTerm,String username) {
         String sql = "Select u from User u where u.username like :username";
         List<User> userList= em.createQuery(sql,User.class).setParameter("username",
                 "%"+searchTerm+"%").getResultList();
-        return UserSearchUtils.getSearchedUserInfo(userList);
+        List<UserSearchDto> list = UserSearchUtils.getSearchedUserInfo(userList);
+        List<UserSearchDto> returnlist = new ArrayList<UserSearchDto>();
+        for (UserSearchDto user :list){
+            FollowDto followDto = new FollowDto();
+            followDto.setUserName(username);
+            followDto.setFollowing_userName(user.getUsername());
+            user.setShowResultButtons(followService.checkFollow(followDto));
+            returnlist.add(user);
+        }
+        return returnlist;
     }
 
     public User getUserEmail(String email) {

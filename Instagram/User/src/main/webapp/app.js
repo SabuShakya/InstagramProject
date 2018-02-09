@@ -10,14 +10,14 @@ angular.module('userModule').config(['$routeProvider','$locationProvider',functi
             templateUrl:"/static/views/signup.jsp",
             controller:"SignupController as signup"
         })
-        // .when("/newsFeed",{
-        //     templateUrl:"/static/views/newsFeed.jsp",
-        //     controller:"MainController as main"
-        // })
         .when("/newsFeed",{
             templateUrl:"/static/views/infinityPage.jsp",
-            controller:"mainController as main"
+            controller:"MainController as main"
         })
+        // .when("/newsFeed",{
+        //     templateUrl:"/static/views/infinityPage.jsp",
+        //     controller:"mainController as main"
+        // })
         .when("/profile",{
             templateUrl: "/static/views/profile.jsp",
             controller:"ProfileController as profile"
