@@ -98,8 +98,6 @@ public class UserController {
     public ResponseEntity<List<UserSearchDto>> searchUsers(@PathVariable("searchTerm")String searchTerm,@PathVariable("username")String username){
         List<UserSearchDto> list = userService.findBySearchTerm(searchTerm,username);
         if (list!=null) {
-//            List<BlockUser> blockUsers=blockService.checkBlocked()
-
             return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.OK);
         }
         return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.NOT_FOUND);

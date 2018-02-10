@@ -25,4 +25,26 @@
 
 <span style="color:red" ng-show="search.showMessage">No results found!</span>
 
+<%--<div class="large-padded-row">--%>
+    <%--<h3>Search</h3>--%>
+    <%--<div class="padded-row">--%>
+        <%--<angucomplete--%>
+                <%--id="ex2"--%>
+                <%--placeholder="Search people"--%>
+                <%--pause="300"--%>
+                <%--selectedobject="search"--%>
+                <%--localdata="searchResult"--%>
+                <%--searchfields="search.searchTerm"--%>
+                <%--titlefield="search.searchTerm"--%>
+                <%--&lt;%&ndash;descriptionfield="twitter"&ndash;%&gt;--%>
+                <%--&lt;%&ndash;imagefield="pic"&ndash;%&gt;--%>
+                <%--minlength="1"--%>
+                <%--inputclass="form-control form-control-small"--%>
+                <%--matchclass="highlight" />--%>
+    <%--</div>--%>
+    <%--<div class="" ng-show="search.searchResult">--%>
+        <%--You selected <span class="bold-span">{{search.originalObject.searchTerm}}</span>--%>
+    <%--</div>--%>
+<%--</div>--%>
+
 

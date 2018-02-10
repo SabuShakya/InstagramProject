@@ -26,7 +26,7 @@
 </div>
 
     <div>
-        <a href="#!/blockUsersList" ng-click="update.blockUsersList()">Blocked Users</a>
+        <a href="#!/blockUsersList" ng-click="update.blockLists()">Blocked Users</a>
     </div>
 </div>
 

@@ -30,10 +30,25 @@
         </div>
     </div>
 
+    <%--<div class="stats-container">--%>
+        <%--<div class="stat">--%>
+            <%--<div class="number">{{searched.followers}}</div>--%>
+            <%--<div class="text">Followers</div>--%>
+        <%--</div>--%>
+        <%--<div class="stat">--%>
+            <%--<div class="number">{{searched.totalPictures}}</div>--%>
+            <%--<div class="text">Pictures</div>--%>
+        <%--</div>--%>
+        <%--<div class="stat">--%>
+            <%--<div class="number">{{searched.following}}</div>--%>
+            <%--<div class="text">Following</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+
     <div class="stats-container">
         <div class="stat">
             <div class="number">{{searched.followers}}</div>
-            <div class="text">Followers</div>
+            <button ng-click="searched.followersList()"> Followers</button>
         </div>
         <div class="stat">
             <div class="number">{{searched.totalPictures}}</div>
@@ -41,9 +56,10 @@
         </div>
         <div class="stat">
             <div class="number">{{searched.following}}</div>
-            <div class="text">Following</div>
+            <button ng-click="searched.followingList()"> Following</button>
         </div>
     </div>
+
 </div>
 <br>
 

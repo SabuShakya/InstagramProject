@@ -11,11 +11,13 @@ import com.users.repository.UserRepository;
 import com.users.service.BlockService;
 import com.users.service.FollowService;
 import com.users.utils.BlockUtils;
-import jdk.nashorn.internal.ir.Block;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,6 +35,9 @@ public class BlockServiceImpl implements BlockService {
 
     @Autowired
     private FollowService followService;
+
+    @Autowired
+    private EntityManager entityManager;
 
     public void blockUser(BlockUserdto blockdto){
         User user = userRepository.getUserByUsername(blockdto.getUserName());
@@ -67,8 +72,14 @@ public class BlockServiceImpl implements BlockService {
 
     public List<BlockUserdto> getBlockedUserList(String username){
         User user=userRepository.getUserByUsername(username);
-        List<User> blockUsers = blockRepository.getByBlockedUser(user.getId());
-        return BlockUtils.convertBlocktoBlockdto(blockUsers);
+        final String SQL_QUERY="SELECT u.username, b.userId, b.blocked_userId FROM blockedUsers_table b LEFT JOIN user_table u ON b.blocked_userId = u.id WHERE b.userId=:id";
+        Query query = entityManager.createNativeQuery(SQL_QUERY).setParameter("id",user.getId());
+        List<Object[]> blockUsers = query.getResultList();
+        List<BlockUserdto> blockUserdtoList= new ArrayList<BlockUserdto>();
+        for(Object[] o:blockUsers ){
+            BlockUserdto blockUserdto=BlockUtils.convertBlocktoBlockdto(o);
+            blockUserdtoList.add(blockUserdto);
+        }
+        return blockUserdtoList;
     }
-//    SELECT b.blocked_userId,b.userId,b.blockStatus From blockedUsers_table b JOIN user_table u ON b.blocked_userId = u.id
 }

@@ -63,7 +63,6 @@ public class UserPhotosServiceImpl implements UserPhotosService {
     public List<UserPostDto> getUserUploads(String userName, Pageable pageable) {
 
         List<UserPostDto> resultList =  new ArrayList<UserPostDto>();
-
         String sql = "SELECT u.username,pt.image_path, pt.created_date, pt.caption," +
                 " t2.profile_pic " +
                 "FROM user_table u" +
