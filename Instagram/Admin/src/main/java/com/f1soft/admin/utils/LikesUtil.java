@@ -1,10 +1,9 @@
-package com.users.utils;
+package com.f1soft.admin.utils;
 
-import com.users.dto.Commentsdto;
-import com.users.dto.Likesdto;
-import com.users.model.Likes;
-import com.users.model.User;
-import com.users.model.UserPhotos;
+import com.f1soft.admin.dto.Likesdto;
+import com.f1soft.admin.model.Likes;
+import com.f1soft.admin.model.User;
+import com.f1soft.admin.model.UserPhotos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,18 +16,6 @@ public class LikesUtil {
         likes.setLiked(true);
         return likes;
     }
-
-//    public static List<Likesdto> convertLikesToLikesDto(List<Likes> likesList){
-//        List<Likesdto> likesdtoList = new ArrayList<Likesdto>();
-//        for (Likes likes:likesList){
-//            Likesdto likesdto =  new Likesdto();
-//            likesdto.setUserName(likes.getUser().getUsername());
-//            likesdto.setActivationStatus(likes.getUser().getUserActivation().getActivationStatus());
-//            likesdto.setImageName(likes.getUserPhotos().getImage_path());
-//            likesdtoList.add(likesdto);
-//        }
-//        return likesdtoList;
-//    }
 
     public static List<Likesdto> convertLikesToLikesDto(List<Likes> likesList){
         List<Likesdto> likesdtoList = new ArrayList<Likesdto>();

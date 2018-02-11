@@ -50,7 +50,7 @@
             vm.modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/static/views/followersList.jsp',
+                templateUrl: 'modules/views/followersList.jsp',
                 controller: 'FollowersListController',
                 controllerAs: 'followersCtrl',
                 size: 'lg'
@@ -61,7 +61,7 @@
             vm.modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/static/views/followingList.jsp',
+                templateUrl: 'modules/views/followingList.jsp',
                 controller: 'FollowingListController',
                 controllerAs: 'followingCtrl',
                 size: 'lg'
@@ -84,7 +84,7 @@
             vm.modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/static/views/comments.jsp',
+                templateUrl: 'modules/views/comments.jsp',
                 controller: 'CommentsController',
                 controllerAs: 'comment',
                 size: 'lg'

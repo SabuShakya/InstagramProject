@@ -1,80 +1,3 @@
-// (function () {
-//     angular.module('userModule').controller("SearchController", SearchController);
-//     SearchController.$inject= ['HttpService','$localStorage'];
-//
-//     function SearchController(HttpService,$localStorage) {
-//         var vm = this;
-//         vm.searchTerm = '';
-//         vm.searchResult = [];
-//         vm.message = '';
-//         vm.showResult = false;
-//         vm.showMessage = false;
-//         vm.checkList=false;
-//         vm.showFollowBtn = true;
-//         vm.followObj={
-//             userName : $localStorage.storedObj.username,
-//             following_userName : $localStorage.openProfileOf.username
-//         };
-//         vm.search = search;
-//         vm.openProfile = openProfile;
-//         vm.followUser=followUser;
-//         vm.unfollowUser=unfollowUser;
-//         vm.checkFollow=checkFollow;
-//
-//
-//         function search() {
-//             HttpService.get("/search/"+vm.searchTerm).then(function (value) {
-//                 vm.searchResult = value;
-//                 vm.showResult = true;
-//             },function (reason) {
-//                 vm.message = "No result found";
-//                 vm.showMessage = true;
-//                 console.log("Error+ "+reason);
-//             });
-//         }
-//
-//         function openProfile(user) {
-//             $localStorage.openProfileOf = user;
-//         }
-//
-//         function checkFollow(user) {
-//             HttpService.post("/checkFollow",vm.followObj).then(function (value) {
-//                 vm.showFollowBtn = false;
-//             },function (reason) {
-//                 vm.showFollowBtn = true;
-//             });
-//
-//         }
-//
-//         function followUser(user) {
-//             HttpService.post("/followUser",vm.followObj).then(function (value) {
-//                 vm.showFollowBtn = false;
-//
-//                 // angular.forEach(vm.searchResult , function(searchResult , key) {
-//                 //         if(searchResult.username == $localStorage.storedObj.username){
-//                 //             searchResult.showResultButtons = true;
-//                 //         }else {
-//                 //             searchResult.showResultButtons = false;
-//                 //         }
-//                 //     });
-//             },function (reason) {
-//                 vm.showFollowBtn = true;
-//                 console.log("error following"+reason);
-//             });
-//         }
-//
-//         function unfollowUser(user) {
-//             HttpService.post("/unfollowUser",vm.followObj).then(function (value) {
-//                 vm.showFollowBtn = true;
-//             },function (reason) {
-//                 vm.showFollowBtn = false;
-//                 console.log("error following"+reason);
-//             });
-//         }
-//     }
-//
-// })();
-
 (function () {
     angular.module('userModule').controller("SearchController", SearchController);
     SearchController.$inject= ['HttpService','$localStorage'];
@@ -84,11 +7,12 @@
         vm.searchTerm = '';
         vm.searchResult = [];
         vm.message = '';
+        vm.searchedUser='';
+        vm.finalList=[];
         vm.followers = '';
         vm.following = '';
         vm.showResult = false;
         vm.showMessage = false;
-        vm.showFollowBtn = true;
         vm.showList=false;
         $localStorage.openProfileOf={};
         vm.followObj={
@@ -102,20 +26,21 @@
         vm.followUser = followUser;
         vm.unfollowUser = unfollowUser;
 
-        checkFollow();
-
         function search() {
-            HttpService.get("/search/"+vm.searchTerm).then(function (value) {
+            HttpService.get("/search/"+vm.searchTerm+"/"+$localStorage.storedObj.username).then(function (value) {
                 vm.searchResult = value;
-                angular.forEach(vm.searchResult , function(searchResult , key) {
-                    if((searchResult!=null) &&(searchResult.activationStatus == "activated")){
-                        vm.showList = true;
-                        vm.showMessage = false;
-                    }else {
-                        vm.showList = false;
-                        vm.showMessage = true;
-                    }
-                });
+                if(vm.searchResult!=null) {
+                    angular.forEach(vm.searchResult, function (searchResult, key) {
+                        if (searchResult.activationStatus == "activated") {
+                            vm.finalList = vm.finalList.concat(searchResult);
+                            vm.showList = true;
+                            vm.showMessage = false;
+                        }
+                        else{
+                            vm.showMessage=true;
+                        }
+                    })
+                }
             },function (reason) {
                 vm.showList = false;
                 vm.showMessage = true;
@@ -127,37 +52,42 @@
             $localStorage.openProfileOf = user;
         }
 
-        function checkFollow(){
-            vm.followObj={
-                userName : $localStorage.storedObj.username,
-                following_userName : $localStorage.openProfileOf.username
-            };
-            HttpService.post("/checkFollow",vm.followObj).then(function (value) {
-                vm.showFollowBtn = false;
-            },function (reason) {
-                vm.showFollowBtn = true;
-            });
+        function checkFollow(finalList){
+                vm.followObj={
+                    userName : $localStorage.storedObj.username,
+                    following_userName : finalList.username
+                };
+                HttpService.post("/checkFollow",vm.followObj).then(function (value) {
+                    finalList.showResultButtons= value;
+                },function (reason) {
+                    finalList.showResultButtons= false;
+                });
         }
 
         function followUser(user) {
             vm.followObj={
                 userName : $localStorage.storedObj.username,
-                following_userName : $localStorage.openProfileOf.username
+                following_userName : user.username
             };
             HttpService.post("/followUser",vm.followObj).then(function (value) {
-                vm.showFollowBtn = false;
+                vm.finalList = [];
+                search();
+               vm.finalList.showResultButtons = false;
             },function (reason) {
                 vm.showFollowBtn = true;
                 console.log("error following"+reason);
             });
         }
+
         function unfollowUser(user) {
             vm.followObj={
                 userName : $localStorage.storedObj.username,
-                following_userName : $localStorage.openProfileOf.username
+                following_userName : user.username
             };
             HttpService.post("/unfollowUser",vm.followObj).then(function (value) {
-                vm.showFollowBtn = true;
+                vm.finalList = [];
+                search();
+                vm.finalList.showResultButtons = true;
             },function (reason) {
                 vm.showFollowBtn = false;
                 console.log("error following"+reason);

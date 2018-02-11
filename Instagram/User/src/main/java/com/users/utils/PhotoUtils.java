@@ -1,22 +1,23 @@
 package com.users.utils;
 
 import com.users.dto.UserPhotodto;
+import com.users.dto.UserPostDto;
 import com.users.model.UserPhotos;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoUtils {
-    public static UserPhotodto convertObjectToUserPhotos(Object[] object) {
-        UserPhotodto userPhotodto = new UserPhotodto();
-        userPhotodto.setUsername(object[0].toString());
-        userPhotodto.setProfile_pic(object[1].toString());
-        userPhotodto.setImage_path(object[2].toString());
-        userPhotodto.setCreated_date(object[3].toString());
-        userPhotodto.setCaption(object[4].toString());
-//        userPostDto.setCountOfLikes(likesCount);
-//        userPostDto.setTotalItems(totalItems);
-        return userPhotodto;
+    public static UserPostDto convertObjectToUserPhotos(Object[] object, int likesCount, int totalItems) {
+        UserPostDto userPostDto = new UserPostDto();
+        userPostDto.setUsername(object[0].toString());
+        userPostDto.setProfilePic(object[1].toString());
+        userPostDto.setImage_path(object[2].toString());
+        userPostDto.setCreated_date(object[3].toString());
+        userPostDto.setCaption(object[4].toString());
+        userPostDto.setCountOfLikes(likesCount);
+         userPostDto.setTotalItems(totalItems);
+        return userPostDto;
     }
 
     public static List<UserPhotodto> convertUserPhotos(List<UserPhotos> userPhotodtos) {

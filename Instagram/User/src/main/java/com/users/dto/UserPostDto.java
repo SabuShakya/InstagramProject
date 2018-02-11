@@ -1,6 +1,7 @@
 package com.users.dto;
 
 import com.users.model.Comments;
+import com.users.model.Likes;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,7 @@ public class UserPostDto {
     private String caption;
     private int countOfLikes;
     private int totalItems;
+    private List<Likes> likes;
 
     private String following_userId;
 }

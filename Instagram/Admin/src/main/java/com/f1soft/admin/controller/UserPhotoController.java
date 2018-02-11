@@ -37,7 +37,7 @@ public class UserPhotoController {
 
     @GetMapping("/getCommentsOfThisPicture/{imageName}")
     public ResponseEntity<List<Commentsdto>> getComments(@PathVariable("imageName") String imageName){
-        List<Commentsdto> commentsdtoList = commentsService.getComments(imageName);
+        List<Commentsdto> commentsdtoList = commentsService.getAllComments(imageName);
         return  new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
     }
 

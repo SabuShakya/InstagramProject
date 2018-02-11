@@ -77,20 +77,8 @@ public class UserController {
         return new ResponseEntity<Boolean>(false, HttpStatus.NOT_FOUND);
     }
 
-//    @GetMapping("/getPosts/{userName}")
-//    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username,
-//    @RequestParam("page") int page, @RequestParam("size") int size){
-//        org.springframework.data.domain.Pageable pageable = new PageRequest(page,size);
-//        List<UserPostDto> userPostList=followService.getPosts(username, pageable);
-//        if (userPostList!= null) {
-//            return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
-//        }
-//        return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
-//    }
-
     @GetMapping("/getPosts/{userName}")
-    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username,
-                                                      @RequestParam("page") int page, @RequestParam("size") int size){
+    public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username, @RequestParam("page") int page, @RequestParam("size") int size){
         org.springframework.data.domain.Pageable pageable = new PageRequest(page,size);
         List<UserPostDto> userPostList=photoService.getPosts(username, pageable);
         if (userPostList!= null) {
@@ -106,18 +94,9 @@ public class UserController {
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
-//    @GetMapping("/search/{searchTerm}")
-//    public ResponseEntity<List<UserSearchDto>> searchUsers(@PathVariable("searchTerm")String searchTerm){
-//        List<UserSearchDto> list = userService.findBySearchTerm(searchTerm);
-//        if (list!=null) {
-//            return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.OK);
-//        }
-//        return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.NOT_FOUND);
-//    }
-
-    @GetMapping("/search/{searchTerm}")
-    public ResponseEntity<List<UserSearchDto>> searchUsers(@PathVariable("searchTerm")String searchTerm){
-        List<UserSearchDto> list = userService.findBySearchTerm(searchTerm);
+    @GetMapping("/search/{searchTerm}/{username}")
+    public ResponseEntity<List<UserSearchDto>> searchUsers(@PathVariable("searchTerm")String searchTerm,@PathVariable("username")String username){
+        List<UserSearchDto> list = userService.findBySearchTerm(searchTerm,username);
         if (list!=null) {
 //            List<BlockUser> blockUsers=blockService.checkBlocked()
 

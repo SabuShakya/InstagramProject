@@ -1,13 +1,11 @@
 package com.f1soft.admin.serviceimpl;
 
 import com.f1soft.admin.dto.*;
+import com.f1soft.admin.model.Comments;
 import com.f1soft.admin.model.ProfilePhoto;
 import com.f1soft.admin.model.User;
 import com.f1soft.admin.model.UserPhotos;
-import com.f1soft.admin.repository.LikesRepository;
-import com.f1soft.admin.repository.PhotoRepository;
-import com.f1soft.admin.repository.ProfilePhotoRepository;
-import com.f1soft.admin.repository.UserRepository;
+import com.f1soft.admin.repository.*;
 import com.f1soft.admin.service.UserPhotosService;
 import com.f1soft.admin.utils.PhotoUtils;
 import com.f1soft.admin.utils.UserPostUtils;
@@ -41,6 +39,9 @@ public class UserPhotosServiceImpl implements UserPhotosService {
 
     @Autowired
     private LikesRepository likesRepository;
+
+    @Autowired
+    private CommentsRepository commentsRepository;
 
     @Autowired
     private EntityManager entityManager;
@@ -87,7 +88,8 @@ public class UserPhotosServiceImpl implements UserPhotosService {
             System.out.println(o[4].toString());
 //            getting likesCount
             int likesCount = (likesRepository.getByUserPhotos_Image_path(o[1].toString())).size();
-            resultList.add(UserPostUtils.convertToUserPostDto(o, likesCount, totalItems));
+            List<UploadsCommentDto> listOfCommentObject = getComments(o[1].toString());
+            resultList.add(UserPostUtils.convertToUserPostDto(o, likesCount, totalItems,listOfCommentObject));
         }
         return resultList;
     }
@@ -112,7 +114,8 @@ public class UserPhotosServiceImpl implements UserPhotosService {
             System.out.println(o[4].toString());
 //            getting likesCount
             int likesCount = (likesRepository.getByUserPhotos_Image_path(o[1].toString())).size();
-            resultList.add(UserPostUtils.convertToUserPostDto(o, likesCount, 0));
+            List<UploadsCommentDto> listOfCommentObject = getComments(o[1].toString());
+            resultList.add(UserPostUtils.convertToUserPostDto(o, likesCount, 0,listOfCommentObject));
         }
         return resultList;
     }
@@ -134,5 +137,19 @@ public class UserPhotosServiceImpl implements UserPhotosService {
     public long getPhotoCount(String username) {
         List<UserPhotos> userPhotosList = photoRepository.getUserPhotosByUserUsername(username);
         return userPhotosList.size();
+    }
+
+    public List<UploadsCommentDto> getComments(String imagePath){
+        String commentSql ="SELECT c.comments,u.username FROM comment_table c LEFT JOIN photo_table table2 ON c.pic_id = table2.id LEFT JOIN user_table u ON c.user_id = u.id WHERE table2.image_path= :imagePath";
+        Query commentQuery = entityManager.createNativeQuery(commentSql).setParameter("imagePath",imagePath);
+        List<Object[]> listOfCommentObject =commentQuery.getResultList();
+        List<UploadsCommentDto> commentsList = new ArrayList<UploadsCommentDto>();
+        for (Object[] oo : listOfCommentObject) {
+            UploadsCommentDto uploadsCommentDto = new UploadsCommentDto();
+            uploadsCommentDto.setUserName(oo[1].toString());
+            uploadsCommentDto.setComments(oo[0].toString());
+            commentsList.add(uploadsCommentDto);
+        }
+            return commentsList;
     }
 }

@@ -32,15 +32,15 @@
                         <button>
                             <span> {{uploads.countOfLikes}}</span>
                         </button>
-                        <button ng-click="userUploads.showComments(uploads)">
-                            <span class='comment'></span>
-                            <div ng-show="userUploads.showing" ng-repeat="comment in userUploads.commentList">
-                                <div ng-show="userUploads.showList" ng-repeat="comm in userUploads.commentList">
-                                    {{comment.username}} : {{comment.comments}}
-                                </div>
+                            <button ng-click="userUploads.showComments(uploads)">
+                                <span class='comment'></span>
+                            </button>
+                            <div ng-show="userUploads.showing" ng-repeat="comm in uploads.comments">
+                                <%--<div ng-show="userUploads.showList" ng-repeat="comm in userUploads.commentList">--%>
+                                {{comm.userName}} : {{comm.comments}}
                             </div>
-                        </button>
-                        <button ng-click="userUploads.openLikeListModal(uploads)">
+
+                            <button ng-click="userUploads.openLikeListModal(uploads)">
                             <span class='save'></span>
                         </button>
                     </div>

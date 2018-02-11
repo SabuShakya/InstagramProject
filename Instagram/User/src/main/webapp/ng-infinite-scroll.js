@@ -2,6 +2,7 @@
 var mod;
 
 mod = angular.module('infinite-scroll', []);
+mod.value('THROTTLE_MILLISECONDS', 100);
 
 mod.directive('infiniteScroll', [
   '$rootScope', '$window', '$timeout', function($rootScope, $window, $timeout) {
@@ -77,3 +78,4 @@ mod.directive('infiniteScroll', [
     };
   }
 ]);
+

@@ -47,6 +47,16 @@ public class User implements Serializable {
     @OneToOne(mappedBy = "user",cascade=CascadeType.REMOVE)
     private ProfilePhoto profilePhotos;
 
+    @OneToOne(mappedBy = "user")
+    private UserActivation userActivation;
+
+    @OneToMany(mappedBy = "user")
+    private List<BlockUser> blockUsers;
+
+    @OneToMany(mappedBy = "blockedUser")
+    private List<BlockUser> blockedUser;
+
+
     @Transient
     private int totalItems;
 

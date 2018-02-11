@@ -12,7 +12,7 @@ public class UserPostDto {
     private String username;
     private String image_path;
     private String profilePic;
-    private List<String> comments;
+    private List<UploadsCommentDto> comments;
     private String created_date;
     private String caption;
     private int countOfLikes;

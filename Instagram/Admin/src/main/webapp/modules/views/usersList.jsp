@@ -12,7 +12,7 @@
                      height="10%">
             </div>
             <div class="col-md-4" style="float: left">
-                <h4><a href="#!/showClickedUserProfile" ng-click="usersList.openProfile(user)">{{user.username}}</a>
+                <h4><a href="#!/adminPage/showClickedUserProfile" ng-click="usersList.openProfile(user)">{{user.username}}</a>
                 </h4>
                 <h5>{{user.fullname}}</h5>
             </div>

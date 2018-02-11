@@ -1,11 +1,12 @@
 (function () {
     angular.module("adminModule").controller("UserUploadsController", UserUploadsController);
 
-    UserUploadsController.$inject = ['HttpService', '$localStorage','$log','$rootScope'];
+    UserUploadsController.$inject = ['HttpService', '$localStorage','$log','$rootScope','$uibModal'];
 
-    function UserUploadsController(HttpService, $localStorage,$log,$rootScope) {
+    function UserUploadsController(HttpService, $localStorage,$log,$rootScope,$uibModal) {
         var vm = this;
         vm.uploadList = [];
+
         vm.showing = false;
         vm.showList = true;
         vm.fetching = true;
@@ -17,6 +18,7 @@
         vm.getUploadsOfUser = getUploadsOfUser;
         vm.showComments = showComments;
         vm.openLikeListModal=openLikeListModal;
+
         getUploadsOfUser();
 
         function getUploadsOfUser() {
@@ -33,18 +35,18 @@
         }
 
         function showComments(uploads) {
-            HttpService.get("/getCommentsOfThisPicture/" + uploads.image_path).then(
-                function (value) {
+            // HttpService.get("/getCommentsOfThisPicture/" + uploads.image_path).then(
+            //     function (value) {
                     if (vm.showing) {
                         vm.showList = false;
                         vm.showing = false;
                     } else {
-                        vm.commentList = value;
+                        // vm.commentList = value;
                         vm.showing = true;
                     }
-                }, function (reason) {
-                    console.log(reason);
-                });
+                // }, function (reason) {
+                //     console.log(reason);
+                // });
         }
 
         function pageChanged() {
@@ -63,12 +65,11 @@
             vm.modalInstance=$uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/static/views/likesList.jsp',
+                templateUrl: 'modules/views/likesList.jsp',
                 controller :'LikesListController',
                 controllerAs: 'likesctrl',
                 size: 'lg'
             });
         }
-
     }
 })();

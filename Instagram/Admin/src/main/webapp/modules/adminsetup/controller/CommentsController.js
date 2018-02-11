@@ -16,10 +16,10 @@
         vm.submitClicked=false;
         vm.isActive=false;
 
-        vm.userDisplayName= $localStorage.storedObj.username;
+        // vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
-        vm.add = add;
-        vm.like = like;
+        // vm.add = add;
+        // vm.like = like;
         // vm.openDeleteModal= openDeleteModal;
         // vm.openEditModal=openEditModal;
         // vm.edit=edit;

@@ -10,7 +10,7 @@ public class UserSearchDto {
     private String username;
     private String fullname;
     private String imagename;
-    public boolean showResultButtons;
+    private boolean showResultButtons;
     private String activationStatus;
     private boolean blockStatus;
 }

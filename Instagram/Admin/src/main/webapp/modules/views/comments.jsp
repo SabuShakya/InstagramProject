@@ -15,10 +15,10 @@
 
         <div class='footer'>
             <div class='react'>
-                {{comment.likeCount}}
-                <%--<button ng-click="comment.like()">--%>
 
-                <%--<button ng-class="{'active':comment.isActive}" ng-click="comment.like()">--%>
+                <%--<button ng-click="comment.like()">--%>
+                  Likes:{{comment.likeCount}}
+                <%--<button>--%>
                     <%--<span class='love'></span>--%>
                 <%--</button>--%>
                 <button role='button' ng-click="comment.showComments()">

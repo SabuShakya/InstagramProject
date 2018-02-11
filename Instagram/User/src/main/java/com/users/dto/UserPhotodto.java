@@ -1,5 +1,6 @@
 package com.users.dto;
 
+import com.users.model.Likes;
 import com.users.model.User;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,5 +20,7 @@ public class UserPhotodto {
     private String profile_pic;
     private String caption;
     private String username;
+    private List<Likes> likes;
+    private  int likesCount;
 
 }

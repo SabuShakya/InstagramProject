@@ -21,7 +21,7 @@ public class CommentsServiceImpl implements CommentsService {
     private EntityManager entityManager;
 
     @Override
-    public List<Commentsdto> getComments(String imageName) {
+    public List<Commentsdto> getAllComments(String imageName) {
 //        getting comments list
         List<Commentsdto> commentsdtoList = new ArrayList<Commentsdto>();
         String commentSql = "SELECT t.comments,u.username FROM comment_table t LEFT JOIN photo_table t2 ON t.pic_id = t2.id LEFT JOIN user_table u ON t.user_id = u.id " +
@@ -33,5 +33,6 @@ public class CommentsServiceImpl implements CommentsService {
             commentsdtoList.add(CommentsUtil.convertToDto(o));
         }
         return commentsdtoList;
+
     }
 }

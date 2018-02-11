@@ -1,15 +1,17 @@
-package com.users.serviceImpl;
+package com.f1soft.admin.serviceimpl;
 
-import com.users.dto.Commentsdto;
-import com.users.dto.Likesdto;
-import com.users.model.Likes;
-import com.users.model.User;
-import com.users.model.UserPhotos;
-import com.users.repository.LikesRepository;
-import com.users.repository.PhotoRepository;
-import com.users.repository.UserRepository;
-import com.users.service.LikesService;
-import com.users.utils.LikesUtil;
+
+import com.f1soft.admin.dto.Commentsdto;
+import com.f1soft.admin.dto.Likesdto;
+import com.f1soft.admin.model.Likes;
+import com.f1soft.admin.model.User;
+import com.f1soft.admin.model.UserPhotos;
+import com.f1soft.admin.repository.LikesRepository;
+import com.f1soft.admin.repository.PhotoRepository;
+import com.f1soft.admin.repository.UserRepository;
+import com.f1soft.admin.service.LikesService;
+
+import com.f1soft.admin.utils.LikesUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

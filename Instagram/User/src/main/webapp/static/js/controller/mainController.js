@@ -1,8 +1,8 @@
-(function () {
+(function() {
     angular.module('userModule').controller("mainController", mainController);
-    mainController.$inject = ['HttpService', '$localStorage', '$rootScope', '$uibModal', '$log'];
+    mainController.$inject= ['HttpService','$localStorage','$rootScope','$uibModal','$log'];
 
-    function mainController(HttpService, $localStorage, $rootScope, $uibModal, $log) {
+    function mainController(HttpService,$localStorage,$rootScope,$uibModal, $log) {
         var vm = this;
         vm.posts = [];
         vm.fetching = true;
