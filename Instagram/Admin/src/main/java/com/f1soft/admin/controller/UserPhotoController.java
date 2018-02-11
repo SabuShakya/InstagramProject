@@ -1,8 +1,6 @@
 package com.f1soft.admin.controller;
 
-import com.f1soft.admin.dto.Commentsdto;
-import com.f1soft.admin.dto.UserPostDto;
-import com.f1soft.admin.dto.UsersTotalUploadsDto;
+import com.f1soft.admin.dto.*;
 import com.f1soft.admin.service.CommentsService;
 import com.f1soft.admin.service.UserPhotosService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,13 +37,28 @@ public class UserPhotoController {
 
     @GetMapping("/getCommentsOfThisPicture/{imageName}")
     public ResponseEntity<List<Commentsdto>> getComments(@PathVariable("imageName") String imageName){
-        List<Commentsdto> commentsdtoList = commentsService.getComments(imageName);
+        List<Commentsdto> commentsdtoList = commentsService.getAllComments(imageName);
         return  new ResponseEntity<List<Commentsdto>>(commentsdtoList,HttpStatus.OK);
     }
 
-    @GetMapping("/List<UserPostDto>")
+    @GetMapping("/getUploadsPerDay")
     public ResponseEntity<List<UserPostDto>> getUploadsPerDay(){
         List<UserPostDto> posts =userPhotosService.getUploadsPerDay();
         return new ResponseEntity<List<UserPostDto>>(posts,HttpStatus.OK);
+    }
+
+    @GetMapping("/allPhotos/{username}")
+    public ResponseEntity<List<UserPhotodto>> photoList(@PathVariable("username") String username){
+        List<UserPhotodto> photoList= userPhotosService.getAllPhotos(username);
+        if(photoList != null && !photoList.isEmpty()){
+            return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.OK);
+        }
+        return new ResponseEntity<List<UserPhotodto>>(photoList,HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/getProfilePhoto/{username}")
+    public ResponseEntity<ProfilePhotoDto> getProfilePhoto(@PathVariable("username") String username){
+        ProfilePhotoDto profilePhoto = userPhotosService.getProfilePhoto(username);
+        return new ResponseEntity<ProfilePhotoDto>(profilePhoto,HttpStatus.OK);
     }
 }

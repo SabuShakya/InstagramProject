@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="user:war exploded" />
+      <artifact name="Admin:war exploded" />
+      <artifact name="User:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59f3bb7c-0613-404a-a845-4f73e2521758" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/BlockUsersListController.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/BlockUserdto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/BlockUserdto.java" />
@@ -23,6 +25,60 @@
       <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/blockList.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/blockList.jsp" />
       <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/search.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/search.jsp" />
       <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/update.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/update.jsp" />
+=======
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/CommentsController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/LikesController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/Likesdto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UploadsCommentDto.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/BlockUser.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/UserActivation.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/LikesService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/LikesServiceImpl.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/LikesUtil.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LikesListController.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/likesList.jsp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/User/src/main/webapp/jquery.min.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/UserPhotoController.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/UserPhotoController.java" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserPostDto.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserPostDto.java" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/User.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/User.java" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/CommentsService.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/CommentsService.java" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/CommentsServiceImpl.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/CommentsServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserPhotosServiceImpl.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserPhotosServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/UserPostUtils.java" afterPath="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/UserPostUtils.java" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/CommentsController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/CommentsController.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UploadsPerDayController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UploadsPerDayController.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserUploadsController.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserUploadsController.js" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/comments.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/comments.jsp" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsPerDay.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsPerDay.jsp" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/usersList.jsp" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/usersList.jsp" />
+      <change beforePath="$PROJECT_DIR$/Admin/src/main/webapp/static/angular.min.js" afterPath="$PROJECT_DIR$/Admin/src/main/webapp/static/angular.min.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPhotodto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPhotodto.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPostDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserPostDto.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserSearchDto.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/dto/UserSearchDto.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/service/UserService.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/service/UserService.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/FollowServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/LikesUtil.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/LikesUtil.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/PhotoUtils.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/PhotoUtils.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserPhotosPostUtil.java" afterPath="$PROJECT_DIR$/User/src/main/java/com/users/utils/UserPhotosPostUtil.java" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/app.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/app.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/ng-infinite-scroll.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/ng-infinite-scroll.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ScrollDirective.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ScrollDirective.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SearchController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SearchController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/webapp/static/views/search.jsp" afterPath="$PROJECT_DIR$/User/src/main/webapp/static/views/search.jsp" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/User/target/" />
@@ -43,31 +99,61 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+<<<<<<< HEAD
     <expand />
+=======
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Instagram@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Instagram@localhost [2]" type="feb32156:DbDataSourceImpl" />
+      </path>
+    </expand>
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="LikesServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="498">
               <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+=======
+      <file leaf-file-name="uploadsPerDay.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsPerDay.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="54">
+              <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-648">
               <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+=======
+      <file leaf-file-name="UploadsPerDayController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UploadsPerDayController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="PhotoServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -97,11 +183,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="12">
               <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+=======
+      <file leaf-file-name="UserUploadsController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserUploadsController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="776">
+              <caret line="59" column="13" lean-forward="true" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="infinityPage.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/infinityPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
@@ -117,21 +211,37 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="479">
               <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+=======
+      <file leaf-file-name="app-module.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/app-module.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="LikesUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/LikesUtil.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
               <caret line="26" column="73" lean-forward="false" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
+=======
+      <file leaf-file-name="uploadsOfUser.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="38" column="33" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="CommentUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/CommentUtils.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -147,6 +257,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
               <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+=======
+      <file leaf-file-name="usersList.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/usersList.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
               <folding />
             </state>
           </provider>
@@ -157,11 +274,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
         <option value="Class" />
         <option value="Jsp File" />
         <option value="JavaScript File" />
+=======
+        <option value="Jsp File" />
+        <option value="JavaScript File" />
+        <option value="Class" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>e`</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -174,6 +302,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/service/FollowService.java" />
         <option value="$PROJECT_DIR$/Admin/src/main/webapp/static/angular.min.js" />
         <option value="$PROJECT_DIR$/User/src/main/resources/application.properties" />
@@ -225,6 +354,59 @@
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/model/Likes.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1f2592a4-9846-4908-afe7-0dd584a22de6/console.sql" />
         <option value="$PROJECT_DIR$/User/src/main/java/com/users/utils/LikesUtil.java" />
+=======
+        <option value="$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1f2592a4-9846-4908-afe7-0dd584a22de6/console.sql" />
+        <option value="$PROJECT_DIR$/User/src/main/webapp/static/css/infiniteScroll.css" />
+        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/infinityPage.jsp" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/breadcrumb.html" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminPage.jsp" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/PhotoUtils.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserPhotodto.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UsersListController.js" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/profile.jsp" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/FollowService.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/dto/UserListInfoDto.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/FollowDto.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/FollowCountDto.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/FollowService.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/FollowUtils.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/FollowServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/UserPhotosService.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/FollowController.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/FollowersListController.js" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/FollowingListController.js" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/Likesdto.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/LikesService.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/LikesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/LikesUtil.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/CommentsController.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/CommentsService.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/CommentsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/UserPhotoController.java" />
+        <option value="$PROJECT_DIR$/Admin/pom.xml" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/LikesController.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/User.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/UserActivation.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/BlockUser.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/CommentsController.js" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/comments.jsp" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/77ceeccf-de54-45fd-a97b-2cfdc46e5828/console.sql" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UploadsCommentDto.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserPhotosServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/UserPostUtils.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserPostDto.java" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp" />
+        <option value="$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LikesListController.js" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserUploadsController.js" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsPerDay.jsp" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UploadsPerDayController.js" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/app-module.js" />
+        <option value="$PROJECT_DIR$/Admin/src/main/webapp/modules/views/usersList.jsp" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
       </list>
     </option>
   </component>
@@ -241,16 +423,23 @@
     <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="MavenProjectNavigator">
     <treeState>
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="user" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="instagram" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="user" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="instagram" type="9519ce18:MavenProjectsStructure$ProjectNode" />
           <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
         </path>
       </expand>
@@ -258,10 +447,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="53" />
-    <option name="y" value="100" />
-    <option name="width" value="967" />
-    <option name="height" value="552" />
+    <option name="x" value="51" />
+    <option name="y" value="72" />
+    <option name="width" value="1293" />
+    <option name="height" value="610" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -282,78 +471,44 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+=======
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="users" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -376,11 +531,13 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
               <item name="serviceImpl" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -397,48 +554,46 @@
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="adminsetup" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="adminsetup" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Instagram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Instagram" type="462c0819:PsiDirectoryNode" />
-              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,6 +601,25 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.f1soft.admin.service" />
+      <recent name="com.f1soft.admin.controller" />
+      <recent name="com.f1soft.admin.model" />
+      <recent name="com.f1soft.admin.utils" />
+      <recent name="com.f1soft.admin.dto" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Admin/src/main/webapp/modules/views" />
+      <recent name="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller" />
+      <recent name="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model" />
+      <recent name="$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto" />
+      <recent name="$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -459,7 +633,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.tomcat">
+  <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -540,7 +714,12 @@
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="user:war exploded">
+        <artifact name="Admin:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/admin" />
+          </settings>
+        </artifact>
+        <artifact name="User:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -607,6 +786,8 @@
       <method>
         <option name="BuildArtifacts" enabled="true">
           <artifact name="user:war exploded" />
+          <artifact name="Admin:war exploded" />
+          <artifact name="User:war exploded" />
         </option>
       </method>
     </configuration>
@@ -616,10 +797,6 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.All in user" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.tomcat" />
-    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -638,6 +815,7 @@
       <workItem from="1517809893911" duration="10591000" />
       <workItem from="1517889626191" duration="23614000" />
       <workItem from="1517976911594" duration="15354000" />
+<<<<<<< HEAD
       <workItem from="1518065155799" duration="955000" />
       <workItem from="1518066510016" duration="17395000" />
       <workItem from="1518102570921" duration="5389000" />
@@ -647,6 +825,17 @@
       <workItem from="1518256038022" duration="174000" />
       <workItem from="1518264590762" duration="6327000" />
       <workItem from="1518322386458" duration="6719000" />
+=======
+      <workItem from="1518064218617" duration="26000" />
+      <workItem from="1518082441112" duration="2073000" />
+      <workItem from="1518085197812" duration="5473000" />
+      <workItem from="1518099755793" duration="4807000" />
+      <workItem from="1518138295754" duration="3371000" />
+      <workItem from="1518148671588" duration="6662000" />
+      <workItem from="1518167813152" duration="5154000" />
+      <workItem from="1518313734843" duration="355000" />
+      <workItem from="1518321862370" duration="9539000" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
     </task>
     <servers />
   </component>
@@ -659,35 +848,54 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="137189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="24" width="1313" height="744" extended-state="6" />
+=======
+    <option name="totallyTimeSpent" value="101326000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="41" y="-4" width="1325" height="772" extended-state="6" />
+    <editor active="true" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14127861" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21032056" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13891082" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13838936" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23950233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06687403" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44479004" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46500778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5318818" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25816485" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2904499" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.533437" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5085537" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25957778" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -706,30 +914,30 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14127861" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21032056" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13891082" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13838936" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2690513" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3763608" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06687403" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44479004" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46500778" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53333336" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38102645" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25019732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.533437" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29393467" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25019547" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -745,6 +953,133 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UpdateController.js</url>
+          <line>132</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/UpdateController.js</url>
+          <line>134</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js</url>
+          <line>19</line>
+          <option name="timeStamp" value="130" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js</url>
+          <line>21</line>
+          <option name="timeStamp" value="131" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js</url>
+          <line>33</line>
+          <option name="timeStamp" value="132" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js</url>
+          <line>31</line>
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js</url>
+          <line>22</line>
+          <option name="timeStamp" value="172" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js</url>
+          <line>32</line>
+          <option name="timeStamp" value="181" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UploadsPerDayController.js</url>
+          <line>18</line>
+          <option name="timeStamp" value="189" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UploadsPerDayController.js</url>
+          <line>20</line>
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js</url>
+          <line>71</line>
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js</url>
+          <line>94</line>
+          <option name="timeStamp" value="203" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js</url>
+          <line>98</line>
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js</url>
+          <line>72</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js</url>
+          <line>39</line>
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js</url>
+          <line>42</line>
+          <option name="timeStamp" value="218" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserUploadsController.js</url>
+          <line>28</line>
+          <option name="timeStamp" value="222" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserUploadsController.js</url>
+          <line>54</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="227" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserUploadsController.js</url>
+          <line>29</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="253" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java</url>
+          <line>70</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java</url>
+          <line>74</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java</url>
           <line>44</line>
@@ -770,6 +1105,7 @@
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< HEAD
           <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/LikesController.java</url>
           <line>22</line>
           <properties />
@@ -803,16 +1139,57 @@
           <line>63</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="373" />
+=======
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/BlockUserController.java</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/BlockUserController.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/controller/BlockUserController.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java</url>
+          <line>143</line>
+          <properties />
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/User/src/main/java/com/users/utils/UserPhotosPostUtil.java</url>
+          <line>74</line>
+          <properties />
+          <option name="timeStamp" value="171" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
+<<<<<<< HEAD
       <option name="time" value="377" />
+=======
+      <option name="time" value="254" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/PostCommentModalController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-648">
@@ -823,10 +1200,28 @@
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/mainController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+=======
+    <entry file="http://localhost:8080/admin/modules/adminsetup/controller/ProfileController.js">
+      <provider selected="true" editor-type-id="httpFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LoginController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/service/LoginService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/ImgUploadController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-628">
@@ -908,10 +1303,95 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="52" column="69" lean-forward="false" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminPhotoModal.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/SearchController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/controller/LikesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/Likesdto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/LikesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/LikesUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="55" column="2" lean-forward="true" selection-start-line="55" selection-start-column="2" selection-end-line="63" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/LikesUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/LikesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/CommentsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/service/CommentsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/CommentsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="54" column="26" lean-forward="false" selection-start-line="44" selection-start-column="7" selection-end-line="54" selection-end-column="26" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/service/FollowService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -978,10 +1458,73 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="84" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="84" />
+=======
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/controller/CommentsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="25" column="65" lean-forward="true" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/service/CommentsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/CommentsUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/CommentsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/BlockUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/UserActivation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-128">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/LikesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="208" column="21" lean-forward="false" selection-start-line="208" selection-start-column="21" selection-end-line="208" selection-end-column="21" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/update.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
@@ -1013,18 +1556,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="135" column="4" lean-forward="false" selection-start-line="135" selection-start-column="4" selection-end-line="135" selection-end-column="4" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding>
+            <marker date="1518151010106" expanded="false" signature="2212:2222" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/static/angular.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4644">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/ProfileController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1548">
+          <caret line="86" column="37" lean-forward="false" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/comments.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/followersList.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="31" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/adminPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="http://localhost:8080/static/js/controller/MainController.js">
       <provider selected="true" editor-type-id="httpFileEditor">
         <state />
@@ -1034,26 +1616,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/CommentsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/controller/UserPhotoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="33" column="56" lean-forward="false" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/searchedProfile.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-486">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/blockList.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1084,82 +1687,181 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-756">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/77ceeccf-de54-45fd-a97b-2cfdc46e5828/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="39" column="145" lean-forward="false" selection-start-line="39" selection-start-column="103" selection-end-line="39" selection-end-column="145" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UploadsCommentDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/serviceimpl/UserPhotosServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="91" column="58" lean-forward="true" selection-start-line="91" selection-start-column="58" selection-end-line="91" selection-end-column="58" />
+          <folding>
+            <element signature="e#6520#6539#0" expanded="true" />
+            <marker date="1518329226664" expanded="true" signature="2469:2795" ph="SELECT u.use... user_table" />
+            <marker date="1518329226664" expanded="true" signature="3952:4278" ph="SELECT u.use... user_table" />
+            <marker date="1518329226664" expanded="true" signature="6092:6273" ph="SELECT c.com... comment_table" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/dto/UserPostDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/search.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/java/com/f1soft/admin/utils/UserPostUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/CommentsController.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-133">
           <caret line="49" column="24" lean-forward="false" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
+=======
+        <state relative-caret-position="54">
+          <caret line="10" column="26" lean-forward="true" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/controller/LikesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="28" column="46" lean-forward="true" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+=======
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/UserActivation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/newsFeed.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/dto/LikeActiondto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/js/controller/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="126" column="9" lean-forward="true" selection-start-line="115" selection-start-column="0" selection-end-line="126" selection-end-column="9" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/dto/Likesdto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/likesList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/model/Likes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/LikesListController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/LikesServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
           <caret line="71" column="5" lean-forward="true" selection-start-line="71" selection-start-column="5" selection-end-line="71" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-648">
           <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/User/src/main/webapp/static/views/comments.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/serviceImpl/PhotoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1169,41 +1871,75 @@
             <marker date="1518265691644" expanded="true" signature="2977:3417" ph="SELECT u.use... photo_table" />
             <marker date="1518265691644" expanded="true" signature="2977:4154" ph="{...}" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsOfUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="38" column="33" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1f2592a4-9846-4908-afe7-0dd584a22de6/console.sql">
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/uploadsPerDay.jsp">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="479">
           <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+=======
+        <state relative-caret-position="54">
+          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/LikesUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="26" column="73" lean-forward="false" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UserUploadsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="59" column="13" lean-forward="true" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/CommentUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/adminsetup/controller/UploadsPerDayController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/utils/BlockUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/modules/views/usersList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/User/src/main/java/com/users/controller/BlockUserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12">
@@ -1216,6 +1952,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-90">
           <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+=======
+    <entry file="file://$PROJECT_DIR$/Admin/src/main/webapp/app-module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="46" column="40" lean-forward="true" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+>>>>>>> e5e15774093743de77415bfdf6aad0e4237313a0
           <folding />
         </state>
       </provider>

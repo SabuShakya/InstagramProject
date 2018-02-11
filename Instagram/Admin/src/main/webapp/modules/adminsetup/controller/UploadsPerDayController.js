@@ -1,9 +1,9 @@
 (function () {
     angular.module('adminModule').controller('UploadsPerDayController',UploadsPerDayController);
 
-    UploadsPerDayController.$inject =['HttpService'];
+    UploadsPerDayController.$inject =['HttpService','$rootScope','$uibModal','$localStorage'];
 
-    function UploadsPerDayController(HttpService) {
+    function UploadsPerDayController(HttpService,$rootScope,$uibModal,$localStorage) {
         var vm = this;
         vm.uploadList=[];
         vm.commentList = [];
@@ -15,36 +15,30 @@
 
         function getUploadsOfDay() {
             // var URL = "/"+$localStorage.showUploadsOfUser+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
-            var URL ="/getUploadsOfDay";
-            HttpService.get(URL).then(
+            // var URL ="/getUploadsPerDay";
+            HttpService.get("/getUploadsPerDay").then(
                 function (value) {
                     vm.uploadList = value;
                     // vm.totalItems = value[0].totalItems;
                 }, function (reason) {
-                    console.log(reason);
+                    console.log("UploadsperDayError: "+reason);
                 });
         }
 
         function showComments(uploads) {
-            HttpService.get("/getCommentsOfThisPicture/" + uploads.image_path).then(
-                function (value) {
-                    if (vm.showing) {
-                        vm.showList = false;
-                        vm.showing = false;
-                    } else {
-                        vm.commentList = value;
-                        vm.showing = true;
-                    }
-                }, function (reason) {
-                    console.log(reason);
-                });
+            if (vm.showing) {
+                vm.showList = false;
+                vm.showing = false;
+            } else {
+                vm.showing = true;
+            }
         }
         function openLikeListModal(post) {
             $rootScope.imageName = post.image_path;
             vm.modalInstance=$uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/static/views/likesList.jsp',
+                templateUrl: 'modules/views/likesList.jsp',
                 controller :'LikesListController',
                 controllerAs: 'likesctrl',
                 size: 'lg'

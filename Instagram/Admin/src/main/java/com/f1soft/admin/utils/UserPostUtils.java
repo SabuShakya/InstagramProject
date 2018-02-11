@@ -1,5 +1,6 @@
 package com.f1soft.admin.utils;
 
+import com.f1soft.admin.dto.UploadsCommentDto;
 import com.f1soft.admin.dto.UserPostDto;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 public class UserPostUtils {
-    public static UserPostDto convertToUserPostDto(Object object[],int likesCount,int totalItems) {
+    public static UserPostDto convertToUserPostDto(Object object[],int likesCount,int totalItems,List<UploadsCommentDto> listOfComments) {
         UserPostDto userPostDto = new UserPostDto();
         userPostDto.setUsername(object[0].toString());
         userPostDto.setImage_path(object[1].toString());
@@ -17,6 +18,7 @@ public class UserPostUtils {
         userPostDto.setProfilePic(object[4].toString());
         userPostDto.setCountOfLikes(likesCount);
         userPostDto.setTotalItems(totalItems);
+        userPostDto.setComments(listOfComments);
         return userPostDto;
     }
 }

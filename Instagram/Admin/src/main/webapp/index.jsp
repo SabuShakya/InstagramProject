@@ -10,13 +10,15 @@
     <link href="css/newsFeed.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
     <link href="css/breadcrumb.css" rel="stylesheet">
+    <link href="css/profile.css" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>--%>
-    <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>--%>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+    <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>--%>
 
-    <script type="text/javascript" src="static/angular.min.js"></script>
+
+    <%--<script type="text/javascript" src="static/angular.min.js"></script>--%>
     <script type="text/javascript" src="static/angular-route.min.js"></script>
     <script type="text/javascript" src="static/ng-breadcrumbs.js"></script>
     <script type="text/javascript" src="static/ng-breadcrumbs.min.js"></script>
@@ -59,6 +61,11 @@
 <script type="text/javascript" src="modules/adminsetup/controller/AdminPhotoModalController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/UserUploadsController.js"></script>
 <script type="text/javascript" src="modules/adminsetup/controller/UploadsPerDayController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/ProfileController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/FollowersListController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/FollowingListController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/CommentsController.js"></script>
+<script type="text/javascript" src="modules/adminsetup/controller/LikesListController.js"></script>
 
 <%--Services--%>
 <script type="text/javascript" src="modules/adminsetup/service/LoginService.js"></script>

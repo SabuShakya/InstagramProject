@@ -47,8 +47,8 @@
                 label: 'ActiveUsersList'
             })
             .when("/adminPage/showClickedUserProfile", {
-                templateUrl: "modules/views/userProfilePage.jsp",
-                controller: "UserProfilePageController as uppc",
+                templateUrl: "modules/views/profile.jsp",
+                controller: "ProfileController as profile",
                 label: 'UserProfile'
             })
             .when("/adminPage/totalUploads", {
@@ -56,11 +56,11 @@
                 controller: "TotalUploadsController as totalUploads",
                 label: 'TotalUploads'
             })
-            .when("/adminPage/totalUploadsPerDay", {
-                templateUrl: "modules/views/totalUploads.jsp",
-                controller: "TotalUploadsController as totalUploads",
-                label: 'Uploads per Day'
-            })
+            // .when("/adminPage/totalUploadsPerDay", {
+            //     templateUrl: "modules/views/totalUploads.jsp",
+            //     controller: "TotalUploadsController as totalUploads",
+            //     label: 'Uploads per Day'
+            // })
             .when("/adminPage/totalUploads/showUploadsOfUser", {
                 templateUrl: "modules/views/uploadsOfUser.jsp",
                 controller: "UserUploadsController as userUploads",
