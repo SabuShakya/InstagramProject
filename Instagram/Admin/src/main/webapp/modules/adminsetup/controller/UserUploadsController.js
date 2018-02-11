@@ -35,18 +35,11 @@
         }
 
         function showComments(uploads) {
-            // HttpService.get("/getCommentsOfThisPicture/" + uploads.image_path).then(
-            //     function (value) {
-                    if (vm.showing) {
-                        vm.showList = false;
-                        vm.showing = false;
-                    } else {
-                        // vm.commentList = value;
-                        vm.showing = true;
-                    }
-                // }, function (reason) {
-                //     console.log(reason);
-                // });
+            if (vm.showing) {
+                vm.showList = false;
+                vm.showing = false;
+                } else {
+                vm.showing = true;
         }
 
         function pageChanged() {
