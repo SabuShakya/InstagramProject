@@ -1,5 +1,5 @@
 (function(){
-angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap', 'ngStorage','infinite-scroll']);
+angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap', 'ngStorage','infinite-scroll','angucomplete']);
 angular.module('userModule').config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
     $routeProvider
         .when("/login",{

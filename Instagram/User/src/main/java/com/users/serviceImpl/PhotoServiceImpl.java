@@ -81,46 +81,10 @@ public class PhotoServiceImpl implements PhotoService {
         }
     }
 
-    @Override
-//    public List<UserPostDto> getPosts(String userName, Pageable pageable) {
-//        User user = userRepository.getUserByUsername(userName);
-//        final String SQL_QUERY =
-//                "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId " +
-//                        "FROM photo_table t " +
-//                        "LEFT JOIN user_table u ON t.user_id = u.id " +
-//                        "LEFT JOIN follow f ON u.id = f.following_userId " +
-//                        "LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id " +
-//                        "where f.userId=:id ORDER BY t.created_date DESC";
-//
-//        Query query = entityManager.createNativeQuery(SQL_QUERY).setParameter("id",user.getId());
-//        int totalItems = query.getResultList().size();
-//        query.setFirstResult((pageable.getPageNumber() - 1) * pageable.getPageSize());
-//        query.setMaxResults(pageable.getPageSize());
-//
-//        List<Object[]> allList = query.getResultList();
-//        List<UserPhotodto> userPhotosList = new ArrayList<UserPhotodto>();
-//
-//        for (Object[] o :allList){
-//            int likesCount=(likesRepository.getByUserPhotos_Image_path(o[2].toString())).size();
-//            UserPhotodto userPhotodto= PhotoUtils.convertObjectToUserPhotos(o,likesCount);
-//            userPhotosList.add(userPhotodto);
-//        }
-//
-//        for (UserPhotodto userPhotos : userPhotosList) {
-//            List<Likes> likesList =likesRepository.getByUserPhotos_Image_path(userPhotos.getImage_path());
-//            userPhotos.setLikes(likesList);
-//            userPhotosList.add(userPhotos);
-//            UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList,totalItems);
-//        }
-////
-//        return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList,totalItems);
-//
-//    }
-
     public List<UserPostDto> getPosts(String userName, Pageable pageable) {
         User user = userRepository.getUserByUsername(userName);
         final String SQL_QUERY =
-                "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId " +
+                "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId" +
                         "FROM photo_table t " +
                         "LEFT JOIN user_table u ON t.user_id = u.id " +
                         "LEFT JOIN follow f ON u.id = f.following_userId " +

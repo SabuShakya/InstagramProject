@@ -42,6 +42,8 @@
         vm.blockUser=blockUser;
         vm.unblockUser=unblockUser;
         vm.checkBlocked=checkBlocked;
+        vm.followersList=followersList;
+        vm.followingList=followingList;
 
         profilePhoto();
         checkFollow();
@@ -119,6 +121,7 @@
             HttpService.post("/followUser",vm.followObj).then(function (value) {
                 vm.showFollowBtn = false;
                 searchedUserPhotos();
+                followCount();
             },function (reason) {
                 vm.showFollowBtn = true;
                 console.log("error following"+reason);
@@ -130,6 +133,7 @@
                 vm.showFollowBtn = true;
                 vm.showStatus=true;
                 userStatusPhotos();
+                followCount();
             },function (reason) {
                 vm.showFollowBtn = false;
                 console.log("error following"+reason);
@@ -161,6 +165,7 @@
         function blockUser() {
             HttpService.post("/blockUser",vm.blockObj).then(function(value){
                 vm.showBlockBtn=false;
+                checkBlocked();
                 // vm.showBlockMessage=true;
                 // vm.showFollowOptionsBtn=false;
                 // vm.showPhotoList=false;
@@ -174,6 +179,7 @@
        function unblockUser () {
            HttpService.post("/unblockUser",vm.blockObj).then(function(value){
                vm.showBlockBtn=true;
+               checkBlocked();
                // vm.showBlockMessage=false;
                // vm.showFollowOptionsBtn=true;
                // vm.showPhotoList=true;
@@ -182,5 +188,27 @@
               vm.showBlockBtn=false;
            });
        }
+
+        function followersList(){
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/SearchedFollowersList.jsp',
+                controller :'SearchedFollowersListController',
+                controllerAs: 'followersCtrl',
+                size: 'lg'
+            });
+        }
+
+        function followingList(){
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/searchedFollowingList.jsp',
+                controller :'SearchedFollowingListController',
+                controllerAs: 'followingCtrl',
+                size: 'lg'
+            });
+        }
     }
 })();

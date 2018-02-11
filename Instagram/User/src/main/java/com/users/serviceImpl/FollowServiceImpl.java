@@ -43,12 +43,6 @@ public class FollowServiceImpl implements FollowService {
     public List<User> getFollowedUsers(String username) {
         List<User> listOfFollowedUsers = followRepository.getFollowedUser(username);
         System.out.println(listOfFollowedUsers);
-//        List<UserPhotos> userPhotosList= photoService.getListOfPhotos(listOfFollowedUsers,pageable);
-//        for (UserPhotos userPhotos: userPhotosList){
-//            List<Likes> likes = likesService.getByPhotoId(userPhotos.getId());
-//            userPhotos.setLikes(likes);
-//        }
-//        return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList);
         return listOfFollowedUsers;
     }
 

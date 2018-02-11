@@ -101,17 +101,6 @@
                 HttpService.get("/getLikesList/"+vm.imageName).then(function (value) {
                     vm.showLikes = true;
                     vm.likeList = value;
-                    //
-                    // angular.forEach(vm.likes,function(likes,key){
-                    //     if(likes.activationStatus=="activated"){
-                    //         vm.likeList[i]=likes;
-                    //         i++;
-                    //         vm.showUserLikes=true;
-                    //     }
-                    //     else{
-                    //         vm.showUserLikes=false;
-                    //     }
-                    // });
                 },function (reason) {
                     console.log("This occurred:"+reason);
                 });

@@ -6,14 +6,14 @@
         var vm = this;
         vm.followers = [];
         vm.userDisplayName = $localStorage.storedObj.username;
+
         vm.ok = ok;
 
         HttpService.get("/getFollowersList/"+vm.userDisplayName).then(function (value) {
-            vm.followers = value;
-        },function (reason) {
-            console.log("This occurred:"+reason);
+            vm.followers= value;
+            }, function (reason) {
+            console.log("This occurred:" + reason);
         });
-
 
         function ok() {
             $uibModalInstance.dismiss('close');

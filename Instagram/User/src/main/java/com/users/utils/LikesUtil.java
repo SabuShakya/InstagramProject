@@ -18,18 +18,6 @@ public class LikesUtil {
         return likes;
     }
 
-//    public static List<Likesdto> convertLikesToLikesDto(List<Likes> likesList){
-//        List<Likesdto> likesdtoList = new ArrayList<Likesdto>();
-//        for (Likes likes:likesList){
-//            Likesdto likesdto =  new Likesdto();
-//            likesdto.setUserName(likes.getUser().getUsername());
-//            likesdto.setActivationStatus(likes.getUser().getUserActivation().getActivationStatus());
-//            likesdto.setImageName(likes.getUserPhotos().getImage_path());
-//            likesdtoList.add(likesdto);
-//        }
-//        return likesdtoList;
-//    }
-
     public static List<Likesdto> convertLikesToLikesDto(List<Likes> likesList){
         List<Likesdto> likesdtoList = new ArrayList<Likesdto>();
         for (Likes likes:likesList){

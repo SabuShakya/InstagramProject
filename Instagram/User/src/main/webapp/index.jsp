@@ -3,9 +3,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <link href="static/css/newsFeed.css">
     <link href="static/css/comments.css" rel="stylesheet">
     <link href="static/css/update.css" rel="stylesheet">
+    <%--<link href="static/css/angucomplete.css" rel="stylesheet">--%>
+    <%--<link href="static/css/structure.css" rel="stylesheet">--%>
+
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -46,9 +50,13 @@
 <script src="static/js/controller/UpdateController.js"></script>
 <script src="static/js/controller/FollowersListController.js"></script>
 <script src="static/js/controller/FollowingListController.js"></script>
+<script src="static/js/controller/SearchedFollowersListController.js"></script>
+<script src="static/js/controller/SearchedFollowingListController.js"></script>
+
 <script src="static/js/controller/PostCommentModalController.js"></script>
 <script src="static/js/directives/EnterDirective.js"></script>
 <script src="static/js/controller/mainController.js"></script>
+<script src="static/js/controller/angucomplete.js"></script>
 
 
 <script src="static/js/service/HttpService.js"> </script>
