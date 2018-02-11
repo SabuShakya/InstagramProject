@@ -21,6 +21,7 @@ public class UserPostDto {
     private int countOfLikes;
     private int totalItems;
     private List<Likes> likes;
+    private String activationStatus;
 
     private String following_userId;
 }

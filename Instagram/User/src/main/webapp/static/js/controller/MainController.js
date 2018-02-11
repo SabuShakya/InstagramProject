@@ -5,6 +5,7 @@
     function MainController(HttpService,$localStorage,$rootScope,$uibModal, $log) {
         var vm = this;
         vm.posts = [];
+        vm.finalPostList=[];
         vm.message = '';
         vm.commentSuccessMsg = false;
         vm.showFollowMessgae =false;
@@ -39,9 +40,16 @@
             var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
             HttpService.get(URL).then(
                 function (value) {
-                    vm.posts = vm.posts.concat(value);
+                    // vm.posts = vm.posts.concat(value);
+                    vm.posts=value;
                     vm.totalItems=value[0].totalItems;
                     vm.fetching=true;
+
+                        angular.forEach(vm.posts, function (posts, key) {
+                            if (posts.activationStatus == "activated") {
+                                vm.finalPostList = vm.finalPostList.concat(posts);
+                            }else{}
+                        })
                 }, function (reason) {
                     vm.message = "Follow Others to see their posts.";
                 });

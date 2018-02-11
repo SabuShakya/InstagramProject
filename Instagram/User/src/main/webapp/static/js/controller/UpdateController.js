@@ -18,6 +18,7 @@
         vm.submitClicked=false;
         vm.showDeactivateBtn=false;
         vm.blockList=[];
+        vm.name=[];
         vm.user={};
         vm.url = "/update";
         vm.userDisplayName = $localStorage.storedObj.username;
@@ -28,8 +29,6 @@
         vm.checkPrivacy=checkPrivacy;
         vm.deActivateAccount=deActivateAccount;
         vm.checkPassword=checkPassword;
-        vm.blockLists=blockLists;
-
         checkPrivacy();
 
         function updateUser() {
@@ -125,14 +124,14 @@
                 });
         }
 
-        function blockLists(){
-            HttpService.get("/blockUsersList/"+$localStorage.storedObj.username).then(
-                function (value) {
-                    vm.blockList=value;
-                },function (reason) {
-
-                }
-            )
-        }
+        // function blockLists(){
+        //     HttpService.get("/blockUsersList/"+$localStorage.storedObj.username).then(
+        //         function (value) {
+        //             vm.blockList=value;
+        //         },function (reason) {
+        //
+        //         }
+        //     )
+        // }
     }
 })();

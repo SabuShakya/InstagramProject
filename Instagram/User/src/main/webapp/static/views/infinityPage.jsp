@@ -2,7 +2,8 @@
 <section class = "section-content">
     <div infinite-scroll="main.pageChanged()" ng-model="main.currentPage"infinite-scroll-distance="1">
 
-        <div align="center" ng-repeat="post in main.posts">
+        <%--<div ng-show="main.newsFeed">--%>
+        <div align="center" ng-repeat="post in main.finalPostList">
             <div class='insta fade-scroll'>
                 <div class='top-insta'>
                     <img class="img-responsive img-circle margin" src="/uploads/{{post.profilePic}}" width="10%" height="10%">
@@ -42,6 +43,7 @@
                     <br>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </section>

@@ -84,11 +84,12 @@ public class PhotoServiceImpl implements PhotoService {
     public List<UserPostDto> getPosts(String userName, Pageable pageable) {
         User user = userRepository.getUserByUsername(userName);
         final String SQL_QUERY =
-                "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId" +
+                "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId,uAt.activationStatus " +
                         "FROM photo_table t " +
                         "LEFT JOIN user_table u ON t.user_id = u.id " +
                         "LEFT JOIN follow f ON u.id = f.following_userId " +
                         "LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id " +
+                        "LEFT JOIN userActivation_table uAt ON u.id = uAt.user_id " +
                         "where f.userId=:id ORDER BY t.created_date DESC";
 
         Query query = entityManager.createNativeQuery(SQL_QUERY).setParameter("id",user.getId());

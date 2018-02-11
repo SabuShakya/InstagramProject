@@ -15,6 +15,7 @@ public class PhotoUtils {
         userPostDto.setImage_path(object[2].toString());
         userPostDto.setCreated_date(object[3].toString());
         userPostDto.setCaption(object[4].toString());
+        userPostDto.setActivationStatus(object[6].toString());
         userPostDto.setCountOfLikes(likesCount);
          userPostDto.setTotalItems(totalItems);
         return userPostDto;
