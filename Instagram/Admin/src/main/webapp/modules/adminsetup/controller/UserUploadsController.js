@@ -35,8 +35,6 @@
         }
 
         function showComments(uploads) {
-            // HttpService.get("/getCommentsOfThisPicture/" + uploads.image_path).then(
-            //     function (value) {
                     if (vm.showing) {
                         vm.showList = false;
                         vm.showing = false;
@@ -44,9 +42,6 @@
                         // vm.commentList = value;
                         vm.showing = true;
                     }
-                // }, function (reason) {
-                //     console.log(reason);
-                // });
         }
 
         function pageChanged() {
