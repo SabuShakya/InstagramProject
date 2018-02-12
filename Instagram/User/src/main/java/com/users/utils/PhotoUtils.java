@@ -1,5 +1,6 @@
 package com.users.utils;
 
+import com.users.dto.LikeActiondto;
 import com.users.dto.UserPhotodto;
 import com.users.dto.UserPostDto;
 import com.users.model.UserPhotos;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PhotoUtils {
-    public static UserPostDto convertObjectToUserPhotos(Object[] object, int likesCount, int totalItems) {
+    public static UserPostDto convertObjectToUserPhotos(Object[] object, LikeActiondto likeActiondto, int totalItems) {
         UserPostDto userPostDto = new UserPostDto();
         userPostDto.setUsername(object[0].toString());
         userPostDto.setProfilePic(object[1].toString());
@@ -16,8 +17,9 @@ public class PhotoUtils {
         userPostDto.setCreated_date(object[3].toString());
         userPostDto.setCaption(object[4].toString());
         userPostDto.setActivationStatus(object[6].toString());
-        userPostDto.setCountOfLikes(likesCount);
-         userPostDto.setTotalItems(totalItems);
+        userPostDto.setCountOfLikes(likeActiondto.getLikeCount());
+        userPostDto.setShowRedButton(likeActiondto.getShowRedButton());
+        userPostDto.setTotalItems(totalItems);
         return userPostDto;
     }
 

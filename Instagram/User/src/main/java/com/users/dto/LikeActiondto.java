@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Setter
 public class LikeActiondto {
     private int likeCount;
-
+    private Boolean showRedButton;
 }

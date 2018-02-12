@@ -4,10 +4,6 @@
          infinite-scroll-immediate-check="false" infinite-scroll-container='".constrained"'
          infinite-scroll-parent="true" >`
 
-        <div ng-show="main.showFollowMesssage">
-            <span class="glyphicon glyphicon-plus"><h2>Follow others to see their posts </h2></span>
-        </div>
-
         <div align="center" ng-repeat="post in main.finalPostList">
             <div class='insta fade-scroll'>
                 <div class='top-insta'>
@@ -33,7 +29,7 @@
 
                     <div class='react'>
                         {{post.countOfLikes}}
-                        <button ng-click="main.like(post)">
+                        <button ng-class="{'active':post.showRedButton}" ng-click="main.like(post)">
                             <span class='love'></span>
                         </button>
                         <button role='button' ng-click="main.showComments(post)">

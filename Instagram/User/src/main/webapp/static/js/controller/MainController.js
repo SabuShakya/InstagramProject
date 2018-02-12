@@ -17,6 +17,7 @@
         vm.countOfLikes = '';
         $rootScope.imageName = '';
         $rootScope.showPostComments= '';
+        vm.isActive = false;
 
         vm.addComment = addComment;
         vm.showComments = showComments;
@@ -42,6 +43,7 @@
                 function (value) {
                     // vm.posts = vm.posts.concat(value);
                     vm.posts=value;
+                    vm.isActive = value.showRedButton;
                     vm.totalItems=value[0].totalItems;
                     vm.fetching=true;
                     // vm.showFollowMesssage=false;
@@ -117,8 +119,9 @@
         function like(post) {
             post.username = $localStorage.storedObj.username;
             HttpService.post("/likeAction",post).then(function (value) {
-                vm.countOfLikes = value;
-                post.countOfLikes = value;
+                vm.countOfLikes = value.likeCount;
+                post.countOfLikes = value.likeCount;
+                post.showRedButton = value.showRedButton;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });

@@ -11,19 +11,19 @@
         vm.showList = true;
         vm.fetching = true;
         vm.totalItems = '';
-        vm.CurrentPage =1;
+        vm.CurrentPage = 1;
         vm.maxSize = 2;
-        vm.pageChanged= pageChanged;
+        vm.pageChanged = pageChanged;
 
         vm.getUploadsOfUser = getUploadsOfUser;
         vm.showComments = showComments;
-        vm.openLikeListModal=openLikeListModal;
+        vm.openLikeListModal = openLikeListModal;
 
         getUploadsOfUser();
 
         function getUploadsOfUser() {
             vm.fetching = false;
-            var URL = "/getUploadsOf/"+$localStorage.showUploadsOfUser+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
+            var URL = "/getUploadsOf/" + $localStorage.showUploadsOfUser + "?page=" + vm.CurrentPage + "&size=" + vm.maxSize;
             HttpService.get(URL).then(
                 function (value) {
                     vm.uploadList = vm.uploadList.concat(value);
@@ -38,8 +38,9 @@
             if (vm.showing) {
                 vm.showList = false;
                 vm.showing = false;
-                } else {
+            } else {
                 vm.showing = true;
+            }
         }
 
         function pageChanged() {
@@ -55,11 +56,11 @@
 
         function openLikeListModal(post) {
             $rootScope.imageName = post.image_path;
-            vm.modalInstance=$uibModal.open({
+            vm.modalInstance = $uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
                 templateUrl: 'modules/views/likesList.jsp',
-                controller :'LikesListController',
+                controller: 'LikesListController',
                 controllerAs: 'likesctrl',
                 size: 'lg'
             });

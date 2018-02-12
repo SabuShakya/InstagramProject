@@ -1,4 +1,5 @@
 package com.users.serviceImpl;
+import com.users.dto.LikeActiondto;
 import com.users.dto.UserPhotodto;
 import com.users.dto.UserPostDto;
 import com.users.model.User;
@@ -101,8 +102,8 @@ public class PhotoServiceImpl implements PhotoService {
         List<UserPostDto> userPostDtoList = new ArrayList<UserPostDto>();
 
         for (Object[] o :allList){
-            int likesCount=likesService.getLikesCountForImage(o[2].toString());
-            UserPostDto userPostDto= PhotoUtils.convertObjectToUserPhotos(o,likesCount,totalItems);
+            LikeActiondto likeActiondto =likesService.getLikesCountForImage(o[2].toString(),user);
+            UserPostDto userPostDto= PhotoUtils.convertObjectToUserPhotos(o,likeActiondto,totalItems);
             userPostDtoList.add(userPostDto);
         }
         return userPostDtoList;
