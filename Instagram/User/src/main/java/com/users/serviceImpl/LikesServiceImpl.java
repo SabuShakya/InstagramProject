@@ -68,15 +68,21 @@ public class LikesServiceImpl implements LikesService {
     public LikeActiondto getLikesCountForImage(String imageName, User user) {
         List<Likes> likesList = likesRepository.getByUserPhotos_Image_path(imageName);
         LikeActiondto likeActiondto = new LikeActiondto();
+        likeActiondto.setShowRedButton(false);
+        int c =0;
         if (likesList == null) {
             likeActiondto.setShowRedButton(false);
         } else {
             for (Likes likes : likesList) {
                 if (likes.getUser().getUsername().equals(user.getUsername())) {
-                    likeActiondto.setShowRedButton(true);
-                } else {
-                    likeActiondto.setShowRedButton(false);
+                   c= c+1;
                 }
+            }
+            if (c>0){
+                likeActiondto.setShowRedButton(true);
+            }
+            else {
+                likeActiondto.setShowRedButton(false);
             }
         }
         List<Likesdto> list = LikesUtil.convertLikesToLikesDto(likesList);
