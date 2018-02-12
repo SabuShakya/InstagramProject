@@ -23,10 +23,10 @@
 
 <div>
     <a href="#!/deactivateAccount">Temporarily disable my account</a>
-</div>
+</div><br>
 
     <div>
-        <a href="#!/blockUsersList" ng-click="update.blockLists()">Blocked Users</a>
+        <a href="#!/blockUsersList">Blocked users</a>
     </div>
 </div>
 

@@ -52,7 +52,7 @@
 <script src="static/js/controller/FollowingListController.js"></script>
 <script src="static/js/controller/SearchedFollowersListController.js"></script>
 <script src="static/js/controller/SearchedFollowingListController.js"></script>
-
+<script src="static/js/controller/BlockUsersListController.js"></script>
 <script src="static/js/controller/PostCommentModalController.js"></script>
 <script src="static/js/directives/EnterDirective.js"></script>
 <script src="static/js/controller/mainController.js"></script>

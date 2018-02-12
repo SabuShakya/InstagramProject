@@ -5,6 +5,7 @@
     function MainController(HttpService,$localStorage,$rootScope,$uibModal, $log) {
         var vm = this;
         vm.posts = [];
+        vm.finalPostList=[];
         vm.message = '';
         vm.commentSuccessMsg = false;
         vm.showFollowMessgae =false;
@@ -16,6 +17,7 @@
         vm.countOfLikes = '';
         $rootScope.imageName = '';
         $rootScope.showPostComments= '';
+        vm.isActive = false;
 
         vm.addComment = addComment;
         vm.showComments = showComments;
@@ -39,9 +41,17 @@
             var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
             HttpService.get(URL).then(
                 function (value) {
-                    vm.posts = vm.posts.concat(value);
+                    // vm.posts = vm.posts.concat(value);
+                    vm.posts=value;
+                    vm.isActive = value.showRedButton;
                     vm.totalItems=value[0].totalItems;
                     vm.fetching=true;
+
+                        angular.forEach(vm.posts, function (posts, key) {
+                            if (posts.activationStatus == "activated") {
+                                vm.finalPostList = vm.finalPostList.concat(posts);
+                            }else{}
+                        })
                 }, function (reason) {
                     vm.message = "Follow Others to see their posts.";
                 });
@@ -107,8 +117,9 @@
         function like(post) {
             post.username = $localStorage.storedObj.username;
             HttpService.post("/likeAction",post).then(function (value) {
-                vm.countOfLikes = value;
-                post.countOfLikes = value;
+                vm.countOfLikes = value.likeCount;
+                post.countOfLikes = value.likeCount;
+                post.showRedButton = value.showRedButton;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });

@@ -14,7 +14,7 @@
         vm.showCommentList= true;
         $rootScope.saved= false;
         vm.submitClicked=false;
-       vm.isActive=false;
+        vm.isActive=false;
 
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
@@ -29,8 +29,9 @@
         vm.commentsList=commentsList;
         vm.imageName = $rootScope.photo;
 
-        HttpService.get("/likesCount/"+vm.imageName).then(function (value) {
-            vm.likeCount = value;
+        HttpService.get("/likesCount/"+vm.imageName+"/"+$localStorage.storedObj.username).then(function (value) {
+            vm.likeCount = value.likeCount;
+            vm.isActive = value.showRedButton;
         },function (reason) {
             console.log("This error occurred:"+reason);
         });
@@ -61,8 +62,9 @@
                 'image_path':$rootScope.photo
             };
             HttpService.post("/likeAction",vm.obj).then(function (value) {
-                vm.isActive=!(vm.isActive);
-                vm.likeCount = value;
+                // vm.isActive=!(vm.isActive);
+                vm.likeCount = value.likeCount;
+                vm.isActive= value.showRedButton;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });

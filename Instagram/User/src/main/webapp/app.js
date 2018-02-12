@@ -48,7 +48,7 @@ angular.module('userModule').config(['$routeProvider','$locationProvider',functi
         })
         .when("/blockUsersList",{
             templateUrl:"/static/views/blockList.jsp",
-            controller:"UpdateController as update"
+            controller:"BlockUsersListController as block"
         })
         .otherwise({
             redirectTo:'/login'

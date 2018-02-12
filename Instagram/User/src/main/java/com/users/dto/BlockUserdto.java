@@ -8,5 +8,6 @@ import lombok.Setter;
 public class BlockUserdto {
     private String userName;
     private String blockedUsername;
+    private String profilePhoto;
 }
 

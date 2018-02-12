@@ -47,4 +47,24 @@
     <%--</div>--%>
 <%--</div>--%>
 
+<%--<div class="large-padded-row">--%>
+<%--<h3>Search</h3>--%>
+<%--<div class="padded-row">--%>
+<%--<div angucomplete--%>
+     <%--id="ex5"--%>
+     <%--placeholder="Search projects"--%>
+     <%--pause="500"--%>
+     <%--selected-object="selectedProject"--%>
+     <%--remote-url="http://localhost:8080/#!/search"--%>
+     <%--remote-url-request-formatter="remoteUrlRequestFn"--%>
+     <%--remote-url-data-field="finalList"--%>
+     <%--title-field="name"--%>
+     <%--description-field="description"--%>
+     <%--minlength="2"--%>
+     <%--input-class="form-control form-control-small"--%>
+     <%--match-class="highlight">--%>
+<%--</div>--%>
+<%--</div>--%>
+<%--</div>--%>
+
 

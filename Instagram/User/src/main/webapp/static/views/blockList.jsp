@@ -1,8 +1,12 @@
 <div ng-include src="'static/views/navigation.html'"></div>
 
-hyaaa
-<div ng-controller="UpdateController as update">
-<div ng-repeat="list in update.blockList">
-    <h2> {{list.blockedUsername}} </h2>
+<h2> Blocked users list: </h2>
+<div ng-repeat="list in block.blockList">
+        <div class="col-md-8">
+        <img class="img-responsive img-circle margin" src="/uploads/{{list.profilePhoto}}" width="10%" height="10%">
+
+            <h4><a href="/#!/searchedUser" ng-click="block.openProfile(list)">{{list.blockedUsername}}</a></h4>
+        <%--<h2> {{list.blockedUsername}}</h2>--%>
+    </div>
 </div>
 </div>

@@ -72,7 +72,7 @@ public class BlockServiceImpl implements BlockService {
 
     public List<BlockUserdto> getBlockedUserList(String username){
         User user=userRepository.getUserByUsername(username);
-        final String SQL_QUERY="SELECT u.username, b.userId, b.blocked_userId FROM blockedUsers_table b LEFT JOIN user_table u ON b.blocked_userId = u.id WHERE b.userId=:id";
+        final String SQL_QUERY="SELECT u.username, p.profile_pic, b.userId, b.blocked_userId FROM blockedUsers_table b LEFT JOIN user_table u ON b.blocked_userId = u.id LEFT JOIN profile_pic_table p ON u.id = p.user_id WHERE b.userId=:id";
         Query query = entityManager.createNativeQuery(SQL_QUERY).setParameter("id",user.getId());
         List<Object[]> blockUsers = query.getResultList();
         List<BlockUserdto> blockUserdtoList= new ArrayList<BlockUserdto>();

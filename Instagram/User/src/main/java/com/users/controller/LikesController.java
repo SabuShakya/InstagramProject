@@ -1,7 +1,10 @@
 package com.users.controller;
 
 import com.users.dto.Commentsdto;
+import com.users.dto.LikeActiondto;
 import com.users.dto.Likesdto;
+import com.users.model.User;
+import com.users.repository.UserRepository;
 import com.users.service.LikesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,18 +19,22 @@ import java.util.List;
 public class LikesController {
 
     @Autowired
+    private UserRepository userRepository;
+    @Autowired
     private LikesService likesService;
 
     @PostMapping("/likeAction")
-    public ResponseEntity<Integer> like(@RequestBody Commentsdto commentsdto ){
-        int likesCount=likesService.saveLike(commentsdto);
-        return new ResponseEntity<Integer>(likesCount, HttpStatus.OK);
+    public ResponseEntity<LikeActiondto> like(@RequestBody Commentsdto commentsdto ){
+        LikeActiondto likesCount=likesService.saveLike(commentsdto);
+        return new ResponseEntity<LikeActiondto>(likesCount, HttpStatus.OK);
     }
 
-    @GetMapping("/likesCount/{imageName}")
-    public ResponseEntity<Integer> getLikesCount(@PathVariable("imageName")String imageName){
-        int likesCount = likesService.getLikesCountForImage(imageName);
-        return new ResponseEntity<Integer>(likesCount,HttpStatus.OK);
+    @GetMapping("/likesCount/{imageName}/{userName}")
+    public ResponseEntity<LikeActiondto> getLikesCount(@PathVariable("imageName")String imageName,
+                                                 @PathVariable("userName")String userName){
+        User user = userRepository.getUserByUsername(userName);
+        LikeActiondto likesCount = likesService.getLikesCountForImage(imageName,user);
+        return new ResponseEntity<LikeActiondto>(likesCount,HttpStatus.OK);
     }
 
     @GetMapping("/getLikesList/{imageName}")

@@ -4,9 +4,7 @@
          infinite-scroll-immediate-check="false" infinite-scroll-container='".constrained"'
          infinite-scroll-parent="true" >`
 
-         <%--infinite-scroll-parent='".section-content"' >--%>
-        <%--<div lazy-scroll="main.pageChanged()" lazy-scroll-trigger="80" >--%>
-        <div align="center" ng-repeat="post in main.posts">
+        <div align="center" ng-repeat="post in main.finalPostList">
             <div class='insta fade-scroll'>
                 <div class='top-insta'>
                     <img class="img-responsive img-circle margin" src="/uploads/{{post.profilePic}}" width="10%" height="10%">
@@ -31,7 +29,7 @@
 
                     <div class='react'>
                         {{post.countOfLikes}}
-                        <button ng-click="main.like(post)">
+                        <button ng-class="{'active':post.showRedButton}" ng-click="main.like(post)">
                             <span class='love'></span>
                         </button>
                         <button role='button' ng-click="main.showComments(post)">
@@ -46,5 +44,14 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
 </section>
+</div>
+
+
+<style type="text/css">
+    .active{
+        background:red;
+    }
+</style>

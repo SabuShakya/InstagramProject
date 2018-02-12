@@ -1,4 +1,5 @@
 package com.users.serviceImpl;
+import com.users.dto.LikeActiondto;
 import com.users.dto.UserPhotodto;
 import com.users.dto.UserPostDto;
 import com.users.model.User;
@@ -84,11 +85,12 @@ public class PhotoServiceImpl implements PhotoService {
     public List<UserPostDto> getPosts(String userName, Pageable pageable) {
         User user = userRepository.getUserByUsername(userName);
         final String SQL_QUERY =
-                "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId" +
+                "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId,uAt.activationStatus " +
                         "FROM photo_table t " +
                         "LEFT JOIN user_table u ON t.user_id = u.id " +
                         "LEFT JOIN follow f ON u.id = f.following_userId " +
                         "LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id " +
+                        "LEFT JOIN userActivation_table uAt ON u.id = uAt.user_id " +
                         "where f.userId=:id ORDER BY t.created_date DESC";
 
         Query query = entityManager.createNativeQuery(SQL_QUERY).setParameter("id",user.getId());
@@ -100,8 +102,8 @@ public class PhotoServiceImpl implements PhotoService {
         List<UserPostDto> userPostDtoList = new ArrayList<UserPostDto>();
 
         for (Object[] o :allList){
-            int likesCount=likesService.getLikesCountForImage(o[2].toString());
-            UserPostDto userPostDto= PhotoUtils.convertObjectToUserPhotos(o,likesCount,totalItems);
+            LikeActiondto likeActiondto =likesService.getLikesCountForImage(o[2].toString(),user);
+            UserPostDto userPostDto= PhotoUtils.convertObjectToUserPhotos(o,likeActiondto,totalItems);
             userPostDtoList.add(userPostDto);
         }
         return userPostDtoList;
