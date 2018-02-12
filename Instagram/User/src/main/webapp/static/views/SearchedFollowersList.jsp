@@ -6,6 +6,7 @@
     <div ng-repeat="follow in followersCtrl.searchedFollowers">
         <div class="col-md-12">
             <img class="img-responsive img-circle margin" src="/uploads/{{follow.image}}" width="10%" height="10%">
+
             {{follow.following_userName}}
         </div>
     </div>

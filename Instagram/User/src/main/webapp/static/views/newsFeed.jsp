@@ -7,7 +7,6 @@
                 <img class="img-responsive img-circle margin" src="/uploads/{{post.profilePic}}" width="10%" height="10%">
                 {{post.username}}
 
-                <span class='dot'></span>
             </div>
             <div class='post'>
                 <div class="overlay">

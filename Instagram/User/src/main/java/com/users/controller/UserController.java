@@ -57,7 +57,6 @@ public class UserController {
         return new ResponseEntity<UserTokenDto>(userTokenDto, HttpStatus.NOT_FOUND);
     }
 
-    //smriti
     @PostMapping("/update")
     public ResponseEntity<Boolean> updateUser(@RequestBody Userdto userdto){
         boolean isUser = userService.checkPassword(userdto);
@@ -81,7 +80,8 @@ public class UserController {
     public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName")String username, @RequestParam("page") int page, @RequestParam("size") int size){
         org.springframework.data.domain.Pageable pageable = new PageRequest(page,size);
         List<UserPostDto> userPostList=photoService.getPosts(username, pageable);
-        if (userPostList!= null) {
+        if (userPostList !=null){
+//                && !userPostList.isEmpty()){
             return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
         }
         return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
@@ -102,6 +102,15 @@ public class UserController {
         }
         return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.NOT_FOUND);
     }
+
+    @GetMapping("/anguSearch/{searchTerm}")
+    public ResponseEntity<List<UserSearchDto>> anguSearchUsers(@PathVariable("searchTerm")String searchTerm){
+      List<UserSearchDto> list = userService.findByAnguSearchTerm(searchTerm);
+        if (list!=null) { return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.OK);
+        }
+        return new ResponseEntity<List<UserSearchDto>>(list, HttpStatus.NOT_FOUND);
+    }
+
 
     @PostMapping("/makePrivate/{username}")
     public ResponseEntity<Boolean> privateAccount(@PathVariable("username") String username){

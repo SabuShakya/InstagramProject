@@ -21,7 +21,7 @@
         function getTotalActiveUsers() {
             vm.url = "/getTotalActiveUsers" + "?page=" + vm.currentPage + "&size=" + vm.maxSize;
             HttpService.get(vm.url).then(
-                function (value) {git
+                function (value) {
                     vm.listOfUsers = value;
                     vm.totalItems = value[0].totalItems;
                 }, function (reason) {

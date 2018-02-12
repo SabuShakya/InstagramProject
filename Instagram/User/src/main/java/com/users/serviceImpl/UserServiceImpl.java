@@ -95,14 +95,6 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
-//    public List<UserSearchDto> findBySearchTerm(String searchTerm) {
-//        String sql="SELECT u.username,uAt.activationStatus FROM user_table u JOIN userActivation_table uAt ON u.id = uAt.user_id WHERE u.username LIKE :searchTerm and  uAt.activationStatus LIKE :status";
-//        Query query=em.createNativeQuery(sql,"SearchListResults");
-////        query.setParameter("searchTerm","%"+searchTerm+"%").setParameter("status","activated");
-////        List<User> userList=query.getResultList();
-//       return UserSearchUtils.getSearchedUserInfo(userList);
-//    }
-
     public List<UserSearchDto> findBySearchTerm(String searchTerm,String username) {
         String sql = "Select u from User u where u.username like :username";
         List<User> userList= em.createQuery(sql,User.class).setParameter("username",
@@ -118,6 +110,15 @@ public class UserServiceImpl implements UserService {
         }
         return returnlist;
     }
+
+    public List<UserSearchDto> findByAnguSearchTerm(String searchTerm) {
+        String sql = "Select u from User u where u.username like :username";
+        List<User> userList= em.createQuery(sql,User.class).setParameter("username",
+                "%"+searchTerm+"%").getResultList();
+        List<UserSearchDto> list = UserSearchUtils.getSearchedUserInfo(userList);
+        return list;
+    }
+
 
     public User getUserEmail(String email) {
         return userRepository.getUserByEmail(email);

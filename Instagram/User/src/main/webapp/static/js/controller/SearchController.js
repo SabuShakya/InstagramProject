@@ -19,15 +19,17 @@
             userName : $localStorage.storedObj.username,
             following_userName : $localStorage.openProfileOf.username
         };
+        vm.selectedSearchObject = '';
 
         vm.search = search;
         vm.openProfile = openProfile;
         vm.checkFollow=checkFollow;
         vm.followUser = followUser;
         vm.unfollowUser = unfollowUser;
+        vm.searchUser=searchUser;
 
         function search() {
-            HttpService.get("/search/"+vm.searchTerm+"/"+$localStorage.storedObj.username).then(function (value) {
+            HttpService.get("/search/"+vm.selectedSearchObject.title+"/"+$localStorage.storedObj.username).then(function (value) {
                 vm.searchResult = value;
                 if(vm.searchResult!=null) {
                     angular.forEach(vm.searchResult, function (searchResult, key) {
@@ -46,6 +48,14 @@
                 vm.showMessage = true;
                 console.log("Error+ "+reason);
             });
+        }
+
+        function searchUser(){
+            HttpService.get("/anguSearch/"+vm.selectedSearchObject).then(function (value) {
+
+            },function (reason) {
+
+            })
         }
 
         function openProfile(user) {

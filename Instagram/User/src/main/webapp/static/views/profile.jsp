@@ -36,7 +36,9 @@
         <div class="thumbnail">
             <img src="uploads/{{photo.image_path}}" style="width:100%"
                  ng-click="profile.commentModal(photo.image_path,photo.caption)">
-            {{photo.caption}}
+            <%--{{photo.caption}}--%>
+            </button><br>
+            <button ng-click="profile.deletePhoto(photo)">Delete</button>
         </div>
     </div>
 </div>

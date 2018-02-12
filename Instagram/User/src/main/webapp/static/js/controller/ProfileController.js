@@ -27,6 +27,7 @@
         vm.profilePhoto=profilePhoto;
         vm.followersList=followersList;
         vm.followingList=followingList;
+        vm.deletePhoto=deletePhoto;
 
         allPhotos();
         followCount();
@@ -131,6 +132,17 @@
                     profilePhoto();
                 },
                 function(){})
+        }
+
+        function deletePhoto(image_path) {
+            $rootScope.clickedPhoto=image_path;
+            HttpService.post("/deletePhoto",$rootScope.clickedPhoto).then(function (value) {
+                    allPhotos();
+                },
+                function (reason) {
+                    console.log("error"+reason);
+                }
+            )
         }
     }
 })();

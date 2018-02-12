@@ -4,6 +4,7 @@ import com.users.dto.ProfilePhotoDto;
 import com.users.dto.UserPhotodto;
 import com.users.dto.Userdto;
 import com.users.model.User;
+import com.users.model.UserPhotos;
 import com.users.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -74,5 +75,11 @@ public class PhotoController {
               return new ResponseEntity<List<UserPhotodto>>(photoList, HttpStatus.OK);
           }
         return new ResponseEntity<List<UserPhotodto>>(photoList, HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping("/deletePhoto")
+    public ResponseEntity<Boolean> delete(@RequestBody UserPhotos userPhotos){
+        photoService.deletePhoto(userPhotos);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 }

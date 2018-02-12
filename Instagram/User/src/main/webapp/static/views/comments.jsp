@@ -64,7 +64,6 @@
                 <button ng-click="comment.edit()" ng-disabled="comment.submitClicked">Edit</button>
             </div>
         </div>
-
     </section>
 </div>
 

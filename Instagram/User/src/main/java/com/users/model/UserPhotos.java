@@ -34,7 +34,7 @@ public class UserPhotos {
     @OneToMany(mappedBy = "userPhotos")
     private List<Comments> comments;
 
-    @OneToMany(mappedBy = "userPhotos")
+    @OneToMany(mappedBy = "userPhotos",cascade = CascadeType.REMOVE)
     private List<Likes> likes;
 
     @Transient

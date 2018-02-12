@@ -68,6 +68,11 @@ public class BlockServiceImpl implements BlockService {
         if(blockUser !=null){
             blockRepository.delete(blockUser);
         }
+        Follow follow=followRepository.checkFollow(blockUserdto.getUserName(),
+                blockUserdto.getBlockedUsername());
+        if (follow !=null) {
+            followRepository.delete(follow);
+        }
     }
 
     public List<BlockUserdto> getBlockedUserList(String username){

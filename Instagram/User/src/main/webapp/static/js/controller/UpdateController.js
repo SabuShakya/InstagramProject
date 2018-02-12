@@ -123,15 +123,5 @@
                     console.log("error"+reason);
                 });
         }
-
-        // function blockLists(){
-        //     HttpService.get("/blockUsersList/"+$localStorage.storedObj.username).then(
-        //         function (value) {
-        //             vm.blockList=value;
-        //         },function (reason) {
-        //
-        //         }
-        //     )
-        // }
     }
 })();

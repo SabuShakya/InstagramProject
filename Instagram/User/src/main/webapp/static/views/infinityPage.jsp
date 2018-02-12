@@ -4,11 +4,11 @@
          infinite-scroll-immediate-check="false" infinite-scroll-container='".constrained"'
          infinite-scroll-parent="true" >`
 
-        <%--<div ng-show="main.newsFeed">--%>
+        <div ng-show="main.showFollowMesssage">
+            <span class="glyphicon glyphicon-plus"><h2>Follow others to see their posts </h2></span>
+        </div>
+
         <div align="center" ng-repeat="post in main.finalPostList">
-         <%--infinite-scroll-parent='".section-content"' >--%>
-        <%--<div lazy-scroll="main.pageChanged()" lazy-scroll-trigger="80" >--%>
-        <div align="center" ng-repeat="post in main.posts">
             <div class='insta fade-scroll'>
                 <div class='top-insta'>
                     <img class="img-responsive img-circle margin" src="/uploads/{{post.profilePic}}" width="10%" height="10%">
@@ -26,7 +26,7 @@
                         </a><span>{{post.caption}}</span>
                     </div>
                 </div>
-                <label>Created On:
+                <label>Posted On:
                     <span class="date-of-post">{{post.created_date}}</span>
                 </label>
                 <div class='footer'>

@@ -11,6 +11,7 @@
 
         HttpService.get("/getFollowersList/"+vm.searchedUsername).then(function (value) {
             vm.searchedFollowers= value;
+            openProfile();
         }, function (reason) {
             console.log("This occurred:" + reason);
         });

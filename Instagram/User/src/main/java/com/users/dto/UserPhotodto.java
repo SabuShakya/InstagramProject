@@ -12,11 +12,10 @@ import java.util.List;
 @Setter
 public class UserPhotodto {
     private long id;
-    private long photo_id;
+    private long pic_id;
     private List<String> imageList;
     private String image_path;
     private String created_date;
-
     private String profile_pic;
     private String caption;
     private String username;

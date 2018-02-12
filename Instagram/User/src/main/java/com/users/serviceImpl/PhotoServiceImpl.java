@@ -123,5 +123,9 @@ public class PhotoServiceImpl implements PhotoService {
         List<UserPhotos> userPhotosList = photoRepository.getUserPhotosByUserUsername(username);
         return userPhotosList.size();
     }
+
+    public void deletePhoto(UserPhotos userPhotos) {
+        photoRepository.delete(photoRepository.getUserPhotosByImage_path(userPhotos.getImage_path()));
+    }
 }
 

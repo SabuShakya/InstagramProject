@@ -8,7 +8,7 @@
         vm.finalPostList=[];
         vm.message = '';
         vm.commentSuccessMsg = false;
-        vm.showFollowMessgae =false;
+        vm.showFollowMesssage =false;
         vm.commentList = [];
         vm.showList = false;
         vm.showing = false;
@@ -44,6 +44,7 @@
                     vm.posts=value;
                     vm.totalItems=value[0].totalItems;
                     vm.fetching=true;
+                    // vm.showFollowMesssage=false;
 
                         angular.forEach(vm.posts, function (posts, key) {
                             if (posts.activationStatus == "activated") {
@@ -51,6 +52,7 @@
                             }else{}
                         })
                 }, function (reason) {
+                    // vm.showFollowMesssage=true;
                     vm.message = "Follow Others to see their posts.";
                 });
         }
