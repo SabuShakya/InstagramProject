@@ -81,7 +81,6 @@ public class UserController {
         org.springframework.data.domain.Pageable pageable = new PageRequest(page,size);
         List<UserPostDto> userPostList=photoService.getPosts(username, pageable);
         if (userPostList !=null){
-//                && !userPostList.isEmpty()){
             return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
         }
         return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);

@@ -53,9 +53,4 @@
     .active{
         background:red;
     }
-<<<<<<< HEAD
 </style>
-
-=======
-</style>
->>>>>>> 3ba31f2fb7e59fd6b563417540095ea886227b48

@@ -57,7 +57,7 @@
 <script src="static/js/controller/PostCommentModalController.js"></script>
 <script src="static/js/directives/EnterDirective.js"></script>
 <script src="static/js/controller/mainController.js"></script>
-<script src="static/js/controller/angucomplete.js"></script>
+<script src="static/js/directives/angucomplete.js"></script>
 
 
 <script src="static/js/service/HttpService.js"> </script>
