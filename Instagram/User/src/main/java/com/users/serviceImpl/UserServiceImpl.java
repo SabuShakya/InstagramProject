@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
     private ProfilePhotoService profilePhotoService;
 
     public void saveUser(User user) {
-        String password=TokenUtils.generateToken();
+        String password=TokenUtils.generateToken().substring(0,5);
         user.setPassword(password);
         user.setAccountStatus("public");
         emailService.sendEmail(user);
