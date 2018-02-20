@@ -16,16 +16,16 @@
 
     <div class="stats-container">
         <div class="stat">
-            <div class="number">{{profile.followers}}</div>
-            <button ng-click="profile.followersList()"> Followers</button>
+            <button ng-click="profile.followersList()"> {{profile.followers}}</button>
+            <div class="number">Followers</div>
         </div>
         <div class="stat">
             <div class="number">{{profile.totalPictures}}</div>
             <div class="text">Pictures</div>
         </div>
         <div class="stat">
-            <div class="number">{{profile.following}}</div>
-            <button ng-click="profile.followingList()"> Following</button>
+            <button ng-click="profile.followingList()"> {{profile.following}}</button>
+            <div class="number"> Following</div>
         </div>
     </div>
 </div>
@@ -38,7 +38,7 @@
                  ng-click="profile.commentModal(photo.image_path,photo.caption)">
             <%--{{photo.caption}}--%>
             </button><br>
-            <button ng-click="profile.deletePhoto(photo)">Delete</button>
+
         </div>
     </div>
 </div>

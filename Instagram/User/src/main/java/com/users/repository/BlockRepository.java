@@ -17,4 +17,6 @@ public interface BlockRepository extends JpaRepository<BlockUser,Long>{
 
     @Query("select b.user from BlockUser b where b.blockedUser.id=:id")
     public List<User> getByBlockedUser(@Param("id")long id);
+
+    public BlockUser findByUser_IdAndAndBlockedUser_Id(long id,long blockedUserId);
 }

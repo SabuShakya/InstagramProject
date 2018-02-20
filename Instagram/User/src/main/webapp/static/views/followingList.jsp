@@ -6,7 +6,8 @@
     <div ng-repeat="follow in followingCtrl.following">
         <div class="col-md-12">
         <img class="img-responsive img-circle margin" src="/uploads/{{follow.image}}" width="10%" height="10%">
-            {{follow.userName}}
+
+            <h4><a href="/#!/searchedUser" ng-click="followingCtrl.openProfile(follow)">{{follow.userName}}</a></h4>
         </div>
 
     </div>

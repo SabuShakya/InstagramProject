@@ -76,6 +76,7 @@ public class PhotoServiceImpl implements PhotoService {
             UserPhotos userPhotos = new UserPhotos();
             userPhotos.setUser(user);
             userPhotos.setCreated_date(new Date());
+
             userPhotos.setCaption(userPhotodto.getCaption());
             userPhotos.setImage_path(filename);
             photoRepository.save(userPhotos);
@@ -84,6 +85,17 @@ public class PhotoServiceImpl implements PhotoService {
 
     public List<UserPostDto> getPosts(String userName, Pageable pageable) {
         User user = userRepository.getUserByUsername(userName);
+        String sql = "SELECT f.following_userId ,f.userId FROM user_table u " +
+                "LEFT JOIN follow f ON u.id = f.userId " +
+                "LEFT JOIN blockedUsers_table table2 ON u.id = table2.blocked_userId " +
+                "WHERE f.userId = :id and table2.userId !=f.following_userId";
+        Query followUserQuery = entityManager.createNativeQuery(sql).setParameter("id",user.getId());
+        List<Object[]> listOfFollowedUser = followUserQuery.getResultList();
+        List<String> list = new ArrayList<String>();
+        for (Object[] oo: listOfFollowedUser){
+            list.add(oo[0].toString());
+        }
+
         final String SQL_QUERY =
                 "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId,uAt.activationStatus " +
                         "FROM photo_table t " +
@@ -91,7 +103,7 @@ public class PhotoServiceImpl implements PhotoService {
                         "LEFT JOIN follow f ON u.id = f.following_userId " +
                         "LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id " +
                         "LEFT JOIN userActivation_table uAt ON u.id = uAt.user_id " +
-                        "where f.userId=:id ORDER BY t.created_date DESC";
+                        "where f.userId=:id AND f.isFollowing = true ORDER BY t.created_date DESC";
 
         Query query = entityManager.createNativeQuery(SQL_QUERY).setParameter("id",user.getId());
         int totalItems = query.getResultList().size();

@@ -13,6 +13,7 @@ public class Userdto implements Serializable{
     private String username;
     private String password;
     private String oldPassword;
+    private String email;
     private String image;
     private String accountStatus;
     private String activationStatus;;

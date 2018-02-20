@@ -13,10 +13,11 @@ public class FollowUtils {
         List<FollowDto> followDtoList = new ArrayList<FollowDto>();
         for (User user:userList){
             FollowDto followDto =  new FollowDto();
-            followDto.setUserName(user.getUsername());
-//            followDto.setFollowing_userName(user.getFullName());
-            followDto.setImage(user.getProfilePhotos().getProfile_pic());
-            followDtoList.add(followDto);
+            if (user.getUserActivation().getActivationStatus().equals("activated")) {
+                followDto.setUserName(user.getUsername());
+                followDto.setImage(user.getProfilePhotos().getProfile_pic());
+                followDtoList.add(followDto);
+            }
         }
         return followDtoList;
     }
@@ -25,9 +26,11 @@ public class FollowUtils {
         List<FollowDto> followDtoList = new ArrayList<FollowDto>();
         for (User user:userList){
             FollowDto followDto =  new FollowDto();
-            followDto.setFollowing_userName(user.getUsername());
-            followDto.setImage(user.getProfilePhotos().getProfile_pic());
-            followDtoList.add(followDto);
+            if (user.getUserActivation().getActivationStatus().equals("activated")) {
+                followDto.setFollowing_userName(user.getUsername());
+                followDto.setImage(user.getProfilePhotos().getProfile_pic());
+                followDtoList.add(followDto);
+            }
         }
         return followDtoList;
     }

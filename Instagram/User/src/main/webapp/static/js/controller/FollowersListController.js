@@ -6,6 +6,8 @@
         var vm = this;
         vm.followers = [];
         vm.userDisplayName = $localStorage.storedObj.username;
+        vm.user={};
+        vm.openProfile=openProfile;
 
         vm.ok = ok;
 
@@ -16,6 +18,14 @@
         });
 
         function ok() {
+            $uibModalInstance.dismiss('close');
+        }
+
+        function openProfile(follow) {
+            vm.user={
+                username:follow.following_userName
+            };
+            $localStorage.openProfileOf = vm.user;
             $uibModalInstance.dismiss('close');
         }
     }

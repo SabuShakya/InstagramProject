@@ -4,13 +4,16 @@
 <div class="modal-body" id="modal-body">
 
 <form>
-    <input type = "text" name="caption" ng-model ="img.caption" placeholder="Write a caption...">
+    <%--<input type = "text" name="caption" ng-model ="img.caption" placeholder="Write a caption...">--%>
     <input type="file" ng-model="img.listOfImages" name="files" multiple accept="image/*, .zip"
            maxsize="5000" required base-sixty-four-input>
 </form>
     <div ng-repeat="i in img.listOfImages" class = "col-lg-4">
         <img src="data:image/jpeg;base64,{{i.base64}}" width="100px" height="100px">
+            <input type = "text" name="caption" ng-model ="i.caption" placeholder="Write a caption...">
     </div>
+
+
 </div>
 
 <div class="modal-footer">

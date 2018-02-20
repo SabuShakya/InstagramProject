@@ -39,6 +39,8 @@
 
 <script src="static/js/controller/SignupController.js"> </script>
 <script src="static/js/controller/LoginController.js"> </script>
+<script src="static/js/controller/ForgotPasswordController.js"> </script>
+<script src="static/js/controller/UpdatePasswordMessageController.js"> </script>
 <script src="static/js/controller/MainController.js"> </script>
 <script src="static/js/controller/ImgUploadController.js"> </script>
 <script src ="static/js/controller/ProfileController.js"></script>
@@ -58,6 +60,7 @@
 <script src="static/js/directives/EnterDirective.js"></script>
 <script src="static/js/controller/mainController.js"></script>
 <script src="static/js/directives/angucomplete.js"></script>
+<script src="static/js/controller/DeleteMessageController.js"></script>
 
 
 <script src="static/js/service/HttpService.js"> </script>

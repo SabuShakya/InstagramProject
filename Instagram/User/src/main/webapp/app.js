@@ -6,6 +6,10 @@ angular.module('userModule').config(['$routeProvider','$locationProvider',functi
             templateUrl:"/static/views/login.jsp",
             controller: "LoginController as login"
         })
+        .when("/forgotPassword",{
+            templateUrl:"/static/views/forgotPassword.jsp",
+            controller:"ForgotPasswordController as forgotPass"
+        })
         .when("/signup",{
             templateUrl:"/static/views/signup.jsp",
             controller:"SignupController as signup"

@@ -23,11 +23,12 @@
             <span style="color:red" ng-show="update.match"> Password do not match!!</span>
          </p>
 
-        <button type="submit" class="btn btn-success btn-lg pull-centre" ng-click="update.updateUser()" ng-disabled="editform.$invalid" ng-disabled="update.submitClicked">
+        <button type="submit" class="btn btn-success pull-centre" ng-click="update.updateUser()" ng-disabled="editform.$invalid" ng-disabled="update.submitClicked">
             Update
         </button>
         <br> <br>
-        <span ng-show="update.successMsg">Password changed successfully!!</span>
+
+        <%--<span ng-show="update.successMsg">Password changed successfully!!</span>--%>
         <span style="color:red" ng-show="update.error_msg">Error Occurred try again</span>
     </div>
 </form>

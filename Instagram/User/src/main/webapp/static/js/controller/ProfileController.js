@@ -27,7 +27,6 @@
         vm.profilePhoto=profilePhoto;
         vm.followersList=followersList;
         vm.followingList=followingList;
-        vm.deletePhoto=deletePhoto;
 
         allPhotos();
         followCount();
@@ -116,7 +115,6 @@
                 console.log("Error occured" + reason);
             });
         }
-        // $interval(vm.profilePhoto,1000);
 
         function editProfile() {
             vm.modalInstance=$uibModal.open({
@@ -132,17 +130,6 @@
                     profilePhoto();
                 },
                 function(){})
-        }
-
-        function deletePhoto(image_path) {
-            $rootScope.clickedPhoto=image_path;
-            HttpService.post("/deletePhoto",$rootScope.clickedPhoto).then(function (value) {
-                    allPhotos();
-                },
-                function (reason) {
-                    console.log("error"+reason);
-                }
-            )
         }
     }
 })();

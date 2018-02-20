@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
     private ProfilePhotoService profilePhotoService;
 
     public void saveUser(User user) {
-        String password=TokenUtils.generateToken();
+        String password=TokenUtils.generateToken().substring(0,5);
         user.setPassword(password);
         user.setAccountStatus("public");
         emailService.sendEmail(user);
@@ -158,5 +158,23 @@ public class UserServiceImpl implements UserService {
         else{
             return false;
         }
+    }
+
+    public boolean checkUser(Userdto userdto){
+        User isUser = userRepository.getUserByUsername(userdto.getUsername());
+        if(isUser!=null){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public void sendPassword(Userdto userdto){
+        User user = userRepository.getUserByUsername(userdto.getUsername());
+        String password=TokenUtils.generateToken().substring(0,5);
+        user.setPassword(password);
+        emailService.sendEmail(user);
+        user.setPassword(BCrypt.hashpw(password,BCrypt.gensalt()));
+        userRepository.save(user);
     }
 }

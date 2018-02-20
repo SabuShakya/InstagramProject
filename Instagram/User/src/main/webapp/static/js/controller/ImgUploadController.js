@@ -8,6 +8,10 @@
         vm.imageName = [];
         vm.imageList =[];
         vm.listOfImages = [];
+
+        vm.listOfCaption=[];
+        vm.captionList=[];
+
         vm.i = 0;
         vm.caption = '';
         vm.submitClicked=false;
@@ -21,6 +25,11 @@
                     vm.imageList[vm.i]=listOfImages.base64;
                     vm.i++;
                 });
+            //
+            // angular.forEach(vm.listOfCaption, function(listOfCaption, key){
+            //     vm.captionList[vm.i]=listofCaption;
+            //     vm.i++;
+            // })
 
             vm.obj = {
                 'imageList': vm.imageList,
@@ -28,6 +37,7 @@
                 'created_date': new Date(),
                 'username':$localStorage.storedObj.username,
                 'caption': vm.caption
+                // vm.caption
             };
             HttpService.post(vm.url, vm.obj).then(
                 function (value) {
