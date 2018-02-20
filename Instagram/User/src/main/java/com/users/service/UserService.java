@@ -13,7 +13,7 @@ public interface UserService {
     public List<User> findAllUsers();
     public boolean loginUser(Userdto userdto);
 
-    public List<UserSearchDto> findByAnguSearchTerm(String searchTerm);
+    public List<UserSearchDto> findByAnguSearchTerm(String searchTerm,String userName);
     public List<UserSearchDto> findBySearchTerm(String searchTerm,String username);
     public void updateUser(Userdto userdto);
     public boolean checkPassword(Userdto userdto);

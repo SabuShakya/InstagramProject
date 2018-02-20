@@ -1,26 +1,52 @@
 (function () {
     angular.module("userModule").controller("BlockUsersListController", BlockUsersListController);
 
-    BlockUsersListController.$inject = ['HttpService','$localStorage'];
+    BlockUsersListController.$inject = ['HttpService', '$localStorage'];
 
-    function BlockUsersListController(HttpService,$localStorage) {
-        var vm=this;
-        vm.blockList=[];
-        vm.user={};
-        vm.openProfile=openProfile;
+    function BlockUsersListController(HttpService, $localStorage) {
+        var vm = this;
+        vm.blockList = [];
+        vm.user = {};
+        vm.blockObj = {};
+        vm.displayMessage = false;
+        vm.message = '';
+        vm.getBlockedUsersList = getBlockedUsersList;
+        vm.openProfile = openProfile;
+        vm.unblockUser= unblockUser;
 
-        HttpService.get("/blockUsersList/"+$localStorage.storedObj.username).then(
-            function (value) {
-                vm.blockList=value;
-                },function (reason) {
+        getBlockedUsersList();
 
-            });
+        function getBlockedUsersList() {
+            HttpService.get("/blockUsersList/" + $localStorage.storedObj.username).then(
+                function (value) {
+                    vm.blockList = value;
+                    vm.displayMessage = false;
+                }, function (reason) {
+                    vm.displayMessage = true;
+                    vm.blockList = [];
+                    vm.message = "NO RECORDS FOUND!!"
+                });
+        }
 
         function openProfile(list) {
-            vm.user={
-                username:list.blockedUsername
+            vm.user = {
+                username: list.blockedUsername
             };
             $localStorage.openProfileOf = vm.user;
         }
+
+        function unblockUser(list) {
+            vm.blockObj={
+                userName : $localStorage.storedObj.username,
+                blockedUsername : list.blockedUsername
+            };
+            vm.clicked = true;
+            HttpService.post("/unblockUser",vm.blockObj).then(function(value){
+               getBlockedUsersList();
+            },function (reason) {
+               vm.displayMessage = true;
+               alert("Something went wrong");
+            });
+        }
     }
-})()
+})();
