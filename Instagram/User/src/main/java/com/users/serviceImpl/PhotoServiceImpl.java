@@ -1,4 +1,5 @@
 package com.users.serviceImpl;
+import com.users.dto.ImageListdto;
 import com.users.dto.LikeActiondto;
 import com.users.dto.UserPhotodto;
 import com.users.dto.UserPostDto;
@@ -40,6 +41,9 @@ public class PhotoServiceImpl implements PhotoService {
     private UserService userService;
 
     @Autowired
+    private PhotoService photoService;
+
+    @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -60,8 +64,9 @@ public class PhotoServiceImpl implements PhotoService {
             dir.mkdir();
         }
         User user = userService.getUser(userPhotodto.getUsername());
-        for (String s : userPhotodto.getImageList()) {
-            byte[] imageDecoded = Base64.getDecoder().decode(s);
+        List<ImageListdto> listOfImages = userPhotodto.getImageList();
+        for (ImageListdto s : listOfImages) {
+            byte[] imageDecoded = Base64.getDecoder().decode(s.getImageName());
             String filename = imageDecoded.toString();
             String pathToImage = dir + "/" + filename;
             try {
@@ -77,7 +82,7 @@ public class PhotoServiceImpl implements PhotoService {
             userPhotos.setUser(user);
             userPhotos.setCreated_date(new Date());
 
-            userPhotos.setCaption(userPhotodto.getCaption());
+            userPhotos.setCaption(s.getCaption());
             userPhotos.setImage_path(filename);
             photoRepository.save(userPhotos);
         }
@@ -139,6 +144,15 @@ public class PhotoServiceImpl implements PhotoService {
 
     public void deletePhoto(UserPhotos userPhotos) {
         photoRepository.delete(photoRepository.getUserPhotosByImage_path(userPhotos.getImage_path()));
+    }
+
+    public void updateCaption(UserPhotodto userPhotodto){
+        User user = userService.getUser(userPhotodto.getUsername());
+        UserPhotos userPhotos1 = photoRepository.getUserPhotosByImage_path(userPhotodto.getImage_path());
+        userPhotos1.setImage_path(userPhotodto.getImage_path());
+        userPhotos1.setUser(user);
+        userPhotos1.setCaption(userPhotodto.getCaption());
+        photoRepository.save(userPhotos1);
     }
 }
 

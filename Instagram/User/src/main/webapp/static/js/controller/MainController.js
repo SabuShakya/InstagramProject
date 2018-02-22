@@ -9,6 +9,7 @@
         vm.message = '';
         vm.commentSuccessMsg = false;
         vm.showFollowMesssage =false;
+        vm.showLoveIcon=false;
         vm.commentList = [];
         vm.showList = false;
         vm.showing = false;
@@ -117,11 +118,13 @@
         }
 
         function like(post) {
+            vm.showLoveIcon=true;
             post.username = $localStorage.storedObj.username;
             HttpService.post("/likeAction",post).then(function (value) {
                 vm.countOfLikes = value.likeCount;
                 post.countOfLikes = value.likeCount;
                 post.showRedButton = value.showRedButton;
+                vm.showLoveIcon=true;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });

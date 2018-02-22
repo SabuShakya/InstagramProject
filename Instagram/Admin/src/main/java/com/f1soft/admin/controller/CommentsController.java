@@ -15,7 +15,6 @@ public class CommentsController {
     @Autowired
     private CommentsService commentsService;
 
-
     @GetMapping(value = "/showComments/{image_path}")
     public ResponseEntity<List<Commentsdto>> commentList(@PathVariable("image_path")String image_path){
         List<Commentsdto> commentsdtoList=commentsService.getAllComments(image_path);

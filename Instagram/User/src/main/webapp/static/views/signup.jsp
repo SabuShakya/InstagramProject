@@ -30,6 +30,12 @@
     <button type="submit" class="btn btn-success btn-lg pull-centre" ng-disabled="signup.submitClicked" ng-disabled="signupform.$invalid" ng-click="signup.createUser()" >
         Submit form
     </button>
+
+    <div ng-show="signup.showLoadingIcon">
+        <div class="spinner" ng-show="signup.loading">
+            <img src="http://i49.tinypic.com/j5z8mb.gif" alt="Yükleniyor..."/>
+        </div>
+    </div>
     </div>
 </form>
 <span style="color:red" ng-show="signup.error_msg">Error Occurred try again</span>

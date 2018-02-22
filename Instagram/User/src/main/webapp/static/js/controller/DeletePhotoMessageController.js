@@ -1,16 +1,15 @@
 (function() {
-    angular.module('userModule').controller('DeleteMessageController', DeleteMessageController);
+    angular.module('userModule').controller('DeletePhotoMessageController', DeletePhotoMessageController);
 
-    DeleteMessageController.$inject = ['HttpService', '$uibModalInstance', '$rootScope', '$location','$localStorage'];
+    DeletePhotoMessageController.$inject = ['HttpService', '$uibModalInstance', '$rootScope', '$location','$localStorage'];
 
-    function DeleteMessageController(HttpService, $uibModalInstance, $rootScope, $location,$localStorage) {
+    function DeletePhotoMessageController(HttpService, $uibModalInstance, $rootScope, $location,$localStorage) {
         var vm = this;
         vm.photoList=[];
         vm.showList = true;
         $rootScope.clickedPhoto='';
         vm.yes=yes;
         vm.no=no;
-        vm.allPhotos=allPhotos;
 
         function yes(imageName) {
             $rootScope.clickedPhoto={
@@ -19,20 +18,12 @@
             HttpService.post("/deletePhoto",$rootScope.clickedPhoto).then(function (value) {
                     console.log("success");
                     $uibModalInstance.close('save');
+                    // allPhotos();
                 },
                 function (reason) {
                     console.log("error"+reason);
                 }
             )
-        }
-
-        function allPhotos(){
-            HttpService.get("/allPhotos/" + $localStorage.storedObj.username).then(function (value) {
-                vm.photoList = value;
-                vm.showList = false;
-            }, function (reason) {
-                console.log("Error occured" + reason);
-            });
         }
 
         function no(){

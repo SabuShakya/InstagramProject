@@ -28,7 +28,7 @@ public class UserPhotos {
     @JoinColumn(name="user_id", nullable =false)
     private User user;
 
-    @Column(name ="caption")
+    @Column(name ="caption", nullable=false)
     private String caption;
 
     @OneToMany(mappedBy = "userPhotos")

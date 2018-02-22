@@ -8,12 +8,14 @@
         vm.imageName = [];
         $rootScope.profile = '';
         vm.submitClicked=false;
+        vm.showUploadImage=false;
 
         vm.uploadPhoto = uploadPhoto;
         vm.close = close;
 
         function uploadPhoto() {
             vm.submitClicked=true;
+
             vm.obj = {
                 'profile_pic': vm.imageName.base64,
                 'username': $localStorage.storedObj.username
@@ -23,6 +25,7 @@
                 function (value) {
                     vm.submitClicked=true;
                     $rootScope.saved = true;
+                    vm.showUploadImage=true;
                     $uibModalInstance.close('save');
                 },
                 function (reason) {

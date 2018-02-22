@@ -103,6 +103,13 @@
                 controllerAs: 'comment',
                 size: 'lg'
             });
+            vm.modalInstance.result.then(
+                function(){
+                },
+                function(){
+                    allPhotos();
+                    followCount();
+                })
         }
 
         function profilePhoto() {
