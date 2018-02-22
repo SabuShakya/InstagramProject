@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserTokenDto> getUser(@RequestBody Userdto userdto) {
+    public ResponseEntity<UserTokenDto> getUser(@RequestBody Userdto userdto){
         boolean isUser = userService.loginUser(userdto);
         UserTokenDto userTokenDto = new UserTokenDto();
         if (isUser) {
@@ -56,6 +56,16 @@ public class UserController {
             return new ResponseEntity<UserTokenDto>(userTokenDto, HttpStatus.OK);
         }
         return new ResponseEntity<UserTokenDto>(userTokenDto, HttpStatus.NOT_FOUND);
+    }
+
+    @PostMapping("/forgotPassword")
+    public ResponseEntity<Boolean> sendPassword(@RequestBody Userdto userdto){
+        boolean isUser = userService.checkUser(userdto);
+        if(isUser){
+            userService.sendPassword(userdto);
+            return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+        }
+        return new ResponseEntity<Boolean>(false, HttpStatus.NOT_FOUND);
     }
 
     @PostMapping("/update")

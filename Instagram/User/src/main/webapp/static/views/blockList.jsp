@@ -15,4 +15,3 @@
         <button ng-click="block.unblockUser(list)">Un-block</button>
     </div>
 </div>
-</div>

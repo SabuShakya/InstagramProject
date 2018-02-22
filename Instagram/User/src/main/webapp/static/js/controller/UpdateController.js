@@ -1,9 +1,9 @@
 (function() {
     angular.module("userModule").controller("UpdateController", UpdateController);
 
-    UpdateController.$inject = ['HttpService', '$rootScope', '$location','$localStorage'];
+    UpdateController.$inject = ['HttpService', '$rootScope', '$location','$localStorage','$uibModal'];
 
-    function UpdateController(HttpService, $rootScope, $location,$localStorage) {
+    function UpdateController(HttpService, $rootScope, $location,$localStorage,$uibModal) {
         var vm = this;
         vm.username='';
         vm.password='';
@@ -23,6 +23,7 @@
         vm.url = "/update";
         vm.userDisplayName = $localStorage.storedObj.username;
 
+        vm.openModal=openModal;
         vm.updateUser = updateUser;
         vm.init=init;
         vm.changeStatus=changeStatus;
@@ -45,6 +46,7 @@
                     function (value) {
                         vm.successMsg=true;
                         console.log("success");
+                        openModal();
                     }, function (reason) {
                         vm.message = "Old password didnot matched!!";
                         vm.error_msg = true;
@@ -53,7 +55,17 @@
             }else{
                 vm.match=true;
             }
+        }
 
+        function openModal() {
+            vm.modalInstance = $uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/passwordUpdateMessage.jsp',
+                controller: 'UpdatePasswordMessageController',
+                controllerAs: 'updatePassword',
+                size: 'lg'
+            });
         }
 
         function init(){

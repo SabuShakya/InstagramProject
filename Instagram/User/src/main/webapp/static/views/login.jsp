@@ -22,7 +22,8 @@
                 <span style="color:red">{{login.errormsg}}</span>
         </div>
 
-        <a href="/#!/signup">Signup </a>
+        <a href="/#!/signup">Signup </a> <br>
+        <a href="/#!/forgotPassword">Forgot password</a>
     </form>
 </div>
 </body>

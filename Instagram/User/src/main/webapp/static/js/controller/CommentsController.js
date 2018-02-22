@@ -1,11 +1,12 @@
 (function(){
     angular.module('userModule').controller("CommentsController", CommentsController);
 
-    CommentsController.$inject =['HttpService','$uibModalInstance','$rootScope','$localStorage','$location','$interval'];
+    CommentsController.$inject =['HttpService','$uibModalInstance','$rootScope','$localStorage','$location','$interval','$uibModal'];
 
-    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location, $interval) {
+    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location, $interval,$uibModal) {
         var vm =this;
         vm.comments = '';
+        vm.photoList=[];
         vm.commentList=[];
         vm.likeList = [];
         vm.showList=false;
@@ -15,6 +16,7 @@
         $rootScope.saved= false;
         vm.submitClicked=false;
         vm.isActive=false;
+        $rootScope.clickedPhoto='';
 
         vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
@@ -27,6 +29,8 @@
         vm.showLikeList = showLikeList;
         vm.showComments=showComments;
         vm.commentsList=commentsList;
+        vm.openDeleteModalMessage=openDeleteModalMessage;
+        vm.allPhotos=allPhotos;
         vm.imageName = $rootScope.photo;
 
         HttpService.get("/likesCount/"+vm.imageName+"/"+$localStorage.storedObj.username).then(function (value) {
@@ -140,6 +144,32 @@
 
         function cancel(){
             $uibModalInstance.dismiss('close');
+        }
+
+        function allPhotos(){
+            HttpService.get("/allPhotos/" + $localStorage.storedObj.username).then(function (value) {
+                vm.photoList = value;
+                vm.showList = false;
+            }, function (reason) {
+                console.log("Error occured" + reason);
+            });
+        }
+
+        function openDeleteModalMessage(){
+            vm.modalInstance=$uibModal.open({
+                ariaLabelledBy: 'modal-title',
+                ariaDescribedBy: 'modal-body',
+                templateUrl: '/static/views/deleteModalMessage.jsp',
+                controller :'DeleteMessageController',
+                controllerAs: 'deleteMessage',
+                size: 'lg'
+            });
+
+            vm.modalInstance.result.then(
+                function(){
+                    allPhotos();
+                },
+                function(){})
         }
     }
 

@@ -172,4 +172,22 @@ public class UserServiceImpl implements UserService {
             return false;
         }
     }
+
+    public boolean checkUser(Userdto userdto){
+        User isUser = userRepository.getUserByUsername(userdto.getUsername());
+        if(isUser!=null){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public void sendPassword(Userdto userdto){
+        User user = userRepository.getUserByUsername(userdto.getUsername());
+        String password=TokenUtils.generateToken().substring(0,5);
+        user.setPassword(password);
+        emailService.sendEmail(user);
+        user.setPassword(BCrypt.hashpw(password,BCrypt.gensalt()));
+        userRepository.save(user);
+    }
 }

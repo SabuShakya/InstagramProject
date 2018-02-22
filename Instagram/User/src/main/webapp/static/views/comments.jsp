@@ -1,4 +1,5 @@
 <div class="modal-header">
+    <button ng-click="comment.openDeleteModalMessage()">Delete</button>
     <%--<h1 class="modal-title" id="modal-title">{{comment.userDisplayName}}</h1>--%>
 </div>
 
@@ -6,6 +7,7 @@
     <section>
         <div align="center">
             <img src="uploads/{{photo}}" width="100%">
+
         </div>
 
         <div class='caption'>

@@ -76,6 +76,7 @@ public class PhotoServiceImpl implements PhotoService {
             UserPhotos userPhotos = new UserPhotos();
             userPhotos.setUser(user);
             userPhotos.setCreated_date(new Date());
+
             userPhotos.setCaption(userPhotodto.getCaption());
             userPhotos.setImage_path(filename);
             photoRepository.save(userPhotos);

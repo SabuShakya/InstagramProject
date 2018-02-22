@@ -7,6 +7,7 @@ import com.f1soft.admin.model.User;
 import com.f1soft.admin.model.UserPhotos;
 import com.f1soft.admin.repository.*;
 import com.f1soft.admin.service.UserPhotosService;
+import com.f1soft.admin.utils.DateUtils;
 import com.f1soft.admin.utils.PhotoUtils;
 import com.f1soft.admin.utils.UserPostUtils;
 import jdk.nashorn.internal.objects.annotations.Constructor;
@@ -102,9 +103,10 @@ public class UserPhotosServiceImpl implements UserPhotosService {
                 "FROM user_table u" +
                 " LEFT JOIN photo_table pt ON u.id = pt.user_id" +
                 " LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id" +
-                " WHERE pt.created_date =:date";
-        LocalDate today = LocalDate.now();
-        Query query = entityManager.createNativeQuery(sql).setParameter("date", today.toString());
+                " WHERE pt.created_date >=:date";
+//        LocalDate today = LocalDate.now();
+        String today= DateUtils.getStringDateWithTimeSetToZero(new Date());
+        Query query = entityManager.createNativeQuery(sql).setParameter("date", today);
         List<Object[]> list = query.getResultList();
         for (Object[] o : list) {
             System.out.println(o[0].toString());
