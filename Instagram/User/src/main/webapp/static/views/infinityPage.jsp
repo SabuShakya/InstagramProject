@@ -12,11 +12,13 @@
 
                 </div>
                 <div class='post'>
-                    <div class="overlay">
-                        <span></span>
-                    </div>
+                    <%--<div ng-show="main.showLoveIcon">--%>
+                    <%--<div class="overlay">--%>
+                        <%--<span></span>--%>
+                    <%--</div>--%>
+
                     <div class="thumbnail principal-post">
-                        <img src="/uploads/{{post.image_path}}">
+                        <img src="/uploads/{{post.image_path}}" ng-dblclick="main.like(post)">
                     </div>
                     <div class='caption'>
                         </a><span>{{post.caption}}</span>

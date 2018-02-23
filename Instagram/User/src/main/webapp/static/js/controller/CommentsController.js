@@ -15,10 +15,13 @@
         vm.showCommentList= true;
         $rootScope.saved= false;
         vm.submitClicked=false;
+        vm.showEditCaptionForm=false;
+        // vm.showLoveIcon=false;
         vm.isActive=false;
         $rootScope.clickedPhoto='';
 
         vm.userDisplayName= $localStorage.storedObj.username;
+        vm.userProfilePhoto= $localStorage.profilePicture;
         vm.url ="/addComment";
         vm.add = add;
         vm.like = like;
@@ -30,7 +33,8 @@
         vm.showComments=showComments;
         vm.commentsList=commentsList;
         vm.openDeleteModalMessage=openDeleteModalMessage;
-        vm.allPhotos=allPhotos;
+        vm.openEditCaption=openEditCaption;
+        vm.editCaption=editCaption;
         vm.imageName = $rootScope.photo;
 
         HttpService.get("/likesCount/"+vm.imageName+"/"+$localStorage.storedObj.username).then(function (value) {
@@ -61,14 +65,15 @@
         }
 
         function like() {
+           // vm.showLoveIcon =true;
             vm.obj = {
                 'username':$localStorage.storedObj.username,
                 'image_path':$rootScope.photo
             };
             HttpService.post("/likeAction",vm.obj).then(function (value) {
-                // vm.isActive=!(vm.isActive);
                 vm.likeCount = value.likeCount;
                 vm.isActive= value.showRedButton;
+               // vm.showLoveIcon=true;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });
@@ -143,33 +148,45 @@
         }
 
         function cancel(){
-            $uibModalInstance.dismiss('close');
-        }
-
-        function allPhotos(){
-            HttpService.get("/allPhotos/" + $localStorage.storedObj.username).then(function (value) {
-                vm.photoList = value;
-                vm.showList = false;
-            }, function (reason) {
-                console.log("Error occured" + reason);
-            });
+            $uibModalInstance.close('save');
         }
 
         function openDeleteModalMessage(){
             vm.modalInstance=$uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/static/views/deleteModalMessage.jsp',
-                controller :'DeleteMessageController',
-                controllerAs: 'deleteMessage',
+                templateUrl: '/static/views/deletePhotoMessage.jsp',
+                controller :'DeletePhotoMessageController',
+                controllerAs: 'deletePhotoMessage',
                 size: 'lg'
             });
 
             vm.modalInstance.result.then(
                 function(){
-                    allPhotos();
+                    cancel();
                 },
                 function(){})
+        }
+
+        function openEditCaption(caption){
+            $rootScope.clickedCaption={
+                username:$localStorage.storedObj.username,
+                caption:caption,
+                image_path:vm.imageName
+            };
+            vm.showEditCaptionForm = true;
+        }
+
+        function editCaption() {
+            HttpService.post("/editCaption",  $rootScope.clickedCaption).then(function (value) {
+                $rootScope.saved = true;
+                vm.showEditCaptionForm = false;
+                vm.submitClicked=true;
+                cancel();
+            },function (reason) {
+                $rootScope.saved = true;
+                vm.submitClicked=false;
+            });
         }
     }
 

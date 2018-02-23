@@ -82,4 +82,10 @@ public class PhotoController {
         photoService.deletePhoto(userPhotos);
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
+
+    @PostMapping("/editCaption")
+    public ResponseEntity<Boolean> editCaption(@RequestBody UserPhotodto userPhotodto){
+        photoService.updateCaption(userPhotodto);
+        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+    }
 }

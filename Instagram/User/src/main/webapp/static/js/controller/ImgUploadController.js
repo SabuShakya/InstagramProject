@@ -7,37 +7,31 @@
         var vm= this;
         vm.imageName = [];
         vm.imageList =[];
-        vm.listOfImages = [];
-
-        vm.listOfCaption=[];
-        vm.captionList=[];
-
+        vm.listOfImages = {imageName:'',
+                            caption:''};
         vm.i = 0;
-        vm.caption = '';
         vm.submitClicked=false;
+        vm.showCaptionOptions=false;
         vm.url="/upload";
         vm.uploadPhoto = uploadPhoto;
         vm.close = close;
 
         function uploadPhoto() {
-            vm.submitClicked=true;
+            vm.submitClicked=false;
+            vm.showCaptionOptions=true;
             angular.forEach(vm.listOfImages, function(listOfImages, key) {
-                    vm.imageList[vm.i]=listOfImages.base64;
+                    vm.imageList[vm.i]={
+                        imageName:listOfImages.base64,
+                        caption:listOfImages.listOfImages.caption};
                     vm.i++;
                 });
-            //
-            // angular.forEach(vm.listOfCaption, function(listOfCaption, key){
-            //     vm.captionList[vm.i]=listofCaption;
-            //     vm.i++;
-            // })
 
             vm.obj = {
                 'imageList': vm.imageList,
                 'image_path': '',
                 'created_date': new Date(),
                 'username':$localStorage.storedObj.username,
-                'caption': vm.caption
-                // vm.caption
+                'caption': vm.imageList.caption
             };
             HttpService.post(vm.url, vm.obj).then(
                 function (value) {

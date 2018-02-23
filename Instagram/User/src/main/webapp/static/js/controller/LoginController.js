@@ -9,6 +9,7 @@
         vm.errormsg = '';
         vm.valid= true;
         vm.booleanValue = true;
+        vm.loading = false;
 
         vm.url = "/login";
         vm.loginUser = loginUser;
@@ -22,6 +23,7 @@
         }
 
         function loginUser() {
+            vm.loading = true;
             vm.user = {
                 'username': vm.username,
                 'password': vm.password
@@ -34,11 +36,13 @@
                         tokenNo :response.tokenNo,
                         password:response.password
                     };
+                    vm.loading = false;
                     $location.path("/profile");
                 },
                 function(error){
                     vm.valid=false;
                     vm.errormsg = "Incorrect username or password";
+                    vm.loading = false;
                 }
             );
         }

@@ -30,7 +30,13 @@
     <button type="submit" class="btn btn-success btn-lg pull-centre" ng-disabled="signup.submitClicked" ng-disabled="signupform.$invalid" ng-click="signup.createUser()" >
         Submit form
     </button>
+
+    <div ng-show="signup.loading">
+        <i class="fa fa-spinner fa-spin" style="font-size:50px"></i>
+    <%--<div class="loader">--%>
+    <%--</div>--%>
     </div>
+
 </form>
 <span style="color:red" ng-show="signup.error_msg">Error Occurred try again</span>
 
@@ -49,5 +55,25 @@
         box-sizing: border-box;
         width: 100%;
         padding: 12px;
+    }
+    .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 </style>
