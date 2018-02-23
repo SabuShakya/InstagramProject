@@ -10,29 +10,26 @@
             vm.error_msg = false;
             vm.submitClicked=false;
             vm.loading = false;
-            vm.showLoadingIcon=false;
         vm.url="/signup";
         vm.createUser= createUser;
 
         function createUser() {
             vm.submitClicked=true;
             vm.loading = true;
-            vm.showLoadingIcon=true;
             vm.newUser ={
                 'fullName': vm.fullName,
                 'username': vm.username,
                 'email': vm.email
             };
 
-            HttpService.post(vm.url, vm.newUser).then(function(value){
-                vm.submitClicked=true;
+            HttpService.post(vm.url, vm.newUser).then(function(response){
                 vm.loading = false;
-                vm.showLoadingIcon=false;
+                vm.submitClicked=true;
                 alert("Check your email to verify your account...");
                 $location.path("/login");
-                }, function(reason){
-                vm.submitClicked=false;
-                vm.loading = false;
+                }, function(error){
+                    vm.submitClicked=false;
+                    vm.loading = false;
                     vm.error_msg = true;
                 }
             );

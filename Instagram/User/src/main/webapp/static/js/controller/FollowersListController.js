@@ -8,14 +8,21 @@
         vm.userDisplayName = $localStorage.storedObj.username;
         vm.user={};
         vm.openProfile=openProfile;
-
+        vm.getFollowersList = getFollowersList;
+        vm.followUser = followUser;
+        vm.unfollowUser = unfollowUser;
         vm.ok = ok;
 
-        HttpService.get("/getFollowersList/"+vm.userDisplayName).then(function (value) {
-            vm.followers= value;
+        getFollowersList();
+
+        function getFollowersList() {
+            HttpService.get("/getFollowersList/"+vm.userDisplayName).then(function (value) {
+                vm.followers= value;
             }, function (reason) {
-            console.log("This occurred:" + reason);
-        });
+                console.log("This occurred:" + reason);
+            });
+        }
+
 
         function ok() {
             $uibModalInstance.dismiss('close');
@@ -27,6 +34,37 @@
             };
             $localStorage.openProfileOf = vm.user;
             $uibModalInstance.dismiss('close');
+        }
+
+        function followUser(user) {
+            vm.clicked = true;
+            vm.followObj={
+                userName : $localStorage.storedObj.username,
+                following_userName : user.username
+            };
+            HttpService.post("/followUser",vm.followObj).then(function (value) {
+                getFollowersList();
+                vm.clicked = false;
+            },function (reason) {
+                vm.clicked = false;
+                console.log("error following"+reason);
+            });
+        }
+
+        function unfollowUser(user) {
+            vm.followObj={
+                userName : $localStorage.storedObj.username,
+                following_userName : user.username
+            };
+            vm.clicked = true;
+            HttpService.post("/unfollowUser",vm.followObj).then(function (value) {
+               getFollowersList();
+                vm.clicked = false;
+            },function (reason) {
+                vm.showFollowBtn = false;
+                vm.clicked = false;
+                console.log("error following"+reason);
+            });
         }
     }
 })();

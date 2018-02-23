@@ -77,7 +77,7 @@
 
             <div ng-hide="comment.showCommentList">
                 <input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>
-                <button ng-click="comment.edit()" ng-disabled="comment.submitClicked">Editin</button>
+                <button ng-click="comment.edit()" ng-disabled="comment.submitClicked">Edit</button>
             </div>
         </div>
     </section>

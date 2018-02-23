@@ -148,7 +148,7 @@
         }
 
         function cancel(){
-            $uibModalInstance.dismiss('close');
+            $uibModalInstance.close('save');
         }
 
         function openDeleteModalMessage(){

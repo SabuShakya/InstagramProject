@@ -24,6 +24,10 @@
 
         <a href="/#!/signup">Signup </a> <br>
         <a href="/#!/forgotPassword">Forgot password</a>
+
+        <div ng-show="login.loading">
+            <i class="fa fa-spinner fa-spin" style="font-size:50px"></i>
+        </div>
     </form>
 </div>
 </body>

@@ -1,9 +1,6 @@
 package com.users.serviceImpl;
 
-import com.users.dto.FollowDto;
-import com.users.dto.SearchListDto;
-import com.users.dto.UserSearchDto;
-import com.users.dto.Userdto;
+import com.users.dto.*;
 import com.users.model.Follow;
 import com.users.model.ProfilePhoto;
 import com.users.model.User;
@@ -43,6 +40,10 @@ public class UserServiceImpl implements UserService {
     private UserTokenService userTokenService;
     @Autowired
     private FollowService followService;
+
+    @Autowired
+    private BlockService blockService;
+
     @Autowired
     public EntityManager em;
 
@@ -106,16 +107,28 @@ public class UserServiceImpl implements UserService {
             followDto.setUserName(username);
             followDto.setFollowing_userName(user.getUsername());
             user.setShowResultButtons(followService.checkFollow(followDto));
+            //checking blockstatus
+            BlockUserdto blockUserdto = new BlockUserdto();
+            blockUserdto.setUserName(username);
+            blockUserdto.setBlockedUsername(user.getUsername());
+            user.setBlockStatus(blockService.checkBlocked(blockUserdto));
             returnlist.add(user);
         }
         return returnlist;
     }
 
-    public List<UserSearchDto> findByAnguSearchTerm(String searchTerm) {
-        String sql = "Select u from User u where u.username like :username";
+    public List<UserSearchDto> findByAnguSearchTerm(String searchTerm,String userName) {
+        String sql = "Select u from User u where u.username like :username and u.username != :userName";
+//        and u.userActivation = 'activated'
         List<User> userList= em.createQuery(sql,User.class).setParameter("username",
-                "%"+searchTerm+"%").getResultList();
-        List<UserSearchDto> list = UserSearchUtils.getSearchedUserInfo(userList);
+                "%"+searchTerm+"%").setParameter("userName",userName).getResultList();
+        List<User> activeUserList = new ArrayList<User>();
+        for (User user:userList){
+            if (userList!= null && (user.getUserActivation().getActivationStatus().equals("activated"))){
+                activeUserList.add(user);
+            }
+        }
+        List<UserSearchDto> list = UserSearchUtils.getSearchedUserInfo(activeUserList);
         return list;
     }
 

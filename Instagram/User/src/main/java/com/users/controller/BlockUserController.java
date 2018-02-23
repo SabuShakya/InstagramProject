@@ -49,7 +49,7 @@ public class BlockUserController {
    @GetMapping("/blockUsersList/{username}")
     public ResponseEntity<List<BlockUserdto>> getBlockList(@PathVariable("username")String username){
         List<BlockUserdto> blockedUserList= blockService.getBlockedUserList(username);
-        if(blockedUserList!=null){
+        if(blockedUserList != null && !(blockedUserList.isEmpty())){
             return new ResponseEntity<List<BlockUserdto>>(blockedUserList,HttpStatus.OK);
         }
         return new ResponseEntity<List<BlockUserdto>>(blockedUserList,HttpStatus.NOT_FOUND);

@@ -2,6 +2,7 @@ package com.users.controller;
 
 import com.users.dto.FollowCountDto;
 import com.users.dto.FollowDto;
+import com.users.dto.UserSearchDto;
 import com.users.service.FollowService;
 import com.users.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,14 +49,14 @@ public class FollowController {
     }
 
     @GetMapping("/getFollowersList/{username}")
-    public ResponseEntity<List<FollowDto>> getFollowerList(@PathVariable("username")String username){
-        List<FollowDto> followDtoList = followService.getFollowersList(username);
-        return new ResponseEntity<List<FollowDto>>(followDtoList,HttpStatus.OK);
+    public ResponseEntity<List<UserSearchDto>> getFollowerList(@PathVariable("username")String username){
+        List<UserSearchDto> followDtoList = followService.getFollowersList(username);
+        return new ResponseEntity<List<UserSearchDto>>(followDtoList,HttpStatus.OK);
     }
 
     @GetMapping("/getFollowingList/{username}")
-    public ResponseEntity<List<FollowDto>> getFollowingList(@PathVariable("username")String username){
-        List<FollowDto> followDtoList = followService.getFollowingList(username);
-        return new ResponseEntity<List<FollowDto>>(followDtoList,HttpStatus.OK);
+    public ResponseEntity<List<UserSearchDto>> getFollowingList(@PathVariable("username")String username){
+        List<UserSearchDto> followDtoList = followService.getFollowingList(username);
+        return new ResponseEntity<List<UserSearchDto>>(followDtoList,HttpStatus.OK);
     }
 }

@@ -16,16 +16,22 @@
 
     <div class="stats-container">
         <div class="stat">
-            <button ng-click="profile.followersList()"> {{profile.followers}}</button>
-            <div class="number">Followers</div>
+            <%--<button ng-click="profile.followersList()"> {{profile.followers}}</button>--%>
+            <a href="#" ng-click="profile.followersList()"> {{profile.followers}}</a>
+            <div class="number">
+                <a href="#" ng-click="profile.followersList()">Followers</a>
+            </div>
         </div>
         <div class="stat">
             <div class="number">{{profile.totalPictures}}</div>
             <div class="text">Pictures</div>
         </div>
         <div class="stat">
-            <button ng-click="profile.followingList()"> {{profile.following}}</button>
-            <div class="number"> Following</div>
+            <%--<button ng-click="profile.followingList()"> {{profile.following}}</button>--%>
+            <a href="#" ng-click="profile.followingList()"> {{profile.following}}</a>
+            <div class="number">
+                <a href="#" ng-click="profile.followingList()">Following</a>
+            </div>
         </div>
     </div>
 </div>

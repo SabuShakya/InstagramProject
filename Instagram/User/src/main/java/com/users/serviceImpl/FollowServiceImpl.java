@@ -9,6 +9,7 @@ import com.users.service.*;
 import com.users.utils.CommentUtils;
 import com.users.utils.FollowUtils;
 //import com.users.utils.UserPhotosPostUtil;
+import com.users.utils.UserSearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,16 +30,10 @@ public class FollowServiceImpl implements FollowService {
     private FollowRepository followRepository;
 
     @Autowired
-    private PhotoService photoService;
+    private FollowService followService;
 
     @Autowired
-    private LikesService likesService;
-
-    @Autowired
-    private CommentsService commentsService;
-
-    @Autowired
-    private CommentsRepository commentsRepository;
+    private BlockService blockService;
 
     public List<User> getFollowedUsers(String username) {
         List<User> listOfFollowedUsers = followRepository.getFollowedUser(username);
@@ -106,15 +101,50 @@ public class FollowServiceImpl implements FollowService {
         return followCountDto;
     }
 
-    public List<FollowDto> getFollowersList(String username) {
+    //sabu
+    public List<UserSearchDto> getFollowersList(String username) {
         User user = userRepository.getUserByUsername(username);
         List<User> followersList = followRepository.getByFollowedUserId(user.getId());
-        return FollowUtils.convertFollowtoFollowDto(followersList);
+        List<User> tempList = new ArrayList<User>();
+        for (User user1:followersList){
+            if ((tempList!= null) && (user1.getUserActivation().getActivationStatus().equals("activated"))){
+                tempList.add(user1);
+            }
+        }
+        return convertToUserSearchDtoList(tempList, username, user);
     }
 
-    public List<FollowDto> getFollowingList(String username) {
+    //sabu
+    public List<UserSearchDto> getFollowingList(String username) {
         User user = userRepository.getUserByUsername(username);
         List<User> followingList = followRepository.getByFollowingUserId(user.getId());
-        return FollowUtils.convertFollowtoFollowingDto(followingList);
+        List<User> tempList = new ArrayList<User>();
+        for (User user1:followingList){
+            if (tempList!= null && (user1.getUserActivation().getActivationStatus().equals("activated"))){
+                tempList.add(user1);
+            }
+        }
+//        return FollowUtils.convertFollowtoFollowingDto(followingList);
+        return convertToUserSearchDtoList(tempList, username, user);
+    }
+
+    //sabu
+    public List<UserSearchDto> convertToUserSearchDtoList(List<User> followersList, String username, User user) {
+        List<UserSearchDto> list = UserSearchUtils.getSearchedUserInfo(followersList);
+        List<UserSearchDto> returnlist = new ArrayList<UserSearchDto>();
+        for (UserSearchDto userSearchDto : list) {
+            FollowDto followDto = new FollowDto();
+            followDto.setUserName(username);
+            followDto.setFollowing_userName(userSearchDto.getUsername());
+            userSearchDto.setShowResultButtons(followService.checkFollow(followDto));
+            //checking blockstatus
+            BlockUserdto blockUserdto = new BlockUserdto();
+            blockUserdto.setUserName(username);
+            blockUserdto.setBlockedUsername(userSearchDto.getUsername());
+            userSearchDto.setBlockStatus(blockService.checkBlocked(blockUserdto));
+            returnlist.add(userSearchDto);
+        }
+        return returnlist;
     }
 }
+

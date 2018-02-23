@@ -51,6 +51,10 @@
                 controllerAs: 'followersCtrl',
                 size: 'lg'
             });
+            vm.modalInstance.result.then(
+                function () {
+                followCount();
+            },function() {  })
         }
 
         function followingList(){
@@ -62,6 +66,10 @@
                 controllerAs: 'followingCtrl',
                 size: 'lg'
             });
+            vm.modalInstance.result.then(
+                function () {
+                    followCount();
+                },function() {  })
         }
 
         function allPhotos(){

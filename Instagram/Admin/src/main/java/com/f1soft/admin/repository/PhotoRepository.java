@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface PhotoRepository extends JpaRepository<UserPhotos, Long> {
 
-    @Query("select u from UserPhotos u where u.created_date =:date")
+    @Query("select u from UserPhotos u where u.created_date >=:date")
     public List<UserPhotos> getUploadsPerDay(@Param("date") Date date);
 
     public List<UserPhotos> getUserPhotosByUserUsername(String username);

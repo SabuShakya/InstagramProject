@@ -8,6 +8,7 @@ import com.f1soft.admin.repository.PhotoRepository;
 import com.f1soft.admin.repository.UserRepository;
 import com.f1soft.admin.repository.UserTokenRepository;
 import com.f1soft.admin.service.UserLogService;
+import com.f1soft.admin.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +30,8 @@ public class UserLogServiceImpl implements UserLogService {
         List<User> userList = userRepository.findAll();
         List<UserToken> activeUsersList = tokenRepository.getActiveUsers();
         List<UserPhotos> userPhotosList = photoRepository.findAll();
-        List<UserPhotos> uploadsPerDay = photoRepository.getUploadsPerDay(new Date());
+        Date today = DateUtils.getTodaysDateWithTimeSetToZero();
+        List<UserPhotos> uploadsPerDay = photoRepository.getUploadsPerDay(today);
 
         UserLogsDto userLogsDto =  new UserLogsDto();
         userLogsDto.setTotalUsers(userList.size());

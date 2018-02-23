@@ -15,7 +15,7 @@ public interface UserService {
     public boolean checkUser(Userdto userdto);
     public void sendPassword(Userdto userdto);
 
-    public List<UserSearchDto> findByAnguSearchTerm(String searchTerm);
+    public List<UserSearchDto> findByAnguSearchTerm(String searchTerm,String userName);
     public List<UserSearchDto> findBySearchTerm(String searchTerm,String username);
     public void updateUser(Userdto userdto);
     public boolean checkPassword(Userdto userdto);

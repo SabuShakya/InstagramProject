@@ -18,7 +18,6 @@
             HttpService.post("/deletePhoto",$rootScope.clickedPhoto).then(function (value) {
                     console.log("success");
                     $uibModalInstance.close('save');
-                    // allPhotos();
                 },
                 function (reason) {
                     console.log("error"+reason);
