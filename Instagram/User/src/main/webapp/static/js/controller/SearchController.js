@@ -66,7 +66,6 @@
 
         function searchUser(){
             HttpService.get("/anguSearch/"+vm.profileOfUser+"/"+vm.selectedSearchObject).then(function (value) {
-                vm.searchResult =value;
 
             },function (reason) {
 
