@@ -7,7 +7,9 @@
         <input type='file' ng-model='profilePhoto.imageName' base-sixty-four-input>
     </form>
 
+    <div ng-show="profilePhoto.showUploadImage">
     <img src="data:image/jpeg;base64,{{profilePhoto.imageName.base64}}" width ="50%" height="50%">
+    </div>
 </div>
 
 <div class="modal-footer">

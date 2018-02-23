@@ -29,8 +29,11 @@
             Reset Password
         </button>
 
+        <div ng-show="forgotPass.loading">
+            <i class="fa fa-spinner fa-spin" style="font-size:50px"></i>
+        </div>
+
         <br> <br>
-        <%--<span ng-show="update.successMsg">Password changed successfully!!</span>--%>
         <span style="color:red" ng-show="forgotPass.error_msg">Enter correct username</span>
     </div>
 </form>

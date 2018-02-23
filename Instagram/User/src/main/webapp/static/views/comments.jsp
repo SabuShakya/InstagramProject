@@ -1,24 +1,39 @@
 <div class="modal-header">
-    <button ng-click="comment.openDeleteModalMessage()">Delete</button>
-    <%--<h1 class="modal-title" id="modal-title">{{comment.userDisplayName}}</h1>--%>
+    <h4 class="modal-title" id="modal-title"></h4>
+        <img class="img-responsive img-circle margin" src="/uploads/{{comment.userProfilePhoto}}" width="10%" height="10%"> {{comment.userDisplayName}}
+
+        <div class="dropdown" style="float:right;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class='dot02'></span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <button class="btn btn-success btn-sm pull-right" ng-click="comment.openEditCaption(caption)">Edit</button><br> <br>
+                <button class="btn btn-danger btn-sm pull-right" ng-click="comment.openDeleteModalMessage()">Delete</button>
+
+            </div>
+        </div>
 </div>
 
 <div class="modal-body" id="modal-body">
+    <div ng-show="comment.showEditCaptionForm">
+        <input type='text' id='caption' ng-model="clickedCaption.caption" placeholder='Edit caption...'>
+        <button ng-click="comment.editCaption()" ng-disabled="comment.submitClicked">Edit caption</button>
+    </div>
+
     <section>
         <div align="center">
-            <img src="uploads/{{photo}}" width="100%">
-
+            <img src="uploads/{{photo}}" ng-dblclick="comment.like()" width="100%">
+                 <%--ng-disabled="comment.showLoveIcon" >--%>
         </div>
 
         <div class='caption'>
-            </a><span>{{caption}}</span>
+            <span>{{caption}}</span>
         </div>
         <br>
 
         <div class='footer'>
             <div class='react'>
                 {{comment.likeCount}}
-                <%--<button ng-click="comment.like()">--%>
 
                 <button ng-class="{'active':comment.isActive}" ng-click="comment.like()">
                     <span class='love'></span>
@@ -38,7 +53,6 @@
                 </div>
                 </div>
             </div>
-
 
             <div ng-show="comment.showList">
                 <div ng-repeat="commen in comment.commentList">
@@ -77,4 +91,8 @@
     .active{
         background:red;
     }
+    .dropdown-menu{
+       min-width: 10px;
+    }
+
 </style>
