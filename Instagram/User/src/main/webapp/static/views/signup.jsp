@@ -32,7 +32,7 @@
     </button>
     </div>
 </form>
-<span style="color:red" ng-show="signup.error_msg">Error Occurred try again</span>
+<span style="git color:red" ng-show="signup.error_msg">Error Occurred try again</span>
 
 <style>
     input[type=text], select, textarea {
