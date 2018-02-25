@@ -16,7 +16,7 @@
         $rootScope.saved= false;
         vm.submitClicked=false;
         vm.showEditCaptionForm=false;
-        // vm.showLoveIcon=false;
+        vm.showLoveIcon=false;
         vm.isActive=false;
         $rootScope.clickedPhoto='';
 
@@ -65,7 +65,7 @@
         }
 
         function like() {
-           // vm.showLoveIcon =true;
+           vm.showLoveIcon =true;
             vm.obj = {
                 'username':$localStorage.storedObj.username,
                 'image_path':$rootScope.photo
@@ -73,7 +73,7 @@
             HttpService.post("/likeAction",vm.obj).then(function (value) {
                 vm.likeCount = value.likeCount;
                 vm.isActive= value.showRedButton;
-               // vm.showLoveIcon=true;
+               vm.showLoveIcon=true;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });

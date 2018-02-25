@@ -20,9 +20,15 @@
         <button ng-click="comment.editCaption()" ng-disabled="comment.submitClicked">Edit caption</button>
     </div>
 
+    <div ng-show="comment.showLoveIcon">
+        <div class="overlay">
+            <span></span>
+        </div>
+    </div>
+
     <section>
         <div align="center">
-            <img src="uploads/{{photo}}" ng-dblclick="comment.like()" width="100%">
+            <img src="uploads/{{photo}}" width="100%" ng-dblclick="comment.like(photo)">
                  <%--ng-disabled="comment.showLoveIcon" >--%>
         </div>
 

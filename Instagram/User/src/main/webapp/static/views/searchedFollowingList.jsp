@@ -5,8 +5,8 @@
 <div class="modal-body" id="modal-body">
     <div ng-repeat="follow in followingCtrl.searchedFollowing">
         <div class="col-md-12">
-            <img class="img-responsive img-circle margin" src="/uploads/{{follow.image}}" width="10%" height="10%">
-            {{follow.userName}}
+            <img class="img-responsive img-circle margin" src="/uploads/{{follow.imagename}}" width="10%" height="10%">
+            {{follow.username}}
         </div>
     </div>
 </div>
