@@ -47,7 +47,7 @@
                 <button role='button' ng-click="comment.showComments()">
                     <span class='comment'></span>
                 </button>
-                <button ng-click="comment.showLikeList()">
+                <button ng-click="comment.showLikeList()" ng-disabled="comment.showLikedUsers">
                     <span class='save'></span></a>
                 </button>
             </div>

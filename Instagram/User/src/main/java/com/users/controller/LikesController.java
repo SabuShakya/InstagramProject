@@ -34,7 +34,10 @@ public class LikesController {
                                                  @PathVariable("userName")String userName){
         User user = userRepository.getUserByUsername(userName);
         LikeActiondto likesCount = likesService.getLikesCountForImage(imageName,user);
-        return new ResponseEntity<LikeActiondto>(likesCount,HttpStatus.OK);
+        if(likesCount.getLikeCount()==0){
+            return new ResponseEntity<LikeActiondto>(likesCount,HttpStatus.OK);
+        }
+        return new ResponseEntity<LikeActiondto>(likesCount,HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/getLikesList/{imageName}")

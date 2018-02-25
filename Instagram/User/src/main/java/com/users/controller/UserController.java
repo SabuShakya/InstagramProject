@@ -91,11 +91,10 @@ public class UserController {
     public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName") String username, @RequestParam("page") int page, @RequestParam("size") int size) {
         org.springframework.data.domain.Pageable pageable = new PageRequest(page, size);
         List<UserPostDto> userPostList = photoService.getPosts(username, pageable);
-        if ((userPostList != null)){
-//                && !(userPostList.isEmpty())){
-            return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
-        }
-        return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
+//        if ((userPostList != null) && !(userPostList.isEmpty())){
+//            return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
+//        }
+        return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
     }
 
     @PostMapping("/logout")

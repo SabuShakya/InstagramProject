@@ -12,12 +12,14 @@
         vm.showList=false;
         vm.showing = false;
         vm.showLikes = false;
+        vm.showLikedUsers=false;
         vm.showCommentList= true;
         $rootScope.saved= false;
         vm.submitClicked=false;
         vm.showEditCaptionForm=false;
         vm.showLoveIcon=false;
         vm.isActive=false;
+        $rootScope.clickedComment ='';
         $rootScope.clickedPhoto='';
 
         vm.userDisplayName= $localStorage.storedObj.username;
@@ -25,6 +27,7 @@
         vm.url ="/addComment";
         vm.add = add;
         vm.like = like;
+        vm.likesCount=likesCount;
         vm.openDeleteModal= openDeleteModal;
         vm.openEditModal=openEditModal;
         vm.edit=edit;
@@ -35,16 +38,24 @@
         vm.openDeleteModalMessage=openDeleteModalMessage;
         vm.openEditCaption=openEditCaption;
         vm.editCaption=editCaption;
+
         vm.imageName = $rootScope.photo;
 
-        HttpService.get("/likesCount/"+vm.imageName+"/"+$localStorage.storedObj.username).then(function (value) {
-            vm.likeCount = value.likeCount;
-            vm.isActive = value.showRedButton;
-        },function (reason) {
-            console.log("This error occurred:"+reason);
-        });
+        likesCount();
 
-        $rootScope.clickedComment ='';
+        function likesCount() {
+            HttpService.get("/likesCount/" + vm.imageName + "/" + $localStorage.storedObj.username).then(function (value) {
+                vm.likeCount = value.likeCount;
+                vm.isActive = value.showRedButton;
+                vm.showLikedUsers=false;
+            }, function (reason) {
+                vm.likeCount = reason.likeCount;
+                vm.isActive = reason.showRedButton;
+                vm.showLikedUsers=true;
+                console.log("This error occurred:" + reason);
+            });
+        }
+
         function add() {
             vm.submitClicked=true;
             vm.obj={
@@ -110,6 +121,7 @@
                 vm.showLikes = false;
             }else{
                 HttpService.get("/getLikesList/"+vm.imageName).then(function (value) {
+                    likesCount();
                     vm.showLikes = true;
                     vm.likeList = value;
                 },function (reason) {
