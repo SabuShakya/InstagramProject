@@ -1,8 +1,6 @@
 package com.users.controller;
 
-import com.users.dto.FollowCountDto;
-import com.users.dto.FollowDto;
-import com.users.dto.UserSearchDto;
+import com.users.dto.*;
 import com.users.service.FollowService;
 import com.users.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,12 +39,32 @@ public class FollowController {
         return new ResponseEntity<Boolean>(true,HttpStatus.OK);
     }
 
-    @GetMapping("/followsCount/{username}")
-    public ResponseEntity<FollowCountDto> getFollowCount(@PathVariable("username")String username){
-        FollowCountDto followCountDto = followService.getFollowCount(username);
-        followCountDto.setTotalPictures(photoService.getPhotoCount(username));
-        return new ResponseEntity<FollowCountDto>(followCountDto,HttpStatus.OK);
+//    @GetMapping("/followsCount/{username}")
+//    public ResponseEntity<FollowCountDto> getFollowCount(@PathVariable("username")String username){
+//        FollowCountDto followCountDto = followService.getFollowCount(username);
+//        followCountDto.setTotalPictures(photoService.getPhotoCount(username));
+//        return new ResponseEntity<FollowCountDto>(followCountDto,HttpStatus.OK);
+//    }
+
+    @GetMapping("/followersCount/{username}")
+    public ResponseEntity<FollowersCountdto> getFollowersCount(@PathVariable("username")String username){
+        FollowersCountdto followersCountDto = followService.getFollowersCount(username);
+        followersCountDto.setTotalPictures(photoService.getPhotoCount(username));
+        if(followersCountDto.getFollowers()==(0)) {
+            return new ResponseEntity<FollowersCountdto>(followersCountDto, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<FollowersCountdto>(followersCountDto, HttpStatus.OK);
     }
+
+    @GetMapping("/followingCount/{username}")
+    public ResponseEntity<FollowingCountdto> getFollowingCount(@PathVariable("username")String username){
+        FollowingCountdto followCountDto = followService.getFollowingCount(username);
+        if(followCountDto.getFollowing()==(0)) {
+            return new ResponseEntity<FollowingCountdto>(followCountDto, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<FollowingCountdto>(followCountDto, HttpStatus.OK);
+    }
+
 
     @GetMapping("/getFollowersList/{username}")
     public ResponseEntity<List<UserSearchDto>> getFollowerList(@PathVariable("username")String username){

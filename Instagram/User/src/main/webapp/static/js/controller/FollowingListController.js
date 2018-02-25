@@ -29,7 +29,7 @@
 
         function openProfile(follow) {
             vm.user={
-                username:follow.userName
+                username:follow.username
             };
             $localStorage.openProfileOf = vm.user;
             $uibModalInstance.dismiss('close');

@@ -11,7 +11,6 @@
         <img class="img-responsive img-circle margin" src="/uploads/{{list.profilePhoto}}" width="10%" height="10%">
 
         <h4><a href="/#!/searchedUser" ng-click="block.openProfile(list)">{{list.blockedUsername}}</a></h4>
-        <%--<h2> {{list.blockedUsername}}</h2>--%>
         <button ng-click="block.unblockUser(list)">Un-block</button>
     </div>
 </div>

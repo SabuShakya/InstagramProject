@@ -3,12 +3,12 @@
 <link rel="stylesheet" type="text/css" href="static/css/profile.css">
 <header>
     <div align="center" class="col-md-12">
-        <img class="img-responsive img-circle margin" src="uploads/{{searched.pic}}" width="30%" height="30%">
+        <img class="img-responsive img-circle margin" src="uploads/{{searched.pic}}" width="20%" height="20%">
+        <p>{{searched.userDisplayName}}</p>
     </div>
 </header>
 
 <div class="main">
-    <p align="center" class="description">{{searched.userDisplayName}}</p><br>
     <div align="center">
         <div ng-show="searched.showFollowOptionsBtn">
         <div ng-if="searched.showFollowBtn">
@@ -30,34 +30,25 @@
         </div>
     </div>
 
-    <%--<div class="stats-container">--%>
-        <%--<div class="stat">--%>
-            <%--<div class="number">{{searched.followers}}</div>--%>
-            <%--<div class="text">Followers</div>--%>
-        <%--</div>--%>
-        <%--<div class="stat">--%>
-            <%--<div class="number">{{searched.totalPictures}}</div>--%>
-            <%--<div class="text">Pictures</div>--%>
-        <%--</div>--%>
-        <%--<div class="stat">--%>
-            <%--<div class="number">{{searched.following}}</div>--%>
-            <%--<div class="text">Following</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-
     <div class="stats-container">
         <div class="stat">
-            <div class="number">{{searched.followers}}</div>
-            <button ng-click="searched.followersList()"> Followers</button>
+            <div class="number">
+                <button ng-click="searched.followersList()" ng-disabled="searched.showFollowersList"> {{searched.followers}}</button>
+            </div>
+            <div class="text" style="color: black">Followers</div>
         </div>
-        <div class="stat">
-            <div class="number">{{searched.totalPictures}}</div>
-            <div class="text">Pictures</div>
+
+    <div class="stat">
+        <div class="number">{{searched.totalPictures}}</div>
+        <div class="text" style="color: black">Pictures</div>
+    </div>
+
+    <div class="stat">
+        <div class="number">
+            <button ng-click="searched.followingList()" ng-disabled="searched.showFollowingList"> {{searched.following}}</button>
         </div>
-        <div class="stat">
-            <div class="number">{{searched.following}}</div>
-            <button ng-click="searched.followingList()"> Following</button>
-        </div>
+        <div class="text" style="color: black">Following</div>
+    </div>
     </div>
 
 </div>
@@ -91,4 +82,24 @@
     </div>
 </div>
 </div>
+
+
+</div>
+<br>
+
+<div align="center" ng-show="profile.showFollowMessage">
+    <span class="glyphicon glyphicon-plus"></span>
+    <span style="color:red">Search users and Follow them to see their posts</span>
+</div>
+
+<div ng-hide="profile.showList">
+    <div class="col-md-4" ng-repeat="photo in profile.photoList track by $index">
+        <div class="thumbnail">
+            <img src="uploads/{{photo.image_path}}" style="width:100%"
+                 ng-click="profile.commentModal(photo.image_path,photo.caption)">
+            </button><br>
+
+        </div>
+    </div>
+
 

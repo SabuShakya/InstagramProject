@@ -2,20 +2,23 @@
 <section class = "section-content">
     <div infinite-scroll="main.pageChanged()" ng-model="main.currentPage" infinite-scroll-distance="1"
          infinite-scroll-immediate-check="false" infinite-scroll-container='".constrained"'
-         infinite-scroll-parent="true" >`
+         infinite-scroll-parent="true" >
 
         <div align="center" ng-repeat="post in main.finalPostList">
             <div class='insta fade-scroll'>
                 <div class='top-insta'>
                     <img class="img-responsive img-circle margin" src="/uploads/{{post.profilePic}}" width="10%" height="10%">
-                    {{post.username}}
+                    <h4><a href="/#!/searchedUser" ng-click="main.openProfile(post)"> {{post.username}}</a>
+                    </h4>
 
                 </div>
                 <div class='post'>
-                    <%--<div ng-show="main.showLoveIcon">--%>
-                    <%--<div class="overlay">--%>
-                        <%--<span></span>--%>
-                    <%--</div>--%>
+
+                    <div ng-show="main.showLoveIcon">
+                    <div class="overlay">
+                        <span></span>
+                    </div>
+                    </div>
 
                     <div class="thumbnail principal-post">
                         <img src="/uploads/{{post.image_path}}" ng-dblclick="main.like(post)">
