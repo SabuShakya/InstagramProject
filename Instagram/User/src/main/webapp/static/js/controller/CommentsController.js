@@ -3,8 +3,8 @@
 
     CommentsController.$inject = ['HttpService', '$uibModalInstance', '$rootScope', '$localStorage', '$location', '$interval', '$uibModal'];
 
-    function CommentsController(HttpService, $uibModalInstance, $rootScope, $localStorage, $location, $interval, $uibModal) {
-        var vm = this;
+    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location, $interval,$uibModal) {
+        var vm =this;
         vm.comments = '';
         vm.photoList = [];
         vm.commentList = [];
@@ -50,8 +50,8 @@
         $rootScope.clickedComment = '';
 
         function add() {
-            vm.submitClicked = true;
-            vm.obj = {
+            vm.submitClicked=true;
+            vm.obj={
                 'comments': vm.comments,
                 'username': $localStorage.storedObj.username,
                 'image_path': $rootScope.photo
@@ -147,7 +147,7 @@
                 vm.showCommentList = true;
             }, function (reason) {
                 $rootScope.saved = true;
-                vm.submitClicked = false;
+                vm.submitClicked=false;
             });
         }
 

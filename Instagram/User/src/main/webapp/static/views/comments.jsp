@@ -9,7 +9,6 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                 <button class="btn btn-success btn-sm pull-right" ng-click="comment.openEditCaption(caption)">Edit</button><br> <br>
                 <button class="btn btn-danger btn-sm pull-right" ng-click="comment.openDeleteModalMessage()">Delete</button>
-
             </div>
         </div>
 </div>
@@ -28,7 +27,7 @@
 
     <section>
         <div align="center">
-            <img src="uploads/{{photo}}" width="100%" ng-dblclick="comment.like(photo)">
+            <img src="uploads/{{photo}}" width="100%" height="90%" ng-dblclick="comment.like(photo)">
                  <%--ng-disabled="comment.showLoveIcon" >--%>
         </div>
 

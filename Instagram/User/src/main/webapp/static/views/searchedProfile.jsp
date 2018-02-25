@@ -76,9 +76,8 @@
 <div ng-show="searched.showPhotoList">
 <div class="col-md-4" ng-repeat="photo in searched.photoList">
     <div class="thumbnail">
-        <img src="uploads/{{photo.image_path}}" style="width:100%"
+        <img src="uploads/{{photo.image_path}}" style="width:100%; height: 50%;"
              ng-click="searched.commentModal(photo.image_path,photo.caption)">
-        {{photo.caption}}
     </div>
 </div>
 </div>

@@ -51,8 +51,8 @@
                             if (posts.activationStatus == "activated") {
                                 vm.finalPostList = vm.finalPostList.concat(posts);
                                 vm.showFollowMesssage=false;
-                            }else{}
-                        })
+                            }
+                        });
                 }, function (reason) {
                     vm.showFollowMesssage=true;
                     vm.posts=[];
