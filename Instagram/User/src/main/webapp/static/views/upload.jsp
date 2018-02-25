@@ -20,6 +20,7 @@
 </div>
 
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-click="img.uploadPhoto()" ng-disabled="img.submitClicked">Upload photo</button>
+    <%--<button class="btn btn-primary" type="button" ng-click="img.uploadPhoto()" ng-disabled="img.submitClicked">Upload photo</button>--%>
+    <button class="btn btn-primary" type="button" ng-click="img.showCaptionAndSelectedPhoto()" ng-disabled="img.submitClicked">Upload photo</button>
     <button class="btn btn-warning" type="button" ng-click="img.close()">Cancel</button>
 </div>

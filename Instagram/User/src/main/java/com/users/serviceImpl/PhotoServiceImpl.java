@@ -90,16 +90,16 @@ public class PhotoServiceImpl implements PhotoService {
 
     public List<UserPostDto> getPosts(String userName, Pageable pageable) {
         User user = userRepository.getUserByUsername(userName);
-        String sql = "SELECT f.following_userId ,f.userId FROM user_table u " +
-                "LEFT JOIN follow f ON u.id = f.userId " +
-                "LEFT JOIN blockedUsers_table table2 ON u.id = table2.blocked_userId " +
-                "WHERE f.userId = :id and table2.userId !=f.following_userId";
-        Query followUserQuery = entityManager.createNativeQuery(sql).setParameter("id",user.getId());
-        List<Object[]> listOfFollowedUser = followUserQuery.getResultList();
-        List<String> list = new ArrayList<String>();
-        for (Object[] oo: listOfFollowedUser){
-            list.add(oo[0].toString());
-        }
+//        String sql = "SELECT f.following_userId ,f.userId FROM user_table u " +
+//                "LEFT JOIN follow f ON u.id = f.userId " +
+//                "LEFT JOIN blockedUsers_table table2 ON u.id = table2.blocked_userId " +
+//                "WHERE f.userId = :id and table2.userId !=f.following_userId";
+//        Query followUserQuery = entityManager.createNativeQuery(sql).setParameter("id",user.getId());
+//        List<Object[]> listOfFollowedUser = followUserQuery.getResultList();
+//        List<String> list = new ArrayList<String>();
+//        for (Object[] oo: listOfFollowedUser){
+//            list.add(oo[0].toString());
+//        }
 
         final String SQL_QUERY =
                 "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId,uAt.activationStatus " +
@@ -153,6 +153,12 @@ public class PhotoServiceImpl implements PhotoService {
         userPhotos1.setUser(user);
         userPhotos1.setCaption(userPhotodto.getCaption());
         photoRepository.save(userPhotos1);
+    }
+
+    @Override
+    public String getCaption(String imageName) {
+        UserPhotos userPhotos = photoRepository.getUserPhotosByImage_path(imageName);
+        return userPhotos.getCaption();
     }
 }
 
