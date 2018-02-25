@@ -14,6 +14,8 @@
         vm.showStatus=false;
         vm.showBlockMessage=false;
         vm.showPhotoList=true;
+        vm.showFollowersList= false;
+        vm.showFollowingList= false;
         $rootScope.photo = '';
 
         vm.url = "/searchedUserPhotos/" + $localStorage.openProfileOf.username;
@@ -37,18 +39,42 @@
         vm.profilePhoto= profilePhoto;
         vm.searchedUserPhotos=searchedUserPhotos;
         vm.userStatusPhotos=userStatusPhotos;
-        vm.followCount=followCount;
         vm.checkFollow =checkFollow;
         vm.blockUser=blockUser;
         vm.unblockUser=unblockUser;
         vm.checkBlocked=checkBlocked;
         vm.followersList=followersList;
         vm.followingList=followingList;
+        vm.followersCount=followersCount;
+        vm.followingCount=followingCount;
 
         profilePhoto();
         checkFollow();
-        followCount();
+        followersCount();
+        followingCount();
         checkBlocked();
+
+        function followersCount(){
+            HttpService.get("/followersCount/"+$localStorage.openProfileOf.username).then(function (value) {
+                vm.followers = value.followers;
+                vm.totalPictures = value.totalPictures;
+                vm.showFollowersList= false;
+            },function (reason) {
+                vm.followers = reason.followers;
+                vm.totalPictures = reason.totalPictures;
+                vm.showFollowersList= true;
+            });
+        }
+
+        function followingCount(){
+            HttpService.get("/followingCount/"+$localStorage.openProfileOf.username).then(function (value) {
+                vm.following = value.following;
+                vm.showFollowingList= false;
+            },function (reason) {
+                vm.following = reason.following;
+                vm.showFollowingList= true;
+            });
+        }
 
         function searchedUserPhotos() {
             HttpService.get(vm.url).then(function (value) {
@@ -69,16 +95,6 @@
                 vm.showStatus = true;
                 vm.showPhotoList=false;
                 console.log("Error occured" + reason);
-            });
-        }
-
-        function followCount() {
-            HttpService.get("/followsCount/" + vm.followObj.following_userName).then(function (value) {
-                vm.followers = value.followers;
-                vm.following = value.following;
-                vm.totalPictures = value.totalPictures;
-            }, function (reason) {
-                console.log(reason);
             });
         }
 
@@ -121,7 +137,8 @@
             HttpService.post("/followUser",vm.followObj).then(function (value) {
                 vm.showFollowBtn = false;
                 searchedUserPhotos();
-                followCount();
+                followersCount();
+                followingCount();
             },function (reason) {
                 vm.showFollowBtn = true;
                 console.log("error following"+reason);
@@ -133,8 +150,9 @@
                 vm.showFollowBtn = true;
                 vm.showStatus=true;
                 userStatusPhotos();
-                followCount();
-            },function (reason) {
+                followersCount();
+                followingCount();
+                },function (reason) {
                 vm.showFollowBtn = false;
                 console.log("error following"+reason);
             });
@@ -166,9 +184,6 @@
             HttpService.post("/blockUser",vm.blockObj).then(function(value){
                 vm.showBlockBtn=false;
                 checkBlocked();
-                // vm.showBlockMessage=true;
-                // vm.showFollowOptionsBtn=false;
-                // vm.showPhotoList=false;
                 console.log("success");
             },function (reason) {
                vm.showBlockBtn=true;
@@ -180,9 +195,6 @@
            HttpService.post("/unblockUser",vm.blockObj).then(function(value){
                vm.showBlockBtn=true;
                checkBlocked();
-               // vm.showBlockMessage=false;
-               // vm.showFollowOptionsBtn=true;
-               // vm.showPhotoList=true;
                console.log("success");
            },function (reason) {
               vm.showBlockBtn=false;
@@ -198,6 +210,13 @@
                 controllerAs: 'followersCtrl',
                 size: 'lg'
             });
+            vm.modalInstance.result.then(
+                function () {
+
+                },function() {
+                    followingCount();
+                    followersCount();
+                })
         }
 
         function followingList(){
@@ -209,6 +228,12 @@
                 controllerAs: 'followingCtrl',
                 size: 'lg'
             });
+            vm.modalInstance.result.then(
+                function () {
+                },function() {
+                    followingCount();
+                    followersCount();
+                })
         }
     }
 })();

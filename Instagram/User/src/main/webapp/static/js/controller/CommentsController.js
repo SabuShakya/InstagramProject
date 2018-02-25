@@ -3,8 +3,8 @@
 
     CommentsController.$inject = ['HttpService', '$uibModalInstance', '$rootScope', '$localStorage', '$location', '$interval', '$uibModal'];
 
-    function CommentsController(HttpService, $uibModalInstance, $rootScope, $localStorage, $location, $interval, $uibModal) {
-        var vm = this;
+    function CommentsController(HttpService, $uibModalInstance, $rootScope,$localStorage,$location, $interval,$uibModal) {
+        var vm =this;
         vm.comments = '';
         vm.photoList = [];
         vm.commentList = [];
@@ -13,13 +13,13 @@
         vm.showList = false;
         vm.showing = false;
         vm.showLikes = false;
-        vm.showCommentList = true;
-        $rootScope.saved = false;
-        vm.submitClicked = false;
-        vm.showEditCaptionForm = false;
-        // vm.showLoveIcon=false;
-        vm.isActive = false;
-        $rootScope.clickedPhoto = '';
+        vm.showCommentList= true;
+        $rootScope.saved= false;
+        vm.submitClicked=false;
+        vm.showEditCaptionForm=false;
+        vm.showLoveIcon=false;
+        vm.isActive=false;
+        $rootScope.clickedPhoto='';
 
         vm.userDisplayName = $localStorage.storedObj.username;
         vm.userProfilePhoto = $localStorage.profilePicture;
@@ -50,8 +50,8 @@
         $rootScope.clickedComment = '';
 
         function add() {
-            vm.submitClicked = true;
-            vm.obj = {
+            vm.submitClicked=true;
+            vm.obj={
                 'comments': vm.comments,
                 'username': $localStorage.storedObj.username,
                 'image_path': $rootScope.photo
@@ -69,17 +69,17 @@
         }
 
         function like() {
-            // vm.showLoveIcon =true;
+           vm.showLoveIcon =true;
             vm.obj = {
                 'username': $localStorage.storedObj.username,
                 'image_path': $rootScope.photo
             };
             HttpService.post("/likeAction", vm.obj).then(function (value) {
                 vm.likeCount = value.likeCount;
-                vm.isActive = value.showRedButton;
-                // vm.showLoveIcon=true;
-            }, function (reason) {
-                console.log("Error Occured:" + reason);
+                vm.isActive= value.showRedButton;
+               vm.showLoveIcon=true;
+            },function (reason) {
+                console.log("Error Occured:"+reason);
             });
         }
 
@@ -147,7 +147,7 @@
                 vm.showCommentList = true;
             }, function (reason) {
                 $rootScope.saved = true;
-                vm.submitClicked = false;
+                vm.submitClicked=false;
             });
         }
 

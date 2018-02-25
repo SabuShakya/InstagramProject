@@ -5,9 +5,16 @@
 <div class="modal-body" id="modal-body">
     <div ng-repeat="follow in followersCtrl.searchedFollowers">
         <div class="col-md-12">
-            <img class="img-responsive img-circle margin" src="/uploads/{{follow.image}}" width="10%" height="10%">
+            <img class="img-responsive img-circle margin" src="/uploads/{{follow.imagename}}" width="10%" height="10%">
 
-            {{follow.following_userName}}
+            <h4><a href="/#!/searchedUser" ng-click="followersCtrl.openProfile(follow)">{{follow.username}}</a>
+            </h4>
+        </div>
+        <div class="col-md-12" ng-hide="follow.showResultButtons" style="float: right">
+            <button ng-click="followersCtrl.followUser(follow)">Follow</button>
+        </div>
+        <div class="col-md-12" ng-show="follow.showResultButtons" style="float: right">
+            <button ng-click="followersCtrl.unfollowUser(follow)">Un-Follow</button>
         </div>
     </div>
 </div>

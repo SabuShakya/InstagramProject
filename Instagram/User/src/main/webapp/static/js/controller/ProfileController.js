@@ -16,6 +16,8 @@
         $rootScope.photo = '';
         $rootScope.clickedPhoto='';
         $rootScope.pic='';
+        vm.showFollowersList= false;
+        vm.showFollowingList= false;
 
         vm.userDisplayName = $localStorage.storedObj.username;
 
@@ -23,22 +25,48 @@
         vm.editProfile=editProfile;
         vm.commentModal=commentModal;
         vm.allPhotos= allPhotos;
-        vm.followCount=followCount;
+        // vm.followCount=followCount;
         vm.profilePhoto=profilePhoto;
         vm.followersList=followersList;
         vm.followingList=followingList;
+        vm.followersCount=followersCount;
+        vm.followingCount=followingCount;
 
         allPhotos();
-        followCount();
+        // followCount();
         profilePhoto();
+        followersCount();
+        followingCount();
 
-        function followCount(){
-            HttpService.get("/followsCount/"+$localStorage.storedObj.username).then(function (value) {
+        // function followCount(){
+        //     HttpService.get("/followsCount/"+$localStorage.storedObj.username).then(function (value) {
+        //         // vm.followers = value.followers;
+        //         vm.following = value.following;
+        //         vm.totalPictures = value.totalPictures;
+        //     },function (reason) {
+        //         console.log(reason);
+        //     });
+        // }
+
+        function followersCount(){
+            HttpService.get("/followersCount/"+$localStorage.storedObj.username).then(function (value) {
                 vm.followers = value.followers;
-                vm.following = value.following;
                 vm.totalPictures = value.totalPictures;
+                vm.showFollowersList= false;
             },function (reason) {
-                console.log(reason);
+                vm.followers = reason.followers;
+                vm.totalPictures = reason.totalPictures;
+                vm.showFollowersList= true;
+            });
+        }
+
+        function followingCount(){
+            HttpService.get("/followingCount/"+$localStorage.storedObj.username).then(function (value) {
+                vm.following = value.following;
+                vm.showFollowingList= false;
+            },function (reason) {
+                vm.following = reason.following;
+                vm.showFollowingList= true;
             });
         }
 
@@ -53,8 +81,11 @@
             });
             vm.modalInstance.result.then(
                 function () {
-                followCount();
-            },function() {  })
+
+            },function() {
+                    followersCount();
+                    followingCount();
+                })
         }
 
         function followingList(){
@@ -68,8 +99,10 @@
             });
             vm.modalInstance.result.then(
                 function () {
-                    followCount();
-                },function() {  })
+                    },function() {
+                    followingCount();
+                    followersCount();
+                })
         }
 
         function allPhotos(){
@@ -94,7 +127,7 @@
             vm.modalInstance.result.then(
                 function(){
                    allPhotos();
-                   followCount();
+                   followersCount();
                 },
                 function(){})
         }
@@ -113,10 +146,11 @@
             });
             vm.modalInstance.result.then(
                 function(){
+                    allPhotos();
                 },
                 function(){
                     allPhotos();
-                    followCount();
+                    followersCount();
                 })
         }
 

@@ -6,9 +6,9 @@
         var vm = this;
         vm.posts = [];
         vm.finalPostList=[];
-        vm.message = '';
+        vm.user={};
         vm.commentSuccessMsg = false;
-        vm.showFollowMesssage =false;
+        vm.showFollowMessage =true;
         vm.showLoveIcon=false;
         vm.commentList = [];
         vm.showList = false;
@@ -47,19 +47,18 @@
                     vm.isActive = value.showRedButton;
                     vm.totalItems=value[0].totalItems;
                     vm.fetching=true;
-                    // vm.showFollowMesssage=false;
-
                         angular.forEach(vm.posts, function (posts, key) {
                             if (posts.activationStatus == "activated") {
                                 vm.finalPostList = vm.finalPostList.concat(posts);
-                            }else{}
-                        })
+                                vm.showFollowMesssage=false;
+                            }
+                        });
                 }, function (reason) {
-                    // vm.showFollowMesssage=true;
-                    vm.message = "Follow Others to see their posts.";
+                    vm.showFollowMesssage=true;
+                    vm.posts=[];
+                    vm.finalPostList=[];
                 });
         }
-
 
         function addComment(post) {
             vm.obj={
@@ -124,7 +123,7 @@
                 vm.countOfLikes = value.likeCount;
                 post.countOfLikes = value.likeCount;
                 post.showRedButton = value.showRedButton;
-                vm.showLoveIcon=true;
+                vm.showLoveIcon=false;
             },function (reason) {
                 console.log("Error Occured:"+reason);
             });
@@ -155,8 +154,11 @@
             };
         }
 
-        function openProfile(user) {
-            $localStorage.openProfileOf = user;
+        function openProfile(post) {
+            vm.user={
+                username:post.username
+            };
+            $localStorage.openProfileOf = vm.user;
         }
     }
 })();
