@@ -18,4 +18,5 @@ public interface PhotoService {
     public long getPhotoCount(String username);
     public void deletePhoto(UserPhotos userPhotos);
     public void updateCaption(UserPhotodto userPhotodto);
+    public String getCaption(String imageName);
 }

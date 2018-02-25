@@ -27,7 +27,7 @@
         </div>
 
         <div class='caption'>
-            <span>{{caption}}</span>
+            <span>{{comment.caption}}</span>
         </div>
         <br>
 

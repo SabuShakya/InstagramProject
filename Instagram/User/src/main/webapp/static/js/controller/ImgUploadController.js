@@ -8,23 +8,39 @@
         vm.imageName = [];
         vm.imageList =[];
         vm.listOfImages = {imageName:'',
-                            caption:''};
+                            caption:'caption'};
         vm.i = 0;
         vm.submitClicked=false;
         vm.showCaptionOptions=false;
         vm.url="/upload";
         vm.uploadPhoto = uploadPhoto;
+        vm.showCaptionAndSelectedPhoto = showCaptionAndSelectedPhoto;
         vm.close = close;
 
+        function showCaptionAndSelectedPhoto() {
+            if (vm.showCaptionOptions){
+                uploadPhoto();
+            }else {
+                vm.showCaptionOptions = true;
+            }
+        }
         function uploadPhoto() {
             vm.submitClicked=false;
-            vm.showCaptionOptions=true;
+            // vm.showCaptionOptions=true;
             angular.forEach(vm.listOfImages, function(listOfImages, key) {
-                    vm.imageList[vm.i]={
+                if((listOfImages.listOfImages != undefined) || (listOfImages.listOfImages != null)){
+                vm.imageList[vm.i]={
                         imageName:listOfImages.base64,
                         caption:listOfImages.listOfImages.caption};
                     vm.i++;
-                });
+                }else{
+                    vm.imageList[vm.i]={
+                        imageName:listOfImages.base64,
+                        caption:''
+                    };
+                    vm.i++;
+                }
+            });
 
             vm.obj = {
                 'imageList': vm.imageList,

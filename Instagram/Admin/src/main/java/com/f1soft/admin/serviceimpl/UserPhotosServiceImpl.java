@@ -103,9 +103,9 @@ public class UserPhotosServiceImpl implements UserPhotosService {
                 "FROM user_table u" +
                 " LEFT JOIN photo_table pt ON u.id = pt.user_id" +
                 " LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id" +
-                " WHERE pt.created_date >=:date";
+                " WHERE pt.created_date >:date";
 //        LocalDate today = LocalDate.now();
-        String today= DateUtils.getStringDateWithTimeSetToZero(new Date());
+        Date today = DateUtils.getTodaysDateWithTimeSetToZero();
         Query query = entityManager.createNativeQuery(sql).setParameter("date", today);
         List<Object[]> list = query.getResultList();
         for (Object[] o : list) {
