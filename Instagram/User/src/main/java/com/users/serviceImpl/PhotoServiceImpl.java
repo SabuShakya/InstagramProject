@@ -1,8 +1,10 @@
 package com.users.serviceImpl;
+
 import com.users.dto.ImageListdto;
 import com.users.dto.LikeActiondto;
 import com.users.dto.UserPhotodto;
 import com.users.dto.UserPostDto;
+import com.users.exceptionHandler.NoFollowingException;
 import com.users.model.User;
 import com.users.model.UserPhotos;
 import com.users.repository.LikesRepository;
@@ -90,40 +92,39 @@ public class PhotoServiceImpl implements PhotoService {
 
     public List<UserPostDto> getPosts(String userName, Pageable pageable) {
         User user = userRepository.getUserByUsername(userName);
-//        String sql = "SELECT f.following_userId ,f.userId FROM user_table u " +
-//                "LEFT JOIN follow f ON u.id = f.userId " +
-//                "LEFT JOIN blockedUsers_table table2 ON u.id = table2.blocked_userId " +
-//                "WHERE f.userId = :id and table2.userId !=f.following_userId";
-//        Query followUserQuery = entityManager.createNativeQuery(sql).setParameter("id",user.getId());
-//        List<Object[]> listOfFollowedUser = followUserQuery.getResultList();
-//        List<String> list = new ArrayList<String>();
-//        for (Object[] oo: listOfFollowedUser){
-//            list.add(oo[0].toString());
-//        }
+        String sql = "SELECT f.following_userId ,f.userId FROM user_table u " +
+                "LEFT JOIN follow f ON u.id = f.userId " +
+                "LEFT JOIN blockedUsers_table table2 ON u.id = table2.blocked_userId " +
+                "WHERE f.userId = :id and table2.userId !=f.following_userId";
+        Query followUserQuery = entityManager.createNativeQuery(sql).setParameter("id", user.getId());
+        List<Object[]> listOfFollowedUser = followUserQuery.getResultList();
+        if (listOfFollowedUser == null || listOfFollowedUser.size()==0) {
+            throw new NoFollowingException("Follow others to see their Posts", "Not following anyone");
+        } else {
+            final String SQL_QUERY =
+                    "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId,uAt.activationStatus " +
+                            "FROM photo_table t " +
+                            "LEFT JOIN user_table u ON t.user_id = u.id " +
+                            "LEFT JOIN follow f ON u.id = f.following_userId " +
+                            "LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id " +
+                            "LEFT JOIN userActivation_table uAt ON u.id = uAt.user_id " +
+                            "where f.userId=:id AND f.isFollowing = true ORDER BY t.created_date DESC";
 
-        final String SQL_QUERY =
-                "SELECT u.username,t2.profile_pic,t.image_path,t.created_date,t.caption,f.following_userId,uAt.activationStatus " +
-                        "FROM photo_table t " +
-                        "LEFT JOIN user_table u ON t.user_id = u.id " +
-                        "LEFT JOIN follow f ON u.id = f.following_userId " +
-                        "LEFT JOIN profile_pic_table t2 ON u.id = t2.user_id " +
-                        "LEFT JOIN userActivation_table uAt ON u.id = uAt.user_id " +
-                        "where f.userId=:id AND f.isFollowing = true ORDER BY t.created_date DESC";
+            Query query = entityManager.createNativeQuery(SQL_QUERY).setParameter("id", user.getId());
+            int totalItems = query.getResultList().size();
+            query.setFirstResult((pageable.getPageNumber() - 1) * pageable.getPageSize());
+            query.setMaxResults(pageable.getPageSize());
 
-        Query query = entityManager.createNativeQuery(SQL_QUERY).setParameter("id",user.getId());
-        int totalItems = query.getResultList().size();
-        query.setFirstResult((pageable.getPageNumber() - 1) * pageable.getPageSize());
-        query.setMaxResults(pageable.getPageSize());
+            List<Object[]> allList = query.getResultList();
+            List<UserPostDto> userPostDtoList = new ArrayList<UserPostDto>();
 
-        List<Object[]> allList = query.getResultList();
-        List<UserPostDto> userPostDtoList = new ArrayList<UserPostDto>();
-
-        for (Object[] o :allList){
-            LikeActiondto likeActiondto =likesService.getLikesCountForImage(o[2].toString(),user);
-            UserPostDto userPostDto= PhotoUtils.convertObjectToUserPhotos(o,likeActiondto,totalItems);
-            userPostDtoList.add(userPostDto);
+            for (Object[] o : allList) {
+                LikeActiondto likeActiondto = likesService.getLikesCountForImage(o[2].toString(), user);
+                UserPostDto userPostDto = PhotoUtils.convertObjectToUserPhotos(o, likeActiondto, totalItems);
+                userPostDtoList.add(userPostDto);
+            }
+            return userPostDtoList;
         }
-        return userPostDtoList;
     }
 
     public List<UserPhotodto> getAllPhotos(String username) {
@@ -146,7 +147,7 @@ public class PhotoServiceImpl implements PhotoService {
         photoRepository.delete(photoRepository.getUserPhotosByImage_path(userPhotos.getImage_path()));
     }
 
-    public void updateCaption(UserPhotodto userPhotodto){
+    public void updateCaption(UserPhotodto userPhotodto) {
         User user = userService.getUser(userPhotodto.getUsername());
         UserPhotos userPhotos1 = photoRepository.getUserPhotosByImage_path(userPhotodto.getImage_path());
         userPhotos1.setImage_path(userPhotodto.getImage_path());

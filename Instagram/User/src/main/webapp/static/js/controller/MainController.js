@@ -7,8 +7,9 @@
         vm.posts = [];
         vm.finalPostList=[];
         vm.user={};
+        vm.message = '';
         vm.commentSuccessMsg = false;
-        vm.showFollowMessage =true;
+        vm.showFollowMessage =false;
         vm.showLoveIcon=false;
         vm.commentList = [];
         vm.showList = false;
@@ -55,6 +56,8 @@
                         });
                 }, function (reason) {
                     vm.showFollowMesssage=true;
+                    vm.message = reason.message;
+                    console.log(reason.developerMessage);
                     vm.posts=[];
                     vm.finalPostList=[];
                 });

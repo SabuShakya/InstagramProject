@@ -3,7 +3,9 @@
     <div infinite-scroll="main.pageChanged()" ng-model="main.currentPage" infinite-scroll-distance="1"
          infinite-scroll-immediate-check="false" infinite-scroll-container='".constrained"'
          infinite-scroll-parent="true" >
-
+        <div ng-show="main.showFollowMessage">
+            {{main.message}}
+        </div>
         <div align="center" ng-repeat="post in main.finalPostList">
             <div class='insta fade-scroll'>
                 <div class='top-insta'>
