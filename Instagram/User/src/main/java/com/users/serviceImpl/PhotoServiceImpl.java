@@ -92,10 +92,8 @@ public class PhotoServiceImpl implements PhotoService {
 
     public List<UserPostDto> getPosts(String userName, Pageable pageable) {
         User user = userRepository.getUserByUsername(userName);
-        String sql = "SELECT f.following_userId ,f.userId FROM user_table u " +
-                "LEFT JOIN follow f ON u.id = f.userId " +
-                "LEFT JOIN blockedUsers_table table2 ON u.id = table2.blocked_userId " +
-                "WHERE f.userId = :id and table2.userId !=f.following_userId";
+        String sql = "SELECT f.following_userId ,f.userId FROM " +
+                "follow f WHERE f.userId = :id AND f.isFollowing=TRUE ";
         Query followUserQuery = entityManager.createNativeQuery(sql).setParameter("id", user.getId());
         List<Object[]> listOfFollowedUser = followUserQuery.getResultList();
         if (listOfFollowedUser == null || listOfFollowedUser.size()==0) {

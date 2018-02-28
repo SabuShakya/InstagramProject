@@ -51,11 +51,11 @@
                         angular.forEach(vm.posts, function (posts, key) {
                             if (posts.activationStatus == "activated") {
                                 vm.finalPostList = vm.finalPostList.concat(posts);
-                                vm.showFollowMesssage=false;
+                                vm.showFollowMessage=false;
                             }
                         });
                 }, function (reason) {
-                    vm.showFollowMesssage=true;
+                    vm.showFollowMessage=true;
                     vm.message = reason.message;
                     console.log(reason.developerMessage);
                     vm.posts=[];
