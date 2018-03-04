@@ -1,6 +1,7 @@
 package com.users.controller;
 
 import com.users.dto.*;
+import com.users.exceptionHandler.IncorrectPasswordException;
 import com.users.model.*;
 import com.users.service.*;
 import com.users.utils.TokenUtils;
@@ -55,7 +56,7 @@ public class UserController {
             userTokenDto = userTokenService.authToken(userdto);
             return new ResponseEntity<UserTokenDto>(userTokenDto, HttpStatus.OK);
         }
-        return new ResponseEntity<UserTokenDto>(userTokenDto, HttpStatus.NOT_FOUND);
+        throw  new IncorrectPasswordException("User is not registered","null pointer occurred.");
     }
 
     @PostMapping("/forgotPassword")
