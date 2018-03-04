@@ -8,9 +8,9 @@
         <p>
             Username:
             <input type="text" name="username" ng-model="forgotPass.username" placeholder="Instagram username" required/>
-            <span style="color:red" ng-show="editform.email.$dirty && editform.email.$invalid">
-            <span class="error" ng-show="editform.email.$error.required"> Username is required</span>
-            <span class="error" ng-show="editform.email.$error.email">Enter a valid username</span>
+            <span style="color:red" ng-show="editform.username.$dirty && editform.username.$invalid">
+            <span class="error" ng-show="editform.username.$error.required"> Username is required</span>
+            <span class="error" ng-show="editform.username.$error.email">Enter a valid username</span>
             </span>
         </p>
 

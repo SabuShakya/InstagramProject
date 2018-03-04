@@ -1,4 +1,4 @@
-(function () {
+ (function () {
     angular.module("adminModule").service("SignupService", SignupService);
 
     SignupService.$inject = ['HttpService','$location'];

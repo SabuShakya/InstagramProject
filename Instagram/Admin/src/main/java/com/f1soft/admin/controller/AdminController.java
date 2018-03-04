@@ -4,6 +4,7 @@ import com.f1soft.admin.dto.AdminInfoDto;
 import com.f1soft.admin.dto.AdminLoginDto;
 import com.f1soft.admin.dto.TokenAuthDto;
 import com.f1soft.admin.dto.UserLogsDto;
+import com.f1soft.admin.exceptionhandler.IncorrectUsernameException;
 import com.f1soft.admin.model.Admin;
 import com.f1soft.admin.model.TokenAuth;
 import com.f1soft.admin.service.AdminService;
@@ -35,8 +36,10 @@ public class AdminController {
         if (loginAdmin) {
             tokenAuthDto = tokenAuthService.authenticateToken(adminLoginDto);
             return new ResponseEntity<TokenAuthDto>(tokenAuthDto, HttpStatus.OK);
+        }else {
+            throw new IncorrectUsernameException("Admin is not registered","Admin doesn't exist");
         }
-        return new ResponseEntity<TokenAuthDto>(tokenAuthDto, HttpStatus.NOT_FOUND);
+//        return new ResponseEntity<TokenAuthDto>(tokenAuthDto, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/getAdminId/{tokenNo}/{userName}")
