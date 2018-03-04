@@ -35,7 +35,8 @@
                     $location.path("/adminPage");
                 }, function (reason) {
                     vm.valid = false;
-                    vm.errormsg = "User not registered";
+                    vm.errormsg = reason.errorMsg;
+                    console.log(reason.developerMessage);
                 });
         }
 

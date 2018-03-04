@@ -35,7 +35,7 @@ angular.module('userModule').factory('HttpService', HttpService);
                     },
                     function (error) {
                         console.log("Error occured");
-                        defered.reject(error);
+                        defered.reject(error.data);
                     }
                 );
             return defered.promise;

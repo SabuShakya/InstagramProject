@@ -1,6 +1,7 @@
 package com.users.serviceImpl;
 
 import com.users.dto.*;
+import com.users.exceptionHandler.IncorrectPasswordException;
 import com.users.model.Follow;
 import com.users.model.ProfilePhoto;
 import com.users.model.User;
@@ -86,12 +87,16 @@ public class UserServiceImpl implements UserService {
     public boolean loginUser(Userdto userdto) {
         User isUser = userRepository.getUserByUsername(userdto.getUsername());
 
-        if((isUser !=null) && (BCrypt.checkpw(userdto.getPassword(),isUser.getPassword()))){
-            userdto.setId(isUser.getId());
+        if(isUser !=null){
+            if(BCrypt.checkpw(userdto.getPassword(),isUser.getPassword())){
+                    userdto.setId(isUser.getId());
             UserActivation userActivation = userActivationRepository.getByUserUsername(userdto.getUsername());
             userActivation.setActivationStatus("activated");
             userActivationRepository.save(userActivation);
             return true;
+        }else{
+                throw new IncorrectPasswordException("Incorrect password.Forgot Password?","Password didn't match.");
+            }
         }
         return false;
     }

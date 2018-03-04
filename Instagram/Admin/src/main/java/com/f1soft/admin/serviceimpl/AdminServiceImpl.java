@@ -2,6 +2,7 @@ package com.f1soft.admin.serviceimpl;
 
 import com.f1soft.admin.dto.AdminInfoDto;
 import com.f1soft.admin.dto.AdminLoginDto;
+import com.f1soft.admin.exceptionhandler.IncorrectUsernameException;
 import com.f1soft.admin.model.Admin;
 import com.f1soft.admin.model.TokenAuth;
 import com.f1soft.admin.repository.AdminRepository;
@@ -34,9 +35,13 @@ public class AdminServiceImpl implements AdminService {
 
     public boolean loginAdmin(AdminLoginDto adminLoginDto) {
         Admin isAdmin = adminRepository.getAdminByUserName(adminLoginDto.getUserName());
-        if((isAdmin !=null) && BCrypt.checkpw(adminLoginDto.getPassword(),isAdmin.getPassword())){
-            adminLoginDto.setId(isAdmin.getId());
-           return true;
+        if((isAdmin !=null)){
+            if(BCrypt.checkpw(adminLoginDto.getPassword(),isAdmin.getPassword())){
+                adminLoginDto.setId(isAdmin.getId());
+                return true;
+            }else{
+                throw new IncorrectUsernameException("Incorrect password","Password didnot match");
+            }
         }
         return false;
     }

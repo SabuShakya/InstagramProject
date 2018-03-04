@@ -1,6 +1,7 @@
 package com.users.controller;
 
 import com.users.dto.*;
+import com.users.exceptionHandler.IncorrectPasswordException;
 import com.users.model.*;
 import com.users.service.*;
 import com.users.utils.TokenUtils;
@@ -55,7 +56,7 @@ public class UserController {
             userTokenDto = userTokenService.authToken(userdto);
             return new ResponseEntity<UserTokenDto>(userTokenDto, HttpStatus.OK);
         }
-        return new ResponseEntity<UserTokenDto>(userTokenDto, HttpStatus.NOT_FOUND);
+        throw  new IncorrectPasswordException("User is not registered","null pointer occurred.");
     }
 
     @PostMapping("/forgotPassword")
@@ -91,10 +92,10 @@ public class UserController {
     public ResponseEntity<List<UserPostDto>> getPosts(@PathVariable("userName") String username, @RequestParam("page") int page, @RequestParam("size") int size) {
         org.springframework.data.domain.Pageable pageable = new PageRequest(page, size);
         List<UserPostDto> userPostList = photoService.getPosts(username, pageable);
-//        if ((userPostList != null) && !(userPostList.isEmpty())){
-//            return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
-//        }
-        return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
+        if ((userPostList != null)){
+            return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.OK);
+        }
+        return new ResponseEntity<List<UserPostDto>>(userPostList, HttpStatus.NOT_FOUND);
     }
 
     @PostMapping("/logout")

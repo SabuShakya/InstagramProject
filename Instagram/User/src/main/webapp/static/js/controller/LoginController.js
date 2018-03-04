@@ -1,13 +1,13 @@
 (function () {
     angular.module('userModule').controller('LoginController', LoginController);
-    LoginController.$inject=['$location','HttpService','$localStorage'];
+    LoginController.$inject = ['$location', 'HttpService', '$localStorage'];
 
     function LoginController($location, HttpService, $localStorage) {
-        var vm= this;
+        var vm = this;
         vm.username = '';
         vm.password = '';
         vm.errormsg = '';
-        vm.valid= true;
+        vm.valid = true;
         vm.booleanValue = true;
         vm.loading = false;
 
@@ -16,9 +16,9 @@
 
 
         //checking if logged in
-        if(!($localStorage.storedObj == null)){
+        if (!($localStorage.storedObj == null)) {
             $location.path("/profile");
-        }else{
+        } else {
             $location.path("/login");
         }
 
@@ -30,21 +30,22 @@
             };
 
             HttpService.post(vm.url, vm.user)
-                .then(function(response){
-                    $localStorage.storedObj={
-                        username:response.username,
-                        tokenNo :response.tokenNo,
-                        password:response.password
-                    };
-                    vm.loading = false;
-                    $location.path("/profile");
-                },
-                function(error){
-                    vm.valid=false;
-                    vm.errormsg = "Incorrect username or password";
-                    vm.loading = false;
-                }
-            );
+                .then(function (response) {
+                        $localStorage.storedObj = {
+                            username: response.username,
+                            tokenNo: response.tokenNo,
+                            password: response.password
+                        };
+                        vm.loading = false;
+                        $location.path("/profile");
+                    },
+                    function (error) {
+                        vm.valid = false;
+                        vm.loading = false;
+                        vm.errormsg = error.message;
+                        console.log(error.developerMessage);
+                    }
+                );
         }
     }
 })();

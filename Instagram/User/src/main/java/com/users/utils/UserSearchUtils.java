@@ -19,6 +19,7 @@ public class UserSearchUtils {
             userSearchDto.setImagename(user.getProfilePhotos().getProfile_pic());
             userSearchDto.setActivationStatus(user.getUserActivation().getActivationStatus());
             userSearchDto.setShowResultButtons(true);
+            userSearchDto.setHideButtons(false);
             userSearchDtoList.add(userSearchDto);
         }
         return userSearchDtoList;

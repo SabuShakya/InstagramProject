@@ -7,8 +7,9 @@
         vm.posts = [];
         vm.finalPostList=[];
         vm.user={};
+        vm.message = '';
         vm.commentSuccessMsg = false;
-        vm.showFollowMessage =true;
+        vm.showFollowMessage =false;
         vm.showLoveIcon=false;
         vm.commentList = [];
         vm.showList = false;
@@ -42,26 +43,23 @@
             var URL = "/getPosts/"+$localStorage.storedObj.username+"?page="+vm.CurrentPage+"&size="+vm.maxSize;
             HttpService.get(URL).then(
                 function (value) {
-                    if(value!=null) {
-                        // vm.posts = vm.posts.concat(value);
-                        vm.posts = value;
-                        vm.isActive = value.showRedButton;
-                        vm.totalItems = value[0].totalItems;
-                        vm.fetching = true;
+                    // vm.posts = vm.posts.concat(value);
+                    vm.posts=value;
+                    vm.isActive = value.showRedButton;
+                    vm.totalItems=value[0].totalItems;
+                    vm.fetching=true;
                         angular.forEach(vm.posts, function (posts, key) {
                             if (posts.activationStatus == "activated") {
                                 vm.finalPostList = vm.finalPostList.concat(posts);
-                                vm.showFollowMesssage = false;
+                                vm.showFollowMessage=false;
                             }
-                        })
-                    }
-                    else{
-                        if(value.length>0 ) {
-                            vm.showFollowMesssage=true;
-                        }else{
-                        vm.showFollowMessage=false;
-                        }
-                    }
+                        });
+                }, function (reason) {
+                    vm.showFollowMessage=true;
+                    vm.message = reason.message;
+                    console.log(reason.developerMessage);
+                    vm.posts=[];
+                    vm.finalPostList=[];
                 });
         }
 

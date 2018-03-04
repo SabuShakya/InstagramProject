@@ -1,68 +1,76 @@
-(function(){
-angular.module('userModule',['ngRoute','naif.base64','ngTouch','ngAnimate','ui.bootstrap', 'ngStorage','infinite-scroll','angucomplete']);
-angular.module('userModule').config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
-    $routeProvider
-        .when("/login",{
-            templateUrl:"/static/views/login.jsp",
-            controller: "LoginController as login"
-        })
-        .when("/forgotPassword",{
-            templateUrl:"/static/views/forgotPassword.jsp",
-            controller:"ForgotPasswordController as forgotPass"
-        })
-        .when("/signup",{
-            templateUrl:"/static/views/signup.jsp",
-            controller:"SignupController as signup"
-        })
-        .when("/newsFeed",{
-            templateUrl:"/static/views/infinityPage.jsp",
-            controller:"MainController as main"
-        })
-        // .when("/newsFeed",{
-        //     templateUrl:"/static/views/infinityPage.jsp",
-        //     controller:"mainController as main"
-        // })
-        .when("/profile",{
-            templateUrl: "/static/views/profile.jsp",
-            controller:"ProfileController as profile"
-        })
-        .when("/search",{
-            templateUrl: "/static/views/search.jsp",
-            controller:"SearchController as search"
-        })
-        .when("/searchedUser",{
-            templateUrl: "/static/views/searchedProfile.jsp",
-            controller:"SearchedProfileController as searched"
-        })
-        .when("/update", {
-            templateUrl: "/static/views/update.jsp",
-            controller: "UpdateController as update"
-        })
-        .when("/navigation",{
-            templateUrl: "/static/views/navigation.html",
-            controller:"NavigationController as navigate"
-        })
-        .when("/changePassword",{
-            templateUrl:"/static/views/changePassword.jsp",
-            controller:"UpdateController as update"
-        })
-        .when("/deactivateAccount",{
-            templateUrl:"/static/views/deactivateAccount.jsp",
-            controller:"UpdateController as update"
-        })
-        .when("/blockUsersList",{
-            templateUrl:"/static/views/blockList.jsp",
-            controller:"BlockUsersListController as block"
-        })
-        .otherwise({
-            redirectTo:'/login'
-        });
+(function () {
+    angular.module('userModule', [
+        'ngRoute',
+        'naif.base64',
+        'ngTouch',
+        'ngAnimate',
+        'ui.bootstrap',
+        'ngStorage',
+        'infinite-scroll',
+        'angucomplete']);
+    angular.module('userModule').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        $routeProvider
+            .when("/login", {
+                templateUrl: "/static/views/login.jsp",
+                controller: "LoginController as login"
+            })
+            .when("/forgotPassword", {
+                templateUrl: "/static/views/forgotPassword.jsp",
+                controller: "ForgotPasswordController as forgotPass"
+            })
+            .when("/signup", {
+                templateUrl: "/static/views/signup.jsp",
+                controller: "SignupController as signup"
+            })
+            .when("/newsFeed", {
+                templateUrl: "/static/views/infinityPage.jsp",
+                controller: "MainController as main"
+            })
+            // .when("/newsFeed",{
+            //     templateUrl:"/static/views/infinityPage.jsp",
+            //     controller:"mainController as main"
+            // })
+            .when("/profile", {
+                templateUrl: "/static/views/profile.jsp",
+                controller: "ProfileController as profile"
+            })
+            .when("/search", {
+                templateUrl: "/static/views/search.jsp",
+                controller: "SearchController as search"
+            })
+            .when("/searchedUser", {
+                templateUrl: "/static/views/searchedProfile.jsp",
+                controller: "SearchedProfileController as searched"
+            })
+            .when("/update", {
+                templateUrl: "/static/views/update.jsp",
+                controller: "UpdateController as update"
+            })
+            .when("/navigation", {
+                templateUrl: "/static/views/navigation.html",
+                controller: "NavigationController as navigate"
+            })
+            .when("/changePassword", {
+                templateUrl: "/static/views/changePassword.jsp",
+                controller: "UpdateController as update"
+            })
+            .when("/deactivateAccount", {
+                templateUrl: "/static/views/deactivateAccount.jsp",
+                controller: "UpdateController as update"
+            })
+            .when("/blockUsersList", {
+                templateUrl: "/static/views/blockList.jsp",
+                controller: "BlockUsersListController as block"
+            })
+            .otherwise({
+                redirectTo: '/login'
+            });
         // $locationProvider.html5Mode({
         //     enabled: true,
         //     requireBase: false
         // })
 
-}]);
+    }]);
 
     // angular.module('userModule').config(['$httpProvider', function ($httpProvider) {
     //

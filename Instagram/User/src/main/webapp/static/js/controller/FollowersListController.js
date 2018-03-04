@@ -7,17 +7,26 @@
         vm.followers = [];
         vm.userDisplayName = $localStorage.storedObj.username;
         vm.user={};
+        vm.hideButtons = "false";
         vm.openProfile=openProfile;
         vm.getFollowersList = getFollowersList;
         vm.followUser = followUser;
         vm.unfollowUser = unfollowUser;
         vm.ok = ok;
 
+
         getFollowersList();
 
         function getFollowersList() {
             HttpService.get("/getFollowersList/"+vm.userDisplayName).then(function (value) {
                 vm.followers= value;
+                angular.forEach(vm.followers,function (follower,key) {
+                    if (follower.username == $localStorage.storedObj.username){
+                        follower.hideButtons=true;
+                    }else {
+                        follower.hideButtons=false;
+                    }
+                })
             }, function (reason) {
                 console.log("This occurred:" + reason);
             });
