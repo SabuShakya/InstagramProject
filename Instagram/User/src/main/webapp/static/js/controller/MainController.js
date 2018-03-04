@@ -52,12 +52,15 @@
                             if (posts.activationStatus == "activated") {
                                 vm.finalPostList = vm.finalPostList.concat(posts);
                                 vm.showFollowMesssage = false;
-                            } else {
                             }
                         })
                     }
                     else{
-                        vm.showFollowMesssage=true;
+                        if(value.length>0 ) {
+                            vm.showFollowMesssage=true;
+                        }else{
+                        vm.showFollowMessage=false;
+                        }
                     }
                 });
         }

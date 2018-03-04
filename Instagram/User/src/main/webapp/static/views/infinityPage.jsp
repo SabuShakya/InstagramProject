@@ -4,6 +4,10 @@
          infinite-scroll-immediate-check="false" infinite-scroll-container='".constrained"'
          infinite-scroll-parent="true" >
 
+        <div ng-show="main.showFollowMesssage">
+            <h3>Follow others to see their posts..</h3>
+        </div>
+
         <div align="center" ng-repeat="post in main.finalPostList">
             <div class='insta fade-scroll'>
                 <div class='top-insta'>

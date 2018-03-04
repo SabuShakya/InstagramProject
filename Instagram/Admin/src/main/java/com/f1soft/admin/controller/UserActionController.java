@@ -41,6 +41,7 @@ public class UserActionController {
         List<UserListInfoDto> userListInfoDtoList = userService.getTotalUsers(pageable);
         return new ResponseEntity<List<UserListInfoDto>>(userListInfoDtoList,HttpStatus.OK);
     }
+
     @GetMapping("/getTotalActiveUsers")
     public ResponseEntity<List<UserListInfoDto>> getTotalActiveUsers(@RequestParam("page") int page,
                                                                @RequestParam("size") int size){

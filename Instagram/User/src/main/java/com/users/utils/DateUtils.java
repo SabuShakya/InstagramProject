@@ -1,4 +1,4 @@
-package com.f1soft.admin.utils;
+package com.users.utils;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -23,6 +23,13 @@ public class DateUtils {
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.SECOND, 0);
         cal.set(Calendar.MILLISECOND, 0);
+        return cal.getTime();
+    }
+
+    public static Date getDateWithTimeAndAmPm(Date date){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+//        cal.set(cal.get(Calendar.AM_PM));
         return cal.getTime();
     }
 }
