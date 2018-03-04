@@ -20,7 +20,7 @@ public class UserPhotos {
     @Column(name="image_path", nullable = false)
     private String image_path;
 
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name="created_date")
     private Date created_date;
 

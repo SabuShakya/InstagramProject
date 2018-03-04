@@ -13,4 +13,5 @@ public class UserSearchDto {
     private boolean showResultButtons;
     private String activationStatus;
     private boolean blockStatus;
+    private boolean hideButtons;
 }

@@ -14,7 +14,7 @@ public class NoFollowingException extends RuntimeException{
         exceptionJSON= new ExceptionJSON();
         exceptionJSON.setMessage(message);
         exceptionJSON.setDeveloperMessage(developerMessage);
-        exceptionJSON.setStatus(HttpStatus.NOT_FOUND);
+//        exceptionJSON.setStatus(HttpStatus.NOT_FOUND);
     }
 
 
