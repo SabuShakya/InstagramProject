@@ -17,7 +17,7 @@ public interface FollowService {
     public FollowersCountdto getFollowersCount(String username);
     public FollowingCountdto getFollowingCount(String username);
 
-    public List<UserSearchDto> getFollowersList(String username);
-    public List<UserSearchDto> getFollowingList(String username);
+    public List<UserSearchDto> getFollowersList(String username,String loggedInUserName);
+    public List<UserSearchDto> getFollowingList(String username,String loggedInUserName);
 
 }
