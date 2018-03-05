@@ -12,7 +12,7 @@
                 <h4><a href="/#!/searchedUser" ng-click="followersCtrl.openProfile(follow)">{{follow.username}}</a>
                 </h4>
             </div>
-            <div nh-hide ="follow.hideButtons">
+            <div ng-hide ="follow.hideButtons">
                 <div class="col-md-12" ng-hide="follow.showResultButtons" style="float: right">
                     <button ng-click="followersCtrl.followUser(follow)">Follow</button>
                 </div>

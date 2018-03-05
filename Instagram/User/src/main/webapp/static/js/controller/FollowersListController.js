@@ -26,7 +26,7 @@
                     }else {
                         follower.hideButtons=false;
                     }
-                })
+                });
             }, function (reason) {
                 console.log("This occurred:" + reason);
             });

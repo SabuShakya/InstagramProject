@@ -169,6 +169,7 @@ public class FollowServiceImpl implements FollowService {
             blockUserdto.setUserName(username);
             blockUserdto.setBlockedUsername(userSearchDto.getUsername());
             userSearchDto.setBlockStatus(blockService.checkBlocked(blockUserdto));
+
             returnlist.add(userSearchDto);
         }
         return returnlist;
