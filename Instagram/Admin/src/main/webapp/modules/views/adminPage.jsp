@@ -9,9 +9,7 @@
     <button class="btn btn-pull center"><a href="#!/adminPage/manageAdmin">Manage Admins</a></button>
 </div>
 <br>
-<%--<div>--%>
-<%--<button type="button" class="btn-default" ng-click="admin.openUserLog()">Show User Log</button>--%>
-<%--</div>--%>
+
 </div>
 <div class="col col-md-9">
     <div class="row" class="container-fluid">

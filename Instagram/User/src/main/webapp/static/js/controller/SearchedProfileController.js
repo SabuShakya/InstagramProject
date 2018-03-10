@@ -32,7 +32,7 @@
             userName : $localStorage.storedObj.username,
             blockedUsername : $localStorage.openProfileOf.username
         };
-        vm.openModal=openModal;
+
         vm.commentModal=commentModal;
         vm.followUser = followUser;
         vm.unfollowUser = unfollowUser;
@@ -108,17 +108,6 @@
             });
         }
 
-        function openModal(){
-            vm.modalInstance = $uibModal.open({
-                ariaLabelledBy: 'modal-title',
-                ariaDescribedBy: 'modal-body',
-                templateUrl: '/static/views/upload.jsp',
-                controller :'ImgUploadController',
-                controllerAs: 'img',
-                size: 'lg'
-            });
-        }
-
         function commentModal(image_path,caption) {
             $rootScope.photo = image_path;
             $rootScope.caption =caption;
@@ -126,10 +115,10 @@
             vm.modalInstance=$uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
-                templateUrl: '/static/views/comments.jsp',
+                templateUrl: '/static/views/searchedProfileComments.jsp',
                 controller :'CommentsController',
                 controllerAs: 'comment',
-                size: 'lg'
+                size: 'md'
             });
         }
 
@@ -208,7 +197,7 @@
                 templateUrl: '/static/views/SearchedFollowersList.jsp',
                 controller :'SearchedFollowersListController',
                 controllerAs: 'followersCtrl',
-                size: 'lg'
+                size: 'md'
             });
             vm.modalInstance.result.then(
                 function () {
@@ -226,7 +215,7 @@
                 templateUrl: '/static/views/searchedFollowingList.jsp',
                 controller :'SearchedFollowingListController',
                 controllerAs: 'followingCtrl',
-                size: 'lg'
+                size: 'md'
             });
             vm.modalInstance.result.then(
                 function () {

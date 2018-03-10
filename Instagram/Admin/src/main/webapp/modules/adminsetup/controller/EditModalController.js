@@ -69,7 +69,7 @@
                 templateUrl: 'modules/views/adminPhotoModal.jsp',
                 controller: 'AdminPhotoModalController',
                 controllerAs: 'modalController',
-                size: 'lg'
+                size: 'md'
             });
             vm.modalInstance.result.then(
                 function(){

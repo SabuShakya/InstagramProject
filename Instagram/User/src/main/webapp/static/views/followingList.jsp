@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h1 class="modal-title" id="modal-title">Following list :</h1>
+    <h3 class="modal-title" id="modal-title">Following list :</h3>
 </div>
 
 <div class="modal-body" id="modal-body">

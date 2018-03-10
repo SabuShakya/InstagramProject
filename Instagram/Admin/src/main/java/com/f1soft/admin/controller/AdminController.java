@@ -39,7 +39,6 @@ public class AdminController {
         }else {
             throw new IncorrectUsernameException("Admin is not registered","Admin doesn't exist");
         }
-//        return new ResponseEntity<TokenAuthDto>(tokenAuthDto, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping("/getAdminId/{tokenNo}/{userName}")

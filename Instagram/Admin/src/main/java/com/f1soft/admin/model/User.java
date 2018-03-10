@@ -41,9 +41,6 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "followedUser")
     private List<Follow> followedUser;
 
-    @OneToMany(mappedBy = "user")
-    private List<Comments> comments;
-
     @OneToOne(mappedBy = "user",cascade=CascadeType.REMOVE)
     private ProfilePhoto profilePhotos;
 
@@ -55,7 +52,6 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy = "blockedUser")
     private List<BlockUser> blockedUser;
-
 
     @Transient
     private int totalItems;
