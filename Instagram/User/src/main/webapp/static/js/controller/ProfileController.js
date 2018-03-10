@@ -69,7 +69,8 @@
             });
             vm.modalInstance.result.then(
                 function () {
-
+                    followersCount();
+                    followingCount();
             },function() {
                     followersCount();
                     followingCount();

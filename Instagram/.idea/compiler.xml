@@ -2,17 +2,22 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Admin" />
         <module name="admin" />
         <module name="user" />
+        <module name="User" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="admin" target="1.8" />
+      <module name="Admin" target="1.8" />
       <module name="instagram" target="1.8" />
+      <module name="User" target="1.8" />
       <module name="user" target="1.8" />
     </bytecodeTargetLevel>
   </component>

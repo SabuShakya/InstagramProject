@@ -16,7 +16,7 @@
         getFollowingList();
 
         function getFollowingList() {
-            HttpService.get("/getFollowingList/"+vm.userDisplayName).then(function (value) {
+            HttpService.get("/getFollowingList/"+vm.userDisplayName+"/"+$localStorage.storedObj.username).then(function (value) {
                 vm.following = value;
             },function (reason) {
                 console.log("This occurred:"+reason);

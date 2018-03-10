@@ -10,11 +10,13 @@
                      height="10%">
                 <h4><a href="/#!/searchedUser" ng-click="followingCtrl.openProfile(follow)">{{follow.username}}</a></h4>
             </div>
-            <div ng-hide="follow.showResultButtons" class="col-md-12" style="float:right">
-                <button ng-click="followingCtrl.followUser(follow)">Follow</button>
-            </div>
-            <div ng-show="follow.showResultButtons" class="col-md-12" style="float:right">
-                <button ng-click="followingCtrl.unfollowUser(follow)">Un-Follow</button>
+            <div ng-hide="follow.hideButtons">
+                <div ng-hide="follow.showResultButtons" class="col-md-12" style="float:right">
+                    <button ng-click="followingCtrl.followUser(follow)">Follow</button>
+                </div>
+                <div ng-show="follow.showResultButtons" class="col-md-12" style="float:right">
+                    <button ng-click="followingCtrl.unfollowUser(follow)">Un-Follow</button>
+                </div>
             </div>
         </div>
     </div>

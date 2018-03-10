@@ -13,6 +13,5 @@ public class Commentsdto implements Serializable{
     private String username;
     private String image_path;
     private String activationStatus;
-
     private boolean showCommentButtons;
 }

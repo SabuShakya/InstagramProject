@@ -18,15 +18,15 @@
         getFollowersList();
 
         function getFollowersList() {
-            HttpService.get("/getFollowersList/"+vm.userDisplayName).then(function (value) {
+            HttpService.get("/getFollowersList/"+vm.userDisplayName+"/"+$localStorage.storedObj.username).then(function (value) {
                 vm.followers= value;
-                angular.forEach(vm.followers,function (follower,key) {
-                    if (follower.username == $localStorage.storedObj.username){
-                        follower.hideButtons=true;
-                    }else {
-                        follower.hideButtons=false;
-                    }
-                })
+                // angular.forEach(vm.followers,function (follower,key) {
+                //     if (follower.username == $localStorage.storedObj.username){
+                //         follower.hideButtons=true;
+                //     }else {
+                //         follower.hideButtons=false;
+                //     }
+                // });
             }, function (reason) {
                 console.log("This occurred:" + reason);
             });
