@@ -1,16 +1,15 @@
 <div class="modal-header">
-    <h1 class="modal-title" id="modal-title">Followed By:</h1>
+    <h3 class="modal-title" id="modal-title">Followed By:</h3>
 </div>
-
 <div class="modal-body" id="modal-body">
     <div ng-repeat="follow in followersCtrl.followers">
-        <div class="col-md-12">
-            <img class="img-responsive img-circle margin" src="/uploads/{{follow.image}}" width="10%" height="10%">
-            {{follow.following_userName}}
-        </div>
+            <img class="img-responsive img-circle margin" src="/uploads/{{follow.imagename}}" width="10%" height="10%">
+            {{follow.username}}
     </div>
 </div>
-
 <div class="modal-footer">
-    <button class="btn btn-warning" type="button" ng-click="followersCtrl.ok()">Done</button>
+    <button class="btn btn-warning" ng-click="followersCtrl.ok()">OK</button>
 </div>
+
+
+

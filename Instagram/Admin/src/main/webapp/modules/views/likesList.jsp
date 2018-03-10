@@ -1,10 +1,9 @@
 <div class="modal-header">
-    <h1 class="modal-title" id="modal-title">Liked By:</h1>
+    <h3 class="modal-title" id="modal-title">Liked By:</h3>
 </div>
 
 <div class="modal-body" id="modal-body">
     <div ng-repeat="like in likesctrl.likes">
-        <%--<img src="/uploads/+">--%>
         {{like.userName}}
     </div>
 </div>

@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h1 class="modal-title" id="modal-title">Followed By:</h1>
+    <h3 class="modal-title" id="modal-title">Followed By:</h3>
 </div>
 
 <div class="modal-body" id="modal-body">
@@ -8,15 +8,14 @@
             <div class="col-md-12" style="float: left">
                 <img class="img-responsive img-circle margin" src="/uploads/{{follow.imagename}}" width="10%"
                      height="10%">
-
                 <h4><a href="/#!/searchedUser" ng-click="followersCtrl.openProfile(follow)">{{follow.username}}</a>
                 </h4>
             </div>
-            <div nh-hide ="follow.hideButtons">
-                <div class="col-md-12" ng-hide="follow.showResultButtons" style="float: right">
+            <div ng-hide ="follow.hideButtons" class="col-md-12">
+                <div ng-hide="follow.showResultButtons" class="col-md-12" style="float: right">
                     <button ng-click="followersCtrl.followUser(follow)">Follow</button>
                 </div>
-                <div class="col-md-12" ng-show="follow.showResultButtons" style="float: right">
+                <div ng-show="follow.showResultButtons" class="col-md-12" style="float: right">
                     <button ng-click="followersCtrl.unfollowUser(follow)">Un-Follow</button>
                 </div>
             </div>

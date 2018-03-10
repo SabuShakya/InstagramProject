@@ -1,7 +1,6 @@
 package com.f1soft.admin.serviceimpl;
 
-import com.f1soft.admin.dto.FollowCountDto;
-import com.f1soft.admin.dto.FollowDto;
+import com.f1soft.admin.dto.*;
 import com.f1soft.admin.model.Follow;
 import com.f1soft.admin.model.User;
 import com.f1soft.admin.repository.CommentsRepository;
@@ -12,10 +11,12 @@ import com.f1soft.admin.service.FollowService;
 
 import com.f1soft.admin.service.UserPhotosService;
 import com.f1soft.admin.utils.FollowUtils;
+import com.f1soft.admin.utils.UserSearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -31,9 +32,6 @@ public class FollowServiceImpl implements FollowService {
     @Autowired
     private UserPhotosService photoService;
 
-//    @Autowired
-//    private LikesService likesService;
-
     @Autowired
     private CommentsService commentsService;
 
@@ -43,61 +41,74 @@ public class FollowServiceImpl implements FollowService {
     public List<User> getFollowedUsers(String username) {
         List<User> listOfFollowedUsers = followRepository.getFollowedUser(username);
         System.out.println(listOfFollowedUsers);
-//        List<UserPhotos> userPhotosList= photoService.getListOfPhotos(listOfFollowedUsers,pageable);
-//        for (UserPhotos userPhotos: userPhotosList){
-//            List<Likes> likes = likesService.getByPhotoId(userPhotos.getId());
-//            userPhotos.setLikes(likes);
-//        }
-//        return UserPhotosPostUtil.convertUserPhotosToUserPostDto(userPhotosList);
         return listOfFollowedUsers;
     }
 
-    public void saveFollows(FollowDto followDto) {
-        User user = userRepository.getUserByUsername(followDto.getUserName());
-        User following_user = userRepository.getUserByUsername(followDto.getFollowing_userName());
-        Follow follow = new Follow();
-        follow.setUser(user);
-        follow.setFollowedUser(following_user);
-        follow.setIsFollowing(true);
-        followRepository.save(follow);
-    }
-
-    public boolean checkFollow(FollowDto followDto) {
-        Follow follow =followRepository.checkFollow(followDto.getUserName(),
-                                                    followDto.getFollowing_userName());
-        if(follow != null){
-            return true;
-        }
-        return false;
-    }
-
-    public void unfollowUser(FollowDto followDto) {
-      Follow follow=followRepository.checkFollow(followDto.getUserName(),
-                                     followDto.getFollowing_userName());
-      if (follow !=null) {
-          followRepository.delete(follow);
-      }
-    }
-
-    public FollowCountDto getFollowCount(String username) {
-        FollowCountDto followCountDto = new FollowCountDto();
-        User user=userRepository.getUserByUsername(username);
-        List<Follow> followingList=followRepository.getByUserId(user.getId());
-        followCountDto.setFollowing(followingList.size());
+    public FollowersCountdto getFollowersCount(String username) {
+        FollowersCountdto followersCountDto = new FollowersCountdto();
+        User user = userRepository.getUserByUsername(username);
         List<User> followersList = followRepository.getByFollowedUserId(user.getId());
-        followCountDto.setFollowers(followersList.size());
+        List<User> followersResultList = new ArrayList<User>();
+        for (User u : followersList) {
+            if (u.getUserActivation().getActivationStatus().equals("activated")) {
+                followersResultList.add(u);
+            }
+        }
+        followersCountDto.setFollowers(followersResultList.size());
+        return followersCountDto;
+    }
+
+    public FollowingCountdto getFollowingCount(String username) {
+        FollowingCountdto followCountDto = new FollowingCountdto();
+        User user = userRepository.getUserByUsername(username);
+        List<Follow> followingList = followRepository.getByUserId(user.getId());
+        List<Follow> resultList = new ArrayList<Follow>();
+        for (Follow f : followingList) {
+            if (f.getFollowedUser().getUserActivation().getActivationStatus().equals("activated")) {
+                resultList.add(f);
+            }
+        }
+        followCountDto.setFollowing(resultList.size());
         return followCountDto;
     }
 
-    public List<FollowDto> getFollowersList(String username) {
+    public List<UserSearchDto> getFollowersList(String username) {
         User user = userRepository.getUserByUsername(username);
         List<User> followersList = followRepository.getByFollowedUserId(user.getId());
-        return FollowUtils.convertFollowtoFollowDto(followersList);
+        List<User> tempList = new ArrayList<User>();
+        for (User user1 : followersList) {
+            if ((tempList != null) && (user1.getUserActivation().getActivationStatus().equals("activated"))) {
+                tempList.add(user1);
+            }
+        }
+        return convertToUserSearchDtoList(tempList, username, user);
     }
 
-    public List<FollowDto> getFollowingList(String username) {
+    public List<UserSearchDto> getFollowingList(String username) {
         User user = userRepository.getUserByUsername(username);
         List<User> followingList = followRepository.getByFollowingUserId(user.getId());
-        return FollowUtils.convertFollowtoFollowingDto(followingList);
+        List<User> tempList = new ArrayList<User>();
+        for (User user1 : followingList) {
+            if (tempList != null && (user1.getUserActivation().getActivationStatus().equals("activated"))) {
+                tempList.add(user1);
+            }
+        }
+        return convertToUserSearchDtoList(tempList, username, user);
+    }
+
+    public List<UserSearchDto> convertToUserSearchDtoList(List<User> followersList, String username, User user) {
+        List<UserSearchDto> list = UserSearchUtils.getSearchedUserInfo(followersList);
+        List<UserSearchDto> returnlist = new ArrayList<UserSearchDto>();
+        for (UserSearchDto userSearchDto : list) {
+            FollowDto followDto = new FollowDto();
+            followDto.setUserName(username);
+            followDto.setFollowing_userName(userSearchDto.getUsername());
+            //checking blockstatus
+            BlockUserdto blockUserdto = new BlockUserdto();
+            blockUserdto.setUserName(username);
+            blockUserdto.setBlockedUsername(userSearchDto.getUsername());
+            returnlist.add(userSearchDto);
+        }
+        return returnlist;
     }
 }

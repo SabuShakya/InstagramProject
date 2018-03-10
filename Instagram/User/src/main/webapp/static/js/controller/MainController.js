@@ -89,7 +89,7 @@
                 templateUrl: '/static/views/postCommentModal.jsp',
                 controller :'PostCommentModalController',
                 controllerAs: 'comment',
-                size: 'lg'
+                size: 'md'
             });
         }
 
@@ -140,7 +140,7 @@
                 templateUrl: '/static/views/likesList.jsp',
                 controller :'LikesListController',
                 controllerAs: 'likesctrl',
-                size: 'lg'
+                size: 'sm'
             });
         }
 

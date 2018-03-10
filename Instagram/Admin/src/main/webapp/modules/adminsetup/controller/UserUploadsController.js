@@ -62,7 +62,7 @@
                 templateUrl: 'modules/views/likesList.jsp',
                 controller: 'LikesListController',
                 controllerAs: 'likesctrl',
-                size: 'lg'
+                size: 'sm'
             });
         }
     }

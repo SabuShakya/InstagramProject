@@ -16,7 +16,6 @@
         vm.ok = ok;
         getFollowersList();
 
-
         function getFollowersList() {
             HttpService.get("/getFollowersList/" + vm.searchedUsername).then(function (value) {
                 vm.searchedFollowers = value;

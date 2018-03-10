@@ -78,29 +78,7 @@ public class FollowServiceImpl implements FollowService {
         }
     }
 
-//    public FollowCountDto getFollowCount(String username) {
-//        FollowCountDto followCountDto = new FollowCountDto();
-//        User user = userRepository.getUserByUsername(username);
-//        List<Follow> followingList = followRepository.getByUserId(user.getId());
-//        List<Follow> resultList = new ArrayList<Follow>();
-//        for (Follow f : followingList) {
-//            if (f.getFollowedUser().getUserActivation().getActivationStatus().equals("activated")) {
-//                resultList.add(f);
-//            }
-//        }
-//        followCountDto.setFollowing(resultList.size());
-//        List<User> followersList = followRepository.getByFollowedUserId(user.getId());
-//        List<User> followersResultList = new ArrayList<User>();
-//        for (User u : followersList) {
-//            if (u.getUserActivation().getActivationStatus().equals("activated")) {
-//                followersResultList.add(u);
-//            }
-//        }
-//        followCountDto.setFollowers(followersResultList.size());
-//        return followCountDto;
-//    }
-
-    public FollowersCountdto getFollowersCount(String username){
+    public FollowersCountdto getFollowersCount(String username) {
         FollowersCountdto followersCountDto = new FollowersCountdto();
         User user = userRepository.getUserByUsername(username);
         List<User> followersList = followRepository.getByFollowedUserId(user.getId());
@@ -114,7 +92,7 @@ public class FollowServiceImpl implements FollowService {
         return followersCountDto;
     }
 
-    public FollowingCountdto getFollowingCount(String username){
+    public FollowingCountdto getFollowingCount(String username) {
         FollowingCountdto followCountDto = new FollowingCountdto();
         User user = userRepository.getUserByUsername(username);
         List<Follow> followingList = followRepository.getByUserId(user.getId());
@@ -128,26 +106,25 @@ public class FollowServiceImpl implements FollowService {
         return followCountDto;
     }
 
-    //sabu
     public List<UserSearchDto> getFollowersList(String username) {
         User user = userRepository.getUserByUsername(username);
         List<User> followersList = followRepository.getByFollowedUserId(user.getId());
         List<User> tempList = new ArrayList<User>();
-        for (User user1:followersList){
-            if ((tempList!= null) && (user1.getUserActivation().getActivationStatus().equals("activated"))){
+        for (User user1 : followersList) {
+            if ((tempList != null) && (user1.getUserActivation().getActivationStatus().equals("activated"))) {
                 tempList.add(user1);
             }
         }
         return convertToUserSearchDtoList(tempList, username, user);
     }
 
-    //sabu
+
     public List<UserSearchDto> getFollowingList(String username) {
         User user = userRepository.getUserByUsername(username);
         List<User> followingList = followRepository.getByFollowingUserId(user.getId());
         List<User> tempList = new ArrayList<User>();
-        for (User user1:followingList){
-            if (tempList!= null && (user1.getUserActivation().getActivationStatus().equals("activated"))){
+        for (User user1 : followingList) {
+            if (tempList != null && (user1.getUserActivation().getActivationStatus().equals("activated"))) {
                 tempList.add(user1);
             }
         }
@@ -155,7 +132,6 @@ public class FollowServiceImpl implements FollowService {
         return convertToUserSearchDtoList(tempList, username, user);
     }
 
-    //sabu
     public List<UserSearchDto> convertToUserSearchDtoList(List<User> followersList, String username, User user) {
         List<UserSearchDto> list = UserSearchUtils.getSearchedUserInfo(followersList);
         List<UserSearchDto> returnlist = new ArrayList<UserSearchDto>();

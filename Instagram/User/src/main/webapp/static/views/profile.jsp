@@ -9,34 +9,26 @@
         <button class="btn btn-success btn-sm" ng-click="profile.editProfile()">Upload profile photo</button>
     </div>
 </header>
-    <div class="stats-container">
-        <div class="stat">
-            <div class="number">
-                <button ng-click="profile.followersList()" ng-disabled="profile.showFollowersList"> {{profile.followers}}</button>
-            </div>
-            <div class="text" style="color: black">Followers</div>
+<div class="stats-container">
+    <div class="stat">
+        <div class="number">
+            <button type="button" class="btn btn-link" ng-click="profile.followersList()" ng-disabled="profile.showFollowersList"> {{profile.followers}}</button>
         </div>
-
-        <div class="stat">
-            <div class="number">{{profile.totalPictures}}</div>
-            <div class="text" style="color: black">Pictures</div>
-        </div>
-
-        <%--<div class="stat">--%>
-            <%--<a href="#" ng-click="profile.followingList()"> {{profile.following}}</a>--%>
-            <%--<div class="number">--%>
-                <%--<a href="#" ng-click="profile.followingList()">Following</a>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-
-        <div class="stat">
-            <div class="number">
-                <button ng-click="profile.followingList()" ng-disabled="profile.showFollowingList"> {{profile.following}}</button>
-            </div>
-            <div class="text" style="color: black">Following</div>
-        </div>
-
+        <div class="text" style="color: black">Followers</div>
     </div>
+
+    <div class="stat">
+        <div class="number">{{profile.totalPictures}}</div>
+        <div class="text" style="color: black">Pictures</div>
+    </div>
+
+    <div class="stat">
+        <div class="number">
+            <button type="button" class="btn btn-link" ng-click="profile.followingList()" ng-disabled="profile.showFollowingList"> {{profile.following}}</button>
+        </div>
+        <div class="text" style="color: black">Following</div>
+    </div>
+</div>
 </div>
 <br>
 
@@ -45,7 +37,6 @@
         <div class="thumbnail">
             <img src="uploads/{{photo.image_path}}" style="width:100%; height: 50%;"
                  ng-click="profile.commentModal(photo.image_path,photo.caption)">
-            </button><br>
         </div>
     </div>
 </div>

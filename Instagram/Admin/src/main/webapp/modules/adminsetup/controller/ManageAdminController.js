@@ -47,7 +47,7 @@
                 templateUrl: 'modules/views/editModal.jsp',
                 controller: 'EditModalController',
                 controllerAs: 'modalController',
-                size: 'lg'
+                size: 'md'
             });
             vm.modalInstance.result.then(
                 function () {
@@ -65,7 +65,7 @@
                 templateUrl: 'modules/views/confirmDelete.jsp',
                 controller: 'EditModalController',
                 controllerAs: 'modalController',
-                size: 'lg'
+                size: 'md'
             });
             vm.modalInstance.result.then(
                 function () {
@@ -83,7 +83,7 @@
                 templateUrl: 'modules/views/adminPhotoModal.jsp',
                 controller: 'EditModalController',
                 controllerAs: 'modalController',
-                size: 'lg'
+                size: 'md'
             });
             vm.modalInstance.result.then(
                 function () {

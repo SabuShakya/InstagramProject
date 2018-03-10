@@ -38,8 +38,8 @@ a {
 header {
     background: url(https://unsplash.it/1080/720?image=601) no-repeat;
     background-size: cover;
-    position: relative;
-    min-height: 230px;
+    /*position: relative;*/
+    min-height: 100px;
     margin-bottom: 40px;
 }
 
@@ -72,9 +72,9 @@ i::after{
 }
 
 .description{
-    padding: 0.5em 2em;
+    /*padding: 0.5em 2em;*/
     text-align: center;
-    font-size: 40px;
+    font-size: 3px;
 }
 
 .stats-container{
@@ -118,4 +118,9 @@ i::after{
     width:33%;
     height: 33%;
     margin-bottom: 2px;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
 }

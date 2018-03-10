@@ -1,26 +1,8 @@
 <div class="modal-header">
     <h4 class="modal-title" id="modal-title"></h4>
-    <img class="img-responsive img-circle margin" src="/uploads/{{comment.userProfilePhoto}}" width="10%" height="10%">
-    {{comment.userDisplayName}}
-
-    <div class="dropdown" style="float:right;">
-        <button class="btn btn-link" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-            <span class='dot02'></span>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-            <button type="button" class="btn btn-link" ng-click="comment.openEditCaption(caption)">Edit</button>
-            <button type="button" class="btn btn-link" ng-click="comment.openDeleteModalMessage()">Delete</button>
-        </div>
-    </div>
 </div>
 
 <div class="modal-body" id="modal-body">
-    <div ng-show="comment.showEditCaptionForm">
-        <input type='text' id='caption' ng-model="clickedCaption.caption" placeholder='Edit caption...'>
-        <button ng-click="comment.editCaption()" ng-disabled="comment.submitClicked">Edit caption</button>
-    </div>
-    <br>
     <div ng-show="comment.showLoveIcon">
         <div class="overlay">
             <span></span>
@@ -32,7 +14,7 @@
     </div>
 
     <div class='caption'>
-        <span>{{comment.caption}}</span>
+        <h4><span> {{comment.searchedUserName}}: {{comment.caption}}</span></h4>
     </div>
     <br>
 
@@ -95,9 +77,4 @@
     .active {
         background: red;
     }
-
-    .dropdown-menu {
-        min-width: 10px;
-    }
-
 </style>

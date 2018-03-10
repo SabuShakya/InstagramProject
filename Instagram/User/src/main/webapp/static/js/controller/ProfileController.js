@@ -25,7 +25,6 @@
         vm.editProfile=editProfile;
         vm.commentModal=commentModal;
         vm.allPhotos= allPhotos;
-        // vm.followCount=followCount;
         vm.profilePhoto=profilePhoto;
         vm.followersList=followersList;
         vm.followingList=followingList;
@@ -33,20 +32,9 @@
         vm.followingCount=followingCount;
 
         allPhotos();
-        // followCount();
         profilePhoto();
         followersCount();
         followingCount();
-
-        // function followCount(){
-        //     HttpService.get("/followsCount/"+$localStorage.storedObj.username).then(function (value) {
-        //         // vm.followers = value.followers;
-        //         vm.following = value.following;
-        //         vm.totalPictures = value.totalPictures;
-        //     },function (reason) {
-        //         console.log(reason);
-        //     });
-        // }
 
         function followersCount(){
             HttpService.get("/followersCount/"+$localStorage.storedObj.username).then(function (value) {
@@ -77,7 +65,7 @@
                 templateUrl: '/static/views/followersList.jsp',
                 controller :'FollowersListController',
                 controllerAs: 'followersCtrl',
-                size: 'lg'
+                size: 'md'
             });
             vm.modalInstance.result.then(
                 function () {
@@ -95,7 +83,7 @@
                 templateUrl: '/static/views/followingList.jsp',
                 controller :'FollowingListController',
                 controllerAs: 'followingCtrl',
-                size: 'lg'
+                size: 'md'
             });
             vm.modalInstance.result.then(
                 function () {
@@ -121,7 +109,7 @@
                 templateUrl: '/static/views/upload.jsp',
                 controller :'ImgUploadController',
                 controllerAs: 'img',
-                size: 'lg'
+                size: 'md'
             });
 
             vm.modalInstance.result.then(
@@ -142,11 +130,12 @@
                 templateUrl: '/static/views/comments.jsp',
                 controller :'CommentsController',
                 controllerAs: 'comment',
-                size: 'lg'
+                size: 'md'
             });
             vm.modalInstance.result.then(
                 function(){
                     allPhotos();
+                    followersCount();
                 },
                 function(){
                     allPhotos();

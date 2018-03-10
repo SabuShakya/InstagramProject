@@ -13,36 +13,37 @@
                     {{uploads.username}}
                 </div>
                 <div class='post'>
-                    <div class="overlay">
-                        <span></span>
-                    </div>
                     <div class="thumbnail principal-post">
                         <img src="uploads/{{uploads.image_path}}">
                     </div>
                     <div class='caption'>
-                        </a><span>{{uploads.caption}}</span>
+                        <span>{{uploads.caption}}</span>
                     </div>
                 </div>
+
                 <label>Created On:
                     <span class="date-of-post">{{uploads.created_date}}</span>
                 </label>
+
                 <div class='footer'>
                     <div class='react'>
-                        <%--{{uploads.countOfLikes}}--%>
-                        <button>
-                            <span> {{uploads.countOfLikes}}</span>
-                        </button>
-                        <button ng-click="userUploads.showComments(uploads)">
-                            <span class='comment'></span>
-                        </button>
-                            <div ng-show="userUploads.showing" ng-repeat="comm in uploads.comments">
-                                <%--<div ng-show="userUploads.showList" ng-repeat="comm in userUploads.commentList">--%>
-                                    {{comm.userName}} : {{comm.comments}}
-                            </div>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+                            Likes:{{uploads.countOfLikes}}
+                            <br>
+                            <button type="button" class="btn btn-secondary"
+                                    ng-click="userUploads.showComments(uploads)">
+                                <span class='comment'></span>
+                            </button>
 
-                        <button ng-click="userUploads.openLikeListModal(uploads)">
-                            <span class='save'></span>
-                        </button>
+                            <button type="button" class="btn btn-secondary"
+                                    ng-click="userUploads.openLikeListModal(uploads)">
+                                <span class='save'></span>
+                            </button>
+                        </div><br>
+                        <div ng-show="userUploads.showing" ng-repeat="comm in uploads.comments">
+                            {{comm.userName}} : {{comm.comments}}
+                        </div>
+                        <br>
                     </div>
                 </div>
             </div>

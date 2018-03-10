@@ -18,14 +18,11 @@
         <input type='text' id='cmnt' ng-model="comment.comments" placeholder='Add a comment...'>
         <button ng-click="comment.add()"  ng-disabled="comment.submitClicked">Add</button>
     </div>
-    <br>
 
     <div ng-hide="comment.showCommentList">
         <input type='text' id='comment' ng-model="clickedComment.comments" placeholder='Edit comment...'>
         <button ng-click="comment.edit()">Edit</button>
     </div>
-</div>
-</section>
 </div>
 
 <div class="modal-footer">

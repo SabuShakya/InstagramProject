@@ -13,7 +13,6 @@
         vm.userDisplayName = '';
         vm.photoList = [];
         vm.profilePhotoList = [];
-        vm.showList = true;
         vm.followers = '';
         vm.following = '';
         vm.totalPictures = '';
@@ -23,49 +22,79 @@
         $rootScope.clickedPhoto = '';
         $rootScope.pic = '';
 
+        vm.showFollowersList= false;
+        vm.showFollowingList= false;
+
         vm.userDisplayName = $localStorage.openProfileOf.username;
 
         vm.commentModal = commentModal;
         vm.allPhotos = allPhotos;
-        vm.followCount = followCount;
+        vm.followersCount=followersCount;
+        vm.followingCount=followingCount;
         vm.profilePhoto = profilePhoto;
         vm.followersList = followersList;
         vm.followingList = followingList;
 
         allPhotos();
-        followCount();
         profilePhoto();
+        followersCount();
+        followingCount();
 
-        function followCount() {
-            HttpService.get("/followsCount/" + $localStorage.openProfileOf.username).then(function (value) {
+        function followersCount(){
+            HttpService.get("/followersCount/"+$localStorage.openProfileOf.username).then(function (value) {
                 vm.followers = value.followers;
-                vm.following = value.following;
                 vm.totalPictures = value.totalPictures;
-            }, function (reason) {
-                console.log(reason);
+                vm.showFollowersList= false;
+            },function (reason) {
+                vm.followers = reason.followers;
+                vm.totalPictures = reason.totalPictures;
+                vm.showFollowersList= true;
             });
         }
 
-        function followersList() {
-            vm.modalInstance = $uibModal.open({
+        function followingCount(){
+            HttpService.get("/followingCount/"+$localStorage.openProfileOf.username).then(function (value) {
+                vm.following = value.following;
+                vm.showFollowingList= false;
+            },function (reason) {
+                vm.following = reason.following;
+                vm.showFollowingList= true;
+            });
+        }
+
+        function followersList(){
+            vm.modalInstance=$uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
                 templateUrl: 'modules/views/followersList.jsp',
-                controller: 'FollowersListController',
+                controller :'FollowersListController',
                 controllerAs: 'followersCtrl',
-                size: 'lg'
+                size: 'sm'
             });
+            vm.modalInstance.result.then(
+                function () {
+
+                },function() {
+                    followingCount();
+                    followersCount();
+                })
         }
 
-        function followingList() {
-            vm.modalInstance = $uibModal.open({
+        function followingList(){
+            vm.modalInstance=$uibModal.open({
                 ariaLabelledBy: 'modal-title',
                 ariaDescribedBy: 'modal-body',
                 templateUrl: 'modules/views/followingList.jsp',
-                controller: 'FollowingListController',
+                controller :'FollowingListController',
                 controllerAs: 'followingCtrl',
-                size: 'lg'
+                size: 'sm'
             });
+            vm.modalInstance.result.then(
+                function () {
+                },function() {
+                    followingCount();
+                    followersCount();
+                })
         }
 
         function allPhotos() {
@@ -87,7 +116,7 @@
                 templateUrl: 'modules/views/comments.jsp',
                 controller: 'CommentsController',
                 controllerAs: 'comment',
-                size: 'lg'
+                size: 'md'
             });
         }
 
@@ -102,6 +131,5 @@
                 console.log("Error occured" + reason);
             });
         }
-
     }
 })();

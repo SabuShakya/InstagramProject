@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <%--<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">--%>
-    <link href="css/newsFeed.css" rel="stylesheet">
+
+    <link href="css/newsFeed.css">
+    <link href="css/comments.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
     <link href="css/breadcrumb.css" rel="stylesheet">
     <link href="css/profile.css" rel="stylesheet">
@@ -15,10 +16,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
-    <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>--%>
-
-
-    <%--<script type="text/javascript" src="static/angular.min.js"></script>--%>
     <script type="text/javascript" src="static/angular-route.min.js"></script>
     <script type="text/javascript" src="static/ng-breadcrumbs.js"></script>
     <script type="text/javascript" src="static/ng-breadcrumbs.min.js"></script>

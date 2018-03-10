@@ -23,9 +23,11 @@
         $rootScope.clickedComment ='';
         $rootScope.clickedPhoto='';
 
-        vm.userDisplayName= $localStorage.storedObj.username;
-        vm.userProfilePhoto= $localStorage.profilePicture;
-        vm.url ="/addComment";
+        vm.userDisplayName = $localStorage.storedObj.username;
+        vm.searchedUserName=$localStorage.openProfileOf.username;
+        vm.userProfilePhoto = $localStorage.profilePicture;
+        vm.url = "/addComment";
+
         vm.add = add;
         vm.like = like;
         vm.likesCount=likesCount;
@@ -174,9 +176,8 @@
                 templateUrl: '/static/views/deletePhotoMessage.jsp',
                 controller: 'DeletePhotoMessageController',
                 controllerAs: 'deletePhotoMessage',
-                size: 'lg'
+                size: 'sm'
             });
-
             vm.modalInstance.result.then(
                 function () {
                     cancel();
@@ -200,7 +201,6 @@
                 vm.showEditCaptionForm = false;
                 vm.submitClicked = true;
                 getCaption();
-                // cancel();
             }, function (reason) {
                 $rootScope.saved = true;
                 vm.submitClicked = false;

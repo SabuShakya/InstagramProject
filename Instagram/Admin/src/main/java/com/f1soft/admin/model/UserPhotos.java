@@ -31,10 +31,10 @@ public class UserPhotos {
     @Column(name ="caption")
     private String caption;
 
-    @OneToMany(mappedBy = "userPhotos")
+    @OneToMany(mappedBy = "userPhotos",cascade = CascadeType.REMOVE)
     private List<Comments> comments;
 
-    @OneToMany(mappedBy = "userPhotos")
+    @OneToMany(mappedBy = "userPhotos",cascade = CascadeType.REMOVE)
     private List<Likes> likes;
 
     @Transient

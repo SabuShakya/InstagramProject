@@ -16,18 +16,13 @@
         vm.submitClicked=false;
         vm.isActive=false;
 
-        // vm.userDisplayName= $localStorage.storedObj.username;
         vm.url ="/addComment";
-        // vm.add = add;
-        // vm.like = like;
-        // vm.openDeleteModal= openDeleteModal;
-        // vm.openEditModal=openEditModal;
-        // vm.edit=edit;
         vm.cancel=cancel;
         vm.showLikeList = showLikeList;
         vm.showComments=showComments;
         vm.commentsList=commentsList;
         vm.imageName = $rootScope.photo;
+        vm.searchedUsername=$localStorage.openProfileOf.username
 
         HttpService.get("/likesCount/"+vm.imageName).then(function (value) {
             vm.likeCount = value;
