@@ -1,8 +1,10 @@
 package com.users.serviceImpl;
 
-import com.users.dto.*;
+import com.users.dto.BlockUserdto;
+import com.users.dto.FollowDto;
+import com.users.dto.UserSearchDto;
+import com.users.dto.Userdto;
 import com.users.exceptionHandler.IncorrectPasswordException;
-import com.users.model.Follow;
 import com.users.model.ProfilePhoto;
 import com.users.model.User;
 import com.users.model.UserActivation;
@@ -14,13 +16,12 @@ import com.users.utils.TokenUtils;
 import com.users.utils.UserSearchUtils;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.persistence.*;
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package com.users.serviceImpl;
 
 import com.users.dto.UserActivationDto;
-import com.users.dto.Userdto;
 import com.users.model.User;
 import com.users.model.UserActivation;
 import com.users.repository.UserActivationRepository;

@@ -1,7 +1,6 @@
 package com.users.serviceImpl;
 
 import com.users.dto.BlockUserdto;
-import com.users.dto.FollowDto;
 import com.users.model.BlockUser;
 import com.users.model.Follow;
 import com.users.model.User;

@@ -1,18 +1,14 @@
 package com.users.serviceImpl;
 
 import com.users.dto.*;
-import com.users.model.*;
-import com.users.repository.CommentsRepository;
+import com.users.model.Follow;
+import com.users.model.User;
 import com.users.repository.FollowRepository;
 import com.users.repository.UserRepository;
-import com.users.service.*;
-import com.users.utils.CommentUtils;
-import com.users.utils.FollowUtils;
-//import com.users.utils.UserPhotosPostUtil;
+import com.users.service.BlockService;
+import com.users.service.FollowService;
 import com.users.utils.UserSearchUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -128,7 +124,6 @@ public class FollowServiceImpl implements FollowService {
         return followCountDto;
     }
 
-    //sabu
     public List<UserSearchDto> getFollowersList(String username, String loggedInUserName) {
         User user = userRepository.getUserByUsername(username);
         List<User> followersList = followRepository.getByFollowedUserId(user.getId());
@@ -141,7 +136,6 @@ public class FollowServiceImpl implements FollowService {
         return convertToUserSearchDtoList(tempList, username, user, loggedInUserName);
     }
 
-    //sabu
     public List<UserSearchDto> getFollowingList(String username, String loggedInUserName) {
         User user = userRepository.getUserByUsername(username);
         List<User> followingList = followRepository.getByFollowingUserId(user.getId());
@@ -151,7 +145,6 @@ public class FollowServiceImpl implements FollowService {
                 tempList.add(user1);
             }
         }
-//        return FollowUtils.convertFollowtoFollowingDto(followingList);
         return convertToUserSearchDtoList(tempList, username, user, loggedInUserName);
     }
 
@@ -175,7 +168,6 @@ public class FollowServiceImpl implements FollowService {
             } else {
                 userSearchDto.setHideButtons(false);
             }
-
             returnlist.add(userSearchDto);
         }
         return returnlist;

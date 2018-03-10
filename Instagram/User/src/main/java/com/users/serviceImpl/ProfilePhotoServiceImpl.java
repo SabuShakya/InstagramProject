@@ -6,8 +6,6 @@ import com.users.model.User;
 import com.users.repository.ProfilePhotoRepository;
 import com.users.service.ProfilePhotoService;
 import com.users.service.UserService;
-import com.users.utils.ProfilePhotoUtils;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +16,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Base64;
-import java.util.List;
 
 @Service
 @Transactional
