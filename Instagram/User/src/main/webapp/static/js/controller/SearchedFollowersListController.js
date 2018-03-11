@@ -17,7 +17,7 @@
         getFollowersList();
 
         function getFollowersList() {
-            HttpService.get("/getFollowersList/" + vm.searchedUsername).then(function (value) {
+            HttpService.get("/getFollowersList/" + vm.searchedUsername+"/"+$localStorage.storedObj.username).then(function (value) {
                 vm.searchedFollowers = value;
             }, function (reason) {
                 console.log("This occurred:" + reason);
