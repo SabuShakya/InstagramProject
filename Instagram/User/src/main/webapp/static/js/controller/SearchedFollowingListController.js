@@ -15,7 +15,6 @@
         vm.ok = ok;
 
         getFollowingList();
-
         function getFollowingList() {
             HttpService.get("/getFollowingList/" + vm.searchedUsername + "/" + $localStorage.storedObj.username).then(function (value) {
                 vm.searchedFollowing = value;
